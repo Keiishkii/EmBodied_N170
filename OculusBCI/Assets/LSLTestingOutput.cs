@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using LSL;
 using UnityEngine;
 
-public class LSLTesting : MonoBehaviour
+public class LSLTestingOutput : MonoBehaviour
 {
-    [SerializeField] private Transform _orbitingTransform;
+    [SerializeField] private string StreamName = "Headset Position";
+    private string StreamType = "";
     
-    private string StreamName = "Headset Position";
-    private string StreamType = "Position Tracker";
+    [Space(10)]
+    [SerializeField] private Transform _trackedObject;
+    
 
     private StreamOutlet outlet;
     
@@ -28,8 +30,8 @@ public class LSLTesting : MonoBehaviour
 
     void FixedUpdate()
     {
-        Vector3 headsetPosition = _orbitingTransform.position;
-        float[] positionData = {headsetPosition.x, headsetPosition.y, headsetPosition.z};
+        Vector3 trackedObjectPosition = _trackedObject.position;
+        float[] positionData = {trackedObjectPosition.x, trackedObjectPosition.y, trackedObjectPosition.z};
         
         outlet.push_sample(positionData);
     }

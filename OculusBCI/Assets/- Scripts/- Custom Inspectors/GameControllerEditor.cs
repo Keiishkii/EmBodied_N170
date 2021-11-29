@@ -2,15 +2,14 @@
     using System.Collections;
     using System.Collections.Generic;
     using UnityEditor;
-    using UnityEditor.Experimental.TerrainAPI;
     using UnityEngine;
 
-    [CustomEditor(typeof(NPCController))]
-    public class NPCControllerEditor : Editor
+    [CustomEditor(typeof(GameController))]
+    public class GameControllerEditor : Editor
     {
         public override void OnInspectorGUI()
         {
-            NPCController targetScript = (NPCController) target;
+            GameController targetScript = (GameController) target;
             
             if (!Application.isPlaying)
             {
@@ -18,10 +17,7 @@
             }
             else
             {
-                if (GUILayout.Button("Toggle Look At"))
-                {
-                    targetScript.ToggleLookAtState.Invoke();
-                }
+                
             }
         }
     }

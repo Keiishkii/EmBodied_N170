@@ -1,0 +1,8 @@
+public enum GameState_Enum
+{
+    START,
+    AWAITING_PLAYER_APPROACH,
+    PLAYER_APPROACHED,
+    AWAITING_PLAYER_INPUT,
+    PLAYER_INPUT
+}

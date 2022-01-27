@@ -42,6 +42,10 @@ public class TestDataStructure
         }
     }
 
-    public float distanceToTriggerLookUp = 2.5f;
+    public float distanceToTriggerNPCLookUp = 2.0f;
+    public float distanceToTriggerPlayerLeave = 3.5f;
+    public float distanceToTriggerReturnedToCentre = 1f;
+    
     public List<TestSegment> testSegments;
+    public List<TestQuestion> testQuestions;
 }

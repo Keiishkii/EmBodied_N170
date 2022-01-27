@@ -8,7 +8,6 @@ using UnityEngine.Events;
 
 public class NPCController : MonoBehaviour
 {
-     [HideInInspector] public UnityEvent ToggleLookAtState = new UnityEvent();
      private NPCBoneReferences _npcBoneReferences;
      private NPCIKReferences _npcIKReferences;
      
@@ -29,28 +28,16 @@ public class NPCController : MonoBehaviour
           _npcBoneReferences = GetComponent<NPCBoneReferences>();
           _npcIKReferences = GetComponent<NPCIKReferences>();
      }
-
-     private void OnEnable()
-     {
-          ToggleLookAtState.AddListener(ToggleLookAt);
-     }
-
-     private void OnDisable()
-     {
-          ToggleLookAtState.RemoveListener(ToggleLookAt);
-     }
-
      
      
      
      
-     private void ToggleLookAt()
+     public void LookAt(bool lookAt)
      {
           if (!ReferenceEquals(_activeLookAtCoroutine, null)) 
                StopCoroutine(_activeLookAtCoroutine);
 
-          _activeLookAtCoroutine = LookAtTargetCoroutine(_lookingUp ? 0.0f : 1.0f);
-          _lookingUp = !_lookingUp;
+          _activeLookAtCoroutine = LookAtTargetCoroutine(lookAt ? 1.0f : 0.0f);
 
           StartCoroutine(_activeLookAtCoroutine);
      }

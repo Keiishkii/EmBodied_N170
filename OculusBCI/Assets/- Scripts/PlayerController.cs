@@ -43,7 +43,8 @@ public class PlayerController : MonoBehaviour
     
     
     
-    public IEnumerator BeginDistanceTesting(NPCController npcController, float distance)
+    
+    public IEnumerator TestDistanceForPlayerApproach(NPCController npcController, float distance)
     {
         Transform npcHeadTransform = npcController.GetHeadTransform();
         Vector3 position, npcFacePosition;
@@ -51,15 +52,54 @@ public class PlayerController : MonoBehaviour
         do
         {
             position = _headsetTransform.position;
+            position = new Vector3(position.x, 0, position.z);
             npcFacePosition = npcHeadTransform.position;
+            npcFacePosition = new Vector3(npcFacePosition.x, 0, npcFacePosition.z);
 
             yield return null;
-        } while (Vector3.SqrMagnitude(position - npcFacePosition) > distance);
+        } while (Vector3.SqrMagnitude(position - npcFacePosition) > Mathf.Pow(distance, 2));
 
-        npcController.ToggleLookAtState.Invoke();
-        GameController.Instance.SetState(GameState_Enum.PLAYER_APPROACHED);
+        npcController.LookAt(true);
+
+        GameController.Instance.ChosenRoom = (transform.position.x > 0) ? Room_Enum.ROOM_A : Room_Enum.ROOM_B;
+        GameController.Instance.GameState = GameState_Enum.PLAYER_APPROACHED;
     }
 
+    public IEnumerator TestDistanceForWalkingAway(NPCController npcController, float distance)
+    {
+        Transform npcHeadTransform = npcController.GetHeadTransform();
+        Vector3 position, npcFacePosition;
+        
+        do
+        {
+            position = _headsetTransform.position;
+            position = new Vector3(position.x, 0, position.z);
+            npcFacePosition = npcHeadTransform.position;
+            npcFacePosition = new Vector3(npcFacePosition.x, 0, npcFacePosition.z);
+
+            yield return null;
+        } while (Vector3.SqrMagnitude(position - npcFacePosition) < Mathf.Pow(distance, 2));
+        
+        npcController.LookAt(false);
+        
+        GameController.Instance.GameState = GameState_Enum.PLAYER_DECISION;
+    }
+
+    public IEnumerator TestDistanceToCenter(float distance)
+    {
+        Vector3 position;
+        
+        do
+        {
+            position = _headsetTransform.position;
+            position = new Vector3(position.x, 0, position.z);
+            
+            yield return null;
+        } while (Vector3.SqrMagnitude(position) > Mathf.Pow(distance, 2));
+        
+        GameController.Instance.GameState = GameState_Enum.PLAYER_RETURNED;
+    }
+    
     public void SpawnHeldItem(Item_Enum itemType)
     {
         if (PrefabDictionary.ContainsKey(itemType))

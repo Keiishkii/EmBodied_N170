@@ -1,5 +1,15 @@
 {
-    "distanceToTriggerLookUp" : 2.5,
+    "distanceToTriggerNPCLookUp" : 2.0,
+    "distanceToTriggerPlayerLeave" : 3.5,
+    "distanceToTriggerReturnedToCentre" : 1.0,
+    
+    "testQuestions": [
+        {
+            "question":     "What emotion did you experience?",
+            "lowAnswer":    "Unhappy",         
+            "highAnswer":   "Happy"            
+        }   
+    ],
     "testSegments": [
         {
             "NPC": 0,

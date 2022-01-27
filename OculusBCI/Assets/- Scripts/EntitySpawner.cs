@@ -38,30 +38,36 @@ public class EntitySpawner : MonoBehaviour
         }
     }
 
-    private GameObject _spawnedNPC;
-    private NPCController _npcController;
-    private NPCBoneReferences _npcBoneReferences;
-    private NPCIKReferences _npcIKReferences;
+    NPCData _npcOneData = new NPCData();
+    NPCData _npcTwoData = new NPCData();
     
     
     
     
     
-    public void SpawnNPC(TestSegment testSegment, bool phaseInRoomA, out NPCController npcController)
+    public void SpawnNPCs(TestSegment testSegment, Transform npcLookAtTarget, out NPCController npc1Controller, out NPCController npc2Controller)
     {
-        npcController = null;
+        npc1Controller = null; npc2Controller = null;
         
         NPC_Enum npcType = testSegment.NPC;
         if (PrefabDictionary.ContainsKey(npcType))
         {
-            _spawnedNPC = Instantiate(PrefabDictionary[npcType], _entityFolder);
-            _npcController = _spawnedNPC.GetComponent<NPCController>();
-            _npcBoneReferences = _spawnedNPC.GetComponent<NPCBoneReferences>();
-            _npcIKReferences = _spawnedNPC.GetComponent<NPCIKReferences>();
+            GameObject NPC_1 = Instantiate(PrefabDictionary[npcType], _entityFolder);
+            _npcOneData.Populate(NPC_1);
             
-            npcController = _npcController;
+            npc1Controller = _npcOneData.npcController;
+            npc1Controller.SetLookAtTarget(npcLookAtTarget);
             
-            StartCoroutine(InitialiseNPC(npcType, phaseInRoomA));
+            
+            GameObject NPC_2 = Instantiate(PrefabDictionary[npcType], _entityFolder);
+            _npcTwoData.Populate(NPC_2);
+            
+            npc2Controller = _npcTwoData.npcController;
+            npc2Controller.SetLookAtTarget(npcLookAtTarget);
+            
+            
+            StartCoroutine(InitialiseNPC(_npcOneData, npcType, true));
+            StartCoroutine(InitialiseNPC(_npcTwoData, npcType, false));
         }
         else
         {
@@ -71,33 +77,37 @@ public class EntitySpawner : MonoBehaviour
 
     public void ClearNPC()
     {
-        Destroy(_spawnedNPC);
+        Destroy(_npcOneData.gameObject);
+        _npcOneData = null;
+        
+        Destroy(_npcTwoData.gameObject);
+        _npcTwoData = null;
     }
 
-    private IEnumerator InitialiseNPC(NPC_Enum NPCType, bool spawnInRoomA)
+    private IEnumerator InitialiseNPC(NPCData npc, NPC_Enum npcType, bool spawnInRoomA)
     {
         yield return new WaitForEndOfFrame();
 
-        SetNPCTransformData(NPCType, spawnInRoomA);
+        SetNPCTransformData(npc, npcType, spawnInRoomA);
 
-        SetNPCArmIK(_npcIKReferences.leftHandIKConstraint, _npcIKReferences.leftHandIKHint, _npcIKReferences.leftHandIKTarget,
-            _npcBoneReferences.leftForeArm, _npcBoneReferences.leftHand);
+        SetNPCArmIK(npc.npcIKReferences.leftHandIKConstraint, npc.npcIKReferences.leftHandIKHint, npc.npcIKReferences.leftHandIKTarget,
+            npc.npcBoneReferences.leftForeArm, npc.npcBoneReferences.leftHand);
         
-        SetNPCArmIK(_npcIKReferences.rightHandIKConstraint, _npcIKReferences.rightHandIKHint, _npcIKReferences.rightHandIKTarget, 
-            _npcBoneReferences.rightForeArm, _npcBoneReferences.rightHand);
+        SetNPCArmIK(npc.npcIKReferences.rightHandIKConstraint, npc.npcIKReferences.rightHandIKHint, npc.npcIKReferences.rightHandIKTarget, 
+            npc.npcBoneReferences.rightForeArm, npc.npcBoneReferences.rightHand);
 
         
-        SetNPCLegIK(_npcIKReferences.leftFootIKConstraint, _npcIKReferences.leftFootIKHint, _npcIKReferences.leftFootIKTarget,
-            _npcBoneReferences.leftLeg, _npcBoneReferences.leftFoot, _npcBoneReferences.leftToeBase);
+        SetNPCLegIK(npc.npcIKReferences.leftFootIKConstraint, npc.npcIKReferences.leftFootIKHint, npc.npcIKReferences.leftFootIKTarget,
+            npc.npcBoneReferences.leftLeg, npc.npcBoneReferences.leftFoot, npc.npcBoneReferences.leftToeBase);
         
-        SetNPCLegIK(_npcIKReferences.rightFootIKConstraint, _npcIKReferences.rightFootIKHint, _npcIKReferences.rightFootIKTarget,
-            _npcBoneReferences.rightLeg, _npcBoneReferences.rightFoot, _npcBoneReferences.rightToeBase);
+        SetNPCLegIK(npc.npcIKReferences.rightFootIKConstraint, npc.npcIKReferences.rightFootIKHint, npc.npcIKReferences.rightFootIKTarget,
+            npc.npcBoneReferences.rightLeg, npc.npcBoneReferences.rightFoot, npc.npcBoneReferences.rightToeBase);
     }
 
-    private void SetNPCTransformData(NPC_Enum NPCType, bool spawnInRoomA)
+    private void SetNPCTransformData(NPCData npc, NPC_Enum npcType, bool spawnInRoomA)
     {
-        float NPCDefaultWaistHeight = PrefabDictionary[NPCType].GetComponent<NPCBoneReferences>().root.position.y;
-        float NPCSittingWaistHeight = _npcBoneReferences.root.position.y;
+        float NPCDefaultWaistHeight = PrefabDictionary[npcType].GetComponent<NPCBoneReferences>().root.position.y;
+        float NPCSittingWaistHeight = npc.npcBoneReferences.root.position.y;
         
         Vector3 chairPosition = new Vector3((spawnInRoomA) ? (_chairPosition.x) : (_chairPosition.x * -1), _chairPosition.y, _chairPosition.z);
         Vector3 playerWaistOffset = new Vector3(0, NPCDefaultWaistHeight - NPCSittingWaistHeight, 0);
@@ -105,7 +115,7 @@ public class EntitySpawner : MonoBehaviour
         Vector3 playerSpawnPosition = chairPosition - playerWaistOffset;
         Quaternion playerSpawnRotation = (spawnInRoomA) ? (Quaternion.Euler(0, -90, 0)) : (Quaternion.Euler(0, 90, 0));
 
-        _spawnedNPC.transform.SetPositionAndRotation(playerSpawnPosition, playerSpawnRotation);
+        npc.gameObject.transform.SetPositionAndRotation(playerSpawnPosition, playerSpawnRotation);
     }
 
     private void SetNPCArmIK(TwoBoneIKConstraint IKConstraint, Transform hintAnchor, Transform targetAnchor, Transform elbowTransform, Transform handTransform)

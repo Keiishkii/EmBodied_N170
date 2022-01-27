@@ -8,6 +8,8 @@
     [CustomEditor(typeof(NPCController))]
     public class NPCControllerEditor : Editor
     {
+        private bool _isLookingUp;
+        
         public override void OnInspectorGUI()
         {
             NPCController targetScript = (NPCController) target;
@@ -20,7 +22,8 @@
             {
                 if (GUILayout.Button("Toggle Look At"))
                 {
-                    targetScript.ToggleLookAtState.Invoke();
+                    targetScript.LookAt(_isLookingUp);
+                    _isLookingUp = !_isLookingUp;
                 }
             }
         }

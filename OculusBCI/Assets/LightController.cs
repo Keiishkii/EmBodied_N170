@@ -70,7 +70,7 @@ public class LightController : MonoBehaviour
 
     private void SetLightBrightness(float value)
     {
-        Debug.Log($"<color=#BBBB00>Light</color> Level: {_lightLevel}");
+        //Debug.Log($"<color=#BBBB00>Light</color> Level: {_lightLevel}");
         for (int i = 0; i < _lights.Count; i++)
         {
             _lights[i].intensity = _lightIntensities[i] * value;

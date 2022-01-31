@@ -8,7 +8,12 @@
             "question":     "What emotion did you experience?",
             "lowAnswer":    "Unhappy",         
             "highAnswer":   "Happy"            
-        }   
+        },
+        {
+            "question":     "How would you rate the game?",
+            "lowAnswer":    "Not great",
+            "highAnswer":   "Excellent"
+        }
     ],
     "testSegments": [
         {
@@ -21,3 +26,5 @@
         }
     ]
 }
+
+

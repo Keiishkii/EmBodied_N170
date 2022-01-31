@@ -147,10 +147,12 @@ public class GameController : MonoBehaviour
                 _evaluationCanvasController.CanvasEnabled(true);
                 _evaluationCanvasController.LoadCanvasContent(_testDataStructure.testQuestions);
             yield return AwaitStateChange(GameState_Enum.PLAYER_RESULTS_COLLECTED);
+                GameState = GameState_Enum.CHECK_END; 
             //-->>   
             
             
-            yield return AwaitStateChange(GameState_Enum.CHECK_END);    
+            yield return AwaitStateChange(GameState_Enum.CHECK_END);   
+                _gameState = GameState_Enum.START;  
             //-->>      
         }
         

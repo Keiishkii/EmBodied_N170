@@ -61,7 +61,8 @@ public class PlayerController : MonoBehaviour
 
         npcController.LookAt(true);
 
-        GameController.Instance.ChosenRoom = (transform.position.x > 0) ? Room_Enum.ROOM_A : Room_Enum.ROOM_B;
+        GameController.Instance.ChosenRoom = (position.x > 0) ? Room_Enum.ROOM_A : Room_Enum.ROOM_B;
+        Debug.Log("Player has entered room " + ((position.x > 0) ? Room_Enum.ROOM_A : Room_Enum.ROOM_B).ToString());
         GameController.Instance.GameState = GameState_Enum.PLAYER_APPROACHED;
     }
 
@@ -78,6 +79,9 @@ public class PlayerController : MonoBehaviour
             npcFacePosition = new Vector3(npcFacePosition.x, 0, npcFacePosition.z);
 
             yield return null;
+
+            float distanceA = Vector3.SqrMagnitude(position - npcFacePosition);
+            float distanceB = Mathf.Pow(distance, 2);
         } while (Vector3.SqrMagnitude(position - npcFacePosition) < Mathf.Pow(distance, 2));
         
         npcController.LookAt(false);

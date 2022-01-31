@@ -9,7 +9,6 @@ public class EvaluationCanvasController : MonoBehaviour
     [SerializeField] private GameObject _canvas;
     
     [SerializeField] private GameObject _questionPanel;
-    [SerializeField] private GameObject _endPanel;
 
     [SerializeField] private TMP_Text _questionLabel;
     [SerializeField] private TMP_Text _lowAnswerLabel;
@@ -42,7 +41,6 @@ public class EvaluationCanvasController : MonoBehaviour
         _questionID = 0;
         
         _questionPanel.SetActive(true);
-        _endPanel.SetActive(false);
         
         SetQuestion();
     }
@@ -58,7 +56,9 @@ public class EvaluationCanvasController : MonoBehaviour
         else
         {
             _questionPanel.SetActive(false);
-            _endPanel.SetActive(true);
+            _canvas.SetActive(false);
+            
+            GameController.Instance.GameState = GameState_Enum.PLAYER_RESULTS_COLLECTED; 
         }
     }
 
@@ -66,11 +66,5 @@ public class EvaluationCanvasController : MonoBehaviour
     {
         _questionID++;
         SetQuestion();
-        
-    }
-
-    public void OnEndQuestioningPressed()
-    {
-        CanvasEnabled(false);
     }
 }

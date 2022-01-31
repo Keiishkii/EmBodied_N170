@@ -38,8 +38,8 @@ public class EntitySpawner : MonoBehaviour
         }
     }
 
-    NPCData _npcOneData = new NPCData();
-    NPCData _npcTwoData = new NPCData();
+    NPCData _npcOneData;
+    NPCData _npcTwoData;
     
     
     
@@ -53,6 +53,7 @@ public class EntitySpawner : MonoBehaviour
         if (PrefabDictionary.ContainsKey(npcType))
         {
             GameObject NPC_1 = Instantiate(PrefabDictionary[npcType], _entityFolder);
+            _npcOneData = new NPCData();
             _npcOneData.Populate(NPC_1);
             
             npc1Controller = _npcOneData.npcController;
@@ -60,6 +61,7 @@ public class EntitySpawner : MonoBehaviour
             
             
             GameObject NPC_2 = Instantiate(PrefabDictionary[npcType], _entityFolder);
+            _npcTwoData = new NPCData();
             _npcTwoData.Populate(NPC_2);
             
             npc2Controller = _npcTwoData.npcController;

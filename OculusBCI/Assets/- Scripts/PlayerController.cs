@@ -63,7 +63,7 @@ public class PlayerController : MonoBehaviour
 
         GameController.Instance.ChosenRoom = (position.x > 0) ? Room_Enum.ROOM_A : Room_Enum.ROOM_B;
         Debug.Log("Player has entered room " + ((position.x > 0) ? Room_Enum.ROOM_A : Room_Enum.ROOM_B).ToString());
-        GameController.Instance.GameState = GameState_Enum.PLAYER_APPROACHED;
+        GameController.Instance.gameState = GameState_Enum.PLAYER_APPROACHED;
     }
 
     public IEnumerator TestDistanceForWalkingAway(NPCController npcController, float distance)
@@ -86,7 +86,7 @@ public class PlayerController : MonoBehaviour
         
         npcController.LookAt(false);
         
-        GameController.Instance.GameState = GameState_Enum.PLAYER_DECISION;
+        GameController.Instance.gameState = GameState_Enum.PLAYER_DECISION;
     }
 
     public IEnumerator TestDistanceToCenter(float distance)
@@ -101,7 +101,7 @@ public class PlayerController : MonoBehaviour
             yield return null;
         } while (Vector3.SqrMagnitude(position) > Mathf.Pow(distance, 2));
         
-        GameController.Instance.GameState = GameState_Enum.PLAYER_RETURNED;
+        GameController.Instance.gameState = GameState_Enum.PLAYER_RETURNED;
     }
     
     public void SpawnHeldItem(Item_Enum itemType)

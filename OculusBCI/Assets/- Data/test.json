@@ -1,19 +1,11 @@
 {
-    "distanceToTriggerNPCLookUp" : 2.0,
+    "distanceToTriggerNPCLookUp" : 2.1,
     "distanceToTriggerPlayerLeave" : 3.5,
     "distanceToTriggerReturnedToCentre" : 1.0,
     
-    "testQuestions": [
-        {
-            "question":     "What emotion did you experience?",
-            "lowAnswer":    "Unhappy",         
-            "highAnswer":   "Happy"            
-        },
-        {
-            "question":     "How would you rate the game?",
-            "lowAnswer":    "Not great",
-            "highAnswer":   "Excellent"
-        }
+    "testQuestionJSONList": [
+        "{ \"questionType\": 0,     \"question\": { \"question\": \"hello\",    \"lowAnswer\": \"low\",    \"highAnswer\": \"high\" }}",
+        "{ \"questionType\": 0,     \"question\": { \"question\": \"hello\",    \"lowAnswer\": \"low\",    \"highAnswer\": \"high\" }}"
     ],
     "testSegments": [
         {

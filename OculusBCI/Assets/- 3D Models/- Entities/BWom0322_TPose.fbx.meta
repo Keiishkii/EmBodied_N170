@@ -3,7 +3,77 @@ guid: f4ae5a348d0e6d641872dc6124636f8d
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M2Hair_BWom0322_M4_00002
+    second: {fileID: 2100000, guid: d3c5c4a0a03f038489d8364c135967f5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M3Head_BWom0322_M4_00003
+    second: {fileID: 2100000, guid: 45c6632fef1c1a641a657913ce5bb448, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M4Eyes_Mouth_BWom0322_M4_00004
+    second: {fileID: 2100000, guid: 89fb1d1c31742584dbe5aee6daa618fc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M5Skin_BWom0322_M4_00005
+    second: {fileID: 2100000, guid: 6622453bb9c56ea47bdd7ed034e31454, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M6Cloths_Stuff_BWom0322_M4_00006
+    second: {fileID: 2100000, guid: 490cfa174fd000a4497bf9bdde75b71d, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: BWom0322-M4-BWom0322-M4-Body-D
+    second: {fileID: 2800000, guid: 8c679f18366bd634cad915ba0d4ebca6, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: BWom0322-M4-BWom0322-M4-Body-N
+    second: {fileID: 2800000, guid: f6367bdf8489df948b695bfee2055731, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: BWom0322-M4-BWom0322-M4-Body-S
+    second: {fileID: 2800000, guid: 3c3a7f38f1d4e18449ee90f88fa6d41c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: BWom0322-M4-BWom0322-M4-Hair-D
+    second: {fileID: 2800000, guid: b03bddccd88761e4a8c62e18190c6044, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: BWom0322-M4-BWom0322-M4-Hair-N
+    second: {fileID: 2800000, guid: 1a70f205dc6559a41bd01935a0064b7a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: BWom0322-M4-BWom0322-M4-Hair-S
+    second: {fileID: 2800000, guid: 503360533e41bd242bc94256fccede14, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: BWom0322-M4-BWom0322-M4-Head-D
+    second: {fileID: 2800000, guid: fd8230c3285958642b26ab4e8eb40c1a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: BWom0322-M4-BWom0322-M4-Head-N
+    second: {fileID: 2800000, guid: 06be731d41c0a9a45b717152900ce515, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: BWom0322-M4-BWom0322-M4-Head-S
+    second: {fileID: 2800000, guid: 3976fac3054891741920493f352cf865, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -45,7 +115,7 @@ ModelImporter:
     importLights: 1
     fileIdsGeneration: 2
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1

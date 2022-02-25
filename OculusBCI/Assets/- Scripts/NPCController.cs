@@ -17,7 +17,6 @@ public class NPCController : MonoBehaviour
      [SerializeField] private AnimationCurve _headMovementAnimationCurve;
 
      private IEnumerator _activeLookAtCoroutine;
-     private bool _lookingUp = false;     
      
      
      

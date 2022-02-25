@@ -3,7 +3,32 @@ guid: 0b39560aaf012c647ac114d38c2e78f8
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M2CMan0200_M4_CS_Hair_CMan0200_M
+    second: {fileID: 2100000, guid: 3aa16d03ae8ed8547a8c698c6ade6d7f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M3CMan0200_M4_CS_Head_CMan0200_M
+    second: {fileID: 2100000, guid: 7d13ba5285ca74843a094dce6f424f7f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M4CMan0200_M4_CS_Eyes_Mouth_CMan
+    second: {fileID: 2100000, guid: 7d13ba5285ca74843a094dce6f424f7f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M5CMan0200_M4_CS_Skin_CMan0200_M
+    second: {fileID: 2100000, guid: 7d13ba5285ca74843a094dce6f424f7f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M6CMan0200_M4_CS_Cloths_Stuff_CM
+    second: {fileID: 2100000, guid: 19a7d016176dda04b9c16201d0c99b4d, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -45,7 +70,7 @@ ModelImporter:
     importLights: 1
     fileIdsGeneration: 2
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1

@@ -1,0 +1,5 @@
+enum LSLStreamLookup
+{
+    NAME,
+    TYPE
+}

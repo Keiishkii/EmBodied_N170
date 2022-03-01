@@ -4,8 +4,10 @@
     "distanceToTriggerReturnedToCentre" : 1.0,
     
     "testQuestionJSONList": [
-        "{ \"questionType\": 0,     \"question\": { \"question\": \"hello\",    \"lowAnswer\": \"low\",    \"highAnswer\": \"high\" }}",
-        "{ \"questionType\": 0,     \"question\": { \"question\": \"hello\",    \"lowAnswer\": \"low\",    \"highAnswer\": \"high\" }}"
+        "{ \"questionType\": 0,     \"questionGroup\": { \"question\": \"Singular Question - Happy?\",    \"lowAnswer\": \"Sad\",    \"highAnswer\": \"Happy\" }}",
+        "{ \"questionType\": 0,     \"questionGroup\": { \"question\": \"Singular Question - Stress?\",    \"lowAnswer\": \"Not stressed\",    \"highAnswer\": \"Very stressed\" }}",
+        
+        "{ \"questionType\": 1,     \"questionGroupOne\": { \"question\": \"How happy are you?\",    \"lowAnswer\": \"Unhappy\",    \"highAnswer\": \"Happy\" },      \"questionGroupTwo\": { \"question\": \"How stressed are you?\",    \"lowAnswer\": \"Not stressed\",    \"highAnswer\": \"Very stressed\" }}"
     ],
     "testSegments": [
         {

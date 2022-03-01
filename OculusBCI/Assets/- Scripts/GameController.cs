@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DataCollection;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Events;
@@ -25,9 +26,11 @@ public class GameController : MonoBehaviour
 
     [HideInInspector] public UnityEvent<Room_Enum> EnableColliders = new UnityEvent<Room_Enum>();
     [HideInInspector] public UnityEvent DisableColliders = new UnityEvent();
-    
+
+
+    private LSLMarkerOutputStream _lslMarkerOutputStream;
+    private DataCollector _dataCollector;
         
-    
     private EvaluationCanvasController _evaluationCanvasController;
     private PlayerController _playerController;
     private EntitySpawner _entitySpawner;
@@ -52,6 +55,9 @@ public class GameController : MonoBehaviour
 
     private void Awake()
     {
+        _lslMarkerOutputStream = FindObjectOfType<LSLMarkerOutputStream>();
+        _dataCollector = FindObjectOfType<DataCollector>();
+        
         _evaluationCanvasController = FindObjectOfType<EvaluationCanvasController>();
         _playerController = FindObjectOfType<PlayerController>();
         _entitySpawner = FindObjectOfType<EntitySpawner>();
@@ -65,17 +71,7 @@ public class GameController : MonoBehaviour
 
     private void Start()
     {
-        TestOBJ obj = new TestOBJ();
-        obj.stringList.Add("hi");
-        obj.stringList.Add("hdi");
-        obj.stringList.Add("hasdi");
-
-        string text = JsonUtility.ToJson(obj, true);
-        Debug.Log(text);
-        
-        
         _testDataStructure = TestDataStructure.LoadJSONData(_testDataStructureJSON);
-
         StartCoroutine(GameFlow());
     }
     
@@ -160,11 +156,15 @@ public class GameController : MonoBehaviour
         }
         
         Debug.Log("Test Complete");
+        _dataCollector.PublishData();
     }
     
     private IEnumerator AwaitStateChange(GameState_Enum state)
     {
-        yield return new WaitUntil(() => gameState == state);                      
+        yield return new WaitUntil(() => gameState == state);      
+        
+        _lslMarkerOutputStream.WriteMarker($"State Change: {state}");
+        _dataCollector.AddDataToContainer($"{state}", _playerController.GetHeadsetTransform());
         
         Debug.Log($"Phase State: <color=#00FFBB>{state}</color>");
     }
@@ -181,12 +181,5 @@ public class GameController : MonoBehaviour
     {
         _playerController.ClearHeldItem();
         _entitySpawner.ClearNPC();
-    }
-    
-    private IEnumerator ReadyNextPhase()
-    {
-        yield return new WaitForSeconds(5.0f);
-        
-        gameState = GameState_Enum.START;
     }
 }

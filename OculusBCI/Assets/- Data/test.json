@@ -6,8 +6,10 @@
     "testQuestionJSONList": [
         "{ \"questionType\": 0,     \"questionGroup\": { \"question\": \"Singular Question - Happy?\",    \"lowAnswer\": \"Sad\",    \"highAnswer\": \"Happy\" }}",
         "{ \"questionType\": 0,     \"questionGroup\": { \"question\": \"Singular Question - Stress?\",    \"lowAnswer\": \"Not stressed\",    \"highAnswer\": \"Very stressed\" }}",
+        "{ \"questionType\": 0,     \"questionGroup\": { \"question\": \"COOKIES OR ICECREAM?\",    \"lowAnswer\": \"ICEREAM\",    \"highAnswer\": \"COOKIES\" }}",
         
-        "{ \"questionType\": 1,     \"questionGroupOne\": { \"question\": \"How happy are you?\",    \"lowAnswer\": \"Unhappy\",    \"highAnswer\": \"Happy\" },      \"questionGroupTwo\": { \"question\": \"How stressed are you?\",    \"lowAnswer\": \"Not stressed\",    \"highAnswer\": \"Very stressed\" }}"
+        "{ \"questionType\": 1,     \"questionGroupOne\": { \"question\": \"How happy are you?\",    \"lowAnswer\": \"Unhappy\",    \"highAnswer\": \"Happy\" },      \"questionGroupTwo\": { \"question\": \"How stressed are you?\",    \"lowAnswer\": \"Not stressed\",    \"highAnswer\": \"Very stressed\" }}",
+        "{ \"questionType\": 1,     \"questionGroupOne\": { \"question\": \"trees?\",    \"lowAnswer\": \"oak\",    \"highAnswer\": \"birch\" },      \"questionGroupTwo\": { \"question\": \"plants?\",    \"lowAnswer\": \"flowers\",    \"highAnswer\": \"power stations\" }}"
     ],
     "testSegments": [
         {

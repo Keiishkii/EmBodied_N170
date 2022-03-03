@@ -6,6 +6,9 @@ using UnityEngine;
 
 using TestQuestions;
 using DataCollection;
+using QuestionPanels;
+using UnityEngine.UI;
+using SliderGroup = QuestionPanels.SliderGroup;
 
 public class EvaluationCanvasController : MonoBehaviour
 {
@@ -40,6 +43,7 @@ public class EvaluationCanvasController : MonoBehaviour
 
     public void CanvasEnabled(bool enabled)
     {
+        _dataCollector.AddNewAnswerGroup();
         _canvas.SetActive(enabled);
     }
 
@@ -60,21 +64,34 @@ public class EvaluationCanvasController : MonoBehaviour
             {
                 case TestQuestion_1_Slider questionGroup:
                 {
-                    _questionPanel_1_Slider.question.questionLabel.text = questionGroup.questionGroup.question;
-                    _questionPanel_1_Slider.question.lowAnswerLabel.text = questionGroup.questionGroup.lowAnswer;
-                    _questionPanel_1_Slider.question.highAnswerLabel.text = questionGroup.questionGroup.highAnswer;
+                    SliderGroup question = _questionPanel_1_Slider.question;
+                    question.questionLabel.text = questionGroup.questionGroup.question;
+                    question.lowAnswerLabel.text = questionGroup.questionGroup.lowAnswer;
+                    question.highAnswerLabel.text = questionGroup.questionGroup.highAnswer;
+
+                    Slider slider = question.slider;
+                    slider.value = ((slider.minValue + slider.maxValue) / 2);
                     
                     _questionPanel_1_Slider.panel.SetActive(true);
                 } break;
                 case TestQuestion_2_Slider questionGroup:
                 {
-                    _questionPanel_2_Slider.questionOne.questionLabel.text = questionGroup.questionGroupOne.question;
-                    _questionPanel_2_Slider.questionOne.lowAnswerLabel.text = questionGroup.questionGroupOne.lowAnswer;
-                    _questionPanel_2_Slider.questionOne.highAnswerLabel.text = questionGroup.questionGroupOne.highAnswer;
+                    SliderGroup question_1 = _questionPanel_2_Slider.questionOne;
+                    question_1.questionLabel.text = questionGroup.questionGroupOne.question;
+                    question_1.lowAnswerLabel.text = questionGroup.questionGroupOne.lowAnswer;
+                    question_1.highAnswerLabel.text = questionGroup.questionGroupOne.highAnswer;
                     
-                    _questionPanel_2_Slider.questionTwo.questionLabel.text = questionGroup.questionGroupTwo.question;
-                    _questionPanel_2_Slider.questionTwo.lowAnswerLabel.text = questionGroup.questionGroupTwo.lowAnswer;
-                    _questionPanel_2_Slider.questionTwo.highAnswerLabel.text = questionGroup.questionGroupTwo.highAnswer;
+                    Slider slider_1 = question_1.slider;
+                    slider_1.value = ((slider_1.minValue + slider_1.maxValue) / 2);
+                    
+                    
+                    SliderGroup question_2 = _questionPanel_2_Slider.questionTwo;
+                    question_2.questionLabel.text = questionGroup.questionGroupTwo.question;
+                    question_2.lowAnswerLabel.text = questionGroup.questionGroupTwo.lowAnswer;
+                    question_2.highAnswerLabel.text = questionGroup.questionGroupTwo.highAnswer;
+                    
+                    Slider slider_2 = question_2.slider;
+                    slider_2.value = ((slider_2.minValue + slider_2.maxValue) / 2);
                     
                     _questionPanel_2_Slider.panel.SetActive(true);
                 }break;
@@ -95,16 +112,17 @@ public class EvaluationCanvasController : MonoBehaviour
     }
     
     public void OnNextQuestionPressed()
-    {switch (_testDataStructure[_questionID])
+    {
+        switch (_testDataStructure[_questionID])
         {
             case TestQuestion_1_Slider questionGroup:
             {
-                _dataCollector.AddQuestionResults(questionGroup.questionGroup.question, $"{_questionPanel_1_Slider.question.slider.value}");
+                _dataCollector.AddNewAnswer($"{_questionPanel_1_Slider.question.slider.value}");
             } break;
             case TestQuestion_2_Slider questionGroup:
             {
-                _dataCollector.AddQuestionResults(questionGroup.questionGroupOne.question, $"{_questionPanel_2_Slider.questionOne.slider.value}");
-                _dataCollector.AddQuestionResults(questionGroup.questionGroupTwo.question, $"{_questionPanel_2_Slider.questionTwo.slider.value}");
+                _dataCollector.AddNewAnswer($"{_questionPanel_2_Slider.questionOne.slider.value}");
+                _dataCollector.AddNewAnswer($"{_questionPanel_2_Slider.questionTwo.slider.value}");
             }break;
         }
         

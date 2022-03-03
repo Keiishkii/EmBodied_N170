@@ -4,9 +4,13 @@ using UnityEngine;
 
 namespace DataCollection
 {
-    public class AnswerContainer
+    public class AnswersContainer
     {
-        public string question;
+        public readonly List<Answer> answers = new List<Answer>();
+    }
+    
+    public class Answer
+    {
         public string answer;
     }
 }

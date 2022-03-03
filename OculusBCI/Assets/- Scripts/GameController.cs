@@ -32,6 +32,7 @@ public class GameController : MonoBehaviour
     private DataCollector _dataCollector;
         
     private EvaluationCanvasController _evaluationCanvasController;
+    private RayInteractionController _rayInteractionController;
     private PlayerController _playerController;
     private EntitySpawner _entitySpawner;
     
@@ -59,6 +60,7 @@ public class GameController : MonoBehaviour
         _dataCollector = FindObjectOfType<DataCollector>();
         
         _evaluationCanvasController = FindObjectOfType<EvaluationCanvasController>();
+        _rayInteractionController = FindObjectOfType<RayInteractionController>();
         _playerController = FindObjectOfType<PlayerController>();
         _entitySpawner = FindObjectOfType<EntitySpawner>();
     }
@@ -89,6 +91,7 @@ public class GameController : MonoBehaviour
             
             //Spawn Entities
             yield return AwaitStateChange(GameState_Enum.START);
+                _rayInteractionController.SetLaserVisibility(false);
                 InitialiseSegmentSetup(testSegment, out NPCController npc1Controller, out NPCController npc2Controller);
             //-->>   
             
@@ -143,6 +146,7 @@ public class GameController : MonoBehaviour
             
             // Show the results UI and record the players inputs.
             yield return AwaitStateChange(GameState_Enum.AWAITING_PLAYER_RESULTS);
+                _rayInteractionController.SetLaserVisibility(true);
                 _evaluationCanvasController.CanvasEnabled(true);
                 _evaluationCanvasController.LoadCanvasContent(_testDataStructure.testQuestionList);
             yield return AwaitStateChange(GameState_Enum.PLAYER_RESULTS_COLLECTED);
@@ -156,7 +160,7 @@ public class GameController : MonoBehaviour
         }
         
         Debug.Log("Test Complete");
-        _dataCollector.PublishData();
+        _dataCollector.PublishData(_testDataStructure.testQuestionList);
     }
     
     private IEnumerator AwaitStateChange(GameState_Enum state)

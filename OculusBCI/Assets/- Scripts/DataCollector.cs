@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Net;
+using TestQuestions;
 using UnityEngine;
 
 namespace DataCollection
@@ -12,7 +13,7 @@ namespace DataCollection
         private string _directory;
         private string _fileName;
         
-        private readonly List<AnswerContainer> _answerContainers = new List<AnswerContainer>();
+        private readonly List<AnswersContainer> _answerContainers = new List<AnswersContainer>();
         private readonly List<DataContainer> _dataContainers = new List<DataContainer>();
 
 
@@ -22,13 +23,19 @@ namespace DataCollection
             _fileName = $"Recorded Data - {DateTime.Now:yyyy-dd-M--HH-mm-ss}.csv";
         }
 
-        public void AddQuestionResults(string question, string answer)
+        public void AddNewAnswerGroup()
         {
-            _answerContainers.Add(new AnswerContainer()
+            _answerContainers.Add(new AnswersContainer());
+        }
+
+        public void AddNewAnswer(string answerValue)
+        {
+            Answer answer = new Answer()
             {
-                question = question, 
-                answer = answer
-            });
+                answer = answerValue
+            };
+            
+            _answerContainers[_answerContainers.Count - 1].answers.Add(answer);
         }
     
         public void AddDataToContainer(string marker, Transform player)
@@ -42,43 +49,60 @@ namespace DataCollection
             });
         }
 
-        public void PublishData()
+        public void PublishData(List<TestQuestion> testQuestions)
         {
             string csvString = "";
 
-            
-            WriteAnswerContainerToCSV(ref csvString);
             csvString += "\n";
-            WriteDataContainerToCSV(ref csvString);
-            
+            WriteDataContainerToCSVString(ref csvString, ref testQuestions);
             
             WriteToCSVFile(csvString);
         }
-
-        private void WriteAnswerContainerToCSV(ref string csvContent)
+        
+        private void WriteDataContainerToCSVString(ref string csvContent, ref List<TestQuestions.TestQuestion> testQuestions)
         {
-            string questionData = "", answerData = "";
-            foreach (var container in _answerContainers)
+            string dataTitles = ",Marker,Time,Position: x,Position: y,Position: z,Rotation: x,Rotation: y,Rotation: z,Rotation: w,";
+
+            string questionHeaders = "";
+            foreach (var testQuestion in testQuestions)
             {
-                questionData += $"{container.question},";
-                answerData += $"{container.answer},";
+                switch (testQuestion)
+                {
+                    case TestQuestion_1_Slider question:
+                    {
+                        questionHeaders += $"{question.questionGroup.question},";
+                    } break;
+                    case TestQuestion_2_Slider question:
+                    {
+                        questionHeaders += $"{question.questionGroupOne.question},";
+                        questionHeaders += $"{question.questionGroupTwo.question},";
+                    } break;
+                }
             }
 
-            csvContent += $"Questions:,{questionData}\n";
-            csvContent += $"Answers:,{answerData}\n";
-        }
-        
-        private void WriteDataContainerToCSV(ref string csvContent)
-        {
-            string dataTitles = ",Marker,Time,Position: x,Position: y,Position: z,Rotation: x,Rotation: y,Rotation: z,Rotation: w";
+            dataTitles += questionHeaders;
+            
 
             int index = 0;
+            int answerIndex = 0;
             string dataContent = "";
             foreach (var container in _dataContainers)
             {
                 dataContent += $"{index},{container.marker},{container.time}," +
                                $"{container.playerHeadPosition.x},{container.playerHeadPosition.y},{container.playerHeadPosition.z}, " +
-                               $"{container.playerHeadRotation.x},{container.playerHeadRotation.y},{container.playerHeadRotation.z},{container.playerHeadRotation.w}\n";
+                               $"{container.playerHeadRotation.x},{container.playerHeadRotation.y},{container.playerHeadRotation.z},{container.playerHeadRotation.w},";
+
+                if (container.marker == $"{GameState_Enum.PLAYER_RESULTS_COLLECTED}")
+                {
+                    foreach (var answer in _answerContainers[answerIndex].answers)
+                    {
+                        dataContent += $"{answer.answer},";
+                    }
+
+                    answerIndex++;
+                }
+
+                dataContent += "\n";
                 
                 index++;
             }

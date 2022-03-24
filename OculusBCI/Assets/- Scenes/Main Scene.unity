@@ -9190,6 +9190,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
   m_RenderPostProcessing: 0
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
@@ -14647,8 +14648,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1728391954}
-  - component: {fileID: 1728391953}
   - component: {fileID: 1728391955}
+  - component: {fileID: 1728391953}
   - component: {fileID: 1728391956}
   m_Layer: 0
   m_Name: ' - - - [ Game Controller ] - - - '
@@ -14726,7 +14727,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1728391952}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4a50b9946a0f8a14fb8e926bbd42cc14, type: 3}
   m_Name: 

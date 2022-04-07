@@ -11,34 +11,31 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Vector3 positionOffset;
     [SerializeField] private Vector3 eulerRotationOffset;
     
-    [Space]
-    [SerializeField] private List<ItemTypeAndPrefabReference> _dictionarySamples;
-    private Dictionary<Item_Enum, GameObject> _prefabDictionary;
-    private Dictionary<Item_Enum, GameObject> PrefabDictionary
-    {
-        get
-        {
-            if (ReferenceEquals(_prefabDictionary, null))
-            {
-                _prefabDictionary = new Dictionary<Item_Enum, GameObject>();
-                foreach (ItemTypeAndPrefabReference sample in _dictionarySamples)
-                {
-                    if (!_prefabDictionary.ContainsKey(sample.type))
-                    {
-                        _prefabDictionary.Add(sample.type, sample.prefab);
-                    }
-                    else
-                    {
-                        Debug.LogWarning($"Prefabs added using the same key to the dictionary. Key: {sample.type}");
-                    }
-                }
-            }
-
-            return _prefabDictionary;
-        }
-    }
-
     private GameObject _heldItem;
+    
+    
+    
+    
+    
+    public void CreateHeldItem(GameObject heldObject)
+    {
+        _heldItem = Instantiate(heldObject, _rightHandTransform);
+
+        _heldItem.transform.localPosition = positionOffset;
+        _heldItem.transform.rotation = Quaternion.Euler(eulerRotationOffset);
+    }
+    
+    public void DestroyHeldItem()
+    {
+        Destroy(_heldItem);
+    }
+    
+    
+    
+    
+    
+    
+    /*
     
     
     
@@ -103,28 +100,12 @@ public class PlayerController : MonoBehaviour
         
         GameController.Instance.gameState = GameState_Enum.PLAYER_RETURNED;
     }
-    
-    public void SpawnHeldItem(Item_Enum itemType)
-    {
-        if (PrefabDictionary.ContainsKey(itemType))
-        {
-            _heldItem = Instantiate(PrefabDictionary[itemType], _rightHandTransform);
-            _heldItem.transform.localPosition = positionOffset;
-            _heldItem.transform.rotation = Quaternion.Euler(eulerRotationOffset);
-        }
-        else
-        {
-            Debug.LogError($"Unable to load the item of type: {itemType}");
-        }
-    }
+    */
 
-    public void ClearHeldItem()
-    {
-        Destroy(_heldItem);
-    }
-
+    /*
     public Transform GetHeadsetTransform()
     {
         return _headsetTransform;
     }
+    */
 }

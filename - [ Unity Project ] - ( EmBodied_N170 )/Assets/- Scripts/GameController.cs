@@ -1,4 +1,4 @@
-using System;
+/*using System;
 using System.Collections;
 using System.Collections.Generic;
 using DataCollection;
@@ -175,8 +175,11 @@ public class GameController : MonoBehaviour
     
     private void InitialiseSegmentSetup(TestSegment testSegment, out NPCController npc1Controller, out NPCController npc2Controller)
     {
-        _playerController.SpawnHeldItem(testSegment.heldItem);
-        _entitySpawner.SpawnNPCs(testSegment, _playerController.GetHeadsetTransform(), out npc1Controller, out npc2Controller);
+        npc2Controller = new NPCController();
+        npc1Controller = new NPCController();
+        
+        //_playerController.SpawnHeldItem(testSegment.heldItem);
+        //_entitySpawner.SpawnNPCs(testSegment, _playerController.GetHeadsetTransform(), out npc1Controller, out npc2Controller);
         
         gameState = GameState_Enum.LIGHTS_ON;
     }
@@ -187,3 +190,4 @@ public class GameController : MonoBehaviour
         _entitySpawner.ClearNPC();
     }
 }
+*/

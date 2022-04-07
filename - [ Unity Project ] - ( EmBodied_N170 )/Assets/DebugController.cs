@@ -6,12 +6,12 @@ using UnityEngine.InputSystem;
 public class DebugController : MonoBehaviour
 {
     [SerializeField] private InputActionAsset _actionAsset;
-    private GameController _gameController;
+    //private GameController _gameController;
     
     // Start is called before the first frame update
     void Start()
     {
-        _gameController = GetComponent<GameController>();
+        //_gameController = GetComponent<GameController>();
     }
     
     
@@ -25,7 +25,7 @@ public class DebugController : MonoBehaviour
 
     private void Grip_WriteToConsole(InputAction.CallbackContext context)
     {
-        _gameController.gameState++;
+        //_gameController.gameState++;
         Debug.Log("Grab");
     }
     
@@ -36,7 +36,7 @@ public class DebugController : MonoBehaviour
     
     private void Keyboard_WriteToConsole(InputAction.CallbackContext context)
     {
-        _gameController.gameState++;
+        //_gameController.gameState++;
         Debug.Log("Trigger");
     }
 }

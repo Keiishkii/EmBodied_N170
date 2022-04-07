@@ -1,3 +1,4 @@
+/*
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -74,3 +75,4 @@ public class HeldItemCollection : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position + _positionOffset, 0.025f);
     }
 }
+*/

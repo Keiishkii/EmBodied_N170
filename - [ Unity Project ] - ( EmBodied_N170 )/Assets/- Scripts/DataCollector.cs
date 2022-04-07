@@ -10,6 +10,7 @@ namespace DataCollection
 {
     public class DataCollector : MonoBehaviour
     {
+        /*
         private string _directory;
         private string _fileName;
         
@@ -42,10 +43,10 @@ namespace DataCollection
         {
             _dataContainers.Add(new DataContainer()
             {
-                marker = marker, 
-                time = $"{DateTime.Now:HH-mm-ss.fff}",
-                playerHeadPosition = player.position,
-                playerHeadRotation = player.rotation
+                //marker = marker, 
+                //time = $"{DateTime.Now:HH-mm-ss.fff}",
+                //playerHeadPosition = player.position,
+               // playerHeadRotation = player.rotation
             });
         }
 
@@ -120,5 +121,6 @@ namespace DataCollection
 
             File.WriteAllText($"{_directory}{_fileName}", csvContent);
         }
+        */
     }
 }

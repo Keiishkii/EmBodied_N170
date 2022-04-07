@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/- Scenes/Main Scene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 0
-    path: Assets/- Scenes/- Testing Scene.unity
+    path: Assets/- Scenes/- [ Old Scenes ] -/- Testing Scene.unity
     guid: 77d234cb8a09bb2439021c314603186c
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 1fd7b53b4d09811429ec5423e366040d, type: 2}

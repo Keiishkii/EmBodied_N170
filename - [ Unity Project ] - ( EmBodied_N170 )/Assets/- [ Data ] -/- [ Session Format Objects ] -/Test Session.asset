@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c9511c202b9cb241abe7932d4f978ce, type: 3}
+  m_Name: Test Session
+  m_EditorClassIdentifier: 
+  blocks:
+  - trials:
+    - {NPCAvatar: {fileID: 5367999664640436700, guid: b7e124d27fc001e499ec505b645183bd, type: 3}, heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}}
+    - {NPCAvatar: {fileID: 5367999664640436700, guid: b7e124d27fc001e499ec505b645183bd, type: 3}, heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}}
+    - {NPCAvatar: {fileID: 5367999664640436700, guid: b7e124d27fc001e499ec505b645183bd, type: 3}, heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}}
+    - {NPCAvatar: {fileID: 5367999664640436700, guid: b7e124d27fc001e499ec505b645183bd, type: 3}, heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}}
+    blockQuestions:
+    - id: 0
+    - id: 1
+  approachDistance: 3
+  references:
+    version: 1
+    00000000:
+      type: {class: BlockQuestion_TwoQuestionSliderPanel, ns: , asm: Assembly-CSharp}
+      data:
+        questionOne: 'Question 1:'
+        questionTwo: 'Question 2:'
+    00000001:
+      type: {class: BlockQuestion_TwoQuestionSliderPanel, ns: , asm: Assembly-CSharp}
+      data:
+        questionOne: 'Question 3:'
+        questionTwo: 'Question 4:'

@@ -123,10 +123,10 @@ namespace Data
             
             //GUILayout.BeginVertical(GUI.skin.customStyles[0]);
 
-            //int value = trialListProperty.arraySize;
-            //Debug.Log(value);
+            int value = trialListProperty.arraySize;
+            Debug.Log(value);
             
-            /*
+            
             int trialCount = EditorGUILayout.IntField("Trial Count: ", value);
             if (trialCount != trialListProperty.arraySize)
             {
@@ -219,12 +219,13 @@ namespace Data
             }
 
             EditorGUILayout.EndHorizontal();
-            */
+            
 
             if (_blockListProperty.arraySize <= 0)
                 EditorGUILayout.HelpBox("There are no questions asked at the end of the trail. Add a question.", MessageType.Warning);
             
             //GUILayout.EndVertical();
+            */
         }
     }
 }

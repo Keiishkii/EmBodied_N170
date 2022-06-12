@@ -5,5 +5,8 @@ using UnityEngine;
 namespace Questionnaire
 {
     [System.Serializable]
-    public class BlockQuestion { }
+    public class BlockQuestion
+    {
+        public QuestionType_Enum questionType = QuestionType_Enum.Unselected;
+    }
 }

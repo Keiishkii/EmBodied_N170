@@ -6,29 +6,30 @@ using UnityEngine.Animations.Rigging;
 
 public class NPCIKReferences : MonoBehaviour
 {
-    public LookAtConstraint 
-        lookAtConstraint;
-    
-    
-    public TwoBoneIKConstraint
-        leftFootIKConstraint,
-        rightFootIKConstraint,
-        leftHandIKConstraint,
-        rightHandIKConstraint;
+    public LookAtConstraint lookAtConstraint;
+    [HideInInspector] public Transform lookAtTarget;
 
-    public Transform
-        lookAtTarget,
-        
-        leftFootIKTarget,
-        leftFootIKHint,
+    [Space(20)]
+    public TwoBoneIKConstraint leftFootIKConstraint;
+    [Space(5)]
+    public Transform leftFootIKTarget;
+    public Transform leftFootIKHint;
 
-        rightFootIKTarget,
-        rightFootIKHint,
-        
-        leftHandIKTarget,
-        leftHandIKHint,
+    [Space(20)]
+    public TwoBoneIKConstraint rightFootIKConstraint;
+    [Space(5)]
+    public Transform rightFootIKTarget;
+    public Transform rightFootIKHint;
 
-        rightHandIKTarget,
-        rightHandIKHint;
+    [Space(20)]
+    public TwoBoneIKConstraint leftHandIKConstraint;
+    [Space(5)]
+    public Transform leftHandIKTarget;
+    public Transform leftHandIKHint;
     
+    [Space(20)]
+    public TwoBoneIKConstraint rightHandIKConstraint;
+    [Space(5)]
+    public Transform rightHandIKTarget;
+    public Transform rightHandIKHint;
 }

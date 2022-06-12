@@ -7,7 +7,7 @@ using UnityEngine;
 public class RoomManager : MonoBehaviour
 {
     [SerializeField] private Enums.Room _room;
-    [SerializeField] private GameObject _deskCollider, _tableCollider;
+    [SerializeField] private GameObject _deskCollider;
 
     
     private void OnEnable()
@@ -30,6 +30,5 @@ public class RoomManager : MonoBehaviour
     private void OnColliderActivation(bool active)
     {
         _deskCollider.SetActive(active);
-        _tableCollider.SetActive(active);
     }
 }

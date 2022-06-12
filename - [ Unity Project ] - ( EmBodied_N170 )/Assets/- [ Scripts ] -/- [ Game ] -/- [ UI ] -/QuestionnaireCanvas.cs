@@ -15,13 +15,13 @@ namespace Questionnaire
         private GameObject _activePanel;
 
         #region Panels
-
-        [SerializeField] private GameObject _oneQuestionSliderAnswerPanel;
-
-        //private OneQuestionSliderAnswerPanel _oneQuestionSliderAnswerPanelScript;
-        [SerializeField] private GameObject _twoQuestionSliderAnswerPanel;
-        private TwoQuestionSliderAnswerPanel _twoQuestionSliderAnswerPanelScript;
-
+            [SerializeField] private GameObject _readyPanel;
+            
+            [SerializeField] private GameObject _oneQuestionSliderAnswerPanel;
+            //private OneQuestionSliderAnswerPanel _oneQuestionSliderAnswerPanelScript;
+            
+            [SerializeField] private GameObject _twoQuestionSliderAnswerPanel;
+            private TwoQuestionSliderAnswerPanel _twoQuestionSliderAnswerPanelScript;
         #endregion
 
 
@@ -32,7 +32,12 @@ namespace Questionnaire
             _twoQuestionSliderAnswerPanelScript = _twoQuestionSliderAnswerPanel.GetComponent<TwoQuestionSliderAnswerPanel>();
         }
 
-        public void EnableCanvas(ref GameControllerStateMachine stateMachine)
+        public void ShowReadyPanel(bool show)
+        {
+            _readyPanel.SetActive(show);
+        }
+        
+        public void BeginQuestionnaire(ref GameControllerStateMachine stateMachine)
         {
             _currentQuestionnaireIndex = 0;
             _stateMachine = stateMachine;

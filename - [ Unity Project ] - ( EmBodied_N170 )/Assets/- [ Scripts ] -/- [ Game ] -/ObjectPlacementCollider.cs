@@ -5,14 +5,6 @@ using UnityEngine;
 
 public class ObjectPlacementCollider : MonoBehaviour
 {
-    [SerializeField] private Enums.PlacementChoice _placementChoice;
-    
-    
-    private void OnTriggerEnter(Collider other)
-    {
-        OnObjectInPlacementZone(other);
-    }
-
     private void OnTriggerStay(Collider other)
     {
         OnObjectInPlacementZone(other);
@@ -21,7 +13,7 @@ public class ObjectPlacementCollider : MonoBehaviour
 
     private void OnObjectInPlacementZone(Collider other)
     {
-        StateMachine.State_AwaitingPlayerChoice.ColliderEntered.Invoke(_placementChoice);
+        StateMachine.State_AwaitingPlayerChoice.ColliderEntered.Invoke();
     }
 }
  

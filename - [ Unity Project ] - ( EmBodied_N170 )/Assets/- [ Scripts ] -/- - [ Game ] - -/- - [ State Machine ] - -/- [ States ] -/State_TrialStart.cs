@@ -13,8 +13,8 @@ namespace StateMachine
         private PlayerController _playerController;
         private PlayerController PlayerController => _playerController ?? (_playerController = GameObject.FindObjectOfType<PlayerController>());
         
-        private QuestionnaireCanvas _questionnaireCanvas;
-        private QuestionnaireCanvas QuestionnaireCanvas => _questionnaireCanvas ?? (_questionnaireCanvas = GameObject.FindObjectOfType<QuestionnaireCanvas>());
+        private MainCanvas _mainCanvas;
+        private MainCanvas MainCanvas => _mainCanvas ?? (_mainCanvas = GameObject.FindObjectOfType<MainCanvas>());
 
         private NPCManager _npcManager;
         private NPCManager NPCManager => _npcManager ?? (_npcManager = GameObject.FindObjectOfType<NPCManager>());
@@ -27,7 +27,7 @@ namespace StateMachine
             
             Debug.Log($"Entered State: <color=#FFF>Trial Start: {trialIndex}</color>");
             
-            QuestionnaireCanvas.ShowReadyPanel(true);
+            MainCanvas.ReadyPanelVisible = true;
             
             stateMachine.currentTrial = stateMachine.currentBlock.trials[trialIndex];
             Data.Trial currentTrial = stateMachine.currentTrial;
@@ -44,7 +44,7 @@ namespace StateMachine
 
         public override void OnExitState(GameControllerStateMachine stateMachine)
         {
-            QuestionnaireCanvas.ShowReadyPanel(false);
+            MainCanvas.ReadyPanelVisible = false;
         }
 
 

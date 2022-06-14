@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2847186267687949344}
   - component: {fileID: -1729435829955578454}
   - component: {fileID: 7822725638406322762}
+  - component: {fileID: 4632393099258170646}
   m_Layer: 31
   m_Name: Envelope
   m_TagString: Untagged
@@ -112,3 +113,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &4632393099258170646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4360540672554874357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b95a6b2075c86348b714814d08f6c60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  holdingPositionOffset: {x: 0, y: 0, z: 0}
+  holdingEulerRotationOffset: {x: 0, y: 0, z: 0}
+  placementPositionOffset: {x: -0.105, y: 0.7525, z: 0}
+  placementEulerRotationOffset: {x: -90, y: 68.83, z: 0}

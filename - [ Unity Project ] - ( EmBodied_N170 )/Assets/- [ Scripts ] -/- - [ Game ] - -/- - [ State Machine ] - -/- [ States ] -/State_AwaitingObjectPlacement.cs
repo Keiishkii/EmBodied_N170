@@ -3,7 +3,7 @@ using UnityEngine.Events;
 
 namespace StateMachine
 {
-    public class State_AwaitingPlayerChoice : State
+    public class State_AwaitingObjectPlacement : State
     {
         public static readonly UnityEvent<bool> ActivateRoomAColliders = new UnityEvent<bool>();
         public static readonly UnityEvent<bool> ActivateRoomBColliders = new UnityEvent<bool>();

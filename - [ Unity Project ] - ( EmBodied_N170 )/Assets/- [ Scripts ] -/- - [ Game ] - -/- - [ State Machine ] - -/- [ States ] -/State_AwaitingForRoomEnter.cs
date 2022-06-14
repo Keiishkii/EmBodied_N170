@@ -21,7 +21,7 @@ namespace StateMachine
             if (Mathf.Abs(Vector3.SqrMagnitude(new Vector3(playerXCoord, 0, 0))) > _distanceToRoomEntrance * _distanceToRoomEntrance)
             {
                 stateMachine.dataContainer.blockData[stateMachine.blockIndex].trialData[stateMachine.trialIndex].activeRoom = playerXCoord > 0 ? Enums.Room.ROOM_A : Enums.Room.ROOM_B;
-                stateMachine.SetState(stateMachine.AwaitingPlayerChoice);
+                stateMachine.SetState(stateMachine.AwaitingObjectPlacement);
             }
         }
         

@@ -12,7 +12,11 @@ namespace StateMachine
         public override void OnEnterState(GameControllerStateMachine stateMachine)
         {
             Debug.Log("Entered State: <color=#FFF>Lights On</color>");
-            CameraOffset.SetPositionAndRotation(Vector3.zero, Quaternion.Euler(new Vector3(0, 90, 0)));
+
+            Vector3 playerPosition = CameraOffset.position;
+            Vector3 newPosition = new Vector3(playerPosition.x, 0, playerPosition.z);
+            
+            CameraOffset.SetPositionAndRotation(newPosition, Quaternion.Euler(new Vector3(0, 90, 0)));
             
             stateMachine.SetState(stateMachine.AwaitingForRoomEnter);
         }

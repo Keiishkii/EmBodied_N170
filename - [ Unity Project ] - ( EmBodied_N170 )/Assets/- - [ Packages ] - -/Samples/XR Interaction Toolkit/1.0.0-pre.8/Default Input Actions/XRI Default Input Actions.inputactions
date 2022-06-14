@@ -899,13 +899,21 @@
             ]
         },
         {
-            "name": "Keyboard",
+            "name": "Game Inputs",
             "id": "1288e8e4-0b14-465a-9684-23d40e00844d",
             "actions": [
                 {
-                    "name": "WASD",
+                    "name": "Left Hand Activate",
                     "type": "Button",
-                    "id": "e2a60258-2eb6-4707-9f30-13f310a67f96",
+                    "id": "eda02730-22e5-46d7-b32d-071698522392",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Right Hand Activate",
+                    "type": "Button",
+                    "id": "f83589c2-2a09-4cd9-aade-e606e37b553a",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -914,45 +922,45 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "08f20e4d-e7be-402c-bbc7-12a62e0737fb",
-                    "path": "<Keyboard>/#(w)",
+                    "id": "329498de-4f3b-489e-baf4-41f44a43e369",
+                    "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "WASD",
+                    "action": "Left Hand Activate",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "d7c3fddb-7764-46c1-a4af-c0ab51939fd3",
-                    "path": "<Keyboard>/#(a)",
+                    "id": "50b9586a-9378-4015-bcf4-cf50c05f7f48",
+                    "path": "<Mouse>/rightButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "WASD",
+                    "action": "Right Hand Activate",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "8e6394cc-d5ad-4f17-9a9e-9901e6d04e8f",
-                    "path": "<Keyboard>/#(s)",
+                    "id": "a6e35a80-bad3-46dc-b6e5-930e57573b2a",
+                    "path": "<XRController>{LeftHand}/triggerPressed",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "WASD",
+                    "groups": "Generic XR Controller",
+                    "action": "Left Hand Activate",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "54a204de-b8eb-4c7f-8e30-2eea59e3d56b",
-                    "path": "<Keyboard>/#(d)",
+                    "id": "0a51e98d-3ea3-4562-bfae-51be43f95208",
+                    "path": "<XRController>{RightHand}/triggerPressed",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "WASD",
+                    "groups": "Generic XR Controller",
+                    "action": "Right Hand Activate",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

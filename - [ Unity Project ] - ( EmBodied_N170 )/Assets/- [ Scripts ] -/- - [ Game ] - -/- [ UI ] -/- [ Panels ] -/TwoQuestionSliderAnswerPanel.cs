@@ -9,7 +9,7 @@ namespace Questionnaire
 {
     public class TwoQuestionSliderAnswerPanel : MonoBehaviour
     {
-        private QuestionnaireCanvas _questionnaireCanvas;
+        private MainCanvas _mainCanvas;
         private GameControllerStateMachine _stateMachine;
 
         [SerializeField] private TMP_Text _questionOne, _questionTwo;
@@ -18,7 +18,7 @@ namespace Questionnaire
 
         private void Awake()
         {
-            _questionnaireCanvas = FindObjectOfType<QuestionnaireCanvas>();
+            _mainCanvas = FindObjectOfType<MainCanvas>();
             _stateMachine = FindObjectOfType<GameControllerStateMachine>();
         }
 
@@ -31,7 +31,7 @@ namespace Questionnaire
         public void OnNextButtonPressed()
         {
             //_stateMachine.dataContainer.blockData[_stateMachine.blockIndex].trialData[_stateMachine.trialIndex].AddQuestion
-            _questionnaireCanvas.OnQuestionAnswered();
+            _mainCanvas.OnQuestionAnswered();
         }
     }
 }

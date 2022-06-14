@@ -274,12 +274,12 @@ namespace Data
                     SerializedProperty heldObjectProperty = trialProperty.FindPropertyRelative("heldObject");
 
                     EditorGUI.indentLevel += 1;
-                    roomA_NPCAvatarProperty.objectReferenceValue = EditorGUILayout.ObjectField("Room A: NPC Avatar", roomA_NPCAvatarProperty.objectReferenceValue, typeof(GameObject));
-                    roomB_NPCAvatarProperty.objectReferenceValue = EditorGUILayout.ObjectField("Room B: NPC Avatar", roomB_NPCAvatarProperty.objectReferenceValue, typeof(GameObject));
+                    roomA_NPCAvatarProperty.objectReferenceValue = EditorGUILayout.ObjectField("Room A: NPC Avatar", roomA_NPCAvatarProperty.objectReferenceValue, typeof(GameObject), false);
+                    roomB_NPCAvatarProperty.objectReferenceValue = EditorGUILayout.ObjectField("Room B: NPC Avatar", roomB_NPCAvatarProperty.objectReferenceValue, typeof(GameObject), false);
 
                     EditorGUILayout.Space();
 
-                    heldObjectProperty.objectReferenceValue = EditorGUILayout.ObjectField("Held Item", heldObjectProperty.objectReferenceValue, typeof(GameObject));
+                    heldObjectProperty.objectReferenceValue = EditorGUILayout.ObjectField("Held Item", heldObjectProperty.objectReferenceValue, typeof(GameObject), false);
                     EditorGUI.indentLevel -= 1;
 
                     EditorGUILayout.Space();

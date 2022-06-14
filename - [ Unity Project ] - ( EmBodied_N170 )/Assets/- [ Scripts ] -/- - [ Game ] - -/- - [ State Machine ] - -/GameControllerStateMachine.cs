@@ -7,7 +7,8 @@ namespace StateMachine
     public class GameControllerStateMachine : MonoBehaviour
     {
         private State _currentState;
-        
+        public State CurrentState => _currentState;
+
         #region States
             private readonly State_SessionStart SessionStart = new State_SessionStart();
             public  readonly State_SessionComplete SessionComplete = new State_SessionComplete();
@@ -17,7 +18,7 @@ namespace StateMachine
             public  readonly State_TrialComplete TrialComplete = new State_TrialComplete();
             public  readonly State_LightsOn LightsOn = new State_LightsOn();
             public  readonly State_AwaitingForRoomEnter AwaitingForRoomEnter = new State_AwaitingForRoomEnter();
-            public  readonly State_AwaitingPlayerChoice AwaitingPlayerChoice = new State_AwaitingPlayerChoice();
+            public  readonly State_AwaitingObjectPlacement AwaitingObjectPlacement = new State_AwaitingObjectPlacement();
             public  readonly State_AwaitingReturnToCorridor AwaitingReturnToCorridor = new State_AwaitingReturnToCorridor();
             public  readonly State_Questionnaire Questionnaire = new State_Questionnaire();
         #endregion

@@ -13,17 +13,17 @@ public class RoomManager : MonoBehaviour
     private void OnEnable()
     {
         if (_room == Enums.Room.ROOM_A)
-            State_AwaitingPlayerChoice.ActivateRoomAColliders.AddListener(OnColliderActivation);
+            State_AwaitingObjectPlacement.ActivateRoomAColliders.AddListener(OnColliderActivation);
         else
-            State_AwaitingPlayerChoice.ActivateRoomBColliders.AddListener(OnColliderActivation);
+            State_AwaitingObjectPlacement.ActivateRoomBColliders.AddListener(OnColliderActivation);
     }
 
     private void OnDisable()
     {
         if (_room == Enums.Room.ROOM_A)
-            State_AwaitingPlayerChoice.ActivateRoomAColliders.AddListener(OnColliderActivation);
+            State_AwaitingObjectPlacement.ActivateRoomAColliders.AddListener(OnColliderActivation);
         else
-            State_AwaitingPlayerChoice.ActivateRoomBColliders.RemoveListener(OnColliderActivation);
+            State_AwaitingObjectPlacement.ActivateRoomBColliders.RemoveListener(OnColliderActivation);
     }
 
 

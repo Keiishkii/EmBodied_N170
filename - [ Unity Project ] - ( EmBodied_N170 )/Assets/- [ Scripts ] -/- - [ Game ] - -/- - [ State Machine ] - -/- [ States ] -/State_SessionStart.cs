@@ -1,4 +1,5 @@
-﻿using DataCollection;
+﻿using System;
+using DataCollection;
 using Questionnaire;
 using UnityEngine;
 using UnityEngine.Events;
@@ -19,14 +20,12 @@ namespace StateMachine
         public override void OnEnterState(GameControllerStateMachine stateMachine)
         {
             Debug.Log("Entered State: <color=#FFF>Session Start</color>");
+            DataCollector.BeginTransformDataCollection();
+            DataCollector.dataContainer.dateTime = $"{DateTime.Now:U}";
             DataCollector.dataContainer.dataEvents.Add(new DataCollectionEvent_RecordMarker()
             {
                 timeSinceProgramStart = Time.realtimeSinceStartup,
-                currentState = "Session Start",
-                
-                SetHeadTransform = CameraTransform,
-                SetLeftHandTransform = LeftHandTransform,
-                SetRightHandTransform = RightHandTransform
+                currentState = "Session Start"
             });
             
             

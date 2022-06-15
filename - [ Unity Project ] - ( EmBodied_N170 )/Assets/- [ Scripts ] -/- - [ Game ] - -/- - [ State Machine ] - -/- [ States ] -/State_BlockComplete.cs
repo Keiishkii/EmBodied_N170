@@ -18,11 +18,7 @@ namespace StateMachine
             DataCollector.dataContainer.dataEvents.Add(new DataCollectionEvent_RecordMarker()
             {
                 timeSinceProgramStart = Time.realtimeSinceStartup,
-                currentState = "Block Complete",
-                
-                SetHeadTransform = CameraTransform,
-                SetLeftHandTransform = LeftHandTransform,
-                SetRightHandTransform = RightHandTransform
+                currentState = "Block Complete"
             });
             
             

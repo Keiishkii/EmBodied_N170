@@ -11,11 +11,7 @@ namespace StateMachine
             DataCollector.dataContainer.dataEvents.Add(new DataCollectionEvent_RecordMarker()
             {
                 timeSinceProgramStart = Time.realtimeSinceStartup,
-                currentState = "Lights On",
-                
-                SetHeadTransform = CameraTransform,
-                SetLeftHandTransform = LeftHandTransform,
-                SetRightHandTransform = RightHandTransform
+                currentState = "Lights On"
             });
             
             

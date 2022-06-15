@@ -20,11 +20,7 @@ namespace StateMachine
             DataCollector.dataContainer.dataEvents.Add(new DataCollectionEvent_RecordMarker()
             {
                 timeSinceProgramStart = Time.realtimeSinceStartup,
-                currentState = "Questionnaire",
-                
-                SetHeadTransform = CameraTransform,
-                SetLeftHandTransform = LeftHandTransform,
-                SetRightHandTransform = RightHandTransform
+                currentState = "Questionnaire"
             });
             
             

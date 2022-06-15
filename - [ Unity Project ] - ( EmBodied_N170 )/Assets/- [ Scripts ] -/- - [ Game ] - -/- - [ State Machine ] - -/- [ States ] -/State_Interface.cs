@@ -17,7 +17,6 @@ namespace StateMachine
         protected Transform LeftHandTransform => PlayerController.leftHandTransform;
         
         
-        
         public abstract void OnEnterState(GameControllerStateMachine stateMachine);
         public abstract void Update(GameControllerStateMachine stateMachine);
         public abstract void OnExitState(GameControllerStateMachine stateMachine);

@@ -14,14 +14,11 @@ namespace StateMachine
         public override void OnEnterState(GameControllerStateMachine stateMachine)
         {
             Debug.Log("Entered State: <color=#FFF>Session Complete</color>");
+            DataCollector.EndTransformDataCollection();
             DataCollector.dataContainer.dataEvents.Add(new DataCollectionEvent_RecordMarker()
             {
                 timeSinceProgramStart = Time.realtimeSinceStartup,
-                currentState = "Session Complete",
-                
-                SetHeadTransform = CameraTransform,
-                SetLeftHandTransform = LeftHandTransform,
-                SetRightHandTransform = RightHandTransform
+                currentState = "Session Complete"
             });
             
             

@@ -5,13 +5,91 @@ using System.Data;
 using System.IO;
 using Newtonsoft.Json;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace DataCollection
 {
     public class DataCollector : MonoBehaviour
     {
         public readonly DataContainer dataContainer = new DataContainer();
+        
+        [SerializeField] private InputActionReference _leftHandActivation;
+        [SerializeField] private InputActionReference _rightHandActivation;
+        
+        
+        private PlayerController _playerController;
+        private PlayerController PlayerController => _playerController ?? (_playerController = FindObjectOfType<PlayerController>());
 
+        private Transform CameraOffset => PlayerController.transform;
+        private Transform CameraTransform => PlayerController.cameraTransform;
+        private Transform RightHandTransform => PlayerController.rightHandTransform;
+        private Transform LeftHandTransform => PlayerController.leftHandTransform;
+        
+        private IEnumerator _inputDataCollection;
+        private bool _collectingData;
+        
+        
+        
+        
+
+        
+        
+        
+        private void Awake()
+        {
+            _leftHandActivation.action.performed += SampleInput;
+            _rightHandActivation.action.performed += SampleInput;
+        }
+
+        private void OnDestroy()
+        {
+            _leftHandActivation.action.performed -= SampleInput;
+            _rightHandActivation.action.performed -= SampleInput;
+        }
+
+        private void SampleInput(InputAction.CallbackContext callbackContext)
+        {
+            dataContainer.inputSamples.Add(new InputSamples()
+            {
+                inputType = callbackContext.action.name
+            });
+        }
+
+        
+        
+        
+
+        public void BeginTransformDataCollection()
+        {
+            _inputDataCollection = SampleTransformData();
+            StartCoroutine(_inputDataCollection);
+        }
+
+        public void EndTransformDataCollection()
+        {
+            _collectingData = false;
+            StopCoroutine(_inputDataCollection);
+        }
+
+        private IEnumerator SampleTransformData()
+        {
+            _collectingData = true;
+            while (_collectingData)
+            {
+                dataContainer.transformSamples.Add(new TransformSamples()
+                {
+                    time = Time.realtimeSinceStartup,
+                    
+                    SetCameraOffsetTransform = CameraOffset,
+                    SetHeadTransform = CameraTransform,
+                    SetLeftHandTransform = RightHandTransform,
+                    SetRightHandTransform = LeftHandTransform
+                });
+                
+                yield return null;   
+            }
+        }
+        
         
         
         
@@ -19,11 +97,14 @@ namespace DataCollection
         public void WriteData()
         {
             string dateTime = $"{DateTime.Now:U}";
+            dateTime = dateTime.Replace(':', '-');
             
             string directory = $"{Application.persistentDataPath}/Data/";
-            string filename = $"DataContainer - {dateTime.Replace(':', '-')}";
+            string filename = $"DataContainer - {dateTime}";
+            
 
             WriteToJSON(directory, filename);
+            WriteToCSV(directory, filename);
         }
 
         private void WriteToJSON(in string directory, in string filename)
@@ -44,7 +125,7 @@ namespace DataCollection
             }
         }
 
-        private void WriteToCSV()
+        private void WriteToCSV(in string directory, in string filename)
         {
             
         }

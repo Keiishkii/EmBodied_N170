@@ -266,22 +266,27 @@ namespace Data
                     EditorGUILayout.EndHorizontal();
 
                     EditorGUILayout.Space(5);
-
+                    
                     SerializedProperty trialProperty = trialListProperty.GetArrayElementAtIndex(trialIndex); 
 
                     SerializedProperty roomA_NPCAvatarProperty = trialProperty.FindPropertyRelative("roomA_NPCAvatar");
                     SerializedProperty roomB_NPCAvatarProperty = trialProperty.FindPropertyRelative("roomB_NPCAvatar");
                     SerializedProperty heldObjectProperty = trialProperty.FindPropertyRelative("heldObject");
 
+                    if (roomA_NPCAvatarProperty.objectReferenceValue == null || roomB_NPCAvatarProperty.objectReferenceValue == null || heldObjectProperty.objectReferenceValue == null)
+                    {
+                        EditorGUILayout.HelpBox("These fields cannot be empty, assign a Prefab.", MessageType.Error);
+                        EditorGUILayout.Space(5);
+                    }
+                    
                     EditorGUI.indentLevel += 1;
                     roomA_NPCAvatarProperty.objectReferenceValue = EditorGUILayout.ObjectField("Room A: NPC Avatar", roomA_NPCAvatarProperty.objectReferenceValue, typeof(GameObject), false);
                     roomB_NPCAvatarProperty.objectReferenceValue = EditorGUILayout.ObjectField("Room B: NPC Avatar", roomB_NPCAvatarProperty.objectReferenceValue, typeof(GameObject), false);
-
-                    EditorGUILayout.Space();
-
+                    
                     heldObjectProperty.objectReferenceValue = EditorGUILayout.ObjectField("Held Item", heldObjectProperty.objectReferenceValue, typeof(GameObject), false);
+                    
+                    
                     EditorGUI.indentLevel -= 1;
-
                     EditorGUILayout.Space();
                 }
 

@@ -18,9 +18,20 @@ public class RayInteractionController : MonoBehaviour
     private LineRenderer _rightControllerLineRenderer;
     
     private bool _rayVisibility = false;
-    private Handedness _activeHand = Handedness.RIGHT;
-
+    public bool RayVisibility
+    {
+        set
+        {
+            _rayVisibility = value;
+            UpdateLaserVisibility();
+        }
+    }
     
+    private Enums.Handedness _activeHand = Enums.Handedness.RIGHT;
+
+    [Space]
+    [SerializeField] private InputActionReference _rightHandActivate;
+    [SerializeField] private InputActionReference _leftHandActivate;
     
     
     
@@ -38,55 +49,31 @@ public class RayInteractionController : MonoBehaviour
     
 
     // Start is called before the first frame update
-    void OnEnable()
+    private void OnEnable()
     {
-        _actionAsset.FindActionMap("XRI RightHand").FindAction("Select").performed += RightControllerGrip;
-        _actionAsset.FindActionMap("XRI LeftHand").FindAction("Select").performed += LeftControllerGrip;
-        
-        _actionAsset.FindActionMap("XRI RightHand").FindAction("Activate").performed += RightControllerTrigger;
-        _actionAsset.FindActionMap("XRI LeftHand").FindAction("Activate").performed += LeftControllerTrigger;
+        _rightHandActivate.action.performed += RightHandActivation;
+        _leftHandActivate.action.performed += LeftHandActivation;
     }
 
     private void OnDisable()
     {
-        _actionAsset.FindActionMap("XRI RightHand").FindAction("Select").performed -= RightControllerGrip;
-        _actionAsset.FindActionMap("XRI LeftHand").FindAction("Select").performed -= LeftControllerGrip;
-        
-        _actionAsset.FindActionMap("XRI RightHand").FindAction("Activate").performed -= RightControllerTrigger;
-        _actionAsset.FindActionMap("XRI LeftHand").FindAction("Activate").performed -= LeftControllerTrigger;
+        _rightHandActivate.action.performed -= RightHandActivation;
+        _leftHandActivate.action.performed -= LeftHandActivation;
     }
 
     
-    
 
-
-    public void SetLaserVisibility(bool visible)
+    
+    
+    private void RightHandActivation(InputAction.CallbackContext context)
     {
-        _rayVisibility = visible;
+        _activeHand = Enums.Handedness.RIGHT;
         UpdateLaserVisibility();
     }
     
-    private void RightControllerTrigger(InputAction.CallbackContext context)
+    private void LeftHandActivation(InputAction.CallbackContext context)
     {
-        _activeHand = Handedness.RIGHT;
-        UpdateLaserVisibility();
-    }
-    
-    private void RightControllerGrip(InputAction.CallbackContext context)
-    {
-        _activeHand = Handedness.RIGHT;
-        UpdateLaserVisibility();
-    }
-    
-    private void LeftControllerTrigger(InputAction.CallbackContext context)
-    {
-        _activeHand = Handedness.LEFT;
-        UpdateLaserVisibility();
-    }
-    
-    private void LeftControllerGrip(InputAction.CallbackContext context)
-    {
-        _activeHand = Handedness.LEFT;
+        _activeHand = Enums.Handedness.LEFT;
         UpdateLaserVisibility();
     }
 
@@ -96,7 +83,7 @@ public class RayInteractionController : MonoBehaviour
         {
             switch (_activeHand)
             {
-                case Handedness.LEFT:
+                case Enums.Handedness.LEFT:
                 {
                     _leftControllerLineRenderer.enabled = true;
                     _leftControllerXRRayInteractor.enabled = true;
@@ -104,7 +91,7 @@ public class RayInteractionController : MonoBehaviour
                     _rightControllerLineRenderer.enabled = false;
                     _rightControllerXRRayInteractor.enabled = false;
                 } break;
-                case Handedness.RIGHT:
+                case Enums.Handedness.RIGHT:
                 {
                     _leftControllerLineRenderer.enabled = false;
                     _leftControllerXRRayInteractor.enabled = false;

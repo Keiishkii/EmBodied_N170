@@ -1,13 +1,11 @@
-﻿using Questionnaire;
+﻿using DataCollection;
+using Questionnaire;
 using UnityEngine;
 
 namespace StateMachine
 {
-    public class State_TrialComplete : State
+    public class State_TrialComplete : State_Interface
     {
-        private PlayerController _playerController;
-        private PlayerController PlayerController => _playerController ?? (_playerController = GameObject.FindObjectOfType<PlayerController>());
-        
         private NPCManager _npcManager;
         private NPCManager NPCManager => _npcManager ?? (_npcManager = GameObject.FindObjectOfType<NPCManager>());
         
@@ -15,6 +13,16 @@ namespace StateMachine
         public override void OnEnterState(GameControllerStateMachine stateMachine)
         {
             Debug.Log("Entered State: <color=#FFF>Trial Complete</color>");
+            DataCollector.dataContainer.dataEvents.Add(new DataCollectionEvent_RecordMarker()
+            {
+                timeSinceProgramStart = Time.realtimeSinceStartup,
+                currentState = "Trial Complete",
+                
+                SetHeadTransform = CameraTransform,
+                SetLeftHandTransform = LeftHandTransform,
+                SetRightHandTransform = RightHandTransform
+            });
+            
             
             PlayerController.DestroyHeldItem();
             NPCManager.DestroyNPC();

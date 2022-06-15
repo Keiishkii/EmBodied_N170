@@ -1,18 +1,24 @@
-﻿using UnityEngine;
+﻿using DataCollection;
+using UnityEngine;
 
 namespace StateMachine
 {
-    public class State_LightsOn : State
+    public class State_LightsOn : State_Interface
     {
-        private Transform _cameraOffset;
-        private Transform CameraOffset => _cameraOffset ?? (_cameraOffset = GameObject.FindObjectOfType<PlayerController>().transform);
-        
-        
-        
         public override void OnEnterState(GameControllerStateMachine stateMachine)
         {
             Debug.Log("Entered State: <color=#FFF>Lights On</color>");
-
+            DataCollector.dataContainer.dataEvents.Add(new DataCollectionEvent_RecordMarker()
+            {
+                timeSinceProgramStart = Time.realtimeSinceStartup,
+                currentState = "Lights On",
+                
+                SetHeadTransform = CameraTransform,
+                SetLeftHandTransform = LeftHandTransform,
+                SetRightHandTransform = RightHandTransform
+            });
+            
+            
             Vector3 playerPosition = CameraOffset.position;
             Vector3 newPosition = new Vector3(playerPosition.x, 0, playerPosition.z);
             

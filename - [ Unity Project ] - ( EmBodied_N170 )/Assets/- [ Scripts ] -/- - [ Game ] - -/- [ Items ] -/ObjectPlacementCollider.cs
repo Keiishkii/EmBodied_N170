@@ -1,12 +1,15 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using StateMachine;
 using UnityEngine;
 
 public class ObjectPlacementCollider : MonoBehaviour
 {
     private Transform _transform;
 
+    private GameControllerStateMachine _gameControllerStateMachine;
+    private GameControllerStateMachine GameControllerStateMachine => _gameControllerStateMachine ?? (_gameControllerStateMachine = GameObject.FindObjectOfType<GameControllerStateMachine>());
     
     
     private void Awake()
@@ -23,7 +26,7 @@ public class ObjectPlacementCollider : MonoBehaviour
 
     private void OnObjectInPlacementZone(Collider other)
     {
-        StateMachine.State_AwaitingObjectPlacement.ColliderEntered.Invoke();
+        StateMachine.State_AwaitingObjectPlacement.ColliderEntered.Invoke(GameControllerStateMachine);
 
         Transform objectTransform = other.transform;
         HeldItemProperties properties = other.GetComponent<HeldItemProperties>();

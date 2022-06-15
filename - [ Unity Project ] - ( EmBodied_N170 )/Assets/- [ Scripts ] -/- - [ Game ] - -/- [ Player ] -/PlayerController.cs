@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private Transform _leftHandTransform, _rightHandTransform;
+    public Transform cameraTransform, leftHandTransform, rightHandTransform;
 
     [Space]
     [SerializeField] private InputActionReference _rightHandActivation;
@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
     
     public void CreateHeldItem(GameObject heldObject)
     {
-        _heldItem = Instantiate(heldObject, (_activeHand == Enums.Handedness.RIGHT) ? _rightHandTransform : _leftHandTransform);
+        _heldItem = Instantiate(heldObject, (_activeHand == Enums.Handedness.RIGHT) ? rightHandTransform : leftHandTransform);
         _heldItemCollider = _heldItem.GetComponent<Collider>();
 
         _heldItemCollider.enabled = false;

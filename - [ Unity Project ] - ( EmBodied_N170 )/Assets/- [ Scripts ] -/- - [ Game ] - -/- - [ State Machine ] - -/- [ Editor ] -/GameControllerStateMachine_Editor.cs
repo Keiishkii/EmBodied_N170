@@ -13,7 +13,7 @@ public class GameControllerStateMachine_Editor : CustomEditor_Interface
 
         if (Application.isPlaying)
         {
-            switch (targetScript.CurrentState)
+            switch (targetScript.CurrentStateInterface)
             {
                 case State_SessionStart sessionStartState:
                 {

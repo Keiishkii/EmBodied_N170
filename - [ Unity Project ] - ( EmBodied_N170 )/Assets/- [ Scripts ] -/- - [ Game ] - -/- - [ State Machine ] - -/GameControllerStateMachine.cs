@@ -6,11 +6,11 @@ namespace StateMachine
 {
     public class GameControllerStateMachine : MonoBehaviour
     {
-        private State _currentState;
-        public State CurrentState => _currentState;
+        private State_Interface _currentStateInterface;
+        public State_Interface CurrentStateInterface => _currentStateInterface;
 
         #region States
-            private readonly State_SessionStart SessionStart = new State_SessionStart();
+            private readonly State_SessionStart _sessionStart = new State_SessionStart();
             public  readonly State_SessionComplete SessionComplete = new State_SessionComplete();
             public  readonly State_BlockStart BlockStart = new State_BlockStart();
             public  readonly State_BlockComplete BlockComplete = new State_BlockComplete();
@@ -36,26 +36,26 @@ namespace StateMachine
 
         private void Start()
         {
-            _currentState = SessionStart;
-            _currentState.OnEnterState(this);
+            _currentStateInterface = _sessionStart;
+            _currentStateInterface.OnEnterState(this);
         }
 
         private void Update()
         {
-            _currentState.Update(this);
+            _currentStateInterface.Update(this);
         }
 
-        public void SetState(State state)
+        public void SetState(State_Interface stateInterface)
         {
-            _currentState.OnExitState(this);
-            _currentState = state;
-            _currentState.OnEnterState(this);
+            _currentStateInterface.OnExitState(this);
+            _currentStateInterface = stateInterface;
+            _currentStateInterface.OnEnterState(this);
         }
 
         private void OnDrawGizmos()
         {
             if (Application.isPlaying)
-                _currentState.OnDrawGizmos(this);
+                _currentStateInterface.OnDrawGizmos(this);
         }
     }
 }

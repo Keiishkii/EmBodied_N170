@@ -1,27 +1,32 @@
-﻿using Questionnaire;
+﻿using DataCollection;
+using Questionnaire;
 using UnityEngine;
 using UnityEngine.Events;
 
 namespace StateMachine
 {
-    public class State_Questionnaire : State
+    public class State_Questionnaire : State_Interface
     {
-        public static readonly UnityEvent QuestionnaireComplete = new UnityEvent();
+        public static readonly UnityEvent<GameControllerStateMachine> QuestionnaireComplete = new UnityEvent<GameControllerStateMachine>();
         
         private MainCanvas _mainCanvas;
         private MainCanvas MainCanvas => _mainCanvas ?? (_mainCanvas = GameObject.FindObjectOfType<MainCanvas>());
-        
-        private GameControllerStateMachine _stateMachine;
-        
-        private Transform _cameraOffset;
-        private Transform CameraOffset => _cameraOffset ?? (_cameraOffset = GameObject.FindObjectOfType<PlayerController>().transform);
-        
-        
-        
+
+
+
         public override void OnEnterState(GameControllerStateMachine stateMachine)
         {
             Debug.Log("Entered State: <color=#FFF>Questionnaire</color>");
-            _stateMachine = stateMachine;
+            DataCollector.dataContainer.dataEvents.Add(new DataCollectionEvent_RecordMarker()
+            {
+                timeSinceProgramStart = Time.realtimeSinceStartup,
+                currentState = "Questionnaire",
+                
+                SetHeadTransform = CameraTransform,
+                SetLeftHandTransform = LeftHandTransform,
+                SetRightHandTransform = RightHandTransform
+            });
+            
             
             Vector3 playerPosition = CameraOffset.position;
             Vector3 newPosition = new Vector3(playerPosition.x, -3.95f, playerPosition.z);
@@ -41,9 +46,9 @@ namespace StateMachine
 
         
         
-        private void OnQuestionnaireCompletion()
+        private void OnQuestionnaireCompletion(GameControllerStateMachine stateMachine)
         {
-            _stateMachine.SetState(_stateMachine.TrialComplete);
+            stateMachine.SetState(stateMachine.TrialComplete);
         }
     }
 }

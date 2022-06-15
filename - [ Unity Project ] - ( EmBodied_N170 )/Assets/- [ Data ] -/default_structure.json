@@ -1,9 +1,0 @@
-{
-    "distanceToTriggerLookUp" : 2.5,
-    "testSegments": [
-        {
-            "NPC": 0,
-            "heldItem": 0
-        }
-    ]
-}

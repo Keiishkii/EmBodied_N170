@@ -8,7 +8,8 @@ namespace Questionnaire
 {
     public class MainCanvas : MonoBehaviour
     {
-        private GameControllerStateMachine _stateMachine;
+        private GameControllerStateMachine _gameControllerStateMachine;
+        private GameControllerStateMachine GameControllerStateMachine => _gameControllerStateMachine ?? (_gameControllerStateMachine = GameObject.FindObjectOfType<GameControllerStateMachine>());
 
         private int _currentQuestionnaireIndex;
 
@@ -59,8 +60,6 @@ namespace Questionnaire
 
         private void Awake()
         {
-            _stateMachine = FindObjectOfType<GameControllerStateMachine>();
-            
             _oneQuestionSliderAnswerPanelScript = _oneQuestionSliderAnswerPanel.GetComponent<OneQuestionSliderAnswerPanel>();
             _twoQuestionSliderAnswerPanelScript = _twoQuestionSliderAnswerPanel.GetComponent<TwoQuestionSliderAnswerPanel>();
             
@@ -82,12 +81,12 @@ namespace Questionnaire
 
         public void OnSessionStartButtonPressed()
         {
-            State_SessionStart.StartSession.Invoke(_stateMachine);
+            State_SessionStart.StartSession.Invoke(GameControllerStateMachine);
         }
         
         public void OnBlockStartButtonPressed()
         {
-            State_BlockStart.StartBlock.Invoke(_stateMachine);
+            State_BlockStart.StartBlock.Invoke(GameControllerStateMachine);
         }
         
         
@@ -109,9 +108,9 @@ namespace Questionnaire
 
         private void SetPanelContents()
         {
-            if (_stateMachine.currentBlock.blockQuestions.Count > _currentQuestionnaireIndex)
+            if (GameControllerStateMachine.currentBlock.blockQuestions.Count > _currentQuestionnaireIndex)
             {
-                switch (_stateMachine.currentBlock.blockQuestions[_currentQuestionnaireIndex])
+                switch (GameControllerStateMachine.currentBlock.blockQuestions[_currentQuestionnaireIndex])
                 {
                     case BlockQuestion_TwoQuestionSliderAnswer question:
                     {
@@ -131,7 +130,7 @@ namespace Questionnaire
             }
             else
             {
-                State_Questionnaire.QuestionnaireComplete.Invoke();
+                State_Questionnaire.QuestionnaireComplete.Invoke(GameControllerStateMachine);
             }
         }
 

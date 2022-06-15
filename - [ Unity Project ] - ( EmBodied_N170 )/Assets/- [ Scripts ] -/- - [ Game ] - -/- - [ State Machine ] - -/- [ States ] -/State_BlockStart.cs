@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 namespace StateMachine
 {
-    public class State_BlockStart : State
+    public class State_BlockStart : State_Interface
     {
         public static readonly UnityEvent<GameControllerStateMachine> StartBlock = new UnityEvent<GameControllerStateMachine>();
         
@@ -17,8 +17,18 @@ namespace StateMachine
         public override void OnEnterState(GameControllerStateMachine stateMachine)
         {
             int blockIndex = stateMachine.blockIndex;
-            
             Debug.Log($"Entered State: <color=#FFF>Block Start: {blockIndex}</color>");
+            DataCollector.dataContainer.dataEvents.Add(new DataCollectionEvent_RecordMarker()
+            {
+                timeSinceProgramStart = Time.realtimeSinceStartup,
+                currentState = $"Block {blockIndex} Start",
+                
+                SetHeadTransform = CameraTransform,
+                SetLeftHandTransform = LeftHandTransform,
+                SetRightHandTransform = RightHandTransform
+            });
+            
+            
             stateMachine.currentBlock = stateMachine.SessionFormatObject.blocks[blockIndex];
             stateMachine.dataContainer.blockData.Add(new BlockData());
 

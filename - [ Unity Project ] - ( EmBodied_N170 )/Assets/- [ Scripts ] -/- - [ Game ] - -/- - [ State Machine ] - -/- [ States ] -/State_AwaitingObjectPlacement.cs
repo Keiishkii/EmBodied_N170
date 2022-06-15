@@ -1,21 +1,31 @@
-﻿using UnityEngine;
+﻿using DataCollection;
+using UnityEngine;
 using UnityEngine.Events;
 
 namespace StateMachine
 {
-    public class State_AwaitingObjectPlacement : State
+    public class State_AwaitingObjectPlacement : State_Interface
     {
         public static readonly UnityEvent<bool> ActivateRoomAColliders = new UnityEvent<bool>();
         public static readonly UnityEvent<bool> ActivateRoomBColliders = new UnityEvent<bool>();
-        public static readonly UnityEvent ColliderEntered = new UnityEvent();
+        public static readonly UnityEvent<GameControllerStateMachine> ColliderEntered = new UnityEvent<GameControllerStateMachine>();
 
-        private GameControllerStateMachine _stateMachine;
+        
         
         
         public override void OnEnterState(GameControllerStateMachine stateMachine)
         {
-            Debug.Log("Entered State: <color=#FFF>Awaiting Player Choice</color>");
-            _stateMachine = stateMachine;
+            Debug.Log("Entered State: <color=#FFF>Awaiting Object Placement</color>");
+            DataCollector.dataContainer.dataEvents.Add(new DataCollectionEvent_RecordMarker()
+            {
+                timeSinceProgramStart = Time.realtimeSinceStartup,
+                currentState = "Awaiting Object Placement",
+                
+                SetHeadTransform = CameraTransform,
+                SetLeftHandTransform = LeftHandTransform,
+                SetRightHandTransform = RightHandTransform
+            });
+            
             
             ColliderEntered.AddListener(OnColliderEnter);
             if (stateMachine.CurrentTrialData.activeRoom == Enums.Room.ROOM_A)
@@ -36,9 +46,9 @@ namespace StateMachine
         }
 
 
-        private void OnColliderEnter()
+        private void OnColliderEnter(GameControllerStateMachine stateMachine)
         {
-            _stateMachine.SetState(_stateMachine.AwaitingReturnToCorridor);
+            stateMachine.SetState(stateMachine.AwaitingReturnToCorridor);
         }
     }
 }

@@ -5,14 +5,11 @@ using UnityEngine;
 
 namespace StateMachine
 {
-    public class State_TrialStart : State
+    public class State_TrialStart : State_Interface
     {
         private RayInteractionController _rayInteractionController;
         private RayInteractionController RayInteractionController => _rayInteractionController ?? (_rayInteractionController = GameObject.FindObjectOfType<RayInteractionController>());
 
-        private PlayerController _playerController;
-        private PlayerController PlayerController => _playerController ?? (_playerController = GameObject.FindObjectOfType<PlayerController>());
-        
         private MainCanvas _mainCanvas;
         private MainCanvas MainCanvas => _mainCanvas ?? (_mainCanvas = GameObject.FindObjectOfType<MainCanvas>());
 
@@ -22,10 +19,19 @@ namespace StateMachine
         
         public override void OnEnterState(GameControllerStateMachine stateMachine)
         {
-            int blockIndex = stateMachine.blockIndex;
-            int trialIndex = stateMachine.trialIndex;
+            int blockIndex = stateMachine.blockIndex, trialIndex = stateMachine.trialIndex;
             
             Debug.Log($"Entered State: <color=#FFF>Trial Start: {trialIndex}</color>");
+            DataCollector.dataContainer.dataEvents.Add(new DataCollectionEvent_RecordMarker()
+            {
+                timeSinceProgramStart = Time.realtimeSinceStartup,
+                currentState = $"Trial {trialIndex} Start",
+                
+                SetHeadTransform = CameraTransform,
+                SetLeftHandTransform = LeftHandTransform,
+                SetRightHandTransform = RightHandTransform
+            });
+            
             
             MainCanvas.ReadyPanelVisible = true;
             
@@ -33,7 +39,7 @@ namespace StateMachine
             Data.Trial currentTrial = stateMachine.currentTrial;
             stateMachine.dataContainer.blockData[blockIndex].trialData.Add(new TrialData());
 
-            RayInteractionController.SetLaserVisibility(false);
+            RayInteractionController.RayVisibility = false;
             PlayerController.CreateHeldItem(currentTrial.heldObject);
             NPCManager.CreateNPCs(currentTrial.roomA_NPCAvatar, currentTrial.roomB_NPCAvatar);
 

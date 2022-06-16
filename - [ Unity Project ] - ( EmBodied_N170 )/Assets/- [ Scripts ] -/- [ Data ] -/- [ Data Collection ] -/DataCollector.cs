@@ -105,10 +105,13 @@ namespace DataCollection
             string filename = $"DataContainer - {dateTime}";
             
             Thread writeToJson = new Thread(() => WriteToJSON(directory, filename, dataContainer));
+            Thread writeToCSV = new Thread(() => WriteToCSV(directory, filename, dataContainer));
+            
             writeToJson.Start();
+            writeToCSV.Start();
         }
 
-        private static async Task WriteToJSON(string directory, string filename, DataContainer dataContainer)
+        private static void WriteToJSON(string directory, string filename, DataContainer dataContainer)
         {
             string jsonData = JsonConvert.SerializeObject(dataContainer, Formatting.Indented);
             
@@ -126,7 +129,7 @@ namespace DataCollection
             }
         }
 
-        private static async Task WriteToCSV(string directory, string filename, DataContainer dataContainer)
+        private static void WriteToCSV(string directory, string filename, DataContainer dataContainer)
         {
             
         }

@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.IO;
+using System.Threading;
+using System.Threading.Tasks;
 using Newtonsoft.Json;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -102,12 +104,11 @@ namespace DataCollection
             string directory = $"{Application.persistentDataPath}/Data/";
             string filename = $"DataContainer - {dateTime}";
             
-
-            WriteToJSON(directory, filename);
-            WriteToCSV(directory, filename);
+            Thread writeToJson = new Thread(() => WriteToJSON(directory, filename, dataContainer));
+            writeToJson.Start();
         }
 
-        private void WriteToJSON(in string directory, in string filename)
+        private static async Task WriteToJSON(string directory, string filename, DataContainer dataContainer)
         {
             string jsonData = JsonConvert.SerializeObject(dataContainer, Formatting.Indented);
             
@@ -125,7 +126,7 @@ namespace DataCollection
             }
         }
 
-        private void WriteToCSV(in string directory, in string filename)
+        private static async Task WriteToCSV(string directory, string filename, DataContainer dataContainer)
         {
             
         }

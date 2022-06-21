@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blocks:
   - id: 0
-  approachDistance: 0
+  approachDistance: 3
   references:
     version: 1
     00000000:

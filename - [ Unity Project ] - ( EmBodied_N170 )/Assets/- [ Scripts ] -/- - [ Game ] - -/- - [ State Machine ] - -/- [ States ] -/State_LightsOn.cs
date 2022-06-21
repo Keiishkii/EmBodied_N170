@@ -18,7 +18,7 @@ namespace StateMachine
             Vector3 playerPosition = CameraOffset.position;
             Vector3 newPosition = new Vector3(playerPosition.x, 0, playerPosition.z);
             
-            CameraOffset.SetPositionAndRotation(newPosition, Quaternion.Euler(new Vector3(0, 90, 0)));
+            CameraOffset.position = newPosition;
             
             stateMachine.SetState(stateMachine.AwaitingForRoomEnter);
         }

@@ -6,6 +6,8 @@ namespace StateMachine
 {
     public class State_AwaitingObjectPlacement : State_Interface
     {
+        public static readonly UnityEvent<Enums.Room> NPCPlacementTrigger = new UnityEvent<Enums.Room>();
+        
         public static readonly UnityEvent<bool> ActivateRoomAColliders = new UnityEvent<bool>();
         public static readonly UnityEvent<bool> ActivateRoomBColliders = new UnityEvent<bool>();
         public static readonly UnityEvent<GameControllerStateMachine> ColliderEntered = new UnityEvent<GameControllerStateMachine>();
@@ -35,6 +37,10 @@ namespace StateMachine
         public override void OnExitState(GameControllerStateMachine stateMachine)
         {
             ColliderEntered.RemoveListener(OnColliderEnter);
+            
+            NPCPlacementTrigger.Invoke(stateMachine.CurrentTrialData.activeRoom);
+            
+            
             if (stateMachine.CurrentTrialData.activeRoom == Enums.Room.ROOM_A)
                 ActivateRoomAColliders.Invoke(false);
             else

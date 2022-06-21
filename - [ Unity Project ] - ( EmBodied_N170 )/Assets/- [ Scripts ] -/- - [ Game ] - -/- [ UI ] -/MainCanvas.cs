@@ -54,9 +54,10 @@ namespace Questionnaire
             private TwoQuestionSliderAnswerPanel _twoQuestionSliderAnswerPanelScript;
         #endregion
 
+        [Space] 
+        [SerializeField] private GameObject lookTarget;
+        public GameObject LookTarget => lookTarget;
 
-        
-        
 
         private void Awake()
         {

@@ -26,8 +26,8 @@ namespace StateMachine
             
             Vector3 playerPosition = CameraOffset.position;
             Vector3 newPosition = new Vector3(playerPosition.x, -3.95f, playerPosition.z);
-            
-            CameraOffset.SetPositionAndRotation(newPosition, Quaternion.Euler(new Vector3(0, 0, 0)));
+
+            CameraOffset.position = newPosition;
             
             QuestionnaireComplete.AddListener(OnQuestionnaireCompletion);
             MainCanvas.BeginQuestionnaire();

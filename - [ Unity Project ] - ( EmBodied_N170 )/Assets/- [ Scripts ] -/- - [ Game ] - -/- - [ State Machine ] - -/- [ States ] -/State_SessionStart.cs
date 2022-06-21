@@ -10,6 +10,9 @@ namespace StateMachine
     {
         public static readonly UnityEvent<GameControllerStateMachine> StartSession = new UnityEvent<GameControllerStateMachine>();
         
+        private RayInteractionController _rayInteractionController;
+        private RayInteractionController RayInteractionController => _rayInteractionController ?? (_rayInteractionController = GameObject.FindObjectOfType<RayInteractionController>());
+        
         private MainCanvas _mainCanvas;
         private MainCanvas MainCanvas => _mainCanvas ?? (_mainCanvas = GameObject.FindObjectOfType<MainCanvas>());
 
@@ -27,9 +30,12 @@ namespace StateMachine
                 timeSinceProgramStart = Time.realtimeSinceStartup,
                 currentState = "Session Start"
             });
+
+            RayInteractionController.RayVisibility = true;
             
+            Vector3 newPosition = new Vector3(0, -3.95f, 0);
+            CameraOffset.position = newPosition;
             
-            CameraOffset.SetPositionAndRotation(new Vector3(0, -3.95f, 0), Quaternion.Euler(new Vector3(0, 0, 0)));
             MainCanvas.AwaitingSessionStartPanelVisible = true;
             
             StartSession.AddListener(OnSessionStart);

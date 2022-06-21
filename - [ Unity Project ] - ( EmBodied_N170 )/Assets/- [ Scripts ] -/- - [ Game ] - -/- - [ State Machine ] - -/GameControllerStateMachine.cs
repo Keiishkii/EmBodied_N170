@@ -54,8 +54,7 @@ namespace StateMachine
 
         private void OnDrawGizmos()
         {
-            if (Application.isPlaying)
-                _currentStateInterface.OnDrawGizmos(this);
+            if (Application.isPlaying) _currentStateInterface.OnDrawGizmos(this);
         }
     }
 }

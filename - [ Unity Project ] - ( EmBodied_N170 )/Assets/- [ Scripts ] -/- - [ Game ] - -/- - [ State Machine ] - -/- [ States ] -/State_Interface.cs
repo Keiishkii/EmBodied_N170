@@ -15,12 +15,12 @@ namespace StateMachine
         protected Transform CameraTransform => PlayerController.cameraTransform;
         protected Transform RightHandTransform => PlayerController.rightHandTransform;
         protected Transform LeftHandTransform => PlayerController.leftHandTransform;
-        
-        
-        public abstract void OnEnterState(GameControllerStateMachine stateMachine);
-        public abstract void Update(GameControllerStateMachine stateMachine);
-        public abstract void OnExitState(GameControllerStateMachine stateMachine);
 
-        public void OnDrawGizmos(GameControllerStateMachine stateMachine) { }
+
+        public virtual void OnEnterState(GameControllerStateMachine stateMachine) { }
+        public virtual void Update(GameControllerStateMachine stateMachine) { }
+        public virtual void OnExitState(GameControllerStateMachine stateMachine) { }
+
+        public virtual void OnDrawGizmos(GameControllerStateMachine stateMachine) { }
     }
 }

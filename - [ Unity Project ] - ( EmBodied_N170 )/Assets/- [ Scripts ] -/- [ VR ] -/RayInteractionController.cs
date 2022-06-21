@@ -10,10 +10,12 @@ public class RayInteractionController : MonoBehaviour
     [SerializeField] private InputActionAsset _actionAsset;
     
     [SerializeField] private GameObject _leftController;
+    [SerializeField] private GameObject _leftReticule;
     private XRRayInteractor _leftControllerXRRayInteractor;
     private LineRenderer _leftControllerLineRenderer;
     
     [SerializeField] private GameObject _rightController;
+    [SerializeField] private GameObject _rightReticule;
     private XRRayInteractor _rightControllerXRRayInteractor;
     private LineRenderer _rightControllerLineRenderer;
     
@@ -87,17 +89,21 @@ public class RayInteractionController : MonoBehaviour
                 {
                     _leftControllerLineRenderer.enabled = true;
                     _leftControllerXRRayInteractor.enabled = true;
+                    _leftReticule.SetActive(true);
                     
                     _rightControllerLineRenderer.enabled = false;
                     _rightControllerXRRayInteractor.enabled = false;
+                    _rightReticule.SetActive(false);
                 } break;
                 case Enums.Handedness.RIGHT:
                 {
                     _leftControllerLineRenderer.enabled = false;
                     _leftControllerXRRayInteractor.enabled = false;
+                    _leftReticule.SetActive(false);
                     
                     _rightControllerLineRenderer.enabled = true;
                     _rightControllerXRRayInteractor.enabled = true;
+                    _rightReticule.SetActive(true);
                 } break;
             }
         }
@@ -105,9 +111,11 @@ public class RayInteractionController : MonoBehaviour
         {
             _leftControllerLineRenderer.enabled = false;
             _leftControllerXRRayInteractor.enabled = false;
+            _leftReticule.SetActive(false);
             
             _rightControllerLineRenderer.enabled = false;
             _rightControllerXRRayInteractor.enabled = false;
+            _rightReticule.SetActive(false);
         }
     }
 }

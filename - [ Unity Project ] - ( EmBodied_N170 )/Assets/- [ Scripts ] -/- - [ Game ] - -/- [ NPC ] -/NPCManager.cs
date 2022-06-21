@@ -29,13 +29,13 @@ public class NPCManager : MonoBehaviour
         _npcOneData = new NPCData();
         _npcOneData.Populate(NPCOneGameObject);
         
-        InitialiseNPC(in _npcOneData, new Vector3(_chairPosition.x * -1, _chairPosition.y, _chairPosition.z), Quaternion.Euler(0, 90, 0));
+        InitialiseNPC(in _npcOneData, new Vector3(_chairPosition.x, _chairPosition.y, _chairPosition.z), Quaternion.Euler(0, -90, 0));
         
         GameObject NPCTwoGameObject = Instantiate(roomB_NPCPrefab, _entityFolder);
         _npcTwoData = new NPCData();
         _npcTwoData.Populate(NPCTwoGameObject);
         
-        InitialiseNPC(in _npcTwoData, new Vector3(_chairPosition.x, _chairPosition.y, _chairPosition.z), Quaternion.Euler(0, -90, 0));
+        InitialiseNPC(in _npcTwoData, new Vector3(_chairPosition.x * -1, _chairPosition.y, _chairPosition.z), Quaternion.Euler(0, 90, 0));
     }
 
     public void DestroyNPC()

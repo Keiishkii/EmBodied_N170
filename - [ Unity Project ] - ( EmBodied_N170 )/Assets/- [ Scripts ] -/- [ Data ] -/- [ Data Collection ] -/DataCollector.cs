@@ -6,6 +6,7 @@ using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using StateMachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -18,9 +19,17 @@ namespace DataCollection
         [SerializeField] private InputActionReference _leftHandActivation;
         [SerializeField] private InputActionReference _rightHandActivation;
         
+        public BlockData CurrentBlockData => dataContainer.blockData[GameControllerStateMachine.blockIndex];
+        public TrialData CurrentTrialData => CurrentBlockData.trialData[GameControllerStateMachine.trialIndex];
+        
+        
         
         private PlayerController _playerController;
         private PlayerController PlayerController => _playerController ?? (_playerController = FindObjectOfType<PlayerController>());
+        
+        private GameControllerStateMachine _gameControllerStateMachine;
+        private GameControllerStateMachine GameControllerStateMachine => _gameControllerStateMachine ?? (_gameControllerStateMachine = FindObjectOfType<GameControllerStateMachine>());
+
 
         private Transform CameraOffset => PlayerController.transform;
         private Transform CameraTransform => PlayerController.cameraTransform;

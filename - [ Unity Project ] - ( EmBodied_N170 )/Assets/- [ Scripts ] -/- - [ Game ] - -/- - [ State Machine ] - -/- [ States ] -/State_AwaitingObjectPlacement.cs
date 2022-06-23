@@ -26,7 +26,7 @@ namespace StateMachine
             
             
             ColliderEntered.AddListener(OnColliderEnter);
-            if (stateMachine.CurrentTrialData.activeRoom == Enums.Room.ROOM_A)
+            if (DataCollector.CurrentTrialData.activeRoom == Enums.Room.ROOM_A)
                 ActivateRoomAColliders.Invoke(true);
             else
                 ActivateRoomBColliders.Invoke(true);
@@ -38,10 +38,10 @@ namespace StateMachine
         {
             ColliderEntered.RemoveListener(OnColliderEnter);
             
-            NPCPlacementTrigger.Invoke(stateMachine.CurrentTrialData.activeRoom);
+            NPCPlacementTrigger.Invoke(DataCollector.CurrentTrialData.activeRoom);
             
             
-            if (stateMachine.CurrentTrialData.activeRoom == Enums.Room.ROOM_A)
+            if (DataCollector.CurrentTrialData.activeRoom == Enums.Room.ROOM_A)
                 ActivateRoomAColliders.Invoke(false);
             else
                 ActivateRoomBColliders.Invoke(false);

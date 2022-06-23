@@ -118,14 +118,14 @@ namespace Questionnaire
                         _activePanel = _twoQuestionSliderAnswerPanel;
 
                         _twoQuestionSliderAnswerPanel.SetActive(true);
-                        _twoQuestionSliderAnswerPanelScript.SetupPanel(question);
+                        _twoQuestionSliderAnswerPanelScript.SetupPanel(ref question);
                     } break;
                     case BlockQuestion_OneQuestionSliderAnswer question:
                     {
                         _activePanel = _twoQuestionSliderAnswerPanel;
 
                         _oneQuestionSliderAnswerPanel.SetActive(true);
-                        _oneQuestionSliderAnswerPanelScript.SetupPanel(question);
+                        _oneQuestionSliderAnswerPanelScript.SetupPanel(ref question);
                     } break;
                 }
             }
@@ -139,7 +139,9 @@ namespace Questionnaire
         {
             _currentQuestionnaireIndex++;
             _activePanel.SetActive(false);
-
+            
+            
+            
             SetPanelContents();
         }
     }

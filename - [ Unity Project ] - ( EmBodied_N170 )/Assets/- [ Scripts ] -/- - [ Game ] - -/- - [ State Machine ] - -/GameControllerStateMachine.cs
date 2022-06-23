@@ -29,10 +29,7 @@ namespace StateMachine
         [HideInInspector] public Block currentBlock;
         [HideInInspector] public Trial currentTrial;
 
-        public readonly DataContainer dataContainer = new DataContainer();
-        public BlockData CurrentBlockData => dataContainer.blockData[blockIndex];
-        public TrialData CurrentTrialData => CurrentBlockData.trialData[trialIndex];
-
+        
 
         private void Start()
         {

@@ -40,7 +40,7 @@ namespace StateMachine
             
             stateMachine.currentTrial = stateMachine.currentBlock.trials[trialIndex];
             Data.Trial currentTrial = stateMachine.currentTrial;
-            stateMachine.dataContainer.blockData[blockIndex].trialData.Add(new TrialData());
+            DataCollector.CurrentBlockData.trialData.Add(new TrialData());
 
             RayInteractionController.RayVisibility = false;
 

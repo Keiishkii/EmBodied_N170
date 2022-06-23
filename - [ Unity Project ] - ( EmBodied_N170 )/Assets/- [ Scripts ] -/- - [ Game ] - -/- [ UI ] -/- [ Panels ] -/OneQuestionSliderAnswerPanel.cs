@@ -1,34 +1,30 @@
-﻿using StateMachine;
+﻿using DataCollection;
+using StateMachine;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Questionnaire
 {
-    public class OneQuestionSliderAnswerPanel : MonoBehaviour
+    public class OneQuestionSliderAnswerPanel : QuestionPanel_Interface<BlockQuestion_OneQuestionSliderAnswer>
     {
-        private MainCanvas _mainCanvas;
-        private GameControllerStateMachine _stateMachine;
+        [SerializeField] private TMP_Text _questionText;
+        [SerializeField] private Slider _answerSlider;
 
-        [SerializeField] private TMP_Text _questionOne;
-
-
-
-        private void Awake()
-        {
-            _mainCanvas = FindObjectOfType<MainCanvas>();
-            _stateMachine = FindObjectOfType<GameControllerStateMachine>();
-        }
-
-        public void SetupPanel(BlockQuestion_OneQuestionSliderAnswer question)
-        {
-            _questionOne.text = question.questionOne;
-        }
-
-        public void OnNextButtonPressed()
-        {
-            //_stateMachine.dataContainer.blockData[_stateMachine.blockIndex].trialData[_stateMachine.trialIndex].AddQuestion
-            _mainCanvas.OnQuestionAnswered();
-        }
         
+        
+        public override void SetupPanel(ref BlockQuestion_OneQuestionSliderAnswer blockQuestion)
+        {
+            _questionText.text = blockQuestion.questionOne;
+        }
+
+        protected override void WriteResultToDataContainer()
+        {
+            DataCollector.CurrentTrialData.QuestionnaireData.Add(new SliderQuestionData()
+            {
+                question = _questionText.text,
+                answer = _answerSlider.value
+            });
+        }
     }
 }

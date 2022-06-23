@@ -1,7 +1,9 @@
 using System;
 
-[Serializable]
-public abstract class DataCollectionEvent_Interface
+namespace DataCollection
 {
-    public string type;
+    public abstract class DataCollectionEvent_Interface
+    {
+        public string type;
+    }
 }

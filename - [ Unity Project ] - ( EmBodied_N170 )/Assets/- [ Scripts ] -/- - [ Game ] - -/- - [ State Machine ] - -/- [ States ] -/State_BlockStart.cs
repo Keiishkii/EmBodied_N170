@@ -26,7 +26,7 @@ namespace StateMachine
             
             
             stateMachine.currentBlock = stateMachine.SessionFormatObject.blocks[blockIndex];
-            stateMachine.dataContainer.blockData.Add(new BlockData());
+            DataCollector.dataContainer.blockData.Add(new BlockData());
 
             MainCanvas.AwaitingBlockStartPanelVisible = true;
             

@@ -1,37 +1,46 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DataCollection;
 using StateMachine;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Questionnaire
 {
-    public class TwoQuestionSliderAnswerPanel : MonoBehaviour
+    public class TwoQuestionSliderAnswerPanel : QuestionPanel_Interface<BlockQuestion_TwoQuestionSliderAnswer>
     {
-        private MainCanvas _mainCanvas;
-        private GameControllerStateMachine _stateMachine;
-
-        [SerializeField] private TMP_Text _questionOne, _questionTwo;
-
-
-
-        private void Awake()
+        [SerializeField] private TMP_Text _questionOneText;
+        [SerializeField] private Slider _answerTwoSlider;
+        
+        [Space(5)]
+        [SerializeField] private TMP_Text _questionTwoText;
+        [SerializeField] private Slider _answerOneSlider;
+        
+        
+        
+        public override void SetupPanel(ref BlockQuestion_TwoQuestionSliderAnswer blockQuestion)
         {
-            _mainCanvas = FindObjectOfType<MainCanvas>();
-            _stateMachine = FindObjectOfType<GameControllerStateMachine>();
+            _questionOneText.text = blockQuestion.questionOne;
+            _questionTwoText.text = blockQuestion.questionTwo;
         }
 
-        public void SetupPanel(BlockQuestion_TwoQuestionSliderAnswer question)
+        protected override void WriteResultToDataContainer()
         {
-            _questionOne.text = question.questionOne;
-            _questionTwo.text = question.questionTwo;
-        }
-
-        public void OnNextButtonPressed()
-        {
-            //_stateMachine.dataContainer.blockData[_stateMachine.blockIndex].trialData[_stateMachine.trialIndex].AddQuestion
-            _mainCanvas.OnQuestionAnswered();
+            Debug.Log("<color=#FF0000> Writing Question Data </color>");
+            
+            DataCollector.CurrentTrialData.QuestionnaireData.Add(new SliderQuestionData()
+            {
+                question = _questionOneText.text,
+                answer = _answerOneSlider.value
+            });
+            
+            DataCollector.CurrentTrialData.QuestionnaireData.Add(new SliderQuestionData()
+            {
+                question = _questionTwoText.text,
+                answer = _answerTwoSlider.value
+            });
         }
     }
 }

@@ -5,7 +5,6 @@ using UnityEngine;
 
 namespace DataCollection
 {
-    [Serializable]
     public class DataContainer
     {
         public string dateTime;

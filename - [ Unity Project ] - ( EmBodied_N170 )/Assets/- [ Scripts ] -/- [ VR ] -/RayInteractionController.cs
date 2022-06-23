@@ -19,6 +19,11 @@ public class RayInteractionController : MonoBehaviour
     private XRRayInteractor _rightControllerXRRayInteractor;
     private LineRenderer _rightControllerLineRenderer;
     
+    
+    private HandAnimationController _handAnimationController;
+    private HandAnimationController HandAnimationController => _handAnimationController ?? (_handAnimationController = GameObject.FindObjectOfType<HandAnimationController>());
+
+    
     private bool _rayVisibility = false;
     public bool RayVisibility
     {
@@ -29,11 +34,13 @@ public class RayInteractionController : MonoBehaviour
         }
     }
     
-    private Enums.Handedness _activeHand = Enums.Handedness.RIGHT;
+    private Enums.Handedness _activeHand = Enums.Handedness.Right;
 
     [Space]
     [SerializeField] private InputActionReference _rightHandActivate;
     [SerializeField] private InputActionReference _leftHandActivate;
+    
+    
     
     
     
@@ -69,13 +76,13 @@ public class RayInteractionController : MonoBehaviour
     
     private void RightHandActivation(InputAction.CallbackContext context)
     {
-        _activeHand = Enums.Handedness.RIGHT;
+        _activeHand = Enums.Handedness.Right;
         UpdateLaserVisibility();
     }
     
     private void LeftHandActivation(InputAction.CallbackContext context)
     {
-        _activeHand = Enums.Handedness.LEFT;
+        _activeHand = Enums.Handedness.Left;
         UpdateLaserVisibility();
     }
 
@@ -85,8 +92,11 @@ public class RayInteractionController : MonoBehaviour
         {
             switch (_activeHand)
             {
-                case Enums.Handedness.LEFT:
+                case Enums.Handedness.Left:
                 {
+                    HandAnimationController.LeftHandState = HandAnimationState.Pointing;
+                    HandAnimationController.RightHandState = HandAnimationState.Default;
+                    
                     _leftControllerLineRenderer.enabled = true;
                     _leftControllerXRRayInteractor.enabled = true;
                     _leftReticule.SetActive(true);
@@ -95,8 +105,11 @@ public class RayInteractionController : MonoBehaviour
                     _rightControllerXRRayInteractor.enabled = false;
                     _rightReticule.SetActive(false);
                 } break;
-                case Enums.Handedness.RIGHT:
+                case Enums.Handedness.Right:
                 {
+                    HandAnimationController.LeftHandState = HandAnimationState.Default;
+                    HandAnimationController.RightHandState = HandAnimationState.Pointing;
+                    
                     _leftControllerLineRenderer.enabled = false;
                     _leftControllerXRRayInteractor.enabled = false;
                     _leftReticule.SetActive(false);

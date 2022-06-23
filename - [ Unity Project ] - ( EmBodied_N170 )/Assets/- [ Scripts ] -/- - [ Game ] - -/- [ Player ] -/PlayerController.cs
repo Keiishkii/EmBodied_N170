@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Enums;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -12,35 +13,43 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private InputActionReference _rightHandActivation;
     [SerializeField] private InputActionReference _leftHandActivation;
     
-    private Enums.Handedness _activeHand = Enums.Handedness.RIGHT;
-    
     private GameObject _heldItem;
     private Collider _heldItemCollider;
+
+    private Handedness _handedness;
     
     
     
     
-    
-    public void CreateHeldItem(GameObject heldObject)
+    public void CreateHeldItem(in GameObject heldObject, in Handedness handedness)
     {
-        _heldItem = Instantiate(heldObject, (_activeHand == Enums.Handedness.RIGHT) ? rightHandTransform : leftHandTransform);
+        _handedness = handedness;
+        
+        _heldItem = Instantiate(heldObject, (_handedness == Enums.Handedness.Right) ? rightHandTransform : leftHandTransform);
+        
         _heldItemCollider = _heldItem.GetComponent<Collider>();
-
         _heldItemCollider.enabled = false;
-
-        //heldObject.transform.localPosition = positionOffset;
-        //heldObject.transform.rotation = Quaternion.Euler(eulerRotationOffset);
-
-
-        if (_activeHand == Enums.Handedness.RIGHT)
+        
+        HeldItemProperties properties = heldObject.GetComponent<HeldItemProperties>();
+        
+        switch (_handedness)
         {
-            _rightHandActivation.action.started += RightHandActivation;
-            _rightHandActivation.action.canceled += RightHandEnded;
-        }
-        else
-        {
-            _leftHandActivation.action.started += LeftHandActivation;
-            _leftHandActivation.action.canceled += LeftHandEnded;
+            case Handedness.Left:
+            {
+                heldObject.transform.localPosition = properties.leftHandHoldingPositionOffset;
+                heldObject.transform.localRotation = Quaternion.Euler(properties.leftHandHoldingEulerRotationOffset);
+                
+                _leftHandActivation.action.started += LeftHandActivation;
+                _leftHandActivation.action.canceled += LeftHandEnded;
+            } break;
+            case Handedness.Right:
+            {
+                heldObject.transform.localPosition = properties.rightHandHoldingPositionOffset;
+                heldObject.transform.localRotation = Quaternion.Euler(properties.rightHandHoldingEulerRotationOffset);
+                
+                _rightHandActivation.action.started += RightHandActivation;
+                _rightHandActivation.action.canceled += RightHandEnded;
+            } break;
         }
     }
     
@@ -48,16 +57,18 @@ public class PlayerController : MonoBehaviour
     {
         Destroy(_heldItem);
 
-
-        if (_activeHand == Enums.Handedness.RIGHT)
+        switch (_handedness)
         {
-            _rightHandActivation.action.started -= RightHandActivation;
-            _rightHandActivation.action.canceled -= RightHandEnded;
-        }
-        else
-        {
-            _leftHandActivation.action.started -= LeftHandActivation;
-            _leftHandActivation.action.canceled -= LeftHandEnded;
+            case Handedness.Left:
+            {
+                _leftHandActivation.action.started -= LeftHandActivation;
+                _leftHandActivation.action.canceled -= LeftHandEnded;
+            } break;
+            case Handedness.Right:
+            {
+                _rightHandActivation.action.started -= RightHandActivation;
+                _rightHandActivation.action.canceled -= RightHandEnded;
+            } break;
         }
     }
     

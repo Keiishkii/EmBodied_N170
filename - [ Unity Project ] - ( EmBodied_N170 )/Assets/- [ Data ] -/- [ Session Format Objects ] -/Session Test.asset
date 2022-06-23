@@ -13,24 +13,26 @@ MonoBehaviour:
   m_Name: Session Test
   m_EditorClassIdentifier: 
   blocks:
-  - id: 0
+  - rid: 0
   approachDistance: 3
+  participantHandedness: 0
   references:
-    version: 1
-    00000000:
+    version: 2
+    RefIds:
+    - rid: 0
       type: {class: Block, ns: Data, asm: Assembly-CSharp}
       data:
         trials:
-        - id: 1
+        - rid: 1
         blockQuestions:
-        - id: 2
-    00000001:
+        - rid: 2
+    - rid: 1
       type: {class: Trial, ns: Data, asm: Assembly-CSharp}
       data:
         roomA_NPCAvatar: {fileID: 5367999664640436700, guid: b7e124d27fc001e499ec505b645183bd, type: 3}
         roomB_NPCAvatar: {fileID: 325559317196043166, guid: a070698e245c9f947b2a60538df84797, type: 3}
         heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
-    00000002:
+    - rid: 2
       type: {class: BlockQuestion_TwoQuestionSliderAnswer, ns: Questionnaire, asm: Assembly-CSharp}
       data:
         questionType: 2

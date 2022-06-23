@@ -13,6 +13,9 @@ namespace StateMachine
         private RayInteractionController _rayInteractionController;
         private RayInteractionController RayInteractionController => _rayInteractionController ?? (_rayInteractionController = GameObject.FindObjectOfType<RayInteractionController>());
         
+        private HandAnimationController _handAnimationController;
+        private HandAnimationController HandAnimationController => _handAnimationController ?? (_handAnimationController = GameObject.FindObjectOfType<HandAnimationController>());
+        
         private MainCanvas _mainCanvas;
         private MainCanvas MainCanvas => _mainCanvas ?? (_mainCanvas = GameObject.FindObjectOfType<MainCanvas>());
 
@@ -31,6 +34,11 @@ namespace StateMachine
                 currentState = "Session Start"
             });
 
+
+            HandAnimationController.LeftHandState = HandAnimationState.Default;
+            HandAnimationController.LeftHandState = HandAnimationState.Default;
+            
+            
             RayInteractionController.RayVisibility = true;
             
             Vector3 newPosition = new Vector3(0, -3.95f, 0);

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Security.Cryptography;
 using DataCollection;
+using Enums;
 using Questionnaire;
 using UnityEngine;
 
@@ -13,6 +14,9 @@ namespace StateMachine
 
         private MainCanvas _mainCanvas;
         private MainCanvas MainCanvas => _mainCanvas ?? (_mainCanvas = GameObject.FindObjectOfType<MainCanvas>());
+
+        private HandAnimationController _handAnimationController;
+        private HandAnimationController HandAnimationController => _handAnimationController ?? (_handAnimationController = GameObject.FindObjectOfType<HandAnimationController>());
 
         private NPCManager _npcManager;
         private NPCManager NPCManager => _npcManager ?? (_npcManager = GameObject.FindObjectOfType<NPCManager>());
@@ -39,7 +43,23 @@ namespace StateMachine
             stateMachine.dataContainer.blockData[blockIndex].trialData.Add(new TrialData());
 
             RayInteractionController.RayVisibility = false;
-            PlayerController.CreateHeldItem(currentTrial.heldObject);
+
+            Handedness handedness = stateMachine.SessionFormatObject.participantHandedness;
+            switch (handedness)
+            {
+                case Handedness.Right:
+                {
+                    HandAnimationController.RightHandState = HandAnimationState.Holding;
+                    HandAnimationController.LeftHandState = HandAnimationState.Default;
+                } break;
+                case Handedness.Left:
+                {
+                    HandAnimationController.RightHandState = HandAnimationState.Default;
+                    HandAnimationController.LeftHandState = HandAnimationState.Holding;
+                } break;
+            }
+            
+            PlayerController.CreateHeldItem(currentTrial.heldObject, handedness);
             NPCManager.CreateNPCs(currentTrial.roomA_NPCAvatar, currentTrial.roomB_NPCAvatar);
             
             stateMachine.StartCoroutine(LightsOnState(stateMachine, Random.Range(2.0f, 2.5f)));

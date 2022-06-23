@@ -2,7 +2,7 @@
 {
     public enum Handedness
     {
-        LEFT,
-        RIGHT
+        Left,
+        Right
     }
 }

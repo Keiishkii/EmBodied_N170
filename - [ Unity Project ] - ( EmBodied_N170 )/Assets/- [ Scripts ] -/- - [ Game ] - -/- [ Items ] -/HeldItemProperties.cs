@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class HeldItemProperties : MonoBehaviour
 {
-    public Vector3 holdingPositionOffset;
-    public Vector3 holdingEulerRotationOffset;
+    public Vector3 leftHandHoldingPositionOffset;
+    public Vector3 leftHandHoldingEulerRotationOffset;
     
+    [Space (5)]
+    public Vector3 rightHandHoldingPositionOffset;
+    public Vector3 rightHandHoldingEulerRotationOffset;
+    
+    [Space (10)]
     public Vector3 placementPositionOffset;
     public Vector3 placementEulerRotationOffset;
 }

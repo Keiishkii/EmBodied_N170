@@ -11,6 +11,10 @@ public class ObjectPlacementCollider : MonoBehaviour
     private GameControllerStateMachine _gameControllerStateMachine;
     private GameControllerStateMachine GameControllerStateMachine => _gameControllerStateMachine ?? (_gameControllerStateMachine = GameObject.FindObjectOfType<GameControllerStateMachine>());
     
+    private HandAnimationController _handAnimationController;
+    private HandAnimationController HandAnimationController => _handAnimationController ?? (_handAnimationController = GameObject.FindObjectOfType<HandAnimationController>());
+    
+    
     
     private void Awake()
     {
@@ -26,7 +30,7 @@ public class ObjectPlacementCollider : MonoBehaviour
 
     private void OnObjectInPlacementZone(Collider other)
     {
-        StateMachine.State_AwaitingObjectPlacement.ColliderEntered.Invoke(GameControllerStateMachine);
+        State_AwaitingObjectPlacement.ColliderEntered.Invoke(GameControllerStateMachine);
 
         Transform objectTransform = other.transform;
         HeldItemProperties properties = other.GetComponent<HeldItemProperties>();
@@ -35,6 +39,9 @@ public class ObjectPlacementCollider : MonoBehaviour
         
         objectTransform.localPosition = properties.placementPositionOffset;
         objectTransform.localRotation = Quaternion.Euler(properties.placementEulerRotationOffset);
+        
+        HandAnimationController.RightHandState = HandAnimationState.Default;
+        HandAnimationController.LeftHandState = HandAnimationState.Default;
     }
 }
  

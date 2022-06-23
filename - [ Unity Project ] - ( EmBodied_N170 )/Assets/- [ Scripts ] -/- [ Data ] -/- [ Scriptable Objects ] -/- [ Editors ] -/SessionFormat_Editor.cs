@@ -31,15 +31,8 @@ namespace Data
             }
         }
         
-        private QuestionType _questionType;
-        private enum QuestionType
-        {
-            ChooseAPanelType,
-            OneQuestionWithSliderAnswer,
-            TwoQuestionsWithSliderAnswer 
-        }
-
         private SerializedProperty _approachDistanceProperty;
+        private SerializedProperty _participantHandednessProperty;
         private SerializedProperty _blockListProperty;
         
         
@@ -49,6 +42,8 @@ namespace Data
         private void OnEnable()
         {
             _approachDistanceProperty = serializedObject.FindProperty("approachDistance");
+            _participantHandednessProperty = serializedObject.FindProperty("participantHandedness");
+            
             _blockListProperty = serializedObject.FindProperty("blocks");
         }
 
@@ -62,7 +57,10 @@ namespace Data
             
             
             GUILayout.BeginVertical(EditorSkin.customStyles[0]);
-            _approachDistanceProperty.floatValue = EditorGUILayout.FloatField("Approach Distance: ", _approachDistanceProperty.floatValue);
+            {
+                _approachDistanceProperty.floatValue = EditorGUILayout.FloatField("Approach Distance: ", _approachDistanceProperty.floatValue);
+                _participantHandednessProperty.enumValueIndex = (int) (Enums.Handedness) EditorGUILayout.EnumPopup("Handedness: ", (Enums.Handedness) _participantHandednessProperty.enumValueIndex);
+            }
             GUILayout.EndVertical();
             
             

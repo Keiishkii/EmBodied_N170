@@ -28,9 +28,10 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4360540672554874357}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.70441604, y: -0.6408564, z: 0.061628412, w: -0.29883626}
+  m_LocalPosition: {x: 0.06, y: 0.037, z: 0.145}
   m_LocalScale: {x: 100, y: 100, z: 100}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -54,6 +55,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -125,7 +127,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b95a6b2075c86348b714814d08f6c60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  holdingPositionOffset: {x: 0, y: 0, z: 0}
-  holdingEulerRotationOffset: {x: 0, y: 0, z: 0}
+  leftHandHoldingPositionOffset: {x: 0.06, y: 0.037, z: 0.145}
+  leftHandHoldingEulerRotationOffset: {x: -20, y: -210, z: -90}
+  rightHandHoldingPositionOffset: {x: -0.065, y: 0, z: 0.145}
+  rightHandHoldingEulerRotationOffset: {x: -20, y: 220, z: -110}
   placementPositionOffset: {x: -0.105, y: 0.7525, z: 0}
   placementEulerRotationOffset: {x: -90, y: 68.83, z: 0}

@@ -8,6 +8,8 @@ namespace Data
     public class SessionFormat : ScriptableObject
     {
         [SerializeReference] public List<Block> blocks = new List<Block>();
+        
         public float approachDistance;
+        public Enums.Handedness participantHandedness;
     }
 }

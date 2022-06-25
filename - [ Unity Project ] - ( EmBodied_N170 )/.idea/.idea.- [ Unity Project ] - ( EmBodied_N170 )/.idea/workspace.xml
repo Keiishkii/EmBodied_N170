@@ -1,37 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2c24035b-ac20-4dc8-acac-d2bc10f44b7e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- - [ Game ] - -/- [ UI ] -/- [ Panels ] -/QuestionPanel_Interface.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- - [ Game ] - -/- [ UI ] -/- [ Panels ] -/QuestionPanel_Interface.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- [ Data ] -/- [ Data Collection ] -/- [ Session Data ] -/QuestionnaireData_Interface.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- [ Data ] -/- [ Data Collection ] -/- [ Session Data ] -/QuestionnaireData_Interface.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- [ Data ] -/- [ Data Collection ] -/- [ Session Data ] -/SliderQuestionData.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- [ Data ] -/- [ Data Collection ] -/- [ Session Data ] -/SliderQuestionData.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.- [ Unity Project ] - ( EmBodied_N170 )/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.- [ Unity Project ] - ( EmBodied_N170 )/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.- [ Unity Project ] - ( EmBodied_N170 )/.idea/indexLayout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.- [ Unity Project ] - ( EmBodied_N170 )/.idea/riderModule.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.- [ Unity Project ] - ( EmBodied_N170 )/.idea/riderModule.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/- [ Rendering ] -/UniversalRenderPipelineAsset_Renderer.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/- [ Rendering ] -/UniversalRenderPipelineAsset_Renderer.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/- [ Scenes ] -/Main Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/- [ Scenes ] -/Main Scene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- - [ Game ] - -/- - [ State Machine ] - -/- [ States ] -/State_AwaitingForRoomEnter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- - [ Game ] - -/- - [ State Machine ] - -/- [ States ] -/State_AwaitingForRoomEnter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- - [ Game ] - -/- - [ State Machine ] - -/- [ States ] -/State_AwaitingObjectPlacement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- - [ Game ] - -/- - [ State Machine ] - -/- [ States ] -/State_AwaitingObjectPlacement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- - [ Game ] - -/- - [ State Machine ] - -/- [ States ] -/State_BlockStart.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- - [ Game ] - -/- - [ State Machine ] - -/- [ States ] -/State_BlockStart.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- - [ Game ] - -/- - [ State Machine ] - -/- [ States ] -/State_TrialStart.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- - [ Game ] - -/- - [ State Machine ] - -/- [ States ] -/State_TrialStart.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- - [ Game ] - -/- - [ State Machine ] - -/GameControllerStateMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- - [ Game ] - -/- - [ State Machine ] - -/GameControllerStateMachine.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- - [ Game ] - -/- [ UI ] -/- [ Panels ] -/OneQuestionSliderAnswerPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- - [ Game ] - -/- [ UI ] -/- [ Panels ] -/OneQuestionSliderAnswerPanel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- - [ Game ] - -/- [ UI ] -/- [ Panels ] -/TwoQuestionSliderAnswerPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- - [ Game ] - -/- [ UI ] -/- [ Panels ] -/TwoQuestionSliderAnswerPanel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- - [ Game ] - -/- [ UI ] -/MainCanvas.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- - [ Game ] - -/- [ UI ] -/MainCanvas.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- [ Data ] -/- [ Data Collection ] -/- [ Data Events ] -/DataCollectionEvent_Interface.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- [ Data ] -/- [ Data Collection ] -/- [ Data Events ] -/DataCollectionEvent_Interface.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- [ Data ] -/- [ Data Collection ] -/- [ Session Data ] -/BlockData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- [ Data ] -/- [ Data Collection ] -/- [ Session Data ] -/BlockData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- [ Data ] -/- [ Data Collection ] -/- [ Session Data ] -/TrialData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- [ Data ] -/- [ Data Collection ] -/- [ Session Data ] -/TrialData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- [ Data ] -/- [ Data Collection ] -/DataCollector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- [ Data ] -/- [ Data Collection ] -/DataCollector.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- [ Data ] -/- [ Data Collection ] -/DataContainer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- [ Data ] -/- [ Data Collection ] -/DataContainer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Search.settings" beforeDir="false" />
-    </list>
+    <list default="true" id="2c24035b-ac20-4dc8-acac-d2bc10f44b7e" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -104,7 +74,7 @@
       <option name="presentableId" value="Default" />
       <updated>1655951213363</updated>
       <workItem from="1655951236146" duration="184000" />
-      <workItem from="1655952511457" duration="5020000" />
+      <workItem from="1655952511457" duration="5194000" />
     </task>
     <servers />
   </component>

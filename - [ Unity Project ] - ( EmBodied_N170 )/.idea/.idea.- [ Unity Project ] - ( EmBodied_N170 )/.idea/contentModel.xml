@@ -100,7 +100,12 @@
                 <e p="NPCData.cs" t="Include" />
                 <e p="NPCIKReferences.cs" t="Include" />
               </e>
-              <e p="NPCController.cs" t="Include" />
+              <e p="- [ States ] -" t="Include">
+                <e p="NPCState_Idling.cs" t="Include" />
+                <e p="NPCState_Interface.cs" t="Include" />
+                <e p="NPCState_LookingAtPlayer.cs" t="Include" />
+              </e>
+              <e p="NPCController_StateMachine.cs" t="Include" />
               <e p="NPCManager.cs" t="Include" />
             </e>
             <e p="- [ Player ] -" t="Include">

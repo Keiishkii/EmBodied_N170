@@ -54,7 +54,7 @@ public class NPCManager : MonoBehaviour
         bool isRoomA = (position.x > 0);
         SetNPCTransformData(npcData, position, rotation);
 
-        npcData.npcController.room = (isRoomA) ? Enums.Room.ROOM_A : Enums.Room.ROOM_B;
+        //npcData.npcController.room = (isRoomA) ? Enums.Room.ROOM_A : Enums.Room.ROOM_B;
         
         StartCoroutine(SetIK(npcData, isRoomA));
     }

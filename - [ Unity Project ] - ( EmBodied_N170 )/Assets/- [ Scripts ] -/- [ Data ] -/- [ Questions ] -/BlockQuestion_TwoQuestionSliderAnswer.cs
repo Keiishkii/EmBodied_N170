@@ -1,3 +1,5 @@
+using Enums;
+using UnityEngine;
 using UnityEngine.Scripting.APIUpdating;
 
 namespace Questionnaire
@@ -8,5 +10,13 @@ namespace Questionnaire
     {
         public string questionOne;
         public string questionTwo;
+
+        public QuestionDecor questionOneDecorType;
+            public string questionOneDecorOne_Text, questionOneDecorTwo_Text;
+            public Sprite questionOneDecorOne_Sprite, questionOneDecorTwo_Sprite;
+            
+        public QuestionDecor questionTwoDecorType;
+            public string questionTwoDecorOne_Text, questionTwoDecorTwo_Text;
+            public Sprite questionTwoDecorOne_Sprite, questionTwoDecorTwo_Sprite;
     }
 }

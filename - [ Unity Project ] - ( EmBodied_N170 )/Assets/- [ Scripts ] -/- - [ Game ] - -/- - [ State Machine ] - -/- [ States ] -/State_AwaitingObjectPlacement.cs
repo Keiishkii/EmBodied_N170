@@ -10,7 +10,7 @@ namespace StateMachine
         
         public static readonly UnityEvent<bool> ActivateRoomAColliders = new UnityEvent<bool>();
         public static readonly UnityEvent<bool> ActivateRoomBColliders = new UnityEvent<bool>();
-        public static readonly UnityEvent<GameControllerStateMachine> ColliderEntered = new UnityEvent<GameControllerStateMachine>();
+        public static readonly UnityEvent<GameControllerStateMachine> ObjectPlaced = new UnityEvent<GameControllerStateMachine>();
 
         
         
@@ -25,8 +25,8 @@ namespace StateMachine
             });
             
             
-            ColliderEntered.AddListener(OnColliderEnter);
-            if (DataCollector.CurrentTrialData.activeRoom == Enums.Room.ROOM_A)
+            ObjectPlaced.AddListener(OnColliderEnter);
+            if (DataCollector.CurrentTrialData.activeRoom == Enums.Room.RoomA)
                 ActivateRoomAColliders.Invoke(true);
             else
                 ActivateRoomBColliders.Invoke(true);
@@ -36,12 +36,12 @@ namespace StateMachine
 
         public override void OnExitState(GameControllerStateMachine stateMachine)
         {
-            ColliderEntered.RemoveListener(OnColliderEnter);
+            ObjectPlaced.RemoveListener(OnColliderEnter);
             
             NPCPlacementTrigger.Invoke(DataCollector.CurrentTrialData.activeRoom);
             
             
-            if (DataCollector.CurrentTrialData.activeRoom == Enums.Room.ROOM_A)
+            if (DataCollector.CurrentTrialData.activeRoom == Enums.Room.RoomA)
                 ActivateRoomAColliders.Invoke(false);
             else
                 ActivateRoomBColliders.Invoke(false);

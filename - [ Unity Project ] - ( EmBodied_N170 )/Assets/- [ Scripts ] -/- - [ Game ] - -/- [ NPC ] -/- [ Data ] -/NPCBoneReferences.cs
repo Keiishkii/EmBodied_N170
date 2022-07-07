@@ -5,8 +5,11 @@ using UnityEngine;
 
 public class NPCBoneReferences : MonoBehaviour
 {
-    public Transform head;
     public Transform root;
+    
+    [Space(10)] 
+    public Transform head;
+    public Transform headTop;
 
     [Space(10)] 
     public Transform leftHand;

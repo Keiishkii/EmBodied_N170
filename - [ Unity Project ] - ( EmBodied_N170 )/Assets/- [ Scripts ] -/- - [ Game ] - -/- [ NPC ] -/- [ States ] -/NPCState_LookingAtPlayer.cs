@@ -34,7 +34,7 @@ namespace NPC_Controller
         {
             if (Vector3.SqrMagnitude(_avatarHeadPosition.position - _playerHeadPosition.position) > _squareApproachDistance)
             {
-                Debug.Log("<color=#FF0000>END</color>");
+                //Debug.Log("<color=#FF0000>END</color>");
                 stateMachine.SetState = stateMachine.IdleState;
                 return;
             }

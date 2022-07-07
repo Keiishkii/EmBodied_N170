@@ -1,4 +1,5 @@
-﻿using DataCollection;
+﻿using System.Collections;
+using DataCollection;
 using UnityEngine;
 
 namespace StateMachine
@@ -19,6 +20,14 @@ namespace StateMachine
             Vector3 newPosition = new Vector3(playerPosition.x, 0, playerPosition.z);
             
             CameraOffset.position = newPosition;
+
+            stateMachine.StartCoroutine(LightsOnCountDown(stateMachine));
+        }
+
+        private IEnumerator LightsOnCountDown(GameControllerStateMachine stateMachine)
+        {
+            yield return new WaitForSeconds(1.0f);
+            GlobalAudioSource.Instance.PlayOneShot(GlobalAudioSource.Instance.SfxContainer.GoSfx);
             
             stateMachine.SetState(stateMachine.AwaitingForRoomEnter);
         }

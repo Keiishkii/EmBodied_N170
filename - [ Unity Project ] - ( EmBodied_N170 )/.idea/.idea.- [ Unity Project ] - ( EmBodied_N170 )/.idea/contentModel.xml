@@ -121,6 +121,10 @@
             </e>
             <e p="RoomManager.cs" t="Include" />
           </e>
+          <e p="- [ Audio ] -" t="Include">
+            <e p="GlobalAudioSource.cs" t="Include" />
+            <e p="SfxContainer.cs" t="Include" />
+          </e>
           <e p="- [ Data ] -" t="Include">
             <e p="- [ Data Collection ] -" t="Include">
               <e p="- [ Data Events ] -" t="Include">
@@ -145,6 +149,7 @@
             </e>
             <e p="- [ Enums ] -" t="Include">
               <e p="Handedness_Enum.cs" t="Include" />
+              <e p="QuestionDecor_Enum.cs" t="Include" />
               <e p="Room_Enum.cs" t="Include" />
             </e>
             <e p="- [ Questions ] -" t="Include">
@@ -177,7 +182,6 @@
             <e p="S_Ghost.shader" t="Include" />
           </e>
         </e>
-        <e p="InputTest.cs" t="Include" />
       </e>
       <e p="obj" t="ExcludeRecursive" />
       <e p="Packages" t="ExcludeRecursive" />

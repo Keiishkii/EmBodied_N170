@@ -23,7 +23,7 @@ namespace StateMachine
             float playerXCoord = CameraTransform.position.x;
             if (Mathf.Abs(Vector3.SqrMagnitude(new Vector3(playerXCoord, 0, 0))) > _distanceToRoomEntrance * _distanceToRoomEntrance)
             {
-                DataCollector.CurrentTrialData.activeRoom = playerXCoord > 0 ? Enums.Room.ROOM_A : Enums.Room.ROOM_B;
+                DataCollector.CurrentTrialData.activeRoom = playerXCoord > 0 ? Enums.Room.RoomA : Enums.Room.RoomB;
                 stateMachine.SetState(stateMachine.AwaitingObjectPlacement);
             }
         }

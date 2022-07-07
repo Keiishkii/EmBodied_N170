@@ -2,7 +2,7 @@
 {
     public enum Room
     {
-        ROOM_A,
-        ROOM_B
+        RoomA,
+        RoomB
     }
 }

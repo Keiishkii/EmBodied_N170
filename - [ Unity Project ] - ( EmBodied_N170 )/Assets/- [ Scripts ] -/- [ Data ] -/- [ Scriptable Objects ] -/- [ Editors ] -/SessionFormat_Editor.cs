@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using Enums;
 using Questionnaire;
 using UnityEditor;
 using UnityEditor.Rendering;
@@ -56,37 +57,37 @@ namespace Data
             GUI.skin = EditorSkin;
             
             
-            GUILayout.BeginVertical(EditorSkin.customStyles[0]);
+            // ---- Session Data
+            #region Session Data
+            using(new EditorGUILayout.VerticalScope(EditorSkin.customStyles[0]))
             {
                 _approachDistanceProperty.floatValue = EditorGUILayout.FloatField("Approach Distance: ", _approachDistanceProperty.floatValue);
                 _participantHandednessProperty.enumValueIndex = (int) (Enums.Handedness) EditorGUILayout.EnumPopup("Handedness: ", (Enums.Handedness) _participantHandednessProperty.enumValueIndex);
             }
-            GUILayout.EndVertical();
-            
-            
-            
+            #endregion
+
+            // ---- Render Blocks
+            #region Render Blocks
             List<int> blocksToRemove = new List<int>();
             for (int blockIndex = 0; blockIndex < _blockListProperty.arraySize; blockIndex++)
             {
-                EditorGUILayout.BeginVertical(GUI.skin.customStyles[0]);
-                EditorGUILayout.BeginHorizontal();
+                using(new EditorGUILayout.VerticalScope(EditorSkin.customStyles[0]))
                 {
-                    EditorGUILayout.LabelField($"<b><color=#FFF>Block: {blockIndex + 1}</color></b>", EditorSkin.label);
-
-                    if (GUILayout.Button("x"))
+                    using(new EditorGUILayout.HorizontalScope())
                     {
-                        blocksToRemove.Add(blockIndex);
-                    }
-                }
-                EditorGUILayout.EndHorizontal();
-                
-                
-                EditorGUILayout.Separator();
+                        EditorGUILayout.LabelField($"<b><color=#FFF>Block: {blockIndex + 1}</color></b>", EditorSkin.label);
 
-                SerializedProperty blockProperty = _blockListProperty.GetArrayElementAtIndex(blockIndex);
-                RenderBlock(blockProperty);
-                
-                EditorGUILayout.EndVertical();
+                        if (GUILayout.Button("x"))
+                        {
+                            blocksToRemove.Add(blockIndex);
+                        }
+                    }
+                    EditorGUILayout.Separator();
+
+
+                    SerializedProperty blockProperty = _blockListProperty.GetArrayElementAtIndex(blockIndex);
+                    RenderBlockContent(blockProperty);
+                }
             }
 
             foreach (int blockIndex in blocksToRemove)
@@ -110,24 +111,34 @@ namespace Data
                 blockProperty.serializedObject.ApplyModifiedProperties();
                 blockProperty.serializedObject.Update();
             }
-
+            #endregion
+            
+            
             serializedObject.ApplyModifiedProperties();
             serializedObject.Update();
         }
 
 
 
-        private void RenderBlock(SerializedProperty blockProperty)
+        private void RenderBlockContent(SerializedProperty blockProperty)
         {
-            
             SerializedProperty trialListProperty = blockProperty.FindPropertyRelative("trials");
             SerializedProperty questionListProperty = blockProperty.FindPropertyRelative("blockQuestions");
+            SerializedProperty targetRoomProperty = blockProperty.FindPropertyRelative("targetRoom");
             
             
+            // ---- Block Data
+            #region Block Data
+            targetRoomProperty.enumValueIndex = (int) (Enums.Room) EditorGUILayout.EnumPopup("Target Room: ", (Enums.Room) targetRoomProperty.enumValueIndex);
             
-            GUILayout.BeginVertical(GUI.skin.customStyles[0]);
+            EditorGUILayout.Separator();
+            #endregion
+            
+            // ---- Block Questions
+            #region Block Questions:
+            using(new EditorGUILayout.VerticalScope(GUI.skin.customStyles[0]))
             {
-                EditorGUILayout.LabelField($"<b><color=#FFF>Questions: </color></b>", EditorSkin.label);
+                EditorGUILayout.LabelField($"<b><color=#FFF>Questionnaire Panels: </color></b>", EditorSkin.label);
                 
                 if (questionListProperty.arraySize <= 0) EditorGUILayout.HelpBox("There are no questions asked at the end of the trail. Add a question.", MessageType.Warning);
 
@@ -136,15 +147,14 @@ namespace Data
                 {
                     SerializedProperty questionProperty = questionListProperty.GetArrayElementAtIndex(questionIndex);
                     
-                    EditorGUILayout.BeginHorizontal();
+                    using(new EditorGUILayout.HorizontalScope())
                     {
-                        EditorGUILayout.LabelField($"<b><color=#FFF>Question: {questionIndex + 1}</color></b>", EditorSkin.label);
+                        EditorGUILayout.LabelField($"<b><color=#FFF>Panel {questionIndex + 1}:</color></b>", EditorSkin.label);
                         if (GUILayout.Button("x"))
                         {
                             questionsToRemove.Add(questionIndex);
                         }
                     }
-                    EditorGUILayout.EndHorizontal();
                     
                     
                     
@@ -179,18 +189,142 @@ namespace Data
                     {
                         case QuestionType_Enum.OneQuestion_SliderAnswer:
                         {
-                            SerializedProperty questionOneProperty = questionProperty.FindPropertyRelative("questionOne");
-                            questionOneProperty.stringValue = EditorGUILayout.TextField("Question One: ",  questionOneProperty.stringValue);
-                            
+                            SerializedProperty sliderQuestionProperty = questionProperty.FindPropertyRelative("sliderQuestion");
+                            {
+                                EditorGUI.indentLevel++;
+                                sliderQuestionProperty.stringValue = EditorGUILayout.TextField("Question: ", sliderQuestionProperty.stringValue);
+                                EditorGUI.indentLevel--;
+
+                                SerializedProperty questionDecorTypeProperty = questionProperty.FindPropertyRelative("sliderQuestionDecorType");
+                                QuestionDecor_Enum questionDecorType = (QuestionDecor_Enum) EditorGUILayout.EnumPopup("Question Decor Type: ",  (QuestionDecor_Enum) questionDecorTypeProperty.enumValueIndex);
+                                questionDecorTypeProperty.enumValueIndex = (int) questionDecorType;
+                                switch (questionDecorType)
+                                {
+                                    case QuestionDecor_Enum.Text:
+                                    {
+                                        SerializedProperty sliderMinimum = questionProperty.FindPropertyRelative("sliderQuestionDecorMinimumText");
+                                        sliderMinimum.stringValue = EditorGUILayout.TextField("Min: ", sliderMinimum.stringValue);
+                                        
+                                        SerializedProperty sliderMaximum = questionProperty.FindPropertyRelative("sliderQuestionDecorMaximumText");
+                                        sliderMaximum.stringValue = EditorGUILayout.TextField("Max: ", sliderMaximum.stringValue);
+
+                                    } break;
+                                    case QuestionDecor_Enum.Image:
+                                    {
+                                        EditorGUI.indentLevel++;
+                                        
+                                        SerializedProperty sliderMinimum = questionProperty.FindPropertyRelative("sliderQuestionDecorMinimumSprite");
+                                        using (new EditorGUILayout.HorizontalScope(_editorSkin.customStyles[1]))
+                                        {
+                                            EditorGUILayout.LabelField($"Object: {((sliderMinimum.objectReferenceValue == null) ? "Name does not exist" : sliderMinimum.objectReferenceValue.name)}");
+                                            sliderMinimum.objectReferenceValue = EditorGUILayout.ObjectField(sliderMinimum.objectReferenceValue, typeof(Texture2D), false);
+                                        }
+                                        
+                                        SerializedProperty sliderMaximum = questionProperty.FindPropertyRelative("sliderQuestionDecorMaximumSprite");
+                                        using (new EditorGUILayout.HorizontalScope(_editorSkin.customStyles[1]))
+                                        {
+                                            EditorGUILayout.LabelField($"Object: {((sliderMaximum.objectReferenceValue == null) ? "Name does not exist" : sliderMaximum.objectReferenceValue.name)}");
+                                            sliderMaximum.objectReferenceValue = EditorGUILayout.ObjectField(sliderMaximum.objectReferenceValue, typeof(Texture2D), false);
+                                        }
+                                        
+                                        EditorGUI.indentLevel--;
+                                    } break;
+                                }
+                            }
                         } break;
                         case QuestionType_Enum.TwoQuestion_SliderAnswer:
                         {
-                            SerializedProperty questionOneProperty = questionProperty.FindPropertyRelative("questionOne");
-                            questionOneProperty.stringValue = EditorGUILayout.TextField("Question One: ",  questionOneProperty.stringValue);
+                            #region Slider Question Two
+                            {
+                                EditorGUI.indentLevel++;
+                                SerializedProperty sliderQuestionProperty = questionProperty.FindPropertyRelative("sliderOneQuestion");
+                                sliderQuestionProperty.stringValue = EditorGUILayout.TextField("Question: ", sliderQuestionProperty.stringValue);
+                                EditorGUI.indentLevel--;
+
+                                SerializedProperty questionDecorTypeProperty = questionProperty.FindPropertyRelative("sliderOneQuestionDecorType");
+                                QuestionDecor_Enum questionDecorType = (QuestionDecor_Enum) EditorGUILayout.EnumPopup("Question Decor Type: ",  (QuestionDecor_Enum) questionDecorTypeProperty.enumValueIndex);
+                                questionDecorTypeProperty.enumValueIndex = (int) questionDecorType;
+                                switch (questionDecorType)
+                                {
+                                    case QuestionDecor_Enum.Text:
+                                    {
+                                        SerializedProperty sliderMinimum = questionProperty.FindPropertyRelative("sliderOneQuestionDecorMinimumText");
+                                        sliderMinimum.stringValue = EditorGUILayout.TextField("Min: ", sliderMinimum.stringValue);
+                                        
+                                        SerializedProperty sliderMaximum = questionProperty.FindPropertyRelative("sliderOneQuestionDecorMaximumText");
+                                        sliderMaximum.stringValue = EditorGUILayout.TextField("Max: ", sliderMaximum.stringValue);
+
+                                    } break;
+                                    case QuestionDecor_Enum.Image:
+                                    {
+                                        EditorGUI.indentLevel++;
+                                        
+                                        SerializedProperty sliderMinimum = questionProperty.FindPropertyRelative("sliderOneQuestionDecorMinimumSprite");
+                                        using (new EditorGUILayout.HorizontalScope(_editorSkin.customStyles[1]))
+                                        {
+                                            EditorGUILayout.LabelField($"Object: {((sliderMinimum.objectReferenceValue == null) ? "Name does not exist" : sliderMinimum.objectReferenceValue.name)}");
+                                            sliderMinimum.objectReferenceValue = EditorGUILayout.ObjectField(sliderMinimum.objectReferenceValue, typeof(Texture2D), false);
+                                        }
+                                        
+                                        SerializedProperty sliderMaximum = questionProperty.FindPropertyRelative("sliderOneQuestionDecorMaximumSprite");
+                                        using (new EditorGUILayout.HorizontalScope(_editorSkin.customStyles[1]))
+                                        {
+                                            EditorGUILayout.LabelField($"Object: {((sliderMaximum.objectReferenceValue == null) ? "Name does not exist" : sliderMaximum.objectReferenceValue.name)}");
+                                            sliderMaximum.objectReferenceValue = EditorGUILayout.ObjectField(sliderMaximum.objectReferenceValue, typeof(Texture2D), false);
+                                        }
+                                        
+                                        EditorGUI.indentLevel--;
+                                    } break;
+                                }
+                            }
+                            #endregion
                             
-                            SerializedProperty questionTwoProperty = questionProperty.FindPropertyRelative("questionTwo");
-                            questionTwoProperty.stringValue = EditorGUILayout.TextField("Question Two: ",  questionTwoProperty.stringValue);
+                            EditorGUILayout.Separator();
                             
+                            #region Slider Question Two
+                            {
+                                EditorGUI.indentLevel++;
+                                SerializedProperty sliderQuestionProperty = questionProperty.FindPropertyRelative("sliderTwoQuestion");
+                                sliderQuestionProperty.stringValue = EditorGUILayout.TextField("Question: ", sliderQuestionProperty.stringValue);
+                                EditorGUI.indentLevel--;
+
+                                SerializedProperty questionDecorTypeProperty = questionProperty.FindPropertyRelative("sliderTwoQuestionDecorType");
+                                QuestionDecor_Enum questionDecorType = (QuestionDecor_Enum) EditorGUILayout.EnumPopup("Question Decor Type: ",  (QuestionDecor_Enum) questionDecorTypeProperty.enumValueIndex);
+                                questionDecorTypeProperty.enumValueIndex = (int) questionDecorType;
+                                switch (questionDecorType)
+                                {
+                                    case QuestionDecor_Enum.Text:
+                                    {
+                                        SerializedProperty sliderMinimum = questionProperty.FindPropertyRelative("sliderTwoQuestionDecorMinimumText");
+                                        sliderMinimum.stringValue = EditorGUILayout.TextField("Min: ", sliderMinimum.stringValue);
+                                        
+                                        SerializedProperty sliderMaximum = questionProperty.FindPropertyRelative("sliderTwoQuestionDecorMaximumText");
+                                        sliderMaximum.stringValue = EditorGUILayout.TextField("Max: ", sliderMaximum.stringValue);
+
+                                    } break;
+                                    case QuestionDecor_Enum.Image:
+                                    {
+                                        EditorGUI.indentLevel++;
+                                        
+                                        SerializedProperty sliderMinimum = questionProperty.FindPropertyRelative("sliderTwoQuestionDecorMinimumSprite");
+                                        using (new EditorGUILayout.HorizontalScope(_editorSkin.customStyles[1]))
+                                        {
+                                            EditorGUILayout.LabelField($"Object: {((sliderMinimum.objectReferenceValue == null) ? "Name does not exist" : sliderMinimum.objectReferenceValue.name)}");
+                                            sliderMinimum.objectReferenceValue = EditorGUILayout.ObjectField(sliderMinimum.objectReferenceValue, typeof(Texture2D), false);
+                                        }
+                                        
+                                        SerializedProperty sliderMaximum = questionProperty.FindPropertyRelative("sliderTwoQuestionDecorMaximumSprite");
+                                        using (new EditorGUILayout.HorizontalScope(_editorSkin.customStyles[1]))
+                                        {
+                                            EditorGUILayout.LabelField($"Object: {((sliderMaximum.objectReferenceValue == null) ? "Name does not exist" : sliderMaximum.objectReferenceValue.name)}");
+                                            sliderMaximum.objectReferenceValue = EditorGUILayout.ObjectField(sliderMaximum.objectReferenceValue, typeof(Texture2D), false);
+                                        }
+                                        
+                                        EditorGUI.indentLevel--;
+                                    } break;
+                                }
+                            }
+                            #endregion
                         } break;
                     }
                     
@@ -218,17 +352,19 @@ namespace Data
                     questionProperty.serializedObject.Update();
                 }
             }
-            GUILayout.EndVertical();
+            #endregion
 
-            
-            
-            
-            GUILayout.BeginVertical(GUI.skin.customStyles[0]);
+            // ---- Block Trials
+            #region Render Block Trials
+            using(new EditorGUILayout.VerticalScope(EditorSkin.customStyles[0]))
             {
-                EditorGUILayout.LabelField($"<b><color=#FFF>Trials: </color></b>", EditorSkin.label);
+                int trialCount = trialListProperty.arraySize;
+                using(new EditorGUILayout.HorizontalScope())
+                {
+                    EditorGUILayout.LabelField($"<b><color=#FFF>Trials: </color></b>", EditorSkin.label);
+                    trialCount = EditorGUILayout.IntField(trialCount);
+                }
                 
-                int value = trialListProperty.arraySize;
-                int trialCount = EditorGUILayout.IntField("Trial Count: ", value);
                 if (trialCount != trialListProperty.arraySize)
                 {
                     while (trialCount > trialListProperty.arraySize)
@@ -253,15 +389,14 @@ namespace Data
                 {
                     EditorGUILayout.Separator();
 
-                    EditorGUILayout.BeginHorizontal();
+                    using(new EditorGUILayout.HorizontalScope())
                     {
-                        EditorGUILayout.LabelField($"<b><color=#FFF>Trial: {trialIndex + 1}</color></b>", EditorSkin.label);
+                        EditorGUILayout.LabelField($"<b><color=#FFF>Trial {trialIndex + 1}:</color></b>", EditorSkin.label);
                         if (GUILayout.Button("x"))
                         {
                             trialsToRemove.Add(trialIndex);
                         }
                     }
-                    EditorGUILayout.EndHorizontal();
 
                     EditorGUILayout.Space(5);
                     
@@ -311,76 +446,7 @@ namespace Data
                     trialProperty.serializedObject.Update();
                 }
             }
-            GUILayout.EndVertical();
-            
-            
-            /*
-
-            EditorGUILayout.Separator();
-            
-            List<int> questionsToRemove = new List<int>();
-            foreach (var (blockQuestion, questionIndex) in block.blockQuestions.Select((value, i) => (value, i)))
-            {
-                EditorGUILayout.Separator();
-                EditorGUILayout.BeginHorizontal();
-                {
-                    EditorGUILayout.LabelField($"Question: {questionIndex + 1}");
-                    if (GUILayout.Button("x"))
-                        questionsToRemove.Add(questionIndex);
-                }
-                EditorGUILayout.EndHorizontal();
-
-                EditorGUI.indentLevel += 1;
-                switch (blockQuestion)
-                {
-                    case BlockQuestion_OneQuestionSliderAnswer question:
-                    {
-                        question.questionOne = EditorGUILayout.TextArea(question.questionOne);
-                    } break;
-                    case BlockQuestion_TwoQuestionSliderAnswer question:
-                    {
-                        question.questionOne = EditorGUILayout.TextArea(question.questionOne);
-                        question.questionTwo = EditorGUILayout.TextArea(question.questionTwo);
-                    } break;
-                }
-
-                EditorGUI.indentLevel -= 1;
-            }
-
-            foreach (int questionIndex in questionsToRemove)
-                block.blockQuestions.RemoveAt(questionIndex);
-
-            
-            EditorGUILayout.Separator();
-
-            EditorGUILayout.BeginHorizontal();
-            _questionType = (QuestionType) EditorGUILayout.EnumPopup(_questionType);
-            if (GUILayout.Button("Add new question to block"))
-            {
-                switch (_questionType)
-                {
-                    case QuestionType.ChooseAPanelType:
-                    {
-
-                    } break;
-                    case QuestionType.OneQuestionWithSliderAnswer:
-                    {
-                        block.blockQuestions.Add(new BlockQuestion_OneQuestionSliderAnswer());
-                    } break;
-                    case QuestionType.TwoQuestionsWithSliderAnswer:
-                    {
-                        block.blockQuestions.Add(new BlockQuestion_TwoQuestionSliderAnswer());
-                    } break;
-                }
-            }
-
-            EditorGUILayout.EndHorizontal();
-            
-
-            if (_blockListProperty.arraySize <= 0)
-                EditorGUILayout.HelpBox("There are no questions asked at the end of the trail. Add a question.", MessageType.Warning);
-            
-            */
+            #endregion
         }
     }
 }

@@ -2,20 +2,41 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2c24035b-ac20-4dc8-acac-d2bc10f44b7e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- - [ Game ] - -/- [ NPC ] -/- [ States ] -/NPCState_Idling.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- - [ Game ] - -/- [ NPC ] -/- [ States ] -/NPCState_Idling.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- - [ Game ] - -/- [ NPC ] -/- [ States ] -/NPCState_LookingAtPlayer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- - [ Game ] - -/- [ NPC ] -/- [ States ] -/NPCState_LookingAtPlayer.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- [ Data ] -/- [ Enums ] -/QuestionDecor_Enum.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- [ Data ] -/- [ Enums ] -/QuestionDecor_Enum.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.- [ Unity Project ] - ( EmBodied_N170 )/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.- [ Unity Project ] - ( EmBodied_N170 )/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.- [ Unity Project ] - ( EmBodied_N170 )/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.- [ Unity Project ] - ( EmBodied_N170 )/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.- [ Unity Project ] - ( EmBodied_N170 )/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.- [ Unity Project ] - ( EmBodied_N170 )/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/- [ Materials ] -/- [ Entities ] -/- Man (0200)/Skin.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/- [ Materials ] -/- [ Entities ] -/- Man (0200)/Skin.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/- [ Animation ] -/- Animators/Left Hand Controller.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/- [ Animation ] -/- Animators/Left Hand Controller.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/- [ Animation ] -/- Animators/Right Hand Controller.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/- [ Animation ] -/- Animators/Right Hand Controller.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/- [ Data ] -/- [ Session Format Objects ] -/Session Test.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/- [ Data ] -/- [ Session Format Objects ] -/Session Test.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/- [ Prefabs ] -/- [ NPC's ] -/NPC (Female).prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/- [ Prefabs ] -/- [ NPC's ] -/NPC (Female).prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/- [ Prefabs ] -/- [ NPC's ] -/NPC (Male).prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/- [ Prefabs ] -/- [ NPC's ] -/NPC (Male).prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- - [ Game ] - -/- [ NPC ] -/- [ Data ] -/NPCData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- - [ Game ] - -/- [ NPC ] -/- [ Data ] -/NPCData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- - [ Game ] - -/- [ NPC ] -/NPCController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- - [ Game ] - -/- [ NPC ] -/NPCController.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- - [ Game ] - -/- [ NPC ] -/NPCManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- - [ Game ] - -/- [ NPC ] -/NPCManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/- [ Scenes ] -/Main Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/- [ Scenes ] -/Main Scene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- - [ Game ] - -/- - [ State Machine ] - -/- [ States ] -/State_AwaitingForRoomEnter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- - [ Game ] - -/- - [ State Machine ] - -/- [ States ] -/State_AwaitingForRoomEnter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- - [ Game ] - -/- - [ State Machine ] - -/- [ States ] -/State_AwaitingObjectPlacement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- - [ Game ] - -/- - [ State Machine ] - -/- [ States ] -/State_AwaitingObjectPlacement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- - [ Game ] - -/- - [ State Machine ] - -/- [ States ] -/State_LightsOn.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- - [ Game ] - -/- - [ State Machine ] - -/- [ States ] -/State_LightsOn.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- - [ Game ] - -/- - [ State Machine ] - -/- [ States ] -/State_Questionnaire.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- - [ Game ] - -/- - [ State Machine ] - -/- [ States ] -/State_Questionnaire.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- - [ Game ] - -/- - [ State Machine ] - -/- [ States ] -/State_SessionStart.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- - [ Game ] - -/- - [ State Machine ] - -/- [ States ] -/State_SessionStart.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- - [ Game ] - -/- - [ State Machine ] - -/- [ States ] -/State_TrialStart.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- - [ Game ] - -/- - [ State Machine ] - -/- [ States ] -/State_TrialStart.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- - [ Game ] - -/- [ Items ] -/ObjectPlacementCollider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- - [ Game ] - -/- [ Items ] -/ObjectPlacementCollider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- - [ Game ] - -/- [ NPC ] -/- [ Data ] -/NPCBoneReferences.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- - [ Game ] - -/- [ NPC ] -/- [ Data ] -/NPCBoneReferences.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- - [ Game ] - -/- [ NPC ] -/- [ States ] -/NPCState_LookingAtPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- - [ Game ] - -/- [ NPC ] -/- [ States ] -/NPCState_LookingAtPlayer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- - [ Game ] - -/- [ NPC ] -/NPCController_StateMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- - [ Game ] - -/- [ NPC ] -/NPCController_StateMachine.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- - [ Game ] - -/- [ UI ] -/- [ Panels ] -/OneQuestionSliderAnswerPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- - [ Game ] - -/- [ UI ] -/- [ Panels ] -/OneQuestionSliderAnswerPanel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- - [ Game ] - -/- [ UI ] -/- [ Panels ] -/TwoQuestionSliderAnswerPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- - [ Game ] - -/- [ UI ] -/- [ Panels ] -/TwoQuestionSliderAnswerPanel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- - [ Game ] - -/- [ UI ] -/MainCanvas.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- - [ Game ] - -/- [ UI ] -/MainCanvas.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- - [ Game ] - -/RoomManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- - [ Game ] - -/RoomManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- [ Data ] -/- [ Enums ] -/Room_Enum.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- [ Data ] -/- [ Enums ] -/Room_Enum.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- [ Data ] -/- [ Questions ] -/BlockQuestion_OneQuestionSliderAnswer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- [ Data ] -/- [ Questions ] -/BlockQuestion_OneQuestionSliderAnswer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- [ Data ] -/- [ Questions ] -/BlockQuestion_TwoQuestionSliderAnswer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- [ Data ] -/- [ Questions ] -/BlockQuestion_TwoQuestionSliderAnswer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- [ Data ] -/- [ Scriptable Objects ] -/- [ Editors ] -/SessionFormat_Editor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- [ Data ] -/- [ Scriptable Objects ] -/- [ Editors ] -/SessionFormat_Editor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- [ Data ] -/Block.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- [ Data ] -/Block.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- [ VR ] -/- [ Hand Animation ] -/HandAnimationController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- [ VR ] -/- [ Hand Animation ] -/HandAnimationController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- [ VR ] -/RayInteractionController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/- [ Scripts ] -/- [ VR ] -/RayInteractionController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InputTest.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InputTest.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/GUISkin.guiskin" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/GUISkin.guiskin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -28,6 +49,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/- [ Scripts ] -/- - [ Game ] - -/- [ NPC ] -/NPCController_StateMachine.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/- [ Scripts ] -/- [ Audio ] -/SfxContainer.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -42,19 +64,34 @@
       <option value="$PROJECT_DIR$/Assets/- [ Scripts ] -/- - [ Game ] - -/- - [ State Machine ] - -/- [ States ] -/State_BlockStart.cs" />
       <option value="$PROJECT_DIR$/Assets/- [ Scripts ] -/- - [ Game ] - -/- - [ State Machine ] - -/GameControllerStateMachine.cs" />
       <option value="$PROJECT_DIR$/Assets/- [ Scripts ] -/- [ Data ] -/- [ Data Collection ] -/DataCollector.cs" />
-      <option value="$PROJECT_DIR$/Assets/- [ Scripts ] -/- - [ Game ] - -/- - [ State Machine ] - -/- [ States ] -/State_TrialStart.cs" />
-      <option value="$PROJECT_DIR$/Assets/- [ Scripts ] -/- - [ Game ] - -/- - [ State Machine ] - -/- [ States ] -/State_AwaitingObjectPlacement.cs" />
-      <option value="$PROJECT_DIR$/Assets/- [ Scripts ] -/- - [ Game ] - -/- - [ State Machine ] - -/- [ States ] -/State_AwaitingForRoomEnter.cs" />
-      <option value="$PROJECT_DIR$/Assets/- [ Scripts ] -/- - [ Game ] - -/- [ UI ] -/MainCanvas.cs" />
       <option value="$PROJECT_DIR$/Assets/- [ Scripts ] -/- - [ Game ] - -/- [ UI ] -/- [ Panels ] -/QuestionPanel_Interface.cs" />
-      <option value="$PROJECT_DIR$/Assets/- [ Scripts ] -/- - [ Game ] - -/- [ UI ] -/- [ Panels ] -/TwoQuestionSliderAnswerPanel.cs" />
-      <option value="$PROJECT_DIR$/Assets/- [ Scripts ] -/- - [ Game ] - -/- [ UI ] -/- [ Panels ] -/OneQuestionSliderAnswerPanel.cs" />
       <option value="$PROJECT_DIR$/Assets/- [ Scripts ] -/- - [ Game ] - -/- [ NPC ] -/- [ States ] -/NPCState_Interface.cs" />
       <option value="$PROJECT_DIR$/Assets/- [ Scripts ] -/- - [ Game ] - -/- [ NPC ] -/- [ States ] -/NPCState_Idling.cs" />
       <option value="$PROJECT_DIR$/Assets/- [ Scripts ] -/- - [ Game ] - -/- [ NPC ] -/- [ Data ] -/NPCData.cs" />
       <option value="$PROJECT_DIR$/Assets/- [ Scripts ] -/- - [ Game ] - -/- [ NPC ] -/NPCManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/- [ Scripts ] -/- - [ Game ] - -/- [ NPC ] -/NPCController_StateMachine.cs" />
+      <option value="$PROJECT_DIR$/Assets/- [ Scripts ] -/- [ VR ] -/RayInteractionController.cs" />
+      <option value="$PROJECT_DIR$/Assets/- [ Scripts ] -/- [ VR ] -/- [ Hand Animation ] -/HandAnimationController.cs" />
+      <option value="$PROJECT_DIR$/Assets/- [ Scripts ] -/- - [ Game ] - -/- - [ State Machine ] - -/- [ States ] -/State_SessionStart.cs" />
+      <option value="$PROJECT_DIR$/Assets/- [ Scripts ] -/- - [ Game ] - -/- - [ State Machine ] - -/- [ States ] -/State_Questionnaire.cs" />
       <option value="$PROJECT_DIR$/Assets/- [ Scripts ] -/- - [ Game ] - -/- [ NPC ] -/- [ States ] -/NPCState_LookingAtPlayer.cs" />
+      <option value="$PROJECT_DIR$/Assets/- [ Scripts ] -/- - [ Game ] - -/- [ NPC ] -/- [ Data ] -/NPCBoneReferences.cs" />
+      <option value="$PROJECT_DIR$/Assets/- [ Scripts ] -/- - [ Game ] - -/- - [ State Machine ] - -/- [ States ] -/State_TrialStart.cs" />
+      <option value="$PROJECT_DIR$/Assets/- [ Scripts ] -/- [ Data ] -/Block.cs" />
+      <option value="$PROJECT_DIR$/Assets/- [ Scripts ] -/- [ Data ] -/- [ Enums ] -/Room_Enum.cs" />
+      <option value="$PROJECT_DIR$/Assets/- [ Scripts ] -/- - [ Game ] - -/RoomManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/- [ Scripts ] -/- - [ Game ] - -/- - [ State Machine ] - -/- [ States ] -/State_AwaitingForRoomEnter.cs" />
+      <option value="$PROJECT_DIR$/Assets/- [ Scripts ] -/- [ Data ] -/- [ Enums ] -/QuestionDecor_Enum.cs" />
+      <option value="$PROJECT_DIR$/Assets/- [ Scripts ] -/- [ Data ] -/- [ Questions ] -/BlockQuestion_OneQuestionSliderAnswer.cs" />
+      <option value="$PROJECT_DIR$/Assets/- [ Scripts ] -/- [ Data ] -/- [ Questions ] -/BlockQuestion_TwoQuestionSliderAnswer.cs" />
+      <option value="$PROJECT_DIR$/Assets/- [ Scripts ] -/- [ Data ] -/- [ Scriptable Objects ] -/- [ Editors ] -/SessionFormat_Editor.cs" />
+      <option value="$PROJECT_DIR$/Assets/- [ Scripts ] -/- - [ Game ] - -/- [ UI ] -/- [ Panels ] -/OneQuestionSliderAnswerPanel.cs" />
+      <option value="$PROJECT_DIR$/Assets/- [ Scripts ] -/- - [ Game ] - -/- [ UI ] -/- [ Panels ] -/TwoQuestionSliderAnswerPanel.cs" />
+      <option value="$PROJECT_DIR$/Assets/- [ Scripts ] -/- - [ Game ] - -/- [ UI ] -/MainCanvas.cs" />
+      <option value="$PROJECT_DIR$/Assets/- [ Scripts ] -/- - [ Game ] - -/- - [ State Machine ] - -/- [ States ] -/State_AwaitingObjectPlacement.cs" />
+      <option value="$PROJECT_DIR$/Assets/- [ Scripts ] -/- - [ Game ] - -/- [ NPC ] -/NPCController_StateMachine.cs" />
+      <option value="$PROJECT_DIR$/Assets/GlobalAudioSource.cs" />
+      <option value="$PROJECT_DIR$/Assets/- [ Scripts ] -/- [ Audio ] -/SfxContainer.cs" />
+      <option value="$PROJECT_DIR$/Assets/- [ Scripts ] -/- - [ Game ] - -/- - [ State Machine ] - -/- [ States ] -/State_LightsOn.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="2AxVQsrVyl80yDywGtLgj8iUv3l" />
@@ -101,6 +138,7 @@
       <workItem from="1655951236146" duration="184000" />
       <workItem from="1655952511457" duration="5194000" />
       <workItem from="1656241165407" duration="12898000" />
+      <workItem from="1657072440095" duration="21024000" />
     </task>
     <servers />
   </component>

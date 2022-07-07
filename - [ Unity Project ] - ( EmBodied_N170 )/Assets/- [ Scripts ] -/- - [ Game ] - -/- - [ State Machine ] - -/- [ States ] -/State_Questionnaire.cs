@@ -12,7 +12,13 @@ namespace StateMachine
         private MainCanvas _mainCanvas;
         private MainCanvas MainCanvas => _mainCanvas ?? (_mainCanvas = GameObject.FindObjectOfType<MainCanvas>());
 
+        private RayInteractionController _rayInteractionController;
+        private RayInteractionController RayInteractionController => _rayInteractionController ?? (_rayInteractionController = GameObject.FindObjectOfType<RayInteractionController>());
 
+        private HandAnimationController _handAnimationController;
+        private HandAnimationController HandAnimationController => _handAnimationController ?? (_handAnimationController = GameObject.FindObjectOfType<HandAnimationController>());
+        
+        
 
         public override void OnEnterState(GameControllerStateMachine stateMachine)
         {
@@ -22,6 +28,11 @@ namespace StateMachine
                 timeSinceProgramStart = Time.realtimeSinceStartup,
                 currentState = "Questionnaire"
             });
+
+            HandAnimationController.LeftHandState = HandAnimationState.Default;
+            HandAnimationController.RightHandState = HandAnimationState.Default;
+            
+            RayInteractionController.RayVisibility = true;
             
             
             Vector3 playerPosition = CameraOffset.position;

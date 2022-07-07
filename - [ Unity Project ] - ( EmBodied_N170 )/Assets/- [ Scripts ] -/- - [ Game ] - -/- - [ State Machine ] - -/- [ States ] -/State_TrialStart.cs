@@ -80,20 +80,23 @@ namespace StateMachine
                 cameraOffsetTransform = PlayerController.transform,
                 playerHeadTransform = PlayerController.cameraTransform,
                 npcHeadTransform = NPCManager.NpcOneData.npcBoneReferences.head,
+                npcHeadTopTransform = NPCManager.NpcOneData.npcBoneReferences.headTop,
                 mainCanvasTransform = MainCanvas.transform;
 
             Vector3
                 positionOfOffset = cameraOffsetTransform.position,
                 positionOfHead = playerHeadTransform.position,
                 positionOfNPCHead = npcHeadTransform.position,
+                positionOfNPCHeadTop = npcHeadTopTransform.position,
                 mainCanvasPosition = mainCanvasTransform.position;
 
             Vector3 correctedPlayerHeadPosition = positionOfHead - positionOfOffset;
+            Vector3 correctedNPCHeadPosition = (positionOfNPCHead + positionOfNPCHeadTop) / 2.0f;
             
             
             
             Plane canvasPlane = new Plane(mainCanvasTransform.forward * -1, mainCanvasPosition);
-            Ray ray = new Ray(positionOfHead, Vector3.Normalize(positionOfNPCHead - correctedPlayerHeadPosition));
+            Ray ray = new Ray(positionOfHead, Vector3.Normalize(correctedNPCHeadPosition - correctedPlayerHeadPosition));
 
             if (canvasPlane.Raycast(ray, out float distance))
             {

@@ -25,16 +25,38 @@ MonoBehaviour:
         trials:
         - rid: 1
         blockQuestions:
-        - rid: 2
+        - rid: 969770515676266510
+        - rid: 969770515676266512
+        targetRoom: 0
     - rid: 1
       type: {class: Trial, ns: Data, asm: Assembly-CSharp}
       data:
         roomA_NPCAvatar: {fileID: 5367999664640436700, guid: b7e124d27fc001e499ec505b645183bd, type: 3}
         roomB_NPCAvatar: {fileID: 325559317196043166, guid: a070698e245c9f947b2a60538df84797, type: 3}
         heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
-    - rid: 2
+    - rid: 969770515676266510
       type: {class: BlockQuestion_TwoQuestionSliderAnswer, ns: Questionnaire, asm: Assembly-CSharp}
       data:
         questionType: 2
-        questionOne: 'Answer 1:'
-        questionTwo: 'Answer 2:'
+        sliderOneQuestion: 'Question 1:'
+        sliderOneQuestionDecorType: 1
+        sliderOneQuestionDecorMinimumText: ASD
+        sliderOneQuestionDecorMaximumText: ASD
+        sliderOneQuestionDecorMinimumSprite: {fileID: 2800000, guid: 8df3dcaeb4484ed42bd5cc56a82f23ae, type: 3}
+        sliderOneQuestionDecorMaximumSprite: {fileID: 2800000, guid: 20aca9ec6bc9a004f8e18262770356d2, type: 3}
+        sliderTwoQuestion: 'Question 2:'
+        sliderTwoQuestionDecorType: 0
+        sliderTwoQuestionDecorMinimumText: AHHH
+        sliderTwoQuestionDecorMaximumText: asdkasd
+        sliderTwoQuestionDecorMinimumSprite: {fileID: 2800000, guid: aa894e3580fdd334a885997d81b382b9, type: 3}
+        sliderTwoQuestionDecorMaximumSprite: {fileID: 2800000, guid: 24006734370f0154e8aec6efd6f0e0ac, type: 3}
+    - rid: 969770515676266512
+      type: {class: BlockQuestion_OneQuestionSliderAnswer, ns: Questionnaire, asm: Assembly-CSharp}
+      data:
+        questionType: 1
+        sliderQuestion: 
+        sliderQuestionDecorType: 1
+        sliderQuestionDecorMinimumText: 
+        sliderQuestionDecorMaximumText: 
+        sliderQuestionDecorMinimumSprite: {fileID: 2800000, guid: 6beda29ad95d53645a9e1fc4bef14ba6, type: 3}
+        sliderQuestionDecorMaximumSprite: {fileID: 2800000, guid: 65265e5dcd1537a44a608e022d9d7993, type: 3}

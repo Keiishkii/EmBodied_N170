@@ -9,7 +9,6 @@ namespace NPC_Controller
     public class NPCController_StateMachine : MonoBehaviour
     {
         private NPCState_Interface _currentState;
-
         public NPCState_Interface SetState
         {
             set
@@ -39,7 +38,7 @@ namespace NPC_Controller
 
         private GameControllerStateMachine _gameController;
         public GameControllerStateMachine GameController => _gameController ?? (_gameController = FindObjectOfType<GameControllerStateMachine>());
-
+        
         
         [SerializeField] private Transform _lookAtTarget;
         public Transform LookAtTarget => _lookAtTarget;
@@ -50,19 +49,38 @@ namespace NPC_Controller
         
         [SerializeField] private AnimationCurve _lookAtMotionCurve;
         public AnimationCurve LookAtMotionCurve => _lookAtMotionCurve;
+        
+        private AudioSource _audioSource;
 
         
         
         
+
+        private void Awake()
+        {
+            _audioSource = GetComponent<AudioSource>();
+        }
 
         private void Start()
         {
             SetState = IdleState;
         }
 
+        private void OnEnable() { State_AwaitingObjectPlacement.ObjectPlaced.AddListener(OnObjectPlacement); }
+        private void OnDisable() { State_AwaitingObjectPlacement.ObjectPlaced.RemoveListener(OnObjectPlacement); }
+
+        
+        
         private void Update()
         {
             _currentState.Update(this);
+        }
+
+
+
+        private void OnObjectPlacement(GameControllerStateMachine gameControllerStateMachine)
+        {
+            _audioSource.Play();
         }
     }
 }

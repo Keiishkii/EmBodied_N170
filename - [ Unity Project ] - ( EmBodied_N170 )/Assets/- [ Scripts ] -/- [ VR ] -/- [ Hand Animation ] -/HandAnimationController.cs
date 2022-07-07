@@ -16,6 +16,8 @@ public class HandAnimationController : MonoBehaviour
         set
         {
             if (_leftHandState == value) return;
+            
+            Debug.Log($"Left Hand State: {_leftHandState}");
             switch (value)
             {
                 case HandAnimationState.Default:
@@ -42,6 +44,8 @@ public class HandAnimationController : MonoBehaviour
         set
         {
             if (_rightHandState == value) return;
+            
+            Debug.Log($"Right Hand State: {_rightHandState}");
             switch (value)
             {
                 case HandAnimationState.Default:

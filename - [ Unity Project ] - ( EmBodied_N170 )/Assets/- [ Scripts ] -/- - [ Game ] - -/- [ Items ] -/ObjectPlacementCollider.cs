@@ -30,7 +30,7 @@ public class ObjectPlacementCollider : MonoBehaviour
 
     private void OnObjectInPlacementZone(Collider other)
     {
-        State_AwaitingObjectPlacement.ColliderEntered.Invoke(GameControllerStateMachine);
+        State_AwaitingObjectPlacement.ObjectPlaced.Invoke(GameControllerStateMachine);
 
         Transform objectTransform = other.transform;
         HeldItemProperties properties = other.GetComponent<HeldItemProperties>();

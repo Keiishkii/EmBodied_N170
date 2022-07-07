@@ -7,8 +7,6 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class RayInteractionController : MonoBehaviour
 {
-    [SerializeField] private InputActionAsset _actionAsset;
-    
     [SerializeField] private GameObject _leftController;
     [SerializeField] private GameObject _leftReticule;
     private XRRayInteractor _leftControllerXRRayInteractor;
@@ -94,8 +92,8 @@ public class RayInteractionController : MonoBehaviour
             {
                 case Enums.Handedness.Left:
                 {
-                    HandAnimationController.LeftHandState = HandAnimationState.Pointing;
                     HandAnimationController.RightHandState = HandAnimationState.Default;
+                    HandAnimationController.LeftHandState = HandAnimationState.Pointing;
                     
                     _leftControllerLineRenderer.enabled = true;
                     _leftControllerXRRayInteractor.enabled = true;

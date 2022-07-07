@@ -11,5 +11,7 @@ namespace Data
     {
         [SerializeReference] public List<Trial> trials = new List<Trial>();
         [SerializeReference] public List<BlockQuestion> blockQuestions = new List<BlockQuestion>();
+        
+        public Enums.Room targetRoom;
     }
 }

@@ -34,13 +34,12 @@ namespace StateMachine
                 currentState = "Session Start"
             });
 
-
             HandAnimationController.LeftHandState = HandAnimationState.Default;
-            HandAnimationController.LeftHandState = HandAnimationState.Default;
-            
+            HandAnimationController.RightHandState = HandAnimationState.Default;
             
             RayInteractionController.RayVisibility = true;
             
+
             Vector3 newPosition = new Vector3(0, -3.95f, 0);
             CameraOffset.position = newPosition;
             

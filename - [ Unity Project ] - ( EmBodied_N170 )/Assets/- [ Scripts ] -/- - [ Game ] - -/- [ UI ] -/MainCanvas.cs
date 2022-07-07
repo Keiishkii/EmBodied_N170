@@ -117,14 +117,14 @@ namespace Questionnaire
                     {
                         _activePanel = _twoQuestionSliderAnswerPanel;
 
-                        _twoQuestionSliderAnswerPanel.SetActive(true);
+                        _activePanel.SetActive(true);
                         _twoQuestionSliderAnswerPanelScript.SetupPanel(ref question);
                     } break;
                     case BlockQuestion_OneQuestionSliderAnswer question:
                     {
-                        _activePanel = _twoQuestionSliderAnswerPanel;
+                        _activePanel = _oneQuestionSliderAnswerPanel;
 
-                        _oneQuestionSliderAnswerPanel.SetActive(true);
+                        _activePanel.SetActive(true);
                         _oneQuestionSliderAnswerPanelScript.SetupPanel(ref question);
                     } break;
                 }

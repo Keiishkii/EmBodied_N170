@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DataCollection
-{
-    public class BlockData
+namespace Data {
+    namespace DataCollection
     {
-        public readonly List<TrialData> trialData = new List<TrialData>();
+        public class BlockData
+        {
+            public Enums.Room activeRoom;
+            public readonly List<TrialData> trialData = new List<TrialData>();
+        }
     }
 }

@@ -53,9 +53,6 @@ public class NPCManager : MonoBehaviour
     {
         bool isRoomA = (position.x > 0);
         SetNPCTransformData(npcData, position, rotation);
-
-        //npcData.npcController.room = (isRoomA) ? Enums.Room.ROOM_A : Enums.Room.ROOM_B;
-        
         StartCoroutine(SetIK(npcData, isRoomA));
     }
 
@@ -77,6 +74,8 @@ public class NPCManager : MonoBehaviour
     private IEnumerator SetIK(NPCData npcData, bool isRoomA)
     {
         yield return new WaitForEndOfFrame();
+        
+        Debug.Log("NPC IK SET");
         
         SetNPCArmIK(npcData, isRoomA, false);
         SetNPCArmIK(npcData, isRoomA, true);
@@ -114,13 +113,16 @@ public class NPCManager : MonoBehaviour
             constraint = npcData.npcIKReferences.leftHandIKConstraint;
         }
         
-        
-        Vector3 handPosition = handTransform.position;
-        Vector3 targetPosition = new Vector3(handPosition.x, _deskHeight + _armClearance, handPosition.z);
+        Vector3 handTargetPosition = new Vector3()
+        {
+            x = handTransform.position.x,
+            y = _deskHeight + _armClearance,
+            z = handTransform.position.z
+        };
         
         hintAnchor.SetPositionAndRotation(elbowTransform.position, elbowTransform.rotation);
-        targetAnchor.SetPositionAndRotation(targetPosition, handTransform.rotation);
-        
+        targetAnchor.SetPositionAndRotation(handTargetPosition, Quaternion.Euler(0, ((isRoomA) ? 180 : 0), 180));
+
         constraint.weight = 1.0f;
     }
 
@@ -129,9 +131,9 @@ public class NPCManager : MonoBehaviour
     {
         Transform toeTransform, footTransform, legTransform;
         Transform targetAnchor, hintAnchor;
+        Transform root = npcData.npcBoneReferences.root;
         
         TwoBoneIKConstraint constraint;
-        
         
         if (isRight)
         {
@@ -155,20 +157,18 @@ public class NPCManager : MonoBehaviour
             
             constraint = npcData.npcIKReferences.leftFootIKConstraint;
         }
-        
-        
-        Vector3 footPosition = footTransform.position, toePosition = toeTransform.position;
-        Vector3 footIKTargetPosition = new Vector3(
-            footPosition.x,
-            footPosition.y - toePosition.y,
-            ((isRight) ? footPosition.z : footPosition.z));
 
-        Vector3 footIKHintPosition = footIKTargetPosition + new Vector3(0, 0.5f, 0);
-        
-        
-        hintAnchor.SetPositionAndRotation(footIKHintPosition, legTransform.rotation);
-        targetAnchor.SetPositionAndRotation(footIKTargetPosition, footTransform.rotation);
+        Vector3 footTargetPosition = new Vector3()
+        {
+            x = footTransform.position.x,
+            y = 0.0973f,
+            z = footTransform.position.z
+        };
 
+        
+        hintAnchor.SetPositionAndRotation(legTransform.position, legTransform.rotation);
+        targetAnchor.SetPositionAndRotation(footTargetPosition, footTransform.rotation);
+        
         constraint.weight = 1.0f;
     }
 

@@ -48,10 +48,10 @@ namespace Questionnaire
             
             [Space]
             [SerializeField] private GameObject _oneQuestionSliderAnswerPanel;
-            private OneQuestionSliderAnswerPanel _oneQuestionSliderAnswerPanelScript;
+            private OneSliderQuestionnairePanel _oneSliderQuestionnairePanelScript;
             
             [SerializeField] private GameObject _twoQuestionSliderAnswerPanel;
-            private TwoQuestionSliderAnswerPanel _twoQuestionSliderAnswerPanelScript;
+            private TwoSliderQuestionnairePanel _twoSliderQuestionnairePanelScript;
         #endregion
 
         [Space] 
@@ -61,8 +61,8 @@ namespace Questionnaire
 
         private void Awake()
         {
-            _oneQuestionSliderAnswerPanelScript = _oneQuestionSliderAnswerPanel.GetComponent<OneQuestionSliderAnswerPanel>();
-            _twoQuestionSliderAnswerPanelScript = _twoQuestionSliderAnswerPanel.GetComponent<TwoQuestionSliderAnswerPanel>();
+            _oneSliderQuestionnairePanelScript = _oneQuestionSliderAnswerPanel.GetComponent<OneSliderQuestionnairePanel>();
+            _twoSliderQuestionnairePanelScript = _twoQuestionSliderAnswerPanel.GetComponent<TwoSliderQuestionnairePanel>();
             
             CanvasSetup();
         }
@@ -109,23 +109,23 @@ namespace Questionnaire
 
         private void SetPanelContents()
         {
-            if (GameControllerStateMachine.currentBlock.blockQuestions.Count > _currentQuestionnaireIndex)
+            if (GameControllerStateMachine.currentBlock.blockQuestionnairePanels.Count > _currentQuestionnaireIndex)
             {
-                switch (GameControllerStateMachine.currentBlock.blockQuestions[_currentQuestionnaireIndex])
+                switch (GameControllerStateMachine.currentBlock.blockQuestionnairePanels[_currentQuestionnaireIndex])
                 {
-                    case BlockQuestion_TwoQuestionSliderAnswer question:
+                    case QuestionnairePanel_TwoSliders question:
                     {
                         _activePanel = _twoQuestionSliderAnswerPanel;
 
                         _activePanel.SetActive(true);
-                        _twoQuestionSliderAnswerPanelScript.SetupPanel(ref question);
+                        _twoSliderQuestionnairePanelScript.SetupPanel(ref question);
                     } break;
-                    case BlockQuestion_OneQuestionSliderAnswer question:
+                    case QuestionnairePanel_OneSlider question:
                     {
                         _activePanel = _oneQuestionSliderAnswerPanel;
 
                         _activePanel.SetActive(true);
-                        _oneQuestionSliderAnswerPanelScript.SetupPanel(ref question);
+                        _oneSliderQuestionnairePanelScript.SetupPanel(ref question);
                     } break;
                 }
             }

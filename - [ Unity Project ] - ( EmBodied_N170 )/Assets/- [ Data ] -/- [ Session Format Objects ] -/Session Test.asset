@@ -13,50 +13,50 @@ MonoBehaviour:
   m_Name: Session Test
   m_EditorClassIdentifier: 
   blocks:
-  - rid: 0
+  - rid: 969770564149575681
   approachDistance: 3
   participantHandedness: 0
   references:
     version: 2
     RefIds:
-    - rid: 0
-      type: {class: Block, ns: Data, asm: Assembly-CSharp}
+    - rid: 969770564149575681
+      type: {class: Block, ns: Data.Input, asm: Assembly-CSharp}
       data:
         trials:
-        - rid: 1
-        blockQuestions:
-        - rid: 969770515676266510
-        - rid: 969770515676266512
+        - rid: 969770564149575682
+        blockQuestionnairePanels:
+        - rid: 969770564149575688
+        - rid: 969770689896382465
         targetRoom: 0
-    - rid: 1
-      type: {class: Trial, ns: Data, asm: Assembly-CSharp}
+    - rid: 969770564149575682
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
       data:
-        roomA_NPCAvatar: {fileID: 5367999664640436700, guid: b7e124d27fc001e499ec505b645183bd, type: 3}
-        roomB_NPCAvatar: {fileID: 325559317196043166, guid: a070698e245c9f947b2a60538df84797, type: 3}
+        roomA_NPCAvatar: {fileID: 2324528351695377151, guid: bf615b22a1437dd4b856ac5ed0ae6f6a, type: 3}
+        roomB_NPCAvatar: {fileID: 2765776896869550450, guid: e2db069754df6964c89428928ad8727d, type: 3}
         heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
-    - rid: 969770515676266510
-      type: {class: BlockQuestion_TwoQuestionSliderAnswer, ns: Questionnaire, asm: Assembly-CSharp}
+    - rid: 969770564149575688
+      type: {class: QuestionnairePanel_OneSlider, ns: Questionnaire, asm: Assembly-CSharp}
       data:
-        questionType: 2
-        sliderOneQuestion: 'Question 1:'
+        questionnairePanelType: 1
+        sliderQuestion: How hot is it currently?
+        sliderQuestionDecorType: 0
+        sliderQuestionDecorMinimumText: Cold
+        sliderQuestionDecorMaximumText: Hot
+        sliderQuestionDecorMinimumSprite: {fileID: 2800000, guid: 314f1ebef30680448baf6fb08aa85f4d, type: 3}
+        sliderQuestionDecorMaximumSprite: {fileID: 2800000, guid: ba249f57dccb56740854c30a0d6d434f, type: 3}
+    - rid: 969770689896382465
+      type: {class: QuestionnairePanel_TwoSliders, ns: Questionnaire, asm: Assembly-CSharp}
+      data:
+        questionnairePanelType: 2
+        sliderOneQuestion: Are you happy?
         sliderOneQuestionDecorType: 1
-        sliderOneQuestionDecorMinimumText: ASD
-        sliderOneQuestionDecorMaximumText: ASD
-        sliderOneQuestionDecorMinimumSprite: {fileID: 2800000, guid: 8df3dcaeb4484ed42bd5cc56a82f23ae, type: 3}
-        sliderOneQuestionDecorMaximumSprite: {fileID: 2800000, guid: 20aca9ec6bc9a004f8e18262770356d2, type: 3}
-        sliderTwoQuestion: 'Question 2:'
-        sliderTwoQuestionDecorType: 0
-        sliderTwoQuestionDecorMinimumText: AHHH
-        sliderTwoQuestionDecorMaximumText: asdkasd
-        sliderTwoQuestionDecorMinimumSprite: {fileID: 2800000, guid: aa894e3580fdd334a885997d81b382b9, type: 3}
-        sliderTwoQuestionDecorMaximumSprite: {fileID: 2800000, guid: 24006734370f0154e8aec6efd6f0e0ac, type: 3}
-    - rid: 969770515676266512
-      type: {class: BlockQuestion_OneQuestionSliderAnswer, ns: Questionnaire, asm: Assembly-CSharp}
-      data:
-        questionType: 1
-        sliderQuestion: 
-        sliderQuestionDecorType: 1
-        sliderQuestionDecorMinimumText: 
-        sliderQuestionDecorMaximumText: 
-        sliderQuestionDecorMinimumSprite: {fileID: 2800000, guid: 6beda29ad95d53645a9e1fc4bef14ba6, type: 3}
-        sliderQuestionDecorMaximumSprite: {fileID: 2800000, guid: 65265e5dcd1537a44a608e022d9d7993, type: 3}
+        sliderOneQuestionDecorMinimumText: 
+        sliderOneQuestionDecorMaximumText: 
+        sliderOneQuestionDecorMinimumSprite: {fileID: 2800000, guid: ba249f57dccb56740854c30a0d6d434f, type: 3}
+        sliderOneQuestionDecorMaximumSprite: {fileID: 2800000, guid: 314f1ebef30680448baf6fb08aa85f4d, type: 3}
+        sliderTwoQuestion: Are you stressed
+        sliderTwoQuestionDecorType: 1
+        sliderTwoQuestionDecorMinimumText: 
+        sliderTwoQuestionDecorMaximumText: 
+        sliderTwoQuestionDecorMinimumSprite: {fileID: 2800000, guid: a4a579dad06a67249af4989fac015bc9, type: 3}
+        sliderTwoQuestionDecorMaximumSprite: {fileID: 2800000, guid: 518624b7f29c7674baa652baedd34e92, type: 3}

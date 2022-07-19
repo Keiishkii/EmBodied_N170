@@ -1,4 +1,4 @@
-﻿using DataCollection;
+﻿using Enums;
 using UnityEngine;
 
 namespace StateMachine
@@ -7,27 +7,43 @@ namespace StateMachine
     {
         private const float _distanceToRoomEntrance = 1.5f;
         
+        private delegate bool ComparisonCheck(in Vector3 position);
+        private ComparisonCheck _comparisonCheck;
+        
+        
         
         public override void OnEnterState(GameControllerStateMachine stateMachine)
         {
             Debug.Log("Entered State: <color=#FFF>Awaiting For Room Enter</color>");
-            DataCollector.dataContainer.dataEvents.Add(new DataCollectionEvent_RecordMarker()
+            DataCollector.AddDataEventToContainer(new Data.DataCollection.DataCollectionEvent_RecordMarker()
             {
-                timeSinceProgramStart = Time.realtimeSinceStartup,
-                currentState = "Awaiting For Room Enter"
+                record = "Awaiting For Room Enter"
             });
+
+            
+            _comparisonCheck = (stateMachine.currentBlock.targetRoom == Room.RoomA) ? RightRoomDistanceCheck : LeftRoomDistanceCheck;
         }
 
         public override void Update(GameControllerStateMachine stateMachine)
         {
             float playerXCoord = CameraTransform.position.x;
-            if (Mathf.Abs(Vector3.SqrMagnitude(new Vector3(playerXCoord, 0, 0))) > _distanceToRoomEntrance * _distanceToRoomEntrance)
+
+            if (_comparisonCheck(CameraTransform.position))
             {
-                DataCollector.CurrentTrialData.activeRoom = playerXCoord > 0 ? Enums.Room.RoomA : Enums.Room.RoomB;
                 stateMachine.SetState(stateMachine.AwaitingObjectPlacement);
             }
         }
+
+
+
+        private static bool RightRoomDistanceCheck(in Vector3 position)
+        {
+            return (position.x > _distanceToRoomEntrance);
+        }
         
-        public override void OnExitState(GameControllerStateMachine stateMachine) { }
+        private static bool LeftRoomDistanceCheck(in Vector3 position)
+        {
+            return (position.x < -_distanceToRoomEntrance);
+        }
     }
 }

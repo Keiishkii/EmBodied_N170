@@ -34,9 +34,7 @@ namespace NPC_Controller
         {
             if (Vector3.SqrMagnitude(_avatarHeadPosition.position - _playerHeadPosition.position) > _squareApproachDistance)
             {
-                //Debug.Log("<color=#FF0000>END</color>");
                 stateMachine.SetState = stateMachine.IdleState;
-                return;
             }
         }
 
@@ -51,18 +49,23 @@ namespace NPC_Controller
         
         private IEnumerator LookAtPlayer(NPCController_StateMachine stateMachine)
         {
+            Vector3 targetPosition = _playerHeadPosition.position + new Vector3(0, -0.15f, 0);
             Vector3 oldLookTargetPosition = _lookAtTarget.position;
+            
             for (float t = 0.0f; t < 1.0f; t += Time.deltaTime * (1.0f / 0.5f))
             {
+                targetPosition = _playerHeadPosition.position + new Vector3(0, -0.15f, 0);
+                
                 float lerp = stateMachine.LookAtMotionCurve.Evaluate(t);
-                _lookAtTarget.position = Vector3.Lerp(oldLookTargetPosition, _playerHeadPosition.position, lerp);
+                _lookAtTarget.position = Vector3.Lerp(oldLookTargetPosition, targetPosition, lerp);
                 
                 yield return null;
             }
 
             while (Application.isPlaying)
             {
-                _lookAtTarget.position = _playerHeadPosition.position;
+                targetPosition = _playerHeadPosition.position + new Vector3(0, -0.15f, 0);
+                _lookAtTarget.position = targetPosition;
                 
                 yield return null;
             }

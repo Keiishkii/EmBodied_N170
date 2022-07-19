@@ -2,17 +2,13 @@ using System;
 using Unity.Mathematics;
 using UnityEngine;
 
-namespace DataCollection
-{
-    [Serializable]
-    public class DataCollectionEvent_RecordMarker : DataCollectionEvent_Interface
+namespace Data {
+    namespace DataCollection
     {
-        public float timeSinceProgramStart;
-        public string currentState;
-        
-        public DataCollectionEvent_RecordMarker()
+        [Serializable]
+        public class DataCollectionEvent_RecordMarker : DataCollectionEvent_Interface
         {
-            type = nameof(DataCollectionEvent_RecordMarker);
+            public string record;
         }
     }
 }

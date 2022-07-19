@@ -1,6 +1,4 @@
 using UnityEngine;
-using DataCollection;
-using Data;
 
 namespace StateMachine
 {
@@ -9,7 +7,7 @@ namespace StateMachine
         private State_Interface _currentStateInterface;
         public State_Interface CurrentStateInterface => _currentStateInterface;
 
-        #region States
+        #region Game States
             private readonly State_SessionStart _sessionStart = new State_SessionStart();
             public  readonly State_SessionComplete SessionComplete = new State_SessionComplete();
             public  readonly State_BlockStart BlockStart = new State_BlockStart();
@@ -23,11 +21,11 @@ namespace StateMachine
             public  readonly State_Questionnaire Questionnaire = new State_Questionnaire();
         #endregion
 
-        public SessionFormat SessionFormatObject;
+        public Data.Input.SessionFormat SessionFormatObject;
         
         [HideInInspector] public int blockIndex, trialIndex;
-        [HideInInspector] public Block currentBlock;
-        [HideInInspector] public Trial currentTrial;
+        [HideInInspector] public Data.Input.Block currentBlock;
+        [HideInInspector] public Data.Input.Trial currentTrial;
 
         
 
@@ -42,7 +40,7 @@ namespace StateMachine
             _currentStateInterface.Update(this);
         }
 
-        public void SetState(State_Interface stateInterface)
+        public void SetState(State_Interface stateInterface) 
         {
             _currentStateInterface.OnExitState(this);
             _currentStateInterface = stateInterface;

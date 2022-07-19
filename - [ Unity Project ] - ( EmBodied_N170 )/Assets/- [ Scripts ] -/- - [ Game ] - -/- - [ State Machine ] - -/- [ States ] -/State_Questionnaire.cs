@@ -1,5 +1,4 @@
-﻿using DataCollection;
-using Questionnaire;
+﻿using Questionnaire;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -23,10 +22,9 @@ namespace StateMachine
         public override void OnEnterState(GameControllerStateMachine stateMachine)
         {
             Debug.Log("Entered State: <color=#FFF>Questionnaire</color>");
-            DataCollector.dataContainer.dataEvents.Add(new DataCollectionEvent_RecordMarker()
+            DataCollector.AddDataEventToContainer(new Data.DataCollection.DataCollectionEvent_RecordMarker()
             {
-                timeSinceProgramStart = Time.realtimeSinceStartup,
-                currentState = "Questionnaire"
+                record = "Questionnaire"
             });
 
             HandAnimationController.LeftHandState = HandAnimationState.Default;

@@ -1,7 +1,5 @@
 ﻿using System.Collections;
-using DataCollection;
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace StateMachine
 {
@@ -15,10 +13,9 @@ namespace StateMachine
         public override void OnEnterState(GameControllerStateMachine stateMachine)
         {
             Debug.Log("Entered State: <color=#FFF>Awaiting Return To Corridor</color>");
-            DataCollector.dataContainer.dataEvents.Add(new DataCollectionEvent_RecordMarker()
+            DataCollector.AddDataEventToContainer(new Data.DataCollection.DataCollectionEvent_RecordMarker()
             {
-                timeSinceProgramStart = Time.realtimeSinceStartup,
-                currentState = "Awaiting Return To Corridor"
+                record = "Awaiting Return To Corridor"
             });
 
             stateMachine.StartCoroutine(StateChangeTest(stateMachine));

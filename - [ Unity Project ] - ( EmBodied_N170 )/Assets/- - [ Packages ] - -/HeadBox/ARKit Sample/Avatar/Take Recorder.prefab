@@ -1,0 +1,202 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &9120690503722909344
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9120690503722909406}
+  - component: {fileID: 9120690503722909407}
+  m_Layer: 0
+  m_Name: FaceDevice
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9120690503722909406
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9120690503722909344}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.86892414, y: -2.2151613, z: 1.0907817}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9120690505162591477}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9120690503722909407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9120690503722909344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3c82e07b9a14fe3958806045dbb5693, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Guid: 7e4365e6-e518-4560-b847-629f74aea350
+  m_Actor: {fileID: 0}
+  m_Channels: 13
+  m_Pose:
+    BlendShapes:
+      BrowDownLeft: 0
+      BrowDownRight: 0
+      BrowInnerUp: 0.446011
+      BrowOuterUpLeft: 0.33351982
+      BrowOuterUpRight: 0.3335508
+      CheekPuff: 0.014150607
+      CheekSquintLeft: 0.045034718
+      CheekSquintRight: 0.05716302
+      EyeBlinkLeft: 0
+      EyeBlinkRight: 0
+      EyeLookDownLeft: 0
+      EyeLookDownRight: 0
+      EyeLookInLeft: 0.025484318
+      EyeLookInRight: 0.07280375
+      EyeLookOutLeft: 0
+      EyeLookOutRight: 0
+      EyeLookUpLeft: 0.27079734
+      EyeLookUpRight: 0.2706826
+      EyeSquintLeft: 0.1931712
+      EyeSquintRight: 0.19466512
+      EyeWideLeft: 0.33771402
+      EyeWideRight: 0.3377952
+      JawForward: 0.2798713
+      JawLeft: 0.09746753
+      JawOpen: 0.6307144
+      JawRight: 0
+      MouthClose: 0.18364
+      MouthDimpleLeft: 0.09912212
+      MouthDimpleRight: 0.08799349
+      MouthFrownLeft: 0.15647423
+      MouthFrownRight: 0.11300436
+      MouthFunnel: 0.17808625
+      MouthLeft: 0.033079818
+      MouthLowerDownLeft: 0.4160168
+      MouthLowerDownRight: 0.42424074
+      MouthPressLeft: 0.028149486
+      MouthPressRight: 0.034221906
+      MouthPucker: 0.11960733
+      MouthRight: 0
+      MouthRollLower: 0.10527927
+      MouthRollUpper: 0.12266492
+      MouthShrugLower: 0.017957276
+      MouthShrugUpper: 0.14574663
+      MouthSmileLeft: 0
+      MouthSmileRight: 0
+      MouthStretchLeft: 0.38332427
+      MouthStretchRight: 0.2974808
+      MouthUpperUpLeft: 0.024110427
+      MouthUpperUpRight: 0.02156623
+      NoseSneerLeft: 0.041488048
+      NoseSneerRight: 0.03805393
+      TongueOut: 0.00000052536666
+    HeadPosition: {x: -0.042069428, y: -0.059833627, z: -0.48526993}
+    HeadOrientation: {x: -0.074884705, y: -0.039049253, z: 0.017536074, w: -0.99627304}
+    LeftEyeOrientation: {x: 0.059042662, y: -0.007770084, z: 0.00045958217, w: -0.99822515}
+    RightEyeOrientation: {x: 0.059004866, y: 0.022196049, z: -0.0013122864, w: -0.99801004}
+  m_SyncPresentationOffset:
+    m_FrameNumber: 0
+    m_Subframe:
+      m_Subframe: 0
+      m_Resolution: 0
+  m_IsSynchronized: 0
+  m_BufferSize: 1
+--- !u!1 &9120690505162591480
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9120690505162591477}
+  - component: {fileID: 9120690505162591478}
+  - component: {fileID: 9120690505162591479}
+  m_Layer: 0
+  m_Name: Take Recorder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9120690505162591477
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9120690505162591480}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 9120690503722909406}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!320 &9120690505162591478
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9120690505162591480}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: -4985600205217358118, guid: 8e910e0efb1190f42b618a633183d7a1, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: 2803285978402963882, guid: 8e910e0efb1190f42b618a633183d7a1, type: 2}
+    value: {fileID: 0}
+  m_ExposedReferences:
+    m_References:
+    - Female_Adult_02_ARKitDemo: {fileID: 0}
+--- !u!114 &9120690505162591479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9120690505162591480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f2c132feb88d6345985a670b685927d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NullPlayableAsset: {fileID: 11400000, guid: a42ca493bba0c314e86e05cbd6ec9ddf, type: 2}
+  m_DefaultSlatePlayer:
+    m_UnityObject: {fileID: 9120690505162591479}
+    m_Directory: Assets/Takes
+    m_SceneNumber: 1
+    m_Name: New Shot
+    m_TakeNumber: 1
+    m_Description: 
+    m_Take: {fileID: 11400000, guid: 8e910e0efb1190f42b618a633183d7a1, type: 2}
+    m_IterationBase: {fileID: 0}
+    m_Director: {fileID: 9120690505162591478}
+  m_TakePlayer:
+    m_FallbackPlayableAsset: {fileID: 11400000, guid: a42ca493bba0c314e86e05cbd6ec9ddf, type: 2}
+    m_Director: {fileID: 9120690505162591478}
+    m_Take: {fileID: 11400000, guid: 8e910e0efb1190f42b618a633183d7a1, type: 2}
+  m_FrameRate:
+    m_Numerator: 30
+    m_Denominator: 1
+    m_IsDropFrame: 0
+  m_Devices:
+  - {fileID: 9120690503722909407}
+  m_Live: 0

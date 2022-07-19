@@ -1,8 +1,10 @@
-﻿namespace DataCollection
-{
-    public class SliderQuestionData : QuestionnaireData_Interface
+﻿namespace Data {
+    namespace DataCollection
     {
-        public string question;
-        public float answer;
+        public class SliderQuestionData : QuestionnaireData_Interface
+        {
+            public string question;
+            public float answer;
+        }
     }
 }

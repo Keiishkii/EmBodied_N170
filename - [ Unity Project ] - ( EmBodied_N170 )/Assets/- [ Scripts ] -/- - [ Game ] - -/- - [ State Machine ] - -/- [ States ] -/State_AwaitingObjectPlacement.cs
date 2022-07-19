@@ -1,4 +1,4 @@
-﻿using DataCollection;
+﻿using Enums;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -6,51 +6,55 @@ namespace StateMachine
 {
     public class State_AwaitingObjectPlacement : State_Interface
     {
-        public static readonly UnityEvent<Enums.Room> NPCPlacementTrigger = new UnityEvent<Enums.Room>();
-        
         public static readonly UnityEvent<bool> ActivateRoomAColliders = new UnityEvent<bool>();
         public static readonly UnityEvent<bool> ActivateRoomBColliders = new UnityEvent<bool>();
         public static readonly UnityEvent<GameControllerStateMachine> ObjectPlaced = new UnityEvent<GameControllerStateMachine>();
 
+        private delegate void SetRoomColliderActivation(bool activationState);
+        private SetRoomColliderActivation _activateRoomCollider;
+
+
         
         
-        
+
         public override void OnEnterState(GameControllerStateMachine stateMachine)
         {
             Debug.Log("Entered State: <color=#FFF>Awaiting Object Placement</color>");
-            DataCollector.dataContainer.dataEvents.Add(new DataCollectionEvent_RecordMarker()
+            DataCollector.AddDataEventToContainer(new Data.DataCollection.DataCollectionEvent_RecordMarker()
             {
-                timeSinceProgramStart = Time.realtimeSinceStartup,
-                currentState = "Awaiting Object Placement"
+                record = "Awaiting Object Placement"
             });
             
             
             ObjectPlaced.AddListener(OnColliderEnter);
-            if (DataCollector.CurrentTrialData.activeRoom == Enums.Room.RoomA)
-                ActivateRoomAColliders.Invoke(true);
-            else
-                ActivateRoomBColliders.Invoke(true);
+            
+            _activateRoomCollider = (stateMachine.currentBlock.targetRoom == Room.RoomA) ? SetRightRoomColliderActivation : SetLeftRoomColliderActivation;
+            _activateRoomCollider.Invoke(true);
         }
-
-        public override void Update(GameControllerStateMachine stateMachine) { }
 
         public override void OnExitState(GameControllerStateMachine stateMachine)
         {
             ObjectPlaced.RemoveListener(OnColliderEnter);
-            
-            NPCPlacementTrigger.Invoke(DataCollector.CurrentTrialData.activeRoom);
-            
-            
-            if (DataCollector.CurrentTrialData.activeRoom == Enums.Room.RoomA)
-                ActivateRoomAColliders.Invoke(false);
-            else
-                ActivateRoomBColliders.Invoke(false);
+            _activateRoomCollider.Invoke(false);
         }
 
+        
+        
+        
 
         private void OnColliderEnter(GameControllerStateMachine stateMachine)
         {
             stateMachine.SetState(stateMachine.AwaitingReturnToCorridor);
+        }
+
+        private void SetRightRoomColliderActivation(bool activationState)
+        {
+            ActivateRoomAColliders.Invoke(activationState);
+        }
+        
+        private void SetLeftRoomColliderActivation(bool activationState)
+        {
+            ActivateRoomBColliders.Invoke(activationState);
         }
     }
 }

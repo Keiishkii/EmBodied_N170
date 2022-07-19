@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
+#if UNITY_EDITOR
 public abstract class CustomEditor_Interface : Editor
 {
     private bool _drawBaseInspector;
@@ -18,3 +19,4 @@ public abstract class CustomEditor_Interface : Editor
 
     protected abstract void DrawInspectorGUI();
 }
+#endif

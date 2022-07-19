@@ -25,7 +25,7 @@ namespace NPC_Controller
 
             _squareApproachDistance = Mathf.Pow(stateMachine.GameController.SessionFormatObject.approachDistance, 2);
             
-            SetLookTarget(stateMachine, new Vector3(0, 1.5f, 0));
+            SetLookTarget(stateMachine, new Vector3(0, 0, 0));
         }
 
         public override void Update(in NPCController_StateMachine stateMachine)
@@ -33,7 +33,6 @@ namespace NPC_Controller
             if (Vector3.SqrMagnitude(_avatarHeadPosition.position - _playerHeadPosition.position) < _squareApproachDistance)
             {
                 stateMachine.SetState = stateMachine.LookingAtPlayer;
-                return;
             }
         }
 

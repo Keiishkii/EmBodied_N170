@@ -12,6 +12,8 @@ TagManager:
   - Water
   - UI
   - '[ Outside ]'
+  - '[ Object ]'
+  - '[ Desk ]'
   - 
   - 
   - 
@@ -34,9 +36,7 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - Desk
-  - Held Item
+  - '[ Editor Only ]'
   m_SortingLayers:
   - name: Default
     uniqueID: 0

@@ -1,5 +1,4 @@
-﻿using DataCollection;
-using Questionnaire;
+﻿using Questionnaire;
 using UnityEngine;
 
 namespace StateMachine
@@ -15,10 +14,9 @@ namespace StateMachine
         {
             Debug.Log("Entered State: <color=#FFF>Session Complete</color>");
             DataCollector.EndTransformDataCollection();
-            DataCollector.dataContainer.dataEvents.Add(new DataCollectionEvent_RecordMarker()
+            DataCollector.AddDataEventToContainer(new Data.DataCollection.DataCollectionEvent_RecordMarker()
             {
-                timeSinceProgramStart = Time.realtimeSinceStartup,
-                currentState = "Session Complete"
+                record = "Session Complete"
             });
             
             

@@ -1,12 +1,11 @@
-﻿using DataCollection;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace StateMachine
 {
     public abstract class State_Interface
     {
-        private DataCollector _dataCollector;
-        protected DataCollector DataCollector => _dataCollector ?? (_dataCollector = GameObject.FindObjectOfType<DataCollector>());
+        private Data.DataCollection.DataCollector _dataCollector;
+        protected Data.DataCollection.DataCollector DataCollector => _dataCollector ?? (_dataCollector = GameObject.FindObjectOfType<Data.DataCollection.DataCollector>());
         
         private PlayerController _playerController;
         protected PlayerController PlayerController => _playerController ?? (_playerController = GameObject.FindObjectOfType<PlayerController>());

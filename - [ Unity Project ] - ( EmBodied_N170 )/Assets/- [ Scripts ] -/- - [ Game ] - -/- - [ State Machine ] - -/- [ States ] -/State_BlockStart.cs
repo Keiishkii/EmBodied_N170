@@ -1,4 +1,4 @@
-﻿using DataCollection;
+﻿using Enums;
 using Questionnaire;
 using UnityEngine;
 using UnityEngine.Events;
@@ -9,6 +9,9 @@ namespace StateMachine
     {
         public static readonly UnityEvent<GameControllerStateMachine> StartBlock = new UnityEvent<GameControllerStateMachine>();
         
+        private RoomCorrectionCanvasController _roomCorrectionCanvasController;
+        private RoomCorrectionCanvasController RoomCorrectionCanvasController => _roomCorrectionCanvasController ?? (_roomCorrectionCanvasController = GameObject.FindObjectOfType<RoomCorrectionCanvasController>());
+        
         private MainCanvas _mainCanvas;
         private MainCanvas MainCanvas => _mainCanvas ?? (_mainCanvas = GameObject.FindObjectOfType<MainCanvas>());
         
@@ -18,17 +21,33 @@ namespace StateMachine
         {
             int blockIndex = stateMachine.blockIndex;
             Debug.Log($"Entered State: <color=#FFF>Block Start: {blockIndex}</color>");
-            DataCollector.dataContainer.dataEvents.Add(new DataCollectionEvent_RecordMarker()
+            DataCollector.AddDataEventToContainer(new Data.DataCollection.DataCollectionEvent_RecordMarker()
             {
-                timeSinceProgramStart = Time.realtimeSinceStartup,
-                currentState = $"Block {blockIndex} Start"
+                record = $"Block {blockIndex} Start"
             });
             
             
             stateMachine.currentBlock = stateMachine.SessionFormatObject.blocks[blockIndex];
-            DataCollector.dataContainer.blockData.Add(new BlockData());
-
+            Room activeRoom = stateMachine.currentBlock.targetRoom;
+            
+            DataCollector.dataContainer.blockData.Add(new Data.DataCollection.BlockData()
+            {
+                activeRoom = activeRoom
+            });
+            
+            
             MainCanvas.AwaitingBlockStartPanelVisible = true;
+
+            if (activeRoom == Room.RoomA)
+            {
+                RoomCorrectionCanvasController.RoomACanvasVisible = false;
+                RoomCorrectionCanvasController.RoomBCanvasVisible = true;
+            }
+            else
+            {
+                RoomCorrectionCanvasController.RoomACanvasVisible = true;
+                RoomCorrectionCanvasController.RoomBCanvasVisible = false;
+            }
             
             StartBlock.AddListener(OnBlockStart);
         }

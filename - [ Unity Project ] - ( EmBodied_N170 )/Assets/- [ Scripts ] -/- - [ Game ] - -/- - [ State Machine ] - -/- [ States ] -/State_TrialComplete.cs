@@ -1,6 +1,4 @@
-﻿using DataCollection;
-using Questionnaire;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace StateMachine
 {
@@ -13,10 +11,9 @@ namespace StateMachine
         public override void OnEnterState(GameControllerStateMachine stateMachine)
         {
             Debug.Log("Entered State: <color=#FFF>Trial Complete</color>");
-            DataCollector.dataContainer.dataEvents.Add(new DataCollectionEvent_RecordMarker()
+            DataCollector.AddDataEventToContainer(new Data.DataCollection.DataCollectionEvent_RecordMarker()
             {
-                timeSinceProgramStart = Time.realtimeSinceStartup,
-                currentState = "Trial Complete"
+                record = "Trial Complete"
             });
             
             

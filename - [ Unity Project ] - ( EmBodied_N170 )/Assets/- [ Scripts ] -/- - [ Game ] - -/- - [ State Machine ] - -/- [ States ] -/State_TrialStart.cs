@@ -1,6 +1,4 @@
 ﻿using System.Collections;
-using System.Security.Cryptography;
-using DataCollection;
 using Enums;
 using Questionnaire;
 using UnityEngine;
@@ -28,10 +26,9 @@ namespace StateMachine
             int blockIndex = stateMachine.blockIndex, trialIndex = stateMachine.trialIndex;
             
             Debug.Log($"Entered State: <color=#FFF>Trial Start: {trialIndex}</color>");
-            DataCollector.dataContainer.dataEvents.Add(new DataCollectionEvent_RecordMarker()
+            DataCollector.AddDataEventToContainer(new Data.DataCollection.DataCollectionEvent_RecordMarker()
             {
-                timeSinceProgramStart = Time.realtimeSinceStartup,
-                currentState = $"Trial {trialIndex} Start"
+                record = $"Trial {trialIndex} Start"
             });
             
             
@@ -39,8 +36,8 @@ namespace StateMachine
             MainCanvas.ReadyPanelVisible = true;
             
             stateMachine.currentTrial = stateMachine.currentBlock.trials[trialIndex];
-            Data.Trial currentTrial = stateMachine.currentTrial;
-            DataCollector.CurrentBlockData.trialData.Add(new TrialData());
+            Data.Input.Trial currentTrial = stateMachine.currentTrial;
+            DataCollector.CurrentBlockData.trialData.Add(new Data.DataCollection.TrialData());
 
             RayInteractionController.RayVisibility = false;
 
@@ -79,19 +76,23 @@ namespace StateMachine
             Transform
                 cameraOffsetTransform = PlayerController.transform,
                 playerHeadTransform = PlayerController.cameraTransform,
-                npcHeadTransform = NPCManager.NpcOneData.npcBoneReferences.head,
-                npcHeadTopTransform = NPCManager.NpcOneData.npcBoneReferences.headTop,
+                
+                npcLeftEye = NPCManager.NpcOneData.npcBoneReferences.leftEye,
+                npcRightEye = NPCManager.NpcOneData.npcBoneReferences.leftEye,
+                
                 mainCanvasTransform = MainCanvas.transform;
 
             Vector3
                 positionOfOffset = cameraOffsetTransform.position,
                 positionOfHead = playerHeadTransform.position,
-                positionOfNPCHead = npcHeadTransform.position,
-                positionOfNPCHeadTop = npcHeadTopTransform.position,
+                
+                positionOfNPCLeftEye = npcLeftEye.position,
+                positionOfNPCRightEye = npcRightEye.position,
+                
                 mainCanvasPosition = mainCanvasTransform.position;
 
             Vector3 correctedPlayerHeadPosition = positionOfHead - positionOfOffset;
-            Vector3 correctedNPCHeadPosition = (positionOfNPCHead + positionOfNPCHeadTop) / 2.0f;
+            Vector3 correctedNPCHeadPosition = (positionOfNPCLeftEye + positionOfNPCRightEye) / 2.0f;
             
             
             

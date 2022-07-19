@@ -38,7 +38,8 @@ namespace NPC_Controller
 
         private GameControllerStateMachine _gameController;
         public GameControllerStateMachine GameController => _gameController ?? (_gameController = FindObjectOfType<GameControllerStateMachine>());
-        
+
+        private Animator _animator;
         
         [SerializeField] private Transform _lookAtTarget;
         public Transform LookAtTarget => _lookAtTarget;
@@ -59,6 +60,7 @@ namespace NPC_Controller
         private void Awake()
         {
             _audioSource = GetComponent<AudioSource>();
+            _animator = GetComponent<Animator>();
         }
 
         private void Start()
@@ -80,6 +82,7 @@ namespace NPC_Controller
 
         private void OnObjectPlacement(GameControllerStateMachine gameControllerStateMachine)
         {
+            _animator.SetTrigger("Trigger - Thank You");
             _audioSource.Play();
         }
     }

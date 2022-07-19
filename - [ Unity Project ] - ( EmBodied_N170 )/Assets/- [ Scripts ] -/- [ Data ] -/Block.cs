@@ -4,14 +4,16 @@ using System.Collections.Generic;
 using Questionnaire;
 using UnityEngine;
 
-namespace Data
-{
-    [Serializable]
-    public class Block
+namespace Data {
+    namespace Input
     {
-        [SerializeReference] public List<Trial> trials = new List<Trial>();
-        [SerializeReference] public List<BlockQuestion> blockQuestions = new List<BlockQuestion>();
-        
-        public Enums.Room targetRoom;
+        [Serializable]
+        public class Block
+        {
+            [SerializeReference] public List<Trial> trials = new List<Trial>();
+            [SerializeReference] public List<QuestionnairePanel> blockQuestionnairePanels = new List<QuestionnairePanel>();
+
+            public Enums.Room targetRoom;
+        }
     }
 }

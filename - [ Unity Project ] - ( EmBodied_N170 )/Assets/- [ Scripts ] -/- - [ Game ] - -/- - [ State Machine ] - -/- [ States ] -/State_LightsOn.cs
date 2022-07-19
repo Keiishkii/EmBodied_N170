@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using DataCollection;
 using UnityEngine;
 
 namespace StateMachine
@@ -9,10 +8,9 @@ namespace StateMachine
         public override void OnEnterState(GameControllerStateMachine stateMachine)
         {
             Debug.Log("Entered State: <color=#FFF>Lights On</color>");
-            DataCollector.dataContainer.dataEvents.Add(new DataCollectionEvent_RecordMarker()
+            DataCollector.AddDataEventToContainer(new Data.DataCollection.DataCollectionEvent_RecordMarker()
             {
-                timeSinceProgramStart = Time.realtimeSinceStartup,
-                currentState = "Lights On"
+                record = "Lights On"
             });
             
             

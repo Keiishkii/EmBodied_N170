@@ -1,9 +1,18 @@
 using System;
+using UnityEngine;
 
-namespace DataCollection
-{
-    public abstract class DataCollectionEvent_Interface
+namespace Data {
+    namespace DataCollection
     {
-        public string type;
+        [Serializable]
+        public abstract class DataCollectionEvent_Interface
+        {
+            public float timeSinceProgramStart;
+
+            protected DataCollectionEvent_Interface()
+            {
+                timeSinceProgramStart = Time.timeSinceLevelLoad;
+            }
+        }
     }
 }

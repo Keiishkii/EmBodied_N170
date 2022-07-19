@@ -1,5 +1,4 @@
 ﻿using System;
-using DataCollection;
 using Questionnaire;
 using UnityEngine;
 using UnityEngine.Events;
@@ -28,22 +27,21 @@ namespace StateMachine
             Debug.Log("Entered State: <color=#FFF>Session Start</color>");
             DataCollector.BeginTransformDataCollection();
             DataCollector.dataContainer.dateTime = $"{DateTime.Now:U}";
-            DataCollector.dataContainer.dataEvents.Add(new DataCollectionEvent_RecordMarker()
+            DataCollector.AddDataEventToContainer(new Data.DataCollection.DataCollectionEvent_RecordMarker()
             {
-                timeSinceProgramStart = Time.realtimeSinceStartup,
-                currentState = "Session Start"
+                record = "Session Start"
             });
 
+            
             HandAnimationController.LeftHandState = HandAnimationState.Default;
             HandAnimationController.RightHandState = HandAnimationState.Default;
             
             RayInteractionController.RayVisibility = true;
+            MainCanvas.AwaitingSessionStartPanelVisible = true;
             
 
             Vector3 newPosition = new Vector3(0, -3.95f, 0);
             CameraOffset.position = newPosition;
-            
-            MainCanvas.AwaitingSessionStartPanelVisible = true;
             
             StartSession.AddListener(OnSessionStart);
         }

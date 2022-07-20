@@ -42,7 +42,7 @@ public class FixRocketboxMaxImport : AssetPostprocessor
     {
         if (g.transform.Find("Bip02") != null) RenameBip(g);
 
-        Transform pelvis = g.transform.Find("Bip01").Find("Bip01 Pelvis");
+        Transform pelvis = g.transform.Find("Bip01")?.Find("Bip01 Pelvis");
         if (pelvis == null) return;
         Transform spine2 = pelvis.Find("Bip01 Spine").Find("Bip01 Spine1").Find("Bip01 Spine2");
         Transform RClavicle = spine2.Find("Bip01 Neck").Find("Bip01 R Clavicle");

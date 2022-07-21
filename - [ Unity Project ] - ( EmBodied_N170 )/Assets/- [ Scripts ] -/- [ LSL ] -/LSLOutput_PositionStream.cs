@@ -1,10 +1,14 @@
-﻿using LSL;
+﻿#if PLATFORM_STANDALONE_WIN
+using LSL;
+#endif
+
 using UnityEngine;
 
 namespace _LSL
 {
     public class LSLOutput_PositionStream : LSLOutput<float>
     {
+#if PLATFORM_STANDALONE_WIN
         private float _sampleRate;
         public Transform positionStreamTarget;
         
@@ -38,5 +42,6 @@ namespace _LSL
 
             PushOutput(_outlet, _currentSample);
         }
+#endif
     }
 }

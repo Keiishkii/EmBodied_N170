@@ -1,4 +1,5 @@
-﻿using System;
+﻿#if UNITY_STANDALONE_WIN
+using System;
 using System.Runtime.InteropServices;
 
 namespace LSL
@@ -1201,3 +1202,4 @@ namespace LSL
     }
     #endregion
 }
+#endif

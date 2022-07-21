@@ -1,9 +1,12 @@
-﻿using LSL;
+﻿#if PLATFORM_STANDALONE_WIN
+using LSL;
+#endif
 
 namespace _LSL
 {
     public class LSLOutput_MarkerStream : LSLOutput<string>
     {
+#if PLATFORM_STANDALONE_WIN
         private void Awake()
         {
             StreamInfo streamInfo = new StreamInfo(_streamName, _streamType, 1, 0, channel_format_t.cf_string);
@@ -19,5 +22,6 @@ namespace _LSL
             _currentSample = new[] { marker };
             PushOutput(_outlet, _currentSample);
         }
+#endif
     }
 }

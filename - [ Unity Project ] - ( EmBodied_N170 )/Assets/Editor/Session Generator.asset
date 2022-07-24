@@ -1,0 +1,84 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77fc08cb0ba5c7b4fb2fa27ad12139bc, type: 3}
+  m_Name: Session Generator
+  m_EditorClassIdentifier: 
+  fileDirectory: Assets/- [ Data ] -/- [ Session Format Objects ] -
+  filename: Test - 2
+  heldItem: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+  groupA:
+    listVisibility: 0
+    listCount: 10
+    prefabList:
+    - {fileID: 7137246065745300051, guid: 328fca6e48d1b0140a329c267e2e8d65, type: 3}
+    - {fileID: 3988616160223418690, guid: 79d60b613c46b4841a225f9ebd91a8da, type: 3}
+    - {fileID: 8612739744240798829, guid: a435550fa0263f54488e6cd656a16547, type: 3}
+    - {fileID: 8475892927928457697, guid: 576928bf3bf48ca4990cc22d546c53b8, type: 3}
+    - {fileID: 6494704717704555029, guid: 0bfe1fae11436714ea13c3d0f0772b63, type: 3}
+    - {fileID: 2324528351695377151, guid: bf615b22a1437dd4b856ac5ed0ae6f6a, type: 3}
+    - {fileID: 659953216500511583, guid: ab307de9dd26b7d4fa3955126e999a16, type: 3}
+    - {fileID: 9082419334070313285, guid: 8d90ad1e5d31aac4eb81e5bbe7393aa2, type: 3}
+    - {fileID: 2765776896869550450, guid: e2db069754df6964c89428928ad8727d, type: 3}
+    - {fileID: 8095615030172524450, guid: c321b29e23de4aa4f88bcc4695e78af3, type: 3}
+  groupAStatues:
+    listVisibility: 0
+    listCount: 10
+    prefabList:
+    - {fileID: 7137246065745300051, guid: c2a12df1281b7174ab1ddb88069fda90, type: 3}
+    - {fileID: 3988616160223418690, guid: 8b9cb7fe96df8544ba560c7f428a11f9, type: 3}
+    - {fileID: 8612739744240798829, guid: 4188658e2bad9734a9f4de09e542a3f0, type: 3}
+    - {fileID: 8475892927928457697, guid: e9cfe076270167541bc1ee3619083802, type: 3}
+    - {fileID: 6494704717704555029, guid: ee575a7528ccefd44b2812a85f42772c, type: 3}
+    - {fileID: 2324528351695377151, guid: 0bb9a14138c1d194194d2f3c5ff68f37, type: 3}
+    - {fileID: 659953216500511583, guid: ba83635e156185c43a01ec769c1c4c5b, type: 3}
+    - {fileID: 9082419334070313285, guid: f40182b6a6745c24ab03c42c05084701, type: 3}
+    - {fileID: 2765776896869550450, guid: 61dba6adea7bd4e4781628e5b9c42b83, type: 3}
+    - {fileID: 8095615030172524450, guid: 38cda17157ef41a4db8bc26ca0083e45, type: 3}
+  groupB:
+    listVisibility: 0
+    listCount: 10
+    prefabList:
+    - {fileID: 546019268559787885, guid: 425872b63f2588e40854eab7975a8716, type: 3}
+    - {fileID: 4633609961173241037, guid: cdfb60198d8b9324080dbc09f7222ed8, type: 3}
+    - {fileID: 208037630454435721, guid: 3959146ed99e75342b7690eaca1c197b, type: 3}
+    - {fileID: 7975788538233868137, guid: de10ff596c42abc449a300dcdffd7249, type: 3}
+    - {fileID: 1667025052252471913, guid: bf32db0547fd742419eb059dec9d9203, type: 3}
+    - {fileID: 5836601763929389210, guid: 160a2eac0f5beaa40b524cd084261160, type: 3}
+    - {fileID: 151296173630526888, guid: 876e9e5634b402b448170f35eed894c2, type: 3}
+    - {fileID: 8715531548804830126, guid: 4b3f7e074748e7f4196b76b10360c417, type: 3}
+    - {fileID: 582349888759162599, guid: 5a8a5c13c1c56fe4b83ce880267902ea, type: 3}
+    - {fileID: 5245021407769284173, guid: fc8cd8dd074ea704bb17428a29e121d2, type: 3}
+  groupBStatues:
+    listVisibility: 0
+    listCount: 10
+    prefabList:
+    - {fileID: 546019268559787885, guid: 69cf029dc7ba76a4796e630fe4ab0b06, type: 3}
+    - {fileID: 4633609961173241037, guid: c7159f531ae36da4a94376d3c092868a, type: 3}
+    - {fileID: 208037630454435721, guid: 8c01732804858554883bf9740bd2d65e, type: 3}
+    - {fileID: 7975788538233868137, guid: 7be1273a3feffd9479627225e96183ae, type: 3}
+    - {fileID: 1667025052252471913, guid: 3dc98c86e00acc8489b495ebe1e25d8a, type: 3}
+    - {fileID: 5836601763929389210, guid: 131f95b1f86b95a4aa2e1f84a93866e0, type: 3}
+    - {fileID: 151296173630526888, guid: a58f9d706654a05429a2538219c1a6b4, type: 3}
+    - {fileID: 8715531548804830126, guid: 8881e988f6938da42b6782509bd9ece6, type: 3}
+    - {fileID: 582349888759162599, guid: c55e9f9ef1f3b7542a06050d09b4d7ad, type: 3}
+    - {fileID: 5245021407769284173, guid: 659e003288da5784da6a6dea8d1124aa, type: 3}
+  blocks: 10
+  trials: 40
+  approachDistance: 3
+  participantHandedness: 1
+  initialTargetRoom: 0
+  questionOne: Are you feeling happy or sad?
+  questionOneLowTexture: {fileID: 2800000, guid: ba249f57dccb56740854c30a0d6d434f, type: 3}
+  questionOneHighTexture: {fileID: 2800000, guid: 314f1ebef30680448baf6fb08aa85f4d, type: 3}
+  questionTwo: Are you feeling stressed?
+  questionTwoLowTexture: {fileID: 2800000, guid: a4a579dad06a67249af4989fac015bc9, type: 3}
+  questionTwoHighTexture: {fileID: 2800000, guid: 518624b7f29c7674baa652baedd34e92, type: 3}

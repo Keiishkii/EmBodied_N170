@@ -41,6 +41,8 @@ namespace NPC_Controller
 
         private Animator _animator;
         
+        [SerializeField] private bool _isLiving;
+        
         [SerializeField] private Transform _lookAtTarget;
         public Transform LookAtTarget => _lookAtTarget;
         
@@ -66,6 +68,7 @@ namespace NPC_Controller
         private void Start()
         {
             SetState = IdleState;
+            if (!_isLiving) _animator.speed = 0;
         }
 
         private void OnEnable() { State_AwaitingObjectPlacement.ObjectPlaced.AddListener(OnObjectPlacement); }
@@ -75,15 +78,18 @@ namespace NPC_Controller
         
         private void Update()
         {
-            _currentState.Update(this);
+            if (_isLiving) _currentState.Update(this);
         }
 
 
 
         private void OnObjectPlacement(GameControllerStateMachine gameControllerStateMachine)
         {
-            _animator.SetTrigger("Trigger - Thank You");
-            _audioSource.Play();
+            if (_isLiving)
+            {
+                _animator.SetTrigger("Trigger - Thank You");
+                _audioSource.Play();
+            }
         }
     }
 }

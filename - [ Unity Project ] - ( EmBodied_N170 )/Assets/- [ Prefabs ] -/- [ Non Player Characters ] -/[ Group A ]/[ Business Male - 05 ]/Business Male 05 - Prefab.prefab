@@ -2260,6 +2260,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62e021ebf483b81478ac420385dec855, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isLiving: 1
   _lookAtTarget: {fileID: 2258954583851251159}
   _lookSpeed: 0.35
   _lookAtMotionCurve:

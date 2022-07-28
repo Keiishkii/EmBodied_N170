@@ -42,7 +42,8 @@ namespace NPC_Controller
         private Animator _animator;
         
         [SerializeField] private bool _isLiving;
-        
+        [HideInInspector] public Enums.Room room;
+
         [SerializeField] private Transform _lookAtTarget;
         public Transform LookAtTarget => _lookAtTarget;
         
@@ -85,8 +86,9 @@ namespace NPC_Controller
 
         private void OnObjectPlacement(GameControllerStateMachine gameControllerStateMachine)
         {
-            if (_isLiving)
+            if (_isLiving && room == gameControllerStateMachine.currentBlock.targetRoom)
             {
+                Debug.Log("Voice: <color=#4499FF>\"Thank You\"</color>");
                 _animator.SetTrigger("Trigger - Thank You");
                 _audioSource.Play();
             }

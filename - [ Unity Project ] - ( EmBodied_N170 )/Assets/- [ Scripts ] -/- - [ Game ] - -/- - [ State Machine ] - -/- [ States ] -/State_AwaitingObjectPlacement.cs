@@ -13,7 +13,7 @@ namespace StateMachine
         private delegate void SetRoomColliderActivation(bool activationState);
         private SetRoomColliderActivation _activateRoomCollider;
 
-
+        
         
         
 

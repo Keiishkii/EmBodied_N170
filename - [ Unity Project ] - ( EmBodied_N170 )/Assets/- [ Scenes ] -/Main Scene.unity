@@ -25373,12 +25373,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc5836272455e654683aa2442aee28b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SessionFormatObject: {fileID: 11400000, guid: 5ddb47a5878a1ef4fbaa082d0ea68198, type: 2}
+  SessionFormatObject: {fileID: 11400000, guid: 101bf64f96db9cc47a03cd7279b3e8f8, type: 2}
   blockIndex: 0
   trialIndex: 0
   currentBlock:
     trials: []
+    trialListVisibility: 0
     blockQuestionnairePanels: []
+    questionnaireListVisibility: 0
     targetRoom: 0
   currentTrial:
     roomA_NPCAvatar: {fileID: 0}

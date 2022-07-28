@@ -134,11 +134,15 @@ namespace Data {
 
             private void RenderBlockContent(SerializedProperty blockProperty)
             {
-                SerializedProperty trialListProperty = blockProperty.FindPropertyRelative("trials");
                 SerializedProperty targetRoomProperty = blockProperty.FindPropertyRelative("targetRoom");
+                
+                SerializedProperty trialListProperty = blockProperty.FindPropertyRelative("trials");
+                SerializedProperty trialListVisibilityProperty = blockProperty.FindPropertyRelative("trialListVisibility");
+                
                 SerializedProperty questionnairePanelListProperty = blockProperty.FindPropertyRelative("blockQuestionnairePanels");
+                SerializedProperty questionnaireListVisibilityProperty = blockProperty.FindPropertyRelative("questionnaireListVisibility");
 
-
+                
                 // ---- Block Data
 
                 #region Block Data
@@ -150,259 +154,329 @@ namespace Data {
                 #endregion
                 
                 // ---- Block Questions
-
                 #region Block Questions:
-
-                using (new EditorGUILayout.VerticalScope(GUI.skin.customStyles[0]))
+                CustomEditorUtilities.CollapsableScope(questionnaireListVisibilityProperty, "Block Questions", () =>
                 {
-                    EditorGUILayout.LabelField($"<b><color=#FFF>Questionnaire Panels: </color></b>", EditorSkin.label);
-
-                    if (questionnairePanelListProperty.arraySize <= 0) EditorGUILayout.HelpBox("There are no questions asked at the end of the trail. Add a question.", MessageType.Warning);
-
-                    List<int> questionsToRemove = new List<int>();
-                    for (int questionIndex = 0; questionIndex < questionnairePanelListProperty.arraySize; questionIndex++)
+                    using (new EditorGUILayout.VerticalScope(GUI.skin.customStyles[0]))
                     {
-                        SerializedProperty questionProperty = questionnairePanelListProperty.GetArrayElementAtIndex(questionIndex);
+                        EditorGUILayout.LabelField($"<b><color=#FFF>Questionnaire Panels: </color></b>", EditorSkin.label);
 
-                        using (new EditorGUILayout.HorizontalScope())
+                        if (questionnairePanelListProperty.arraySize <= 0) EditorGUILayout.HelpBox("There are no questions asked at the end of the trail. Add a question.", MessageType.Warning);
+
+                        List<int> questionsToRemove = new List<int>();
+                        for (int questionIndex = 0; questionIndex < questionnairePanelListProperty.arraySize; questionIndex++)
                         {
-                            EditorGUILayout.LabelField($"<b><color=#FFF>Panel {questionIndex + 1}:</color></b>", EditorSkin.label);
-                            if (GUILayout.Button("x"))
+                            SerializedProperty questionProperty = questionnairePanelListProperty.GetArrayElementAtIndex(questionIndex);
+
+                            using (new EditorGUILayout.HorizontalScope())
                             {
-                                questionsToRemove.Add(questionIndex);
+                                EditorGUILayout.LabelField($"<b><color=#FFF>Panel {questionIndex + 1}:</color></b>", EditorSkin.label);
+                                if (GUILayout.Button("x"))
+                                {
+                                    questionsToRemove.Add(questionIndex);
+                                }
                             }
-                        }
 
 
 
-                        EditorGUI.indentLevel += 1;
-                        SerializedProperty questionTypeProperty = questionProperty.FindPropertyRelative("questionnairePanelType");
+                            EditorGUI.indentLevel += 1;
+                            SerializedProperty questionTypeProperty = questionProperty.FindPropertyRelative("questionnairePanelType");
 
-                        EditorGUI.BeginChangeCheck();
-                        QuestionnairePanelType_Enum questionnairePanelType = (QuestionnairePanelType_Enum) EditorGUILayout.EnumPopup("Question Type: ", (QuestionnairePanelType_Enum) questionTypeProperty.enumValueIndex);
-                        if (EditorGUI.EndChangeCheck())
-                        {
+                            EditorGUI.BeginChangeCheck();
+                            QuestionnairePanelType_Enum questionnairePanelType = (QuestionnairePanelType_Enum) EditorGUILayout.EnumPopup("Question Type: ", (QuestionnairePanelType_Enum) questionTypeProperty.enumValueIndex);
+                            if (EditorGUI.EndChangeCheck())
+                            {
+                                switch (questionnairePanelType)
+                                {
+                                    case QuestionnairePanelType_Enum.Unselected:
+                                    {
+                                        questionProperty.managedReferenceValue = new QuestionnairePanel();
+                                    }
+                                        break;
+                                    case QuestionnairePanelType_Enum.OneQuestion_SliderAnswer:
+                                    {
+                                        questionProperty.managedReferenceValue = new QuestionnairePanel_OneSlider();
+                                    }
+                                        break;
+                                    case QuestionnairePanelType_Enum.TwoQuestion_SliderAnswer:
+                                    {
+                                        questionProperty.managedReferenceValue = new QuestionnairePanel_TwoSliders();
+                                    }
+                                        break;
+                                }
+
+                                questionTypeProperty = questionProperty.FindPropertyRelative("questionnairePanelType");
+                                questionTypeProperty.enumValueIndex = (int) questionnairePanelType;
+                            }
+
                             switch (questionnairePanelType)
                             {
-                                case QuestionnairePanelType_Enum.Unselected:
-                                {
-                                    questionProperty.managedReferenceValue = new QuestionnairePanel();
-                                }
-                                    break;
                                 case QuestionnairePanelType_Enum.OneQuestion_SliderAnswer:
                                 {
-                                    questionProperty.managedReferenceValue = new QuestionnairePanel_OneSlider();
+                                    SerializedProperty sliderQuestionProperty = questionProperty.FindPropertyRelative("sliderQuestion");
+                                    {
+                                        EditorGUI.indentLevel++;
+                                        sliderQuestionProperty.stringValue = EditorGUILayout.TextField("Question: ", sliderQuestionProperty.stringValue);
+                                        EditorGUI.indentLevel--;
+
+                                        SerializedProperty questionDecorTypeProperty = questionProperty.FindPropertyRelative("sliderQuestionDecorType");
+                                        QuestionDecor_Enum questionDecorType = (QuestionDecor_Enum) EditorGUILayout.EnumPopup("Question Decor Type: ", (QuestionDecor_Enum) questionDecorTypeProperty.enumValueIndex);
+                                        questionDecorTypeProperty.enumValueIndex = (int) questionDecorType;
+                                        switch (questionDecorType)
+                                        {
+                                            case QuestionDecor_Enum.Text:
+                                            {
+                                                SerializedProperty sliderMinimum = questionProperty.FindPropertyRelative("sliderQuestionDecorMinimumText");
+                                                sliderMinimum.stringValue = EditorGUILayout.TextField("Min: ", sliderMinimum.stringValue);
+
+                                                SerializedProperty sliderMaximum = questionProperty.FindPropertyRelative("sliderQuestionDecorMaximumText");
+                                                sliderMaximum.stringValue = EditorGUILayout.TextField("Max: ", sliderMaximum.stringValue);
+
+                                            }
+                                                break;
+                                            case QuestionDecor_Enum.Image:
+                                            {
+                                                EditorGUI.indentLevel++;
+
+                                                SerializedProperty sliderMinimum = questionProperty.FindPropertyRelative("sliderQuestionDecorMinimumSprite");
+                                                using (new EditorGUILayout.HorizontalScope(_editorSkin.customStyles[1]))
+                                                {
+                                                    EditorGUILayout.LabelField($"Object: {((sliderMinimum.objectReferenceValue == null) ? "Name does not exist" : sliderMinimum.objectReferenceValue.name)}");
+                                                    sliderMinimum.objectReferenceValue = EditorGUILayout.ObjectField(sliderMinimum.objectReferenceValue, typeof(Texture2D), false);
+                                                }
+
+                                                SerializedProperty sliderMaximum = questionProperty.FindPropertyRelative("sliderQuestionDecorMaximumSprite");
+                                                using (new EditorGUILayout.HorizontalScope(_editorSkin.customStyles[1]))
+                                                {
+                                                    EditorGUILayout.LabelField($"Object: {((sliderMaximum.objectReferenceValue == null) ? "Name does not exist" : sliderMaximum.objectReferenceValue.name)}");
+                                                    sliderMaximum.objectReferenceValue = EditorGUILayout.ObjectField(sliderMaximum.objectReferenceValue, typeof(Texture2D), false);
+                                                }
+
+                                                EditorGUI.indentLevel--;
+                                            }
+                                                break;
+                                        }
+                                    }
                                 }
                                     break;
                                 case QuestionnairePanelType_Enum.TwoQuestion_SliderAnswer:
                                 {
-                                    questionProperty.managedReferenceValue = new QuestionnairePanel_TwoSliders();
+                                    #region Slider Question Two
+
+                                    {
+                                        EditorGUI.indentLevel++;
+                                        SerializedProperty sliderQuestionProperty = questionProperty.FindPropertyRelative("sliderOneQuestion");
+                                        sliderQuestionProperty.stringValue = EditorGUILayout.TextField("Question: ", sliderQuestionProperty.stringValue);
+                                        EditorGUI.indentLevel--;
+
+                                        SerializedProperty questionDecorTypeProperty = questionProperty.FindPropertyRelative("sliderOneQuestionDecorType");
+                                        QuestionDecor_Enum questionDecorType = (QuestionDecor_Enum) EditorGUILayout.EnumPopup("Question Decor Type: ", (QuestionDecor_Enum) questionDecorTypeProperty.enumValueIndex);
+                                        questionDecorTypeProperty.enumValueIndex = (int) questionDecorType;
+                                        switch (questionDecorType)
+                                        {
+                                            case QuestionDecor_Enum.Text:
+                                            {
+                                                SerializedProperty sliderMinimum = questionProperty.FindPropertyRelative("sliderOneQuestionDecorMinimumText");
+                                                sliderMinimum.stringValue = EditorGUILayout.TextField("Min: ", sliderMinimum.stringValue);
+
+                                                SerializedProperty sliderMaximum = questionProperty.FindPropertyRelative("sliderOneQuestionDecorMaximumText");
+                                                sliderMaximum.stringValue = EditorGUILayout.TextField("Max: ", sliderMaximum.stringValue);
+
+                                            }
+                                                break;
+                                            case QuestionDecor_Enum.Image:
+                                            {
+                                                EditorGUI.indentLevel++;
+
+                                                SerializedProperty sliderMinimum = questionProperty.FindPropertyRelative("sliderOneQuestionDecorMinimumSprite");
+                                                using (new EditorGUILayout.HorizontalScope(_editorSkin.customStyles[1]))
+                                                {
+                                                    EditorGUILayout.LabelField($"Object: {((sliderMinimum.objectReferenceValue == null) ? "Name does not exist" : sliderMinimum.objectReferenceValue.name)}");
+                                                    sliderMinimum.objectReferenceValue = EditorGUILayout.ObjectField(sliderMinimum.objectReferenceValue, typeof(Texture2D), false);
+                                                }
+
+                                                SerializedProperty sliderMaximum = questionProperty.FindPropertyRelative("sliderOneQuestionDecorMaximumSprite");
+                                                using (new EditorGUILayout.HorizontalScope(_editorSkin.customStyles[1]))
+                                                {
+                                                    EditorGUILayout.LabelField($"Object: {((sliderMaximum.objectReferenceValue == null) ? "Name does not exist" : sliderMaximum.objectReferenceValue.name)}");
+                                                    sliderMaximum.objectReferenceValue = EditorGUILayout.ObjectField(sliderMaximum.objectReferenceValue, typeof(Texture2D), false);
+                                                }
+
+                                                EditorGUI.indentLevel--;
+                                            }
+                                                break;
+                                        }
+                                    }
+
+                                    #endregion
+
+                                    EditorGUILayout.Separator();
+
+                                    #region Slider Question Two
+
+                                    {
+                                        EditorGUI.indentLevel++;
+                                        SerializedProperty sliderQuestionProperty = questionProperty.FindPropertyRelative("sliderTwoQuestion");
+                                        sliderQuestionProperty.stringValue = EditorGUILayout.TextField("Question: ", sliderQuestionProperty.stringValue);
+                                        EditorGUI.indentLevel--;
+
+                                        SerializedProperty questionDecorTypeProperty = questionProperty.FindPropertyRelative("sliderTwoQuestionDecorType");
+                                        QuestionDecor_Enum questionDecorType = (QuestionDecor_Enum) EditorGUILayout.EnumPopup("Question Decor Type: ", (QuestionDecor_Enum) questionDecorTypeProperty.enumValueIndex);
+                                        questionDecorTypeProperty.enumValueIndex = (int) questionDecorType;
+                                        switch (questionDecorType)
+                                        {
+                                            case QuestionDecor_Enum.Text:
+                                            {
+                                                SerializedProperty sliderMinimum = questionProperty.FindPropertyRelative("sliderTwoQuestionDecorMinimumText");
+                                                sliderMinimum.stringValue = EditorGUILayout.TextField("Min: ", sliderMinimum.stringValue);
+
+                                                SerializedProperty sliderMaximum = questionProperty.FindPropertyRelative("sliderTwoQuestionDecorMaximumText");
+                                                sliderMaximum.stringValue = EditorGUILayout.TextField("Max: ", sliderMaximum.stringValue);
+
+                                            }
+                                                break;
+                                            case QuestionDecor_Enum.Image:
+                                            {
+                                                EditorGUI.indentLevel++;
+
+                                                SerializedProperty sliderMinimum = questionProperty.FindPropertyRelative("sliderTwoQuestionDecorMinimumSprite");
+                                                using (new EditorGUILayout.HorizontalScope(_editorSkin.customStyles[1]))
+                                                {
+                                                    EditorGUILayout.LabelField($"Object: {((sliderMinimum.objectReferenceValue == null) ? "Name does not exist" : sliderMinimum.objectReferenceValue.name)}");
+                                                    sliderMinimum.objectReferenceValue = EditorGUILayout.ObjectField(sliderMinimum.objectReferenceValue, typeof(Texture2D), false);
+                                                }
+
+                                                SerializedProperty sliderMaximum = questionProperty.FindPropertyRelative("sliderTwoQuestionDecorMaximumSprite");
+                                                using (new EditorGUILayout.HorizontalScope(_editorSkin.customStyles[1]))
+                                                {
+                                                    EditorGUILayout.LabelField($"Object: {((sliderMaximum.objectReferenceValue == null) ? "Name does not exist" : sliderMaximum.objectReferenceValue.name)}");
+                                                    sliderMaximum.objectReferenceValue = EditorGUILayout.ObjectField(sliderMaximum.objectReferenceValue, typeof(Texture2D), false);
+                                                }
+
+                                                EditorGUI.indentLevel--;
+                                            }
+                                                break;
+                                        }
+                                    }
+
+                                    #endregion
                                 }
                                     break;
                             }
 
-                            questionTypeProperty = questionProperty.FindPropertyRelative("questionnairePanelType");
-                            questionTypeProperty.enumValueIndex = (int) questionnairePanelType;
+                            EditorGUI.indentLevel -= 1;
+                            EditorGUILayout.Space();
                         }
 
-                        switch (questionnairePanelType)
+                        foreach (int questionIndex in questionsToRemove)
                         {
-                            case QuestionnairePanelType_Enum.OneQuestion_SliderAnswer:
-                            {
-                                SerializedProperty sliderQuestionProperty = questionProperty.FindPropertyRelative("sliderQuestion");
-                                {
-                                    EditorGUI.indentLevel++;
-                                    sliderQuestionProperty.stringValue = EditorGUILayout.TextField("Question: ", sliderQuestionProperty.stringValue);
-                                    EditorGUI.indentLevel--;
+                            questionnairePanelListProperty.DeleteArrayElementAtIndex(questionIndex);
 
-                                    SerializedProperty questionDecorTypeProperty = questionProperty.FindPropertyRelative("sliderQuestionDecorType");
-                                    QuestionDecor_Enum questionDecorType = (QuestionDecor_Enum) EditorGUILayout.EnumPopup("Question Decor Type: ", (QuestionDecor_Enum) questionDecorTypeProperty.enumValueIndex);
-                                    questionDecorTypeProperty.enumValueIndex = (int) questionDecorType;
-                                    switch (questionDecorType)
-                                    {
-                                        case QuestionDecor_Enum.Text:
-                                        {
-                                            SerializedProperty sliderMinimum = questionProperty.FindPropertyRelative("sliderQuestionDecorMinimumText");
-                                            sliderMinimum.stringValue = EditorGUILayout.TextField("Min: ", sliderMinimum.stringValue);
-
-                                            SerializedProperty sliderMaximum = questionProperty.FindPropertyRelative("sliderQuestionDecorMaximumText");
-                                            sliderMaximum.stringValue = EditorGUILayout.TextField("Max: ", sliderMaximum.stringValue);
-
-                                        }
-                                            break;
-                                        case QuestionDecor_Enum.Image:
-                                        {
-                                            EditorGUI.indentLevel++;
-
-                                            SerializedProperty sliderMinimum = questionProperty.FindPropertyRelative("sliderQuestionDecorMinimumSprite");
-                                            using (new EditorGUILayout.HorizontalScope(_editorSkin.customStyles[1]))
-                                            {
-                                                EditorGUILayout.LabelField($"Object: {((sliderMinimum.objectReferenceValue == null) ? "Name does not exist" : sliderMinimum.objectReferenceValue.name)}");
-                                                sliderMinimum.objectReferenceValue = EditorGUILayout.ObjectField(sliderMinimum.objectReferenceValue, typeof(Texture2D), false);
-                                            }
-
-                                            SerializedProperty sliderMaximum = questionProperty.FindPropertyRelative("sliderQuestionDecorMaximumSprite");
-                                            using (new EditorGUILayout.HorizontalScope(_editorSkin.customStyles[1]))
-                                            {
-                                                EditorGUILayout.LabelField($"Object: {((sliderMaximum.objectReferenceValue == null) ? "Name does not exist" : sliderMaximum.objectReferenceValue.name)}");
-                                                sliderMaximum.objectReferenceValue = EditorGUILayout.ObjectField(sliderMaximum.objectReferenceValue, typeof(Texture2D), false);
-                                            }
-
-                                            EditorGUI.indentLevel--;
-                                        }
-                                            break;
-                                    }
-                                }
-                            }
-                                break;
-                            case QuestionnairePanelType_Enum.TwoQuestion_SliderAnswer:
-                            {
-                                #region Slider Question Two
-
-                                {
-                                    EditorGUI.indentLevel++;
-                                    SerializedProperty sliderQuestionProperty = questionProperty.FindPropertyRelative("sliderOneQuestion");
-                                    sliderQuestionProperty.stringValue = EditorGUILayout.TextField("Question: ", sliderQuestionProperty.stringValue);
-                                    EditorGUI.indentLevel--;
-
-                                    SerializedProperty questionDecorTypeProperty = questionProperty.FindPropertyRelative("sliderOneQuestionDecorType");
-                                    QuestionDecor_Enum questionDecorType = (QuestionDecor_Enum) EditorGUILayout.EnumPopup("Question Decor Type: ", (QuestionDecor_Enum) questionDecorTypeProperty.enumValueIndex);
-                                    questionDecorTypeProperty.enumValueIndex = (int) questionDecorType;
-                                    switch (questionDecorType)
-                                    {
-                                        case QuestionDecor_Enum.Text:
-                                        {
-                                            SerializedProperty sliderMinimum = questionProperty.FindPropertyRelative("sliderOneQuestionDecorMinimumText");
-                                            sliderMinimum.stringValue = EditorGUILayout.TextField("Min: ", sliderMinimum.stringValue);
-
-                                            SerializedProperty sliderMaximum = questionProperty.FindPropertyRelative("sliderOneQuestionDecorMaximumText");
-                                            sliderMaximum.stringValue = EditorGUILayout.TextField("Max: ", sliderMaximum.stringValue);
-
-                                        }
-                                            break;
-                                        case QuestionDecor_Enum.Image:
-                                        {
-                                            EditorGUI.indentLevel++;
-
-                                            SerializedProperty sliderMinimum = questionProperty.FindPropertyRelative("sliderOneQuestionDecorMinimumSprite");
-                                            using (new EditorGUILayout.HorizontalScope(_editorSkin.customStyles[1]))
-                                            {
-                                                EditorGUILayout.LabelField($"Object: {((sliderMinimum.objectReferenceValue == null) ? "Name does not exist" : sliderMinimum.objectReferenceValue.name)}");
-                                                sliderMinimum.objectReferenceValue = EditorGUILayout.ObjectField(sliderMinimum.objectReferenceValue, typeof(Texture2D), false);
-                                            }
-
-                                            SerializedProperty sliderMaximum = questionProperty.FindPropertyRelative("sliderOneQuestionDecorMaximumSprite");
-                                            using (new EditorGUILayout.HorizontalScope(_editorSkin.customStyles[1]))
-                                            {
-                                                EditorGUILayout.LabelField($"Object: {((sliderMaximum.objectReferenceValue == null) ? "Name does not exist" : sliderMaximum.objectReferenceValue.name)}");
-                                                sliderMaximum.objectReferenceValue = EditorGUILayout.ObjectField(sliderMaximum.objectReferenceValue, typeof(Texture2D), false);
-                                            }
-
-                                            EditorGUI.indentLevel--;
-                                        }
-                                            break;
-                                    }
-                                }
-
-                                #endregion
-
-                                EditorGUILayout.Separator();
-
-                                #region Slider Question Two
-
-                                {
-                                    EditorGUI.indentLevel++;
-                                    SerializedProperty sliderQuestionProperty = questionProperty.FindPropertyRelative("sliderTwoQuestion");
-                                    sliderQuestionProperty.stringValue = EditorGUILayout.TextField("Question: ", sliderQuestionProperty.stringValue);
-                                    EditorGUI.indentLevel--;
-
-                                    SerializedProperty questionDecorTypeProperty = questionProperty.FindPropertyRelative("sliderTwoQuestionDecorType");
-                                    QuestionDecor_Enum questionDecorType = (QuestionDecor_Enum) EditorGUILayout.EnumPopup("Question Decor Type: ", (QuestionDecor_Enum) questionDecorTypeProperty.enumValueIndex);
-                                    questionDecorTypeProperty.enumValueIndex = (int) questionDecorType;
-                                    switch (questionDecorType)
-                                    {
-                                        case QuestionDecor_Enum.Text:
-                                        {
-                                            SerializedProperty sliderMinimum = questionProperty.FindPropertyRelative("sliderTwoQuestionDecorMinimumText");
-                                            sliderMinimum.stringValue = EditorGUILayout.TextField("Min: ", sliderMinimum.stringValue);
-
-                                            SerializedProperty sliderMaximum = questionProperty.FindPropertyRelative("sliderTwoQuestionDecorMaximumText");
-                                            sliderMaximum.stringValue = EditorGUILayout.TextField("Max: ", sliderMaximum.stringValue);
-
-                                        }
-                                            break;
-                                        case QuestionDecor_Enum.Image:
-                                        {
-                                            EditorGUI.indentLevel++;
-
-                                            SerializedProperty sliderMinimum = questionProperty.FindPropertyRelative("sliderTwoQuestionDecorMinimumSprite");
-                                            using (new EditorGUILayout.HorizontalScope(_editorSkin.customStyles[1]))
-                                            {
-                                                EditorGUILayout.LabelField($"Object: {((sliderMinimum.objectReferenceValue == null) ? "Name does not exist" : sliderMinimum.objectReferenceValue.name)}");
-                                                sliderMinimum.objectReferenceValue = EditorGUILayout.ObjectField(sliderMinimum.objectReferenceValue, typeof(Texture2D), false);
-                                            }
-
-                                            SerializedProperty sliderMaximum = questionProperty.FindPropertyRelative("sliderTwoQuestionDecorMaximumSprite");
-                                            using (new EditorGUILayout.HorizontalScope(_editorSkin.customStyles[1]))
-                                            {
-                                                EditorGUILayout.LabelField($"Object: {((sliderMaximum.objectReferenceValue == null) ? "Name does not exist" : sliderMaximum.objectReferenceValue.name)}");
-                                                sliderMaximum.objectReferenceValue = EditorGUILayout.ObjectField(sliderMaximum.objectReferenceValue, typeof(Texture2D), false);
-                                            }
-
-                                            EditorGUI.indentLevel--;
-                                        }
-                                            break;
-                                    }
-                                }
-
-                                #endregion
-                            }
-                                break;
+                            SerializedObject obj = _blockListProperty.serializedObject;
+                            obj.ApplyModifiedProperties();
+                            obj.Update();
                         }
 
-                        EditorGUI.indentLevel -= 1;
-                        EditorGUILayout.Space();
+                        if (GUILayout.Button("Add new 'Question'"))
+                        {
+                            questionnairePanelListProperty.arraySize++;
+                            SerializedProperty questionProperty = questionnairePanelListProperty.GetArrayElementAtIndex(questionnairePanelListProperty.arraySize - 1);
+
+                            questionProperty.managedReferenceValue = new QuestionnairePanel();
+
+                            questionProperty.serializedObject.ApplyModifiedProperties();
+                            questionProperty.serializedObject.Update();
+                        }
                     }
-
-                    foreach (int questionIndex in questionsToRemove)
-                    {
-                        questionnairePanelListProperty.DeleteArrayElementAtIndex(questionIndex);
-
-                        SerializedObject obj = _blockListProperty.serializedObject;
-                        obj.ApplyModifiedProperties();
-                        obj.Update();
-                    }
-
-                    if (GUILayout.Button("Add new 'Question'"))
-                    {
-                        questionnairePanelListProperty.arraySize++;
-                        SerializedProperty questionProperty = questionnairePanelListProperty.GetArrayElementAtIndex(questionnairePanelListProperty.arraySize - 1);
-
-                        questionProperty.managedReferenceValue = new QuestionnairePanel();
-
-                        questionProperty.serializedObject.ApplyModifiedProperties();
-                        questionProperty.serializedObject.Update();
-                    }
-                }
+                });
 
                 #endregion
 
                 // ---- Block Trials
 
                 #region Render Block Trials
-
-                using (new EditorGUILayout.VerticalScope(EditorSkin.customStyles[0]))
+                CustomEditorUtilities.CollapsableScope(trialListVisibilityProperty, "Block Trials", () =>
                 {
-                    int trialCount = trialListProperty.arraySize;
-                    using (new EditorGUILayout.HorizontalScope())
+                    using (new EditorGUILayout.VerticalScope(EditorSkin.customStyles[0]))
                     {
-                        EditorGUILayout.LabelField($"<b><color=#FFF>Trials: </color></b>", EditorSkin.label);
-                        trialCount = EditorGUILayout.IntField(trialCount);
-                    }
+                        int trialCount = trialListProperty.arraySize;
+                        using (new EditorGUILayout.HorizontalScope())
+                        {
+                            EditorGUILayout.LabelField($"<b><color=#FFF>Trials: </color></b>", EditorSkin.label);
+                            trialCount = EditorGUILayout.IntField(trialCount);
+                        }
 
-                    if (trialCount != trialListProperty.arraySize)
-                    {
-                        while (trialCount > trialListProperty.arraySize)
+                        if (trialCount != trialListProperty.arraySize)
+                        {
+                            while (trialCount > trialListProperty.arraySize)
+                            {
+                                trialListProperty.arraySize++;
+                                SerializedProperty trialProperty = trialListProperty.GetArrayElementAtIndex(trialListProperty.arraySize - 1);
+
+                                trialProperty.managedReferenceValue = new Trial();
+
+                                trialProperty.serializedObject.ApplyModifiedProperties();
+                                trialProperty.serializedObject.Update();
+                            }
+
+                            while (trialCount >= 0 && trialCount < trialListProperty.arraySize)
+                            {
+                                trialListProperty.DeleteArrayElementAtIndex(trialCount);
+                            }
+                        }
+
+                        List<int> trialsToRemove = new List<int>();
+                        for (int trialIndex = 0; trialIndex < trialListProperty.arraySize; trialIndex++)
+                        {
+                            EditorGUILayout.Separator();
+
+                            using (new EditorGUILayout.HorizontalScope())
+                            {
+                                EditorGUILayout.LabelField($"<b><color=#FFF>Trial {trialIndex + 1}:</color></b>", EditorSkin.label);
+                                if (GUILayout.Button("x"))
+                                {
+                                    trialsToRemove.Add(trialIndex);
+                                }
+                            }
+
+                            EditorGUILayout.Space(5);
+
+                            SerializedProperty trialProperty = trialListProperty.GetArrayElementAtIndex(trialIndex);
+
+                            SerializedProperty roomA_NPCAvatarProperty = trialProperty.FindPropertyRelative("roomA_NPCAvatar");
+                            SerializedProperty roomB_NPCAvatarProperty = trialProperty.FindPropertyRelative("roomB_NPCAvatar");
+                            SerializedProperty heldObjectProperty = trialProperty.FindPropertyRelative("heldObject");
+
+                            if (roomA_NPCAvatarProperty.objectReferenceValue == null || roomB_NPCAvatarProperty.objectReferenceValue == null || heldObjectProperty.objectReferenceValue == null)
+                            {
+                                EditorGUILayout.HelpBox("These fields cannot be empty, assign a Prefab.", MessageType.Error);
+                                EditorGUILayout.Space(5);
+                            }
+
+                            EditorGUI.indentLevel += 1;
+                            roomA_NPCAvatarProperty.objectReferenceValue = EditorGUILayout.ObjectField("Room A: NPC Avatar", roomA_NPCAvatarProperty.objectReferenceValue, typeof(GameObject), false);
+                            roomB_NPCAvatarProperty.objectReferenceValue = EditorGUILayout.ObjectField("Room B: NPC Avatar", roomB_NPCAvatarProperty.objectReferenceValue, typeof(GameObject), false);
+
+                            heldObjectProperty.objectReferenceValue = EditorGUILayout.ObjectField("Held Item", heldObjectProperty.objectReferenceValue, typeof(GameObject), false);
+
+
+                            EditorGUI.indentLevel -= 1;
+                            EditorGUILayout.Space();
+                        }
+
+                        foreach (int trialIndex in trialsToRemove)
+                        {
+                            trialListProperty.DeleteArrayElementAtIndex(trialIndex);
+
+                            SerializedObject obj = _blockListProperty.serializedObject;
+                            obj.ApplyModifiedProperties();
+                            obj.Update();
+                        }
+
+
+                        if (trialListProperty.arraySize <= 0) EditorGUILayout.HelpBox("There are no trials in this block.", MessageType.Warning);
+
+                        if (GUILayout.Button("Add new Trial"))
                         {
                             trialListProperty.arraySize++;
                             SerializedProperty trialProperty = trialListProperty.GetArrayElementAtIndex(trialListProperty.arraySize - 1);
@@ -412,75 +486,8 @@ namespace Data {
                             trialProperty.serializedObject.ApplyModifiedProperties();
                             trialProperty.serializedObject.Update();
                         }
-
-                        while (trialCount >= 0 && trialCount < trialListProperty.arraySize)
-                        {
-                            trialListProperty.DeleteArrayElementAtIndex(trialCount);
-                        }
                     }
-
-                    List<int> trialsToRemove = new List<int>();
-                    for (int trialIndex = 0; trialIndex < trialListProperty.arraySize; trialIndex++)
-                    {
-                        EditorGUILayout.Separator();
-
-                        using (new EditorGUILayout.HorizontalScope())
-                        {
-                            EditorGUILayout.LabelField($"<b><color=#FFF>Trial {trialIndex + 1}:</color></b>", EditorSkin.label);
-                            if (GUILayout.Button("x"))
-                            {
-                                trialsToRemove.Add(trialIndex);
-                            }
-                        }
-
-                        EditorGUILayout.Space(5);
-
-                        SerializedProperty trialProperty = trialListProperty.GetArrayElementAtIndex(trialIndex);
-
-                        SerializedProperty roomA_NPCAvatarProperty = trialProperty.FindPropertyRelative("roomA_NPCAvatar");
-                        SerializedProperty roomB_NPCAvatarProperty = trialProperty.FindPropertyRelative("roomB_NPCAvatar");
-                        SerializedProperty heldObjectProperty = trialProperty.FindPropertyRelative("heldObject");
-
-                        if (roomA_NPCAvatarProperty.objectReferenceValue == null || roomB_NPCAvatarProperty.objectReferenceValue == null || heldObjectProperty.objectReferenceValue == null)
-                        {
-                            EditorGUILayout.HelpBox("These fields cannot be empty, assign a Prefab.", MessageType.Error);
-                            EditorGUILayout.Space(5);
-                        }
-
-                        EditorGUI.indentLevel += 1;
-                        roomA_NPCAvatarProperty.objectReferenceValue = EditorGUILayout.ObjectField("Room A: NPC Avatar", roomA_NPCAvatarProperty.objectReferenceValue, typeof(GameObject), false);
-                        roomB_NPCAvatarProperty.objectReferenceValue = EditorGUILayout.ObjectField("Room B: NPC Avatar", roomB_NPCAvatarProperty.objectReferenceValue, typeof(GameObject), false);
-
-                        heldObjectProperty.objectReferenceValue = EditorGUILayout.ObjectField("Held Item", heldObjectProperty.objectReferenceValue, typeof(GameObject), false);
-
-
-                        EditorGUI.indentLevel -= 1;
-                        EditorGUILayout.Space();
-                    }
-
-                    foreach (int trialIndex in trialsToRemove)
-                    {
-                        trialListProperty.DeleteArrayElementAtIndex(trialIndex);
-
-                        SerializedObject obj = _blockListProperty.serializedObject;
-                        obj.ApplyModifiedProperties();
-                        obj.Update();
-                    }
-
-
-                    if (trialListProperty.arraySize <= 0) EditorGUILayout.HelpBox("There are no trials in this block.", MessageType.Warning);
-
-                    if (GUILayout.Button("Add new Trial"))
-                    {
-                        trialListProperty.arraySize++;
-                        SerializedProperty trialProperty = trialListProperty.GetArrayElementAtIndex(trialListProperty.arraySize - 1);
-
-                        trialProperty.managedReferenceValue = new Trial();
-
-                        trialProperty.serializedObject.ApplyModifiedProperties();
-                        trialProperty.serializedObject.Update();
-                    }
-                }
+                });
                 
                 #endregion
             }

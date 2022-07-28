@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Enums;
 using UnityEngine;
 using UnityEngine.Animations.Rigging;
 
@@ -52,6 +53,8 @@ public class NPCManager : MonoBehaviour
     private void InitialiseNPC(in NPCData npcData, in Vector3 position, in Quaternion rotation)
     {
         bool isRoomA = (position.x > 0);
+        npcData.npcController.room = (isRoomA) ? Room.RoomA : Room.RoomB;
+
         SetNPCTransformData(npcData, position, rotation);
         StartCoroutine(SetIK(npcData, isRoomA));
     }

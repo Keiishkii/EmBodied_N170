@@ -6,6 +6,7 @@ using System.IO;
 using Data.Input;
 using Enums;
 using Questionnaire;
+using Questionnaire.Enums;
 using UnityEditor;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -14,8 +15,9 @@ public class SessionGenerator : EditorWindow
 {
     [SerializeField]
     private SessionGeneratorSerializedData _serializedData;
-
     private SerializedObject _serializedObject;
+    
+    private Vector2 _scroll;
     
     
     
@@ -49,11 +51,12 @@ public class SessionGenerator : EditorWindow
 
     private void OnGUI()
     {
-        DrawNPCPrefabLists();
-
-        DrawGenerationData();
-        
-        DrawGenerateButton();
+        CustomEditorUtilities.ScrollScope(ref _scroll, () =>
+        {
+            DrawNPCPrefabLists();
+            DrawGenerationData();
+            DrawGenerateButton();
+        });
         
         _serializedObject.ApplyModifiedProperties();
     }
@@ -108,33 +111,15 @@ public class SessionGenerator : EditorWindow
             SerializedObject sessionSerializedObject = new SerializedObject(sessionFormat);
 
             
-            
             sessionSerializedObject.FindProperty("approachDistance").floatValue = _serializedObject.FindProperty("approachDistance").floatValue;
             sessionSerializedObject.FindProperty("participantHandedness").enumValueIndex = _serializedObject.FindProperty("participantHandedness").enumValueIndex;
 
-            
 
-            List<UnityEngine.Object> roomA = new List<UnityEngine.Object>();
-            for (int i = 0; i < _serializedObject.FindProperty("groupA").FindPropertyRelative("prefabList").arraySize; i++) {
-                roomA.Add(_serializedObject.FindProperty("groupA").FindPropertyRelative("prefabList").GetArrayElementAtIndex(i).objectReferenceValue);
-            }
-            for (int i = 0; i < _serializedObject.FindProperty("groupBStatues").FindPropertyRelative("prefabList").arraySize; i++) {
-                roomA.Add(_serializedObject.FindProperty("groupBStatues").FindPropertyRelative("prefabList").GetArrayElementAtIndex(i).objectReferenceValue);
-            }
-            
-            List<UnityEngine.Object> roomB = new List<UnityEngine.Object>();
-            for (int i = 0; i < _serializedObject.FindProperty("groupB").FindPropertyRelative("prefabList").arraySize; i++) {
-                roomB.Add(_serializedObject.FindProperty("groupB").FindPropertyRelative("prefabList").GetArrayElementAtIndex(i).objectReferenceValue);
-            }
-            for (int i = 0; i < _serializedObject.FindProperty("groupAStatues").FindPropertyRelative("prefabList").arraySize; i++) {
-                roomB.Add(_serializedObject.FindProperty("groupAStatues").FindPropertyRelative("prefabList").GetArrayElementAtIndex(i).objectReferenceValue);
-            }
-            
-            
-            
             SerializedProperty blocks = sessionSerializedObject.FindProperty("blocks");
             blocks.arraySize = 0;
             
+            //  - [ Blocks ] - 
+            #region Blocks
             Room targetRoom = (Room) _serializedObject.FindProperty("initialTargetRoom").enumValueIndex;
             for (int i = 0; i < _serializedObject.FindProperty("blocks").intValue; i++)
             {
@@ -145,6 +130,8 @@ public class SessionGenerator : EditorWindow
                 block.FindPropertyRelative("targetRoom").enumValueIndex = (int) targetRoom;
                 targetRoom = (targetRoom == Room.RoomA) ? Room.RoomB : Room.RoomA;
 
+                //  - [ Trials ] - 
+                #region Trials
                 SerializedProperty trials = block.FindPropertyRelative("trials");
                 trials.arraySize = 0;
                 for (int j = 0; j < _serializedObject.FindProperty("trials").intValue; j++)
@@ -153,14 +140,42 @@ public class SessionGenerator : EditorWindow
                     SerializedProperty trial = trials.GetArrayElementAtIndex(j);
                     trial.managedReferenceValue = new Trial();
 
+                    //  - [ Held Objects ] - 
+                    #region Non Player Characters
                     trial.FindPropertyRelative("heldObject").objectReferenceValue = _serializedObject.FindProperty("heldItem").objectReferenceValue;
+                    #endregion
 
-                    int random = Random.Range(0, roomA.Count);
-                    trial.FindPropertyRelative("roomA_NPCAvatar").objectReferenceValue = roomA[random];
-                    random = Random.Range(0, roomB.Count);
-                    trial.FindPropertyRelative("roomB_NPCAvatar").objectReferenceValue = roomB[random];
+                    //  - [ Non Player Characters ] - 
+                    #region Non Player Characters
+                    int typeRandomValue = Random.Range(0, 2);
+                    if (typeRandomValue > 0) // Statues Selected
+                    {
+                        SerializedProperty statuesAList = _serializedObject.FindProperty("groupAStatues").FindPropertyRelative("prefabList");
+                        SerializedProperty statuesBList = _serializedObject.FindProperty("groupBStatues").FindPropertyRelative("prefabList");
+                        
+                        int statueARandomIndex = Random.Range(0, statuesAList.arraySize);
+                        int statueBRandomIndex = Random.Range(0, statuesBList.arraySize);
+                        
+                        trial.FindPropertyRelative("roomA_NPCAvatar").objectReferenceValue = statuesAList.GetArrayElementAtIndex(statueARandomIndex).objectReferenceValue;
+                        trial.FindPropertyRelative("roomB_NPCAvatar").objectReferenceValue = statuesBList.GetArrayElementAtIndex(statueBRandomIndex).objectReferenceValue;
+                    }
+                    else // Normal NPCs selected
+                    {
+                        SerializedProperty npcAList = _serializedObject.FindProperty("groupA").FindPropertyRelative("prefabList");
+                        SerializedProperty npcBList = _serializedObject.FindProperty("groupB").FindPropertyRelative("prefabList");
+                        
+                        int npcARandomIndex = Random.Range(0, npcAList.arraySize);
+                        int npcBRandomIndex = Random.Range(0, npcBList.arraySize);
+                        
+                        trial.FindPropertyRelative("roomA_NPCAvatar").objectReferenceValue = npcAList.GetArrayElementAtIndex(npcARandomIndex).objectReferenceValue;
+                        trial.FindPropertyRelative("roomB_NPCAvatar").objectReferenceValue = npcBList.GetArrayElementAtIndex(npcBRandomIndex).objectReferenceValue;
+                    }
+                    #endregion
                 }
+                #endregion
                 
+                //  - [ Questionnaire ] - 
+                #region Questionnaire
                 SerializedProperty questionnairePanelsProperty = block.FindPropertyRelative("blockQuestionnairePanels");
                 questionnairePanelsProperty.arraySize = 0;
 
@@ -168,21 +183,27 @@ public class SessionGenerator : EditorWindow
                 SerializedProperty questionnairePanel = questionnairePanelsProperty.GetArrayElementAtIndex(0);
                 questionnairePanel.managedReferenceValue = new QuestionnairePanel_TwoSliders();
 
+                questionnairePanel.FindPropertyRelative("questionnairePanelType").enumValueIndex = (int) (QuestionnairePanelType_Enum.TwoQuestion_SliderAnswer);
+                
                 questionnairePanel.FindPropertyRelative("sliderOneQuestion").stringValue = _serializedObject.FindProperty("questionOne").stringValue;
                 questionnairePanel.FindPropertyRelative("sliderTwoQuestion").stringValue = _serializedObject.FindProperty("questionTwo").stringValue;
+                
+                questionnairePanel.FindPropertyRelative("sliderOneQuestionDecorType").enumValueIndex = (int) (Enums.QuestionDecor_Enum.Image);
+                questionnairePanel.FindPropertyRelative("sliderTwoQuestionDecorType").enumValueIndex = (int) (Enums.QuestionDecor_Enum.Image);
                 
                 questionnairePanel.FindPropertyRelative("sliderOneQuestionDecorMinimumSprite").objectReferenceValue = _serializedObject.FindProperty("questionOneLowTexture").objectReferenceValue;
                 questionnairePanel.FindPropertyRelative("sliderOneQuestionDecorMaximumSprite").objectReferenceValue = _serializedObject.FindProperty("questionOneHighTexture").objectReferenceValue;
                 questionnairePanel.FindPropertyRelative("sliderTwoQuestionDecorMinimumSprite").objectReferenceValue = _serializedObject.FindProperty("questionTwoLowTexture").objectReferenceValue;
                 questionnairePanel.FindPropertyRelative("sliderTwoQuestionDecorMaximumSprite").objectReferenceValue = _serializedObject.FindProperty("questionTwoHighTexture").objectReferenceValue;
+                #endregion
             }
-            
-            
+            #endregion
             
             
             sessionSerializedObject.ApplyModifiedProperties();
-
-            if (!Directory.Exists(fileDirectoryProperty.stringValue)) Directory.CreateDirectory(fileDirectoryProperty.stringValue);
+            
+            
+            if (!Directory.Exists(fileDirectoryProperty.stringValue)) { Directory.CreateDirectory(fileDirectoryProperty.stringValue); }
             AssetDatabase.CreateAsset(sessionFormat, $"{fileDirectoryProperty.stringValue}/{filenameProperty.stringValue}.asset");
         });
     }
@@ -199,7 +220,7 @@ public class SessionGenerator : EditorWindow
 
     private void DrawPrefabList(SerializedProperty groupProperty, in string label)
     {
-        CustomEditorUtilities.CollapsableLabel(groupProperty.FindPropertyRelative("listVisibility"), label, () =>
+        CustomEditorUtilities.CollapsableScope(groupProperty.FindPropertyRelative("listVisibility"), label, () =>
         {
             SerializedProperty listProperty = groupProperty.FindPropertyRelative("prefabList");
             SerializedProperty countProperty = groupProperty.FindPropertyRelative("listCount");

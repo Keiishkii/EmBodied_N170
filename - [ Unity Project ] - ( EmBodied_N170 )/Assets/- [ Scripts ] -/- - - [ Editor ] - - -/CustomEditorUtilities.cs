@@ -12,15 +12,6 @@ public static class CustomEditorUtilities
         }
     }
 
-    public static void CollapsableLabel(SerializedProperty boolProperty, in string label, Action callback)
-    {
-        boolProperty.boolValue = EditorGUILayout.Foldout(boolProperty.boolValue, label);
-        if (boolProperty.boolValue)
-        {
-            VerticalScope(callback);
-        }
-    }
-
     public static void RenderObjectList(SerializedProperty countProperty, SerializedProperty listProperty, Action insertion, Action<int> iteration)
     {
         EditorGUI.BeginChangeCheck();
@@ -42,6 +33,24 @@ public static class CustomEditorUtilities
         for (int i = 0; i < listProperty.arraySize; i++)
         {
             iteration.Invoke(i);
+        }
+    }
+
+    public static void ScrollScope(ref Vector2 scroll, Action callback)
+    {
+        scroll = GUILayout.BeginScrollView(scroll);
+        {
+            callback.Invoke();
+        }
+        GUILayout.EndScrollView();
+    }
+
+    public static void CollapsableScope(SerializedProperty visibilityProperty, in string label, Action callback)
+    {
+        visibilityProperty.boolValue = EditorGUILayout.Foldout(visibilityProperty.boolValue, label);
+        if (visibilityProperty.boolValue)
+        {
+            VerticalScope(callback);
         }
     }
     

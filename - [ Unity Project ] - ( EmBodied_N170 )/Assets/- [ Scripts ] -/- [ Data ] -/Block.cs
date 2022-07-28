@@ -11,8 +11,12 @@ namespace Data {
         public class Block
         {
             [SerializeReference] public List<Trial> trials = new List<Trial>();
+            public bool trialListVisibility;
+            
             [SerializeReference] public List<QuestionnairePanel> blockQuestionnairePanels = new List<QuestionnairePanel>();
+            public bool questionnaireListVisibility;
 
+            
             public Enums.Room targetRoom;
         }
     }

@@ -27,8 +27,6 @@ public class SessionGenerator : EditorWindow
 
     private void OnEnable()
     {
-        Debug.Log("Enable");
-        
         hideFlags = HideFlags.HideAndDontSave;
 
         _serializedData = AssetDatabase.LoadAssetAtPath<SessionGeneratorSerializedData>("Assets/Editor/Session Generator.asset");
@@ -45,8 +43,6 @@ public class SessionGenerator : EditorWindow
 
     private void OnLostFocus()
     {
-        Debug.Log("Lost Focus");
-        
         AssetDatabase.SaveAssets();
     }
 

@@ -69,4 +69,11 @@ public static class CustomEditorUtilities
             callback.Invoke();
         }
     }
+
+    public static void IndentationScope(Action callback)
+    {
+        EditorGUI.indentLevel++;
+        callback.Invoke();
+        EditorGUI.indentLevel--;
+    }
 }

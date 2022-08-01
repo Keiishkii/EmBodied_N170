@@ -5,9 +5,7 @@ namespace StateMachine
 {
     public class State_AwaitingReturnToCorridor : State_Interface
     {
-        private const float _distanceTillRoomExited = 1.0f;
-        private const float _dotResultComparison = 0.995f;
-        
+        private float _radius = 0.4f;
 
         
         public override void OnEnterState(GameControllerStateMachine stateMachine)
@@ -23,21 +21,13 @@ namespace StateMachine
 
         private IEnumerator StateChangeTest(GameControllerStateMachine stateMachine)
         {
+            Transform playerHeadTransform = PlayerController.cameraTransform;
+            
             while (true)
             {
-                Vector3 position = CameraTransform.position;
-                if (Mathf.Abs(Vector3.SqrMagnitude(new Vector3(position.x, 0, position.z))) < Mathf.Pow(_distanceTillRoomExited, 2))
-                {
-                    Vector3 flattenedForward = Vector3.Normalize(new Vector3(CameraTransform.forward.x, 0, CameraTransform.forward.z));
-                    float result = Vector3.Dot(
-                        flattenedForward,
-                        Vector3.right);
-
-                    if (result > 0.995f)
-                    {
-                        break;
-                    }
-                }
+                if (LookDirectionCheck(ref playerHeadTransform) &&
+                    BoundsCheck(ref playerHeadTransform))
+                    break;
                 
                 yield return null;
             }
@@ -45,6 +35,31 @@ namespace StateMachine
             yield return new WaitForSeconds(1f);
             
             stateMachine.SetState(stateMachine.Questionnaire);
+        }
+
+        private bool LookDirectionCheck(ref Transform playerHeadTransform)
+        {
+            Vector3 forward = playerHeadTransform.forward;
+            Vector3 flattenedForward = new Vector3(forward.x, 0, forward.z);
+
+            return (Vector3.Dot(flattenedForward, Vector3.right) > 0.866f); // 0.866f : 30 degree angular displacement
+        }
+        
+        private bool BoundsCheck(ref Transform playerHeadTransform)
+        {
+            Vector3 position = playerHeadTransform.position;
+            Vector3 flattenedPosition = new Vector3(position.x, 0, position.z);
+
+            return (Vector3.SqrMagnitude(flattenedPosition) < Mathf.Pow(_radius, 2));
+        }
+
+        
+        
+        
+        
+        public override void OnDrawGizmos(GameControllerStateMachine stateMachine)
+        {
+            Gizmos.DrawRay(PlayerController.cameraTransform.position, Vector3.right);
         }
     }
 }

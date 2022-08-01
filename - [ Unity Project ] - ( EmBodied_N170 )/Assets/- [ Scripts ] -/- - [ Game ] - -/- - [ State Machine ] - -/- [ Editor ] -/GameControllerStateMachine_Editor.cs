@@ -2,6 +2,7 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using Data.Input;
 using StateMachine;
 using UnityEditor;
 using UnityEngine;
@@ -13,25 +14,47 @@ public class GameControllerStateMachine_Editor : CustomEditor_Interface
     {
         GameControllerStateMachine targetScript = (GameControllerStateMachine) target;
 
+        DrawBaseProperties(targetScript);
+        DrawNavigationContent(targetScript);
+
+        serializedObject.ApplyModifiedProperties();
+    }
+
+    private void DrawBaseProperties(GameControllerStateMachine targetScript)
+    {
+        EditorGUILayout.LabelField("Properties:");
+        CustomEditorUtilities.IndentationScope(() =>
+        {
+            SerializedProperty sessionFormatProperty = serializedObject.FindProperty("SessionFormatObject");
+            EditorGUILayout.ObjectField(sessionFormatProperty, typeof(SessionFormat));
+        });
+    }
+    
+    private void DrawNavigationContent(GameControllerStateMachine targetScript)
+    {
         if (Application.isPlaying)
         {
-            switch (targetScript.CurrentStateInterface)
+            EditorGUILayout.LabelField("Navigation:");
+            CustomEditorUtilities.IndentationScope(() =>
             {
-                case State_SessionStart sessionStartState:
+                switch (targetScript.CurrentStateInterface)
                 {
-                    if (GUILayout.Button("Start Session"))
+                    case State_SessionStart sessionStartState:
                     {
-                        State_SessionStart.StartSession.Invoke(targetScript);
-                    }
-                } break;
-                case State_BlockStart blockStartState:
-                {
-                    if (GUILayout.Button("Start Block"))
+                        if (GUILayout.Button("Start Session"))
+                        {
+                            State_SessionStart.StartSession.Invoke(targetScript);
+                        }
+                    } break;
+                    case State_BlockStart blockStartState:
                     {
-                        State_BlockStart.StartBlock.Invoke(targetScript);
-                    }
-                } break;
-            }
+                        if (GUILayout.Button("Start Block"))
+                        {
+                            State_BlockStart.StartBlock.Invoke(targetScript);
+                        }
+                    } break;
+                }
+            });
         }
     }
 }

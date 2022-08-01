@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using Enums;
 using Questionnaire;
+using UnityEditor.Rendering;
 using UnityEngine;
 
 namespace StateMachine
@@ -19,6 +20,11 @@ namespace StateMachine
         private NPCManager _npcManager;
         private NPCManager NPCManager => _npcManager ?? (_npcManager = GameObject.FindObjectOfType<NPCManager>());
 
+        private LookAtCursor _lookAtCursor;
+        private LookAtCursor LookAtCursor => _lookAtCursor ?? (_lookAtCursor = GameObject.FindObjectOfType<LookAtCursor>());
+        
+        private float _radius = 0.4f;
+        
 
 
         public override void OnEnterState(GameControllerStateMachine stateMachine)
@@ -40,6 +46,7 @@ namespace StateMachine
             DataCollector.CurrentBlockData.trialData.Add(new Data.DataCollection.TrialData());
 
             RayInteractionController.RayVisibility = false;
+            LookAtCursor.CursorActive = true;
 
             Handedness handedness = stateMachine.SessionFormatObject.participantHandedness;
             switch (handedness)
@@ -67,6 +74,7 @@ namespace StateMachine
         public override void OnExitState(GameControllerStateMachine stateMachine)
         {
             MainCanvas.ReadyPanelVisible = false;
+            LookAtCursor.CursorActive = false;
         }
         
         private bool GetLookTargetPosition(out Vector3 position)
@@ -116,23 +124,16 @@ namespace StateMachine
             yield return null;
             MainCanvas.LookTarget.SetActive(true);
             
-            bool isLookingAtDot = false;
-            while (!isLookingAtDot)
+            while (true)
             {
                 if (GetLookTargetPosition(out Vector3 position))
                 {
                     lookTargetTransform.position = position;
                 }
-                
-                Vector3 
-                    targetPosition = lookTargetTransform.position, 
-                    playerHeadPosition = playerHeadTransform.position;
 
-                float result = Vector3.Dot(
-                    PlayerController.cameraTransform.forward,
-                    Vector3.Normalize(targetPosition - playerHeadPosition));
-                
-                if (result > 0.995f) isLookingAtDot = true;
+                if (LookDirectionCheck(ref playerHeadTransform, ref lookTargetTransform) &&
+                    BoundsCheck(ref playerHeadTransform))
+                    break;
                 
                 yield return null;
             }
@@ -141,6 +142,27 @@ namespace StateMachine
             yield return new WaitForSeconds(waitTime);
             
             stateMachine.SetState(stateMachine.LightsOn);
+        }
+
+        private bool LookDirectionCheck(ref Transform playerHeadTransform, ref Transform lookTargetTransform)
+        {
+            Vector3 
+                targetPosition = lookTargetTransform.position, 
+                playerHeadPosition = playerHeadTransform.position;
+
+            float result = Vector3.Dot(
+                PlayerController.cameraTransform.forward,
+                Vector3.Normalize(targetPosition - playerHeadPosition));
+                
+            return (result > 0.9975f);
+        }
+
+        private bool BoundsCheck(ref Transform playerHeadTransform)
+        {
+            Vector3 position = playerHeadTransform.position;
+            Vector3 flattenedPosition = new Vector3(position.x, 0, position.z);
+
+            return (Vector3.SqrMagnitude(flattenedPosition) < Mathf.Pow(_radius, 2));
         }
 
         
@@ -185,6 +207,9 @@ namespace StateMachine
             {
                 Gizmos.DrawSphere(ray.GetPoint(distance), 0.125f);
             }
+            
+            Gizmos.color = Color.white;
+            Gizmos.DrawWireSphere(new Vector3(0, 0, 0), _radius);
         }
     }
 }

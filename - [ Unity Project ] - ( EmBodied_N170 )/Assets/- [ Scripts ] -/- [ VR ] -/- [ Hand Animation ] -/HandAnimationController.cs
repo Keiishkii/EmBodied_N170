@@ -52,16 +52,25 @@ public class HandAnimationController : MonoBehaviour
                 {
                     RightHandAnimator.SetTrigger("Default Mode");
                     _rightHandState = HandAnimationState.Default;
+
+                    RightHandAnimator.ResetTrigger("Carrying Mode");
+                    RightHandAnimator.ResetTrigger("UI Interaction Mode");
                 } break;
                 case HandAnimationState.Holding:
                 {
                     RightHandAnimator.SetTrigger("Carrying Mode");
                     _rightHandState = HandAnimationState.Holding;
+
+                    RightHandAnimator.ResetTrigger("Default Mode");
+                    RightHandAnimator.ResetTrigger("UI Interaction Mode");
                 } break;
                 case HandAnimationState.Pointing:
                 {
                     RightHandAnimator.SetTrigger("UI Interaction Mode");
                     _rightHandState = HandAnimationState.Pointing;
+
+                    RightHandAnimator.ResetTrigger("Default Mode");
+                    RightHandAnimator.ResetTrigger("Carrying Mode");
                 } break;
             }
         }

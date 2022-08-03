@@ -24,7 +24,7 @@ MonoBehaviour:
   - rid: 969771004841952225
   - rid: 969771005066084363
   approachDistance: 3
-  participantHandedness: 1
+  participantHandedness: 0
   references:
     version: 2
     RefIds:

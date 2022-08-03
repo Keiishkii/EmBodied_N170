@@ -36,17 +36,21 @@ public class PlayerController : MonoBehaviour
         {
             case Handedness.Left:
             {
-                heldObject.transform.localPosition = properties.leftHandHoldingPositionOffset;
-                heldObject.transform.localRotation = Quaternion.Euler(properties.leftHandHoldingEulerRotationOffset);
-                
+                _heldItem.transform.localRotation = Quaternion.Euler(properties.leftHandHoldingEulerRotationOffset);
+                _heldItem.transform.localPosition = properties.leftHandHoldingPositionOffset;
+
+                    Debug.Log($"Left Hand Offset: {properties.leftHandHoldingPositionOffset}");
+
                 _leftHandActivation.action.started += LeftHandActivation;
                 _leftHandActivation.action.canceled += LeftHandEnded;
             } break;
             case Handedness.Right:
             {
-                heldObject.transform.localPosition = properties.rightHandHoldingPositionOffset;
-                heldObject.transform.localRotation = Quaternion.Euler(properties.rightHandHoldingEulerRotationOffset);
-                
+                _heldItem.transform.localRotation = Quaternion.Euler(properties.rightHandHoldingEulerRotationOffset);
+                _heldItem.transform.localPosition = properties.rightHandHoldingPositionOffset;
+
+                    Debug.Log($"Right Hand Offset: {properties.rightHandHoldingPositionOffset}");
+
                 _rightHandActivation.action.started += RightHandActivation;
                 _rightHandActivation.action.canceled += RightHandEnded;
             } break;

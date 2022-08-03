@@ -77,10 +77,10 @@ namespace Data {
             public void AddDataEventToContainer(in DataCollectionEvent_RecordMarker dataCollectionEvent) 
             {
                 dataContainer.dataEvents.Add(dataCollectionEvent);
-                
-                #if PLATFORM_STANDALONE_WIN
+
+#if (PLATFORM_STANDALONE_WIN || UNITY_STANDALONE_WIN || UNITY_EDITOR_WIN)
                 NetworkDataPublisher.PublishMarkerToNetwork(dataCollectionEvent.record);
-                #endif
+#endif
             }
 
 

@@ -1,4 +1,4 @@
-#if PLATFORM_STANDALONE_WIN
+#if (PLATFORM_STANDALONE_WIN || UNITY_STANDALONE_WIN || UNITY_EDITOR_WIN)
 using LSL;
 #endif
 
@@ -9,7 +9,7 @@ namespace _LSL
     // Abstract class used for writing LSL streams. Stores the values it will be writing, and the name of the stream and its description.
     public abstract class LSLOutput<T> : MonoBehaviour
     {
-#if PLATFORM_STANDALONE_WIN
+#if (PLATFORM_STANDALONE_WIN || UNITY_STANDALONE_WIN || UNITY_EDITOR_WIN)
         [SerializeField] protected string _streamName = "Stream Name";
         [SerializeField] protected string _streamType = "Stream Type";
 

@@ -951,6 +951,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Debug: Keyboard Input",
+            "id": "e574b6c9-bd99-46a8-b78e-907ab8f7ca8c",
+            "actions": [
+                {
+                    "name": "Keyboard Input",
+                    "type": "Button",
+                    "id": "a565d265-2d66-473d-9b7b-2cf759265ea0",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "82ab07e0-0d03-4c79-9f16-50dbe4083225",
+                    "path": "<Keyboard>/anyKey",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Keyboard Input",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [

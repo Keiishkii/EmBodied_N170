@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class NetworkDataPublisher : MonoBehaviour
 {
-#if PLATFORM_STANDALONE_WIN
+#if (PLATFORM_STANDALONE_WIN || UNITY_STANDALONE_WIN || UNITY_EDITOR_WIN)
 
     [SerializeField] private LSLOutput_MarkerStream _markerStream;
     public void PublishMarkerToNetwork(in string marker)

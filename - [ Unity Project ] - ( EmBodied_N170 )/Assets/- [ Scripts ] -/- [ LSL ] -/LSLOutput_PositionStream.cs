@@ -1,4 +1,4 @@
-﻿#if PLATFORM_STANDALONE_WIN
+﻿#if (PLATFORM_STANDALONE_WIN || UNITY_STANDALONE_WIN || UNITY_EDITOR_WIN)
 using LSL;
 #endif
 
@@ -8,7 +8,7 @@ namespace _LSL
 {
     public class LSLOutput_PositionStream : LSLOutput<float>
     {
-#if PLATFORM_STANDALONE_WIN
+#if (PLATFORM_STANDALONE_WIN || UNITY_STANDALONE_WIN || UNITY_EDITOR_WIN)
         private float _sampleRate;
         public Transform positionStreamTarget;
         

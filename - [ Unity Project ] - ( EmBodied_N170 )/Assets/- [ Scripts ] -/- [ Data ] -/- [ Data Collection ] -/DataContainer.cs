@@ -13,8 +13,8 @@ namespace Data {
             public readonly List<BlockData> blockData = new List<BlockData>();
             public readonly List<DataCollectionEvent_Interface> dataEvents = new List<DataCollectionEvent_Interface>();
 
-            public readonly List<InputSampleData> inputSamples = new List<InputSampleData>();
-            public readonly List<TransformSampleData> transformSamples = new List<TransformSampleData>();
+            public readonly List<InputSampleData> inputSamples = new List<InputSampleData>(); // Controller Inputs
+            public readonly List<TransformSampleData> transformSamples = new List<TransformSampleData>(); // Transform Data
         }
     }
 }

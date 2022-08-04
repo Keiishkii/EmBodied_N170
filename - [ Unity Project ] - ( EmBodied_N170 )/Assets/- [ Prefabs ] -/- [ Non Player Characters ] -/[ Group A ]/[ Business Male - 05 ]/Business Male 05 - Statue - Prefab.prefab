@@ -2048,6 +2048,7 @@ GameObject:
   - component: {fileID: 3396175541900991225}
   - component: {fileID: -4869300664684927315}
   - component: {fileID: 7087398335793305785}
+  - component: {fileID: 6287623579325498176}
   m_Layer: 0
   m_Name: Business Male 05 - Statue - Prefab
   m_TagString: Untagged
@@ -2260,6 +2261,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62e021ebf483b81478ac420385dec855, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isLiving: 0
+  room: 0
   _lookAtTarget: {fileID: 2258954583851251159}
   _lookSpeed: 0.35
   _lookAtMotionCurve:
@@ -2382,6 +2385,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &6287623579325498176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3988616160223418690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76f36b3856773fd40804ceccdcbff9bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isStatue: 1
+  characterID: 21
 --- !u!1 &4173001786213800214
 GameObject:
   m_ObjectHideFlags: 0

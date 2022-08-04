@@ -9,6 +9,8 @@ public class NetworkDataPublisher : MonoBehaviour
     public void PublishMarkerToNetwork(in string marker)
     {
         _markerStream.PublishMarkerToNetwork(marker);
+
+        Debug.Log($"Marker Published: {marker}");
     }
 #else
     private void Awake()

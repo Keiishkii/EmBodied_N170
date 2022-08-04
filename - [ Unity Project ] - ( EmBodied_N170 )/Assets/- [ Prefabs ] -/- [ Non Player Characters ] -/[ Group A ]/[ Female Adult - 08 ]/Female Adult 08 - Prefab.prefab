@@ -1049,6 +1049,7 @@ GameObject:
   - component: {fileID: 1858537121385671939}
   - component: {fileID: 9017686907691974090}
   - component: {fileID: -4241842292770722625}
+  - component: {fileID: 1421870437350971218}
   m_Layer: 0
   m_Name: Female Adult 08 - Prefab
   m_TagString: Untagged
@@ -1262,6 +1263,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isLiving: 1
+  room: 0
   _lookAtTarget: {fileID: 7037284181457773552}
   _lookSpeed: 0.35
   _lookAtMotionCurve:
@@ -1298,7 +1300,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: ca8faa1577615784cb44693be196dd88, type: 3}
+  m_audioClip: {fileID: 8300000, guid: e593a5d8b521cdb4db8ff5c062e5f15b, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.75
   m_Pitch: 1
@@ -1384,6 +1386,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1421870437350971218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2324528351695377151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76f36b3856773fd40804ceccdcbff9bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isStatue: 0
+  characterID: 15
 --- !u!1 &2332787720057783699
 GameObject:
   m_ObjectHideFlags: 0

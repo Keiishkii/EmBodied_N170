@@ -32,12 +32,8 @@ namespace StateMachine
             int blockIndex = stateMachine.blockIndex, trialIndex = stateMachine.trialIndex;
             
             Debug.Log($"Entered State: <color=#FFF>Trial Start: {trialIndex}</color>");
-            DataCollector.AddDataEventToContainer(new Data.DataCollection.DataCollectionEvent_RecordMarker()
-            {
-                record = $"Trial {trialIndex} Start"
-            });
-            
-            
+
+
             MainCanvas.LookTarget.SetActive(false);
             MainCanvas.ReadyPanelVisible = true;
             
@@ -56,7 +52,7 @@ namespace StateMachine
                     HandAnimationController.RightHandState = HandAnimationState.Holding;
                     HandAnimationController.LeftHandState = HandAnimationState.Default;
                 } break;
-                case Handedness.Left:
+                case Handedness.Left: 
                 {
                     HandAnimationController.RightHandState = HandAnimationState.Default;
                     HandAnimationController.LeftHandState = HandAnimationState.Holding;
@@ -65,11 +61,27 @@ namespace StateMachine
             
             PlayerController.CreateHeldItem(currentTrial.heldObject, handedness);
             NPCManager.CreateNPCs(currentTrial.roomA_NPCAvatar, currentTrial.roomB_NPCAvatar);
-            
+
+            NPCDataCollectionData characterDataA = currentTrial.roomA_NPCAvatar.GetComponent<NPCDataCollectionData>();
+            NPCDataCollectionData characterDataB = currentTrial.roomB_NPCAvatar.GetComponent<NPCDataCollectionData>();
+
+            int trialID = (stateMachine.currentBlock.targetRoom == Room.RoomA) ?
+                    ((!characterDataA.isStatue) ? 1 : 3) :
+                    ((!characterDataB.isStatue) ? 2 : 4);
+
+            DataCollector.CurrentTrialData.roomACharacterName = currentTrial.roomA_NPCAvatar.name;
+            DataCollector.CurrentTrialData.roomACharacterID = characterDataA.characterID;
+
+            DataCollector.CurrentTrialData.roomBCharacterName = currentTrial.roomB_NPCAvatar.name;
+            DataCollector.CurrentTrialData.roomBCharacterID = characterDataB.characterID;
+
+            DataCollector.AddDataEventToContainer(new Data.DataCollection.DataCollectionEvent_RecordMarker()
+            {
+                record = $"{trialID}"
+            });
+
             stateMachine.StartCoroutine(LightsOnState(stateMachine, Random.Range(2.0f, 2.5f)));
         }
-
-        public override void Update(GameControllerStateMachine stateMachine) { }
 
         public override void OnExitState(GameControllerStateMachine stateMachine)
         {
@@ -134,7 +146,10 @@ namespace StateMachine
                 if (LookDirectionCheck(ref playerHeadTransform, ref lookTargetTransform) &&
                     BoundsCheck(ref playerHeadTransform))
                     break;
-                
+
+                Vector3 one;
+                Vector3 two;
+
                 yield return null;
             }
             
@@ -153,8 +168,10 @@ namespace StateMachine
             float result = Vector3.Dot(
                 PlayerController.cameraTransform.forward,
                 Vector3.Normalize(targetPosition - playerHeadPosition));
-                
-            return (result > 0.9975f);
+
+            float cos = Mathf.Abs(Mathf.Cos(Mathf.Deg2Rad * 1.5f)); // Degrees to dot result
+            Debug.Log($"Cos: {cos}, Result: {result}");
+            return (result > cos);
         }
 
         private bool BoundsCheck(ref Transform playerHeadTransform)

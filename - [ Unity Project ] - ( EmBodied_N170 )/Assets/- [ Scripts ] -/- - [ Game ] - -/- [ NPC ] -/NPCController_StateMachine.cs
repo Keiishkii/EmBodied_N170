@@ -88,10 +88,18 @@ namespace NPC_Controller
         {
             if (_isLiving && room == gameControllerStateMachine.currentBlock.targetRoom)
             {
-                Debug.Log("Voice: <color=#4499FF>\"Thank You\"</color>");
-                _animator.SetTrigger("Trigger - Thank You");
-                _audioSource.Play();
+                StartCoroutine(SyncSpeachAnimationToVoice());
             }
+        }
+
+        private IEnumerator SyncSpeachAnimationToVoice()
+        {
+            Debug.Log("Voice: <color=#4499FF>\"Thank You\"</color>");
+            _animator.SetTrigger("Trigger - Thank You");
+
+            yield return new WaitForSeconds(1.61f);
+
+            _audioSource.Play();
         }
     }
 }

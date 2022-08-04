@@ -16,7 +16,7 @@ public class SessionGenerator : EditorWindow
     [SerializeField]
     private SessionGeneratorSerializedData _serializedData;
     private SerializedObject _serializedObject;
-    
+
     private Vector2 _scroll;
     
     
@@ -224,8 +224,7 @@ public class SessionGenerator : EditorWindow
         {
             SerializedProperty listProperty = groupProperty.FindPropertyRelative("prefabList");
             SerializedProperty countProperty = groupProperty.FindPropertyRelative("listCount");
-
-            
+                        
             CustomEditorUtilities.RenderObjectList(countProperty, listProperty, 
                 (() =>
                 {

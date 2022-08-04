@@ -3500,6 +3500,7 @@ GameObject:
   - component: {fileID: 2752963389250951177}
   - component: {fileID: 2520883258591694320}
   - component: {fileID: 5008977067470864206}
+  - component: {fileID: 4785816001330544270}
   m_Layer: 0
   m_Name: Male Adult 04 - Statue - Prefab
   m_TagString: Untagged
@@ -3712,6 +3713,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62e021ebf483b81478ac420385dec855, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isLiving: 0
+  room: 0
   _lookAtTarget: {fileID: 7269240891394345826}
   _lookSpeed: 0.35
   _lookAtMotionCurve:
@@ -3834,6 +3837,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &4785816001330544270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8715531548804830126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76f36b3856773fd40804ceccdcbff9bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isStatue: 1
+  characterID: 47
 --- !u!1 &8844667465293243304
 GameObject:
   m_ObjectHideFlags: 0

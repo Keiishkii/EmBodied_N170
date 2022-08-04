@@ -76,11 +76,11 @@ namespace Data {
             public void AddDataEventToContainer(in DataCollectionEvent_Interface dataCollectionEvent) { dataContainer.dataEvents.Add(dataCollectionEvent); }
             public void AddDataEventToContainer(in DataCollectionEvent_RecordMarker dataCollectionEvent) 
             {
+                #if (PLATFORM_STANDALONE_WIN || UNITY_STANDALONE_WIN || UNITY_EDITOR_WIN)
+                    NetworkDataPublisher.PublishMarkerToNetwork(dataCollectionEvent.record);
+                #endif
+             
                 dataContainer.dataEvents.Add(dataCollectionEvent);
-
-#if (PLATFORM_STANDALONE_WIN || UNITY_STANDALONE_WIN || UNITY_EDITOR_WIN)
-                NetworkDataPublisher.PublishMarkerToNetwork(dataCollectionEvent.record);
-#endif
             }
 
 

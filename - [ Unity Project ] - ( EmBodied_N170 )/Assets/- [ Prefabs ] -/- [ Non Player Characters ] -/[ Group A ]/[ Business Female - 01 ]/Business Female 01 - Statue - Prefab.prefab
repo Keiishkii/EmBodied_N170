@@ -2841,6 +2841,7 @@ GameObject:
   - component: {fileID: 8695320569964522434}
   - component: {fileID: 2164991001025452962}
   - component: {fileID: 4072834745085379056}
+  - component: {fileID: 6835954507681087048}
   m_Layer: 0
   m_Name: Business Female 01 - Statue - Prefab
   m_TagString: Untagged
@@ -3053,6 +3054,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62e021ebf483b81478ac420385dec855, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isLiving: 0
+  room: 0
   _lookAtTarget: {fileID: 6627928133326166511}
   _lookSpeed: 0.35
   _lookAtMotionCurve:
@@ -3175,6 +3178,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &6835954507681087048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7137246065745300051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76f36b3856773fd40804ceccdcbff9bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isStatue: 1
+  characterID: 20
 --- !u!1 &7138574095416630591
 GameObject:
   m_ObjectHideFlags: 0

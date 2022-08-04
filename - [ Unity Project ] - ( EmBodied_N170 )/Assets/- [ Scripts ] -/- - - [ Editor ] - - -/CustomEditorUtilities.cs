@@ -1,3 +1,4 @@
+#if UNITY_EDITOR
 using System;
 using UnityEditor;
 using UnityEngine;
@@ -77,3 +78,4 @@ public static class CustomEditorUtilities
         EditorGUI.indentLevel--;
     }
 }
+#endif

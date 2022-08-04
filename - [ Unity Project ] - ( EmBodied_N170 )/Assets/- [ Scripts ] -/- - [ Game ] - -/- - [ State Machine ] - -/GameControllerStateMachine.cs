@@ -27,7 +27,9 @@ namespace StateMachine
         [HideInInspector] public Data.Input.Block currentBlock;
         [HideInInspector] public Data.Input.Trial currentTrial;
 
-        
+
+    
+
 
         private void Start()
         {
@@ -45,6 +47,7 @@ namespace StateMachine
             _currentStateInterface.OnExitState(this);
             _currentStateInterface = stateInterface;
             _currentStateInterface.OnEnterState(this);
+            _currentStateInterface.WriteStateData(this);
         }
 
         private void OnDrawGizmos()

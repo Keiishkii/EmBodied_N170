@@ -56,7 +56,9 @@ namespace Questionnaire
                     if (maxTexture != null) _questionOneMaxSprite.overrideSprite = Sprite.Create(maxTexture, new Rect(0, 0, maxTexture.width, maxTexture.height), new Vector2(0.5f, 0.5f));
                 } break;
             }
-            
+
+            _questionOneSlider.value = (_questionOneSlider.maxValue + _questionOneSlider.minValue) / 2f;
+
             _questionTwoText.text = questionnairePanel.sliderTwoQuestion;
             switch (questionnairePanel.sliderTwoQuestionDecorType)
             {
@@ -83,6 +85,8 @@ namespace Questionnaire
                     if (maxTexture != null) _questionTwoMaxSprite.overrideSprite = Sprite.Create(maxTexture, new Rect(0, 0, maxTexture.width, maxTexture.height), new Vector2(0.5f, 0.5f));
                 } break;
             }
+
+            _questionTwoSlider.value = (_questionTwoSlider.maxValue + _questionTwoSlider.minValue) / 2f;
         }
 
         protected override void WriteResultToDataContainer()

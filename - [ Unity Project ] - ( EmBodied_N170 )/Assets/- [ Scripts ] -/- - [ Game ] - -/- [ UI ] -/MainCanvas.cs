@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using StateMachine;
+using TMPro;
 using UnityEngine;
 
 namespace Questionnaire
@@ -27,6 +28,7 @@ namespace Questionnaire
             {
                 set => _awaitingBlockStartPanel.SetActive(value);
             }
+            public TMP_Text blockDescriptionLabel;
             
             [SerializeField] private GameObject _readyPanel;
             public bool ReadyPanelVisible

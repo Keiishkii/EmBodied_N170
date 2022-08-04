@@ -204,6 +204,7 @@ GameObject:
   - component: {fileID: 1558778500009983141}
   - component: {fileID: 3321539268436980072}
   - component: {fileID: 3214368039647553820}
+  - component: {fileID: 8375928347853525196}
   m_Layer: 0
   m_Name: Female Adult 15 - Statue - Prefab
   m_TagString: Untagged
@@ -416,6 +417,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62e021ebf483b81478ac420385dec855, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isLiving: 0
+  room: 0
   _lookAtTarget: {fileID: 3112255987595098931}
   _lookSpeed: 0.35
   _lookAtMotionCurve:
@@ -538,6 +541,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &8375928347853525196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 659953216500511583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76f36b3856773fd40804ceccdcbff9bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isStatue: 1
+  characterID: 26
 --- !u!1 &663515539497493555
 GameObject:
   m_ObjectHideFlags: 0

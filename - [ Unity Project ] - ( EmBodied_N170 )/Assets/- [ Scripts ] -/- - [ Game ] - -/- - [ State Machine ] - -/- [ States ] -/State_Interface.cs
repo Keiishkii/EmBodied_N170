@@ -17,8 +17,12 @@ namespace StateMachine
 
 
         public virtual void OnEnterState(GameControllerStateMachine stateMachine) { }
+        public virtual void WriteStateData(GameControllerStateMachine stateMachine) { }
+
         public virtual void Update(GameControllerStateMachine stateMachine) { }
+
         public virtual void OnExitState(GameControllerStateMachine stateMachine) { }
+
 
         public virtual void OnDrawGizmos(GameControllerStateMachine stateMachine) { }
     }

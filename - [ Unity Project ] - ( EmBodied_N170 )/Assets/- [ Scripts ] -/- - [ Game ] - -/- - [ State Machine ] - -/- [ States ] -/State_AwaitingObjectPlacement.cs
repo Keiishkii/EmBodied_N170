@@ -44,7 +44,7 @@ namespace StateMachine
 
         private void OnColliderEnter(GameControllerStateMachine stateMachine)
         {
-            stateMachine.SetState(stateMachine.AwaitingReturnToCorridor);
+            stateMachine.CurrentState = stateMachine.AwaitingReturnToCorridor;
         }
 
         private void SetRightRoomColliderActivation(bool activationState)

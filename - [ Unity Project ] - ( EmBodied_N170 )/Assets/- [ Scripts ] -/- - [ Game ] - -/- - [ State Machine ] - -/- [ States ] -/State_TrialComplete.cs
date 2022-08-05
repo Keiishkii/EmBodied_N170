@@ -23,11 +23,11 @@ namespace StateMachine
             stateMachine.trialIndex++;
             if (stateMachine.currentBlock.trials.Count > stateMachine.trialIndex)
             {
-                stateMachine.SetState(stateMachine.TrialStart);
+                stateMachine.CurrentState = stateMachine.TrialStart;
             }
             else
             {
-                stateMachine.SetState(stateMachine.BlockComplete);
+                stateMachine.CurrentState = stateMachine.BlockComplete;
             }
         }
 

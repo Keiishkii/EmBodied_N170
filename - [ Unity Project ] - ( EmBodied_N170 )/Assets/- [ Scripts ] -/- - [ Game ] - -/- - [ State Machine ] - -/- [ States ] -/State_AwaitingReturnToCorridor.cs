@@ -34,7 +34,7 @@ namespace StateMachine
 
             yield return new WaitForSeconds(1f);
             
-            stateMachine.SetState(stateMachine.Questionnaire);
+            stateMachine.CurrentState = stateMachine.Questionnaire;
         }
 
         private bool LookDirectionCheck(ref Transform playerHeadTransform)

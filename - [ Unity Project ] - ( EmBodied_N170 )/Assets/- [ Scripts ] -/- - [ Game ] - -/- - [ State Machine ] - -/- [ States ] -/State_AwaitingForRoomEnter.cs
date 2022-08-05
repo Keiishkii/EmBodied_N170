@@ -30,7 +30,7 @@ namespace StateMachine
 
             if (_comparisonCheck(CameraTransform.position))
             {
-                stateMachine.SetState(stateMachine.AwaitingObjectPlacement);
+                stateMachine.CurrentState = stateMachine.AwaitingObjectPlacement;
             }
         }
 

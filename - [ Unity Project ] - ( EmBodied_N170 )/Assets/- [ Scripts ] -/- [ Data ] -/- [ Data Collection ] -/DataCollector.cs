@@ -79,7 +79,8 @@ namespace Data {
                 #if (PLATFORM_STANDALONE_WIN || UNITY_STANDALONE_WIN || UNITY_EDITOR_WIN)
                     NetworkDataPublisher.PublishMarkerToNetwork(dataCollectionEvent.record);
                 #endif
-             
+
+                Debug.Log($"<color=#44FFAA>Marker</color>: {dataCollectionEvent.record}");
                 dataContainer.dataEvents.Add(dataCollectionEvent);
             }
 

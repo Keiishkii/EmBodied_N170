@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
                 _heldItem.transform.localRotation = Quaternion.Euler(properties.leftHandHoldingEulerRotationOffset);
                 _heldItem.transform.localPosition = properties.leftHandHoldingPositionOffset;
 
-                    Debug.Log($"Left Hand Offset: {properties.leftHandHoldingPositionOffset}");
+                    //Debug.Log($"Left Hand Offset: {properties.leftHandHoldingPositionOffset}");
 
                 _leftHandActivation.action.started += LeftHandActivation;
                 _leftHandActivation.action.canceled += LeftHandEnded;
@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour
                 _heldItem.transform.localRotation = Quaternion.Euler(properties.rightHandHoldingEulerRotationOffset);
                 _heldItem.transform.localPosition = properties.rightHandHoldingPositionOffset;
 
-                    Debug.Log($"Right Hand Offset: {properties.rightHandHoldingPositionOffset}");
+                    //Debug.Log($"Right Hand Offset: {properties.rightHandHoldingPositionOffset}");
 
                 _rightHandActivation.action.started += RightHandActivation;
                 _rightHandActivation.action.canceled += RightHandEnded;

@@ -8,6 +8,7 @@ namespace StateMachine
     public class State_BlockStart : State_Interface
     {
         public static readonly UnityEvent<GameControllerStateMachine> StartBlock = new UnityEvent<GameControllerStateMachine>();
+        public static readonly UnityEvent<GameControllerStateMachine> ExitEarly = new UnityEvent<GameControllerStateMachine>();
         
         private RoomCorrectionCanvasController _roomCorrectionCanvasController;
         private RoomCorrectionCanvasController RoomCorrectionCanvasController => _roomCorrectionCanvasController ?? (_roomCorrectionCanvasController = GameObject.FindObjectOfType<RoomCorrectionCanvasController>());
@@ -52,6 +53,7 @@ namespace StateMachine
             }
             
             StartBlock.AddListener(OnBlockStart);
+            ExitEarly.AddListener(OnExitEarly);
         }
 
         public override void Update(GameControllerStateMachine stateMachine) { }
@@ -61,6 +63,7 @@ namespace StateMachine
             MainCanvas.AwaitingBlockStartPanelVisible = false;
             
             StartBlock.RemoveListener(OnBlockStart);
+            ExitEarly.RemoveListener(OnExitEarly);
         }
 
         private void OnBlockStart(GameControllerStateMachine stateMachine)
@@ -68,12 +71,17 @@ namespace StateMachine
             if (stateMachine.currentBlock.trials.Count > 0)
             {
                 stateMachine.trialIndex = 0;
-                stateMachine.SetState(stateMachine.TrialStart);
+                stateMachine.CurrentState = stateMachine.TrialStart;
             }
             else
             {
-                stateMachine.SetState(stateMachine.BlockComplete);
-            }   
+                stateMachine.CurrentState = stateMachine.BlockComplete;
+            }
+        }
+
+        private void OnExitEarly(GameControllerStateMachine stateMachine)
+        {
+            stateMachine.CurrentState = stateMachine.SessionComplete;
         }
     }
 }

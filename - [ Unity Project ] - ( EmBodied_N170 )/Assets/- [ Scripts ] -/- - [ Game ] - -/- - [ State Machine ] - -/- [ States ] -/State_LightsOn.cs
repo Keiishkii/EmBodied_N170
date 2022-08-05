@@ -27,7 +27,7 @@ namespace StateMachine
             yield return new WaitForSeconds(1.0f);
             GlobalAudioSource.Instance.PlayOneShot(GlobalAudioSource.Instance.SfxContainer.GoSfx);
             
-            stateMachine.SetState(stateMachine.AwaitingForRoomEnter);
+            stateMachine.CurrentState = stateMachine.AwaitingForRoomEnter;
         }
         
         public override void Update(GameControllerStateMachine stateMachine) { }

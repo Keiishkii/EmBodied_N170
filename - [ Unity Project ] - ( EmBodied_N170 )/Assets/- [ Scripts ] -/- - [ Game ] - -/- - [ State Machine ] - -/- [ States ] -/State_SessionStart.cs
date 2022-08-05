@@ -55,11 +55,11 @@ namespace StateMachine
             if (stateMachine.SessionFormatObject.blocks.Count > 0)
             {
                 stateMachine.blockIndex = 0;
-                stateMachine.SetState(stateMachine.BlockStart);
+                stateMachine.CurrentState = stateMachine.BlockStart;
             }
             else
             {
-                stateMachine.SetState(stateMachine.SessionComplete);
+                stateMachine.CurrentState = stateMachine.SessionComplete;
             }
         }
     }

@@ -65,26 +65,29 @@ namespace StateMachine
             NPCDataCollectionData characterDataA = currentTrial.roomA_NPCAvatar.GetComponent<NPCDataCollectionData>();
             NPCDataCollectionData characterDataB = currentTrial.roomB_NPCAvatar.GetComponent<NPCDataCollectionData>();
 
-            int trialID = (stateMachine.currentBlock.targetRoom == Room.RoomA) ?
-                    ((!characterDataA.isStatue) ? 1 : 3) :
-                    ((!characterDataB.isStatue) ? 2 : 4);
-
             DataCollector.CurrentTrialData.roomACharacterName = currentTrial.roomA_NPCAvatar.name;
             DataCollector.CurrentTrialData.roomACharacterID = characterDataA.characterID;
 
             DataCollector.CurrentTrialData.roomBCharacterName = currentTrial.roomB_NPCAvatar.name;
             DataCollector.CurrentTrialData.roomBCharacterID = characterDataB.characterID;
 
-            DataCollector.AddDataEventToContainer(new Data.DataCollection.DataCollectionEvent_RecordMarker()
-            {
-                record = $"{trialID}"
-            });
-
             stateMachine.StartCoroutine(LightsOnState(stateMachine, Random.Range(2.0f, 2.5f)));
         }
 
         public override void OnExitState(GameControllerStateMachine stateMachine)
         {
+            NPCDataCollectionData characterDataA = stateMachine.currentTrial.roomA_NPCAvatar.GetComponent<NPCDataCollectionData>();
+            NPCDataCollectionData characterDataB = stateMachine.currentTrial.roomB_NPCAvatar.GetComponent<NPCDataCollectionData>();
+
+            int trialID = (stateMachine.currentBlock.targetRoom == Room.RoomA) ?
+                    ((!characterDataA.isStatue) ? 1 : 3) :
+                    ((!characterDataB.isStatue) ? 2 : 4);
+
+            DataCollector.AddDataEventToContainer(new Data.DataCollection.DataCollectionEvent_RecordMarker()
+            {
+                record = $"{trialID}"
+            });
+
             MainCanvas.ReadyPanelVisible = false;
             LookAtCursor.CursorActive = false;
         }
@@ -147,16 +150,12 @@ namespace StateMachine
                     BoundsCheck(ref playerHeadTransform))
                     break;
 
-                Vector3 one;
-                Vector3 two;
-
                 yield return null;
             }
             
-            Debug.Log("Looking at UI cross");
             yield return new WaitForSeconds(waitTime);
             
-            stateMachine.SetState(stateMachine.LightsOn);
+            stateMachine.CurrentState = stateMachine.LightsOn;
         }
 
         private bool LookDirectionCheck(ref Transform playerHeadTransform, ref Transform lookTargetTransform)
@@ -170,7 +169,6 @@ namespace StateMachine
                 Vector3.Normalize(targetPosition - playerHeadPosition));
 
             float cos = Mathf.Abs(Mathf.Cos(Mathf.Deg2Rad * 1.5f)); // Degrees to dot result
-            Debug.Log($"Cos: {cos}, Result: {result}");
             return (result > cos);
         }
 
@@ -182,6 +180,7 @@ namespace StateMachine
             return (Vector3.SqrMagnitude(flattenedPosition) < Mathf.Pow(_radius, 2));
         }
 
+        
         
         
         

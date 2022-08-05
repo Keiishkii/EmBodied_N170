@@ -37,7 +37,7 @@ public class GameControllerStateMachine_Editor : CustomEditor_Interface
             EditorGUILayout.LabelField("Navigation:");
             CustomEditorUtilities.IndentationScope(() =>
             {
-                switch (targetScript.CurrentStateInterface)
+                switch (targetScript.CurrentState)
                 {
                     case State_SessionStart sessionStartState:
                     {

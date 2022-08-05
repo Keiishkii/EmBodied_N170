@@ -53,7 +53,7 @@ namespace StateMachine
         
         private void OnQuestionnaireCompletion(GameControllerStateMachine stateMachine)
         {
-            stateMachine.SetState(stateMachine.TrialComplete);
+            stateMachine.CurrentState = stateMachine.TrialComplete;
         }
     }
 }

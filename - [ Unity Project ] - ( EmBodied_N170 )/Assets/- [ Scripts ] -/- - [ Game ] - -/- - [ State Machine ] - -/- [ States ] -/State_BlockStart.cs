@@ -13,8 +13,14 @@ namespace StateMachine
         private RoomCorrectionCanvasController _roomCorrectionCanvasController;
         private RoomCorrectionCanvasController RoomCorrectionCanvasController => _roomCorrectionCanvasController ?? (_roomCorrectionCanvasController = GameObject.FindObjectOfType<RoomCorrectionCanvasController>());
         
+        private RayInteractionController _rayInteractionController;
+        private RayInteractionController RayInteractionController => _rayInteractionController ?? (_rayInteractionController = GameObject.FindObjectOfType<RayInteractionController>());
+
         private MainCanvas _mainCanvas;
         private MainCanvas MainCanvas => _mainCanvas ?? (_mainCanvas = GameObject.FindObjectOfType<MainCanvas>());
+        
+        private StopSessionEarlyCanvas _stopSessionEarlyCanvas;
+        private StopSessionEarlyCanvas StopSessionEarlyCanvas => _stopSessionEarlyCanvas ?? (_stopSessionEarlyCanvas = GameObject.FindObjectOfType<StopSessionEarlyCanvas>());
         
         
         
@@ -36,6 +42,9 @@ namespace StateMachine
                 activeRoom = activeRoom
             });
             
+            RayInteractionController.RayVisibility = true;
+            
+            StopSessionEarlyCanvas.SetVisible = true;
             
             MainCanvas.AwaitingBlockStartPanelVisible = true;
             MainCanvas.blockDescriptionLabel.text = 
@@ -61,6 +70,7 @@ namespace StateMachine
         public override void OnExitState(GameControllerStateMachine stateMachine)
         {
             MainCanvas.AwaitingBlockStartPanelVisible = false;
+            StopSessionEarlyCanvas.SetVisible = false;
             
             StartBlock.RemoveListener(OnBlockStart);
             ExitEarly.RemoveListener(OnExitEarly);
@@ -81,6 +91,7 @@ namespace StateMachine
 
         private void OnExitEarly(GameControllerStateMachine stateMachine)
         {
+            Debug.Log("Stopping Session Early");
             stateMachine.CurrentState = stateMachine.SessionComplete;
         }
     }

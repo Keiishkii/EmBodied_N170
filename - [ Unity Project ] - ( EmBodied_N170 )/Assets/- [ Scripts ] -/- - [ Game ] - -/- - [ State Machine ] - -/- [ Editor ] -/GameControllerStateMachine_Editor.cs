@@ -55,6 +55,12 @@ public class GameControllerStateMachine_Editor : CustomEditor_Interface
                     } break;
                 }
             });
+            
+            CustomEditorUtilities.Button("Stop Session Early", () =>
+            {
+                Debug.Log("Stopping Session Early");
+                targetScript.CurrentState = targetScript.SessionComplete;
+            });
         }
     }
 }

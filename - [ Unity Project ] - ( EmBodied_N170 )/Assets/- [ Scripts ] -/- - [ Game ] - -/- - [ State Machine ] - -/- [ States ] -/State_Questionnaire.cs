@@ -26,9 +26,6 @@ namespace StateMachine
             {
                 record = "Questionnaire"
             });
-
-            HandAnimationController.LeftHandState = HandAnimationState.Default;
-            HandAnimationController.RightHandState = HandAnimationState.Default;
             
             RayInteractionController.RayVisibility = true;
             

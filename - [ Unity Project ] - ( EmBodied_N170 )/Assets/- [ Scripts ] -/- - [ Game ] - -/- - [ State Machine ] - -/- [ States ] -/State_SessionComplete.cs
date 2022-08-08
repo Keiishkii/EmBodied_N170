@@ -19,6 +19,10 @@ namespace StateMachine
                 record = "Session Complete"
             });
             
+            Vector3 playerPosition = CameraOffset.position;
+            Vector3 newPosition = new Vector3(playerPosition.x, -3.95f, playerPosition.z);
+
+            CameraOffset.position = newPosition;
             
             MainCanvas.SessionCompletePanelVisible = true;
             

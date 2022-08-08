@@ -34,7 +34,7 @@ namespace StateMachine
 
             yield return new WaitForSeconds(1f);
             
-            stateMachine.CurrentState = stateMachine.Questionnaire;
+            stateMachine.CurrentState = stateMachine.TrialComplete;
         }
 
         private bool LookDirectionCheck(ref Transform playerHeadTransform)
@@ -53,6 +53,18 @@ namespace StateMachine
             return (Vector3.SqrMagnitude(flattenedPosition) < Mathf.Pow(_radius, 2));
         }
 
+        
+        
+
+        
+        public override void OnExitState(GameControllerStateMachine stateMachine)
+        {
+            Vector3 playerPosition = CameraOffset.position;
+            Vector3 newPosition = new Vector3(playerPosition.x, -3.95f, playerPosition.z);
+
+            CameraOffset.position = newPosition;
+        }
+        
         
         
         

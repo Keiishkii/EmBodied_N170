@@ -73,7 +73,7 @@ namespace StateMachine
             DataCollector.CurrentTrialData.roomBCharacterName = currentTrial.roomB_NPCAvatar.name;
             DataCollector.CurrentTrialData.roomBCharacterID = characterDataB.characterID;
 
-            stateMachine.StartCoroutine(LightsOnState(stateMachine, Random.Range(0.0f, 1.0f)));
+            stateMachine.StartCoroutine(LightsOnState(stateMachine, Random.Range(0.5f, 1.5f)));
         }
 
         public override void OnExitState(GameControllerStateMachine stateMachine)

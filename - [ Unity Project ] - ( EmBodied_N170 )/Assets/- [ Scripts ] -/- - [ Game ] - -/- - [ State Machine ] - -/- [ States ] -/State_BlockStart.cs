@@ -48,7 +48,7 @@ namespace StateMachine
             
             MainCanvas.AwaitingBlockStartPanelVisible = true;
             MainCanvas.blockDescriptionLabel.text = 
-                $"This block uses the <color=#55FFAA>{((activeRoom == Room.RoomA) ? ("approach") : ("withdraw"))}</color> condition";
+                $"<color=#55FFAA>{((activeRoom == Room.RoomA) ? ("Approach") : ("Withdraw"))}</color> period";
 
             if (activeRoom == Room.RoomA)
             {

@@ -1,8 +1,10 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using Enums;
 using Questionnaire;
 using UnityEditor.Rendering;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace StateMachine
 {
@@ -23,7 +25,7 @@ namespace StateMachine
         private LookAtCursor _lookAtCursor;
         private LookAtCursor LookAtCursor => _lookAtCursor ?? (_lookAtCursor = GameObject.FindObjectOfType<LookAtCursor>());
         
-        private float _radius = 0.4f;
+        private float _radius = 0.25f;
         
 
 
@@ -71,7 +73,7 @@ namespace StateMachine
             DataCollector.CurrentTrialData.roomBCharacterName = currentTrial.roomB_NPCAvatar.name;
             DataCollector.CurrentTrialData.roomBCharacterID = characterDataB.characterID;
 
-            stateMachine.StartCoroutine(LightsOnState(stateMachine, Random.Range(0.0f, 0.5f)));
+            stateMachine.StartCoroutine(LightsOnState(stateMachine, Random.Range(0.0f, 1.0f)));
         }
 
         public override void OnExitState(GameControllerStateMachine stateMachine)
@@ -138,7 +140,8 @@ namespace StateMachine
 
             yield return null;
             MainCanvas.LookTarget.SetActive(true);
-            
+
+            float focusDuration = 0.5f, timeElapsed = 0;
             while (true)
             {
                 if (GetLookTargetPosition(out Vector3 position))
@@ -146,9 +149,14 @@ namespace StateMachine
                     lookTargetTransform.position = position;
                 }
 
-                if (LookDirectionCheck(ref playerHeadTransform, ref lookTargetTransform) &&
-                    BoundsCheck(ref playerHeadTransform))
-                    break;
+                if (LookDirectionCheck(ref playerHeadTransform, ref lookTargetTransform) && BoundsCheck(ref playerHeadTransform))
+                {
+                    timeElapsed += Time.deltaTime;
+                    Debug.Log($"Focus: {Mathf.InverseLerp(0, focusDuration, timeElapsed) * 100}%");
+
+                    if (timeElapsed > focusDuration) break;
+                }
+                else timeElapsed = 0;
 
                 yield return null;
             }
@@ -226,6 +234,7 @@ namespace StateMachine
             
             Gizmos.color = Color.white;
             Gizmos.DrawWireSphere(new Vector3(0, 0, 0), _radius);
+            Gizmos.DrawWireSphere(new Vector3(0, -4f, 0), _radius);
         }
     }
 }

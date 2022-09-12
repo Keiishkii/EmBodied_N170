@@ -1,0 +1,2162 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c9511c202b9cb241abe7932d4f978ce, type: 3}
+  m_Name: 12
+  m_EditorClassIdentifier: 
+  blocks:
+  - rid: 9174799472886284354
+  - rid: 9174799472886284396
+  - rid: 9174799472886284438
+  - rid: 9174799472886284480
+  - rid: 9174799472886284522
+  - rid: 9174799472886284564
+  - rid: 9174799472886284606
+  approachDistance: 2
+  participantHandedness: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 9174799472886284354
+      type: {class: Block, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        trials:
+        - rid: 9174799472886284355
+        - rid: 9174799472886284356
+        - rid: 9174799472886284357
+        - rid: 9174799472886284358
+        - rid: 9174799472886284359
+        - rid: 9174799472886284360
+        - rid: 9174799472886284361
+        - rid: 9174799472886284362
+        - rid: 9174799472886284363
+        - rid: 9174799472886284364
+        - rid: 9174799472886284365
+        - rid: 9174799472886284366
+        - rid: 9174799472886284367
+        - rid: 9174799472886284368
+        - rid: 9174799472886284369
+        - rid: 9174799472886284370
+        - rid: 9174799472886284371
+        - rid: 9174799472886284372
+        - rid: 9174799472886284373
+        - rid: 9174799472886284374
+        - rid: 9174799472886284375
+        - rid: 9174799472886284376
+        - rid: 9174799472886284377
+        - rid: 9174799472886284378
+        - rid: 9174799472886284379
+        - rid: 9174799472886284380
+        - rid: 9174799472886284381
+        - rid: 9174799472886284382
+        - rid: 9174799472886284383
+        - rid: 9174799472886284384
+        - rid: 9174799472886284385
+        - rid: 9174799472886284386
+        - rid: 9174799472886284387
+        - rid: 9174799472886284388
+        - rid: 9174799472886284389
+        - rid: 9174799472886284390
+        - rid: 9174799472886284391
+        - rid: 9174799472886284392
+        - rid: 9174799472886284393
+        - rid: 9174799472886284394
+        trialListVisibility: 0
+        blockQuestionnairePanels:
+        - rid: 9174799472886284395
+        questionnaireListVisibility: 0
+        targetRoom: 1
+    - rid: 9174799472886284355
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 7137246065745300051, guid: 328fca6e48d1b0140a329c267e2e8d65, type: 3}
+        roomB_NPCAvatar: {fileID: 546019268559787885, guid: 425872b63f2588e40854eab7975a8716, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284356
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 7137246065745300051, guid: 328fca6e48d1b0140a329c267e2e8d65, type: 3}
+        roomB_NPCAvatar: {fileID: 4633609961173241037, guid: cdfb60198d8b9324080dbc09f7222ed8, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284357
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 659953216500511583, guid: ba83635e156185c43a01ec769c1c4c5b, type: 3}
+        roomB_NPCAvatar: {fileID: 1667025052252471913, guid: 3dc98c86e00acc8489b495ebe1e25d8a, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284358
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 6494704717704555029, guid: ee575a7528ccefd44b2812a85f42772c, type: 3}
+        roomB_NPCAvatar: {fileID: 208037630454435721, guid: 8c01732804858554883bf9740bd2d65e, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284359
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 6494704717704555029, guid: 0bfe1fae11436714ea13c3d0f0772b63, type: 3}
+        roomB_NPCAvatar: {fileID: 5836601763929389210, guid: 160a2eac0f5beaa40b524cd084261160, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284360
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 659953216500511583, guid: ba83635e156185c43a01ec769c1c4c5b, type: 3}
+        roomB_NPCAvatar: {fileID: 208037630454435721, guid: 8c01732804858554883bf9740bd2d65e, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284361
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 659953216500511583, guid: ab307de9dd26b7d4fa3955126e999a16, type: 3}
+        roomB_NPCAvatar: {fileID: 151296173630526888, guid: 876e9e5634b402b448170f35eed894c2, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284362
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 7137246065745300051, guid: 328fca6e48d1b0140a329c267e2e8d65, type: 3}
+        roomB_NPCAvatar: {fileID: 4633609961173241037, guid: cdfb60198d8b9324080dbc09f7222ed8, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284363
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 9082419334070313285, guid: 8d90ad1e5d31aac4eb81e5bbe7393aa2, type: 3}
+        roomB_NPCAvatar: {fileID: 5245021407769284173, guid: fc8cd8dd074ea704bb17428a29e121d2, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284364
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 9082419334070313285, guid: 8d90ad1e5d31aac4eb81e5bbe7393aa2, type: 3}
+        roomB_NPCAvatar: {fileID: 208037630454435721, guid: 3959146ed99e75342b7690eaca1c197b, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284365
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8095615030172524450, guid: 38cda17157ef41a4db8bc26ca0083e45, type: 3}
+        roomB_NPCAvatar: {fileID: 582349888759162599, guid: c55e9f9ef1f3b7542a06050d09b4d7ad, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284366
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 6494704717704555029, guid: ee575a7528ccefd44b2812a85f42772c, type: 3}
+        roomB_NPCAvatar: {fileID: 546019268559787885, guid: 69cf029dc7ba76a4796e630fe4ab0b06, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284367
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8612739744240798829, guid: 4188658e2bad9734a9f4de09e542a3f0, type: 3}
+        roomB_NPCAvatar: {fileID: 582349888759162599, guid: c55e9f9ef1f3b7542a06050d09b4d7ad, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284368
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 9082419334070313285, guid: f40182b6a6745c24ab03c42c05084701, type: 3}
+        roomB_NPCAvatar: {fileID: 151296173630526888, guid: a58f9d706654a05429a2538219c1a6b4, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284369
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 659953216500511583, guid: ab307de9dd26b7d4fa3955126e999a16, type: 3}
+        roomB_NPCAvatar: {fileID: 5836601763929389210, guid: 160a2eac0f5beaa40b524cd084261160, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284370
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 7137246065745300051, guid: 328fca6e48d1b0140a329c267e2e8d65, type: 3}
+        roomB_NPCAvatar: {fileID: 4633609961173241037, guid: cdfb60198d8b9324080dbc09f7222ed8, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284371
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 659953216500511583, guid: ab307de9dd26b7d4fa3955126e999a16, type: 3}
+        roomB_NPCAvatar: {fileID: 4633609961173241037, guid: cdfb60198d8b9324080dbc09f7222ed8, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284372
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 9082419334070313285, guid: 8d90ad1e5d31aac4eb81e5bbe7393aa2, type: 3}
+        roomB_NPCAvatar: {fileID: 5245021407769284173, guid: fc8cd8dd074ea704bb17428a29e121d2, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284373
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 6494704717704555029, guid: ee575a7528ccefd44b2812a85f42772c, type: 3}
+        roomB_NPCAvatar: {fileID: 5836601763929389210, guid: 131f95b1f86b95a4aa2e1f84a93866e0, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284374
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 659953216500511583, guid: ab307de9dd26b7d4fa3955126e999a16, type: 3}
+        roomB_NPCAvatar: {fileID: 546019268559787885, guid: 425872b63f2588e40854eab7975a8716, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284375
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 3988616160223418690, guid: 8b9cb7fe96df8544ba560c7f428a11f9, type: 3}
+        roomB_NPCAvatar: {fileID: 208037630454435721, guid: 8c01732804858554883bf9740bd2d65e, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284376
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8095615030172524450, guid: c321b29e23de4aa4f88bcc4695e78af3, type: 3}
+        roomB_NPCAvatar: {fileID: 151296173630526888, guid: 876e9e5634b402b448170f35eed894c2, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284377
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 9082419334070313285, guid: 8d90ad1e5d31aac4eb81e5bbe7393aa2, type: 3}
+        roomB_NPCAvatar: {fileID: 5245021407769284173, guid: fc8cd8dd074ea704bb17428a29e121d2, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284378
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 659953216500511583, guid: ba83635e156185c43a01ec769c1c4c5b, type: 3}
+        roomB_NPCAvatar: {fileID: 8715531548804830126, guid: 8881e988f6938da42b6782509bd9ece6, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284379
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 9082419334070313285, guid: f40182b6a6745c24ab03c42c05084701, type: 3}
+        roomB_NPCAvatar: {fileID: 4633609961173241037, guid: c7159f531ae36da4a94376d3c092868a, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284380
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 2765776896869550450, guid: e2db069754df6964c89428928ad8727d, type: 3}
+        roomB_NPCAvatar: {fileID: 151296173630526888, guid: 876e9e5634b402b448170f35eed894c2, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284381
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 3988616160223418690, guid: 8b9cb7fe96df8544ba560c7f428a11f9, type: 3}
+        roomB_NPCAvatar: {fileID: 582349888759162599, guid: c55e9f9ef1f3b7542a06050d09b4d7ad, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284382
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 7137246065745300051, guid: c2a12df1281b7174ab1ddb88069fda90, type: 3}
+        roomB_NPCAvatar: {fileID: 208037630454435721, guid: 8c01732804858554883bf9740bd2d65e, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284383
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 2765776896869550450, guid: e2db069754df6964c89428928ad8727d, type: 3}
+        roomB_NPCAvatar: {fileID: 5836601763929389210, guid: 160a2eac0f5beaa40b524cd084261160, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284384
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 9082419334070313285, guid: 8d90ad1e5d31aac4eb81e5bbe7393aa2, type: 3}
+        roomB_NPCAvatar: {fileID: 8715531548804830126, guid: 4b3f7e074748e7f4196b76b10360c417, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284385
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 7137246065745300051, guid: c2a12df1281b7174ab1ddb88069fda90, type: 3}
+        roomB_NPCAvatar: {fileID: 4633609961173241037, guid: c7159f531ae36da4a94376d3c092868a, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284386
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 659953216500511583, guid: ba83635e156185c43a01ec769c1c4c5b, type: 3}
+        roomB_NPCAvatar: {fileID: 151296173630526888, guid: a58f9d706654a05429a2538219c1a6b4, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284387
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 659953216500511583, guid: ab307de9dd26b7d4fa3955126e999a16, type: 3}
+        roomB_NPCAvatar: {fileID: 151296173630526888, guid: 876e9e5634b402b448170f35eed894c2, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284388
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8095615030172524450, guid: c321b29e23de4aa4f88bcc4695e78af3, type: 3}
+        roomB_NPCAvatar: {fileID: 208037630454435721, guid: 3959146ed99e75342b7690eaca1c197b, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284389
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 2324528351695377151, guid: 0bb9a14138c1d194194d2f3c5ff68f37, type: 3}
+        roomB_NPCAvatar: {fileID: 582349888759162599, guid: c55e9f9ef1f3b7542a06050d09b4d7ad, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284390
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 7137246065745300051, guid: 328fca6e48d1b0140a329c267e2e8d65, type: 3}
+        roomB_NPCAvatar: {fileID: 8715531548804830126, guid: 4b3f7e074748e7f4196b76b10360c417, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284391
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 2324528351695377151, guid: 0bb9a14138c1d194194d2f3c5ff68f37, type: 3}
+        roomB_NPCAvatar: {fileID: 8715531548804830126, guid: 8881e988f6938da42b6782509bd9ece6, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284392
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 3988616160223418690, guid: 8b9cb7fe96df8544ba560c7f428a11f9, type: 3}
+        roomB_NPCAvatar: {fileID: 4633609961173241037, guid: c7159f531ae36da4a94376d3c092868a, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284393
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 7137246065745300051, guid: 328fca6e48d1b0140a329c267e2e8d65, type: 3}
+        roomB_NPCAvatar: {fileID: 151296173630526888, guid: 876e9e5634b402b448170f35eed894c2, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284394
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 7137246065745300051, guid: c2a12df1281b7174ab1ddb88069fda90, type: 3}
+        roomB_NPCAvatar: {fileID: 5245021407769284173, guid: 659e003288da5784da6a6dea8d1124aa, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284395
+      type: {class: QuestionnairePanel_TwoSliders, ns: Questionnaire, asm: Assembly-CSharp}
+      data:
+        questionnairePanelType: 2
+        sliderOneQuestion: Happyness
+        sliderOneQuestionDecorType: 1
+        sliderOneQuestionDecorMinimumText: 
+        sliderOneQuestionDecorMaximumText: 
+        sliderOneQuestionDecorMinimumSprite: {fileID: 2800000, guid: ba249f57dccb56740854c30a0d6d434f, type: 3}
+        sliderOneQuestionDecorMaximumSprite: {fileID: 2800000, guid: 314f1ebef30680448baf6fb08aa85f4d, type: 3}
+        sliderTwoQuestion: Alertness
+        sliderTwoQuestionDecorType: 1
+        sliderTwoQuestionDecorMinimumText: 
+        sliderTwoQuestionDecorMaximumText: 
+        sliderTwoQuestionDecorMinimumSprite: {fileID: 2800000, guid: 0ddc82f33271d66449525a9753135693, type: 3}
+        sliderTwoQuestionDecorMaximumSprite: {fileID: 2800000, guid: d90aac651ae65eb48a4a2c9fb75b5997, type: 3}
+    - rid: 9174799472886284396
+      type: {class: Block, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        trials:
+        - rid: 9174799472886284397
+        - rid: 9174799472886284398
+        - rid: 9174799472886284399
+        - rid: 9174799472886284400
+        - rid: 9174799472886284401
+        - rid: 9174799472886284402
+        - rid: 9174799472886284403
+        - rid: 9174799472886284404
+        - rid: 9174799472886284405
+        - rid: 9174799472886284406
+        - rid: 9174799472886284407
+        - rid: 9174799472886284408
+        - rid: 9174799472886284409
+        - rid: 9174799472886284410
+        - rid: 9174799472886284411
+        - rid: 9174799472886284412
+        - rid: 9174799472886284413
+        - rid: 9174799472886284414
+        - rid: 9174799472886284415
+        - rid: 9174799472886284416
+        - rid: 9174799472886284417
+        - rid: 9174799472886284418
+        - rid: 9174799472886284419
+        - rid: 9174799472886284420
+        - rid: 9174799472886284421
+        - rid: 9174799472886284422
+        - rid: 9174799472886284423
+        - rid: 9174799472886284424
+        - rid: 9174799472886284425
+        - rid: 9174799472886284426
+        - rid: 9174799472886284427
+        - rid: 9174799472886284428
+        - rid: 9174799472886284429
+        - rid: 9174799472886284430
+        - rid: 9174799472886284431
+        - rid: 9174799472886284432
+        - rid: 9174799472886284433
+        - rid: 9174799472886284434
+        - rid: 9174799472886284435
+        - rid: 9174799472886284436
+        trialListVisibility: 0
+        blockQuestionnairePanels:
+        - rid: 9174799472886284437
+        questionnaireListVisibility: 0
+        targetRoom: 0
+    - rid: 9174799472886284397
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8095615030172524450, guid: c321b29e23de4aa4f88bcc4695e78af3, type: 3}
+        roomB_NPCAvatar: {fileID: 582349888759162599, guid: 5a8a5c13c1c56fe4b83ce880267902ea, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284398
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 7137246065745300051, guid: 328fca6e48d1b0140a329c267e2e8d65, type: 3}
+        roomB_NPCAvatar: {fileID: 582349888759162599, guid: 5a8a5c13c1c56fe4b83ce880267902ea, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284399
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 2765776896869550450, guid: 61dba6adea7bd4e4781628e5b9c42b83, type: 3}
+        roomB_NPCAvatar: {fileID: 4633609961173241037, guid: c7159f531ae36da4a94376d3c092868a, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284400
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 9082419334070313285, guid: f40182b6a6745c24ab03c42c05084701, type: 3}
+        roomB_NPCAvatar: {fileID: 208037630454435721, guid: 8c01732804858554883bf9740bd2d65e, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284401
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 6494704717704555029, guid: ee575a7528ccefd44b2812a85f42772c, type: 3}
+        roomB_NPCAvatar: {fileID: 5245021407769284173, guid: 659e003288da5784da6a6dea8d1124aa, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284402
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 6494704717704555029, guid: ee575a7528ccefd44b2812a85f42772c, type: 3}
+        roomB_NPCAvatar: {fileID: 546019268559787885, guid: 69cf029dc7ba76a4796e630fe4ab0b06, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284403
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 659953216500511583, guid: ab307de9dd26b7d4fa3955126e999a16, type: 3}
+        roomB_NPCAvatar: {fileID: 151296173630526888, guid: 876e9e5634b402b448170f35eed894c2, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284404
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 659953216500511583, guid: ba83635e156185c43a01ec769c1c4c5b, type: 3}
+        roomB_NPCAvatar: {fileID: 8715531548804830126, guid: 8881e988f6938da42b6782509bd9ece6, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284405
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 6494704717704555029, guid: 0bfe1fae11436714ea13c3d0f0772b63, type: 3}
+        roomB_NPCAvatar: {fileID: 546019268559787885, guid: 425872b63f2588e40854eab7975a8716, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284406
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8612739744240798829, guid: a435550fa0263f54488e6cd656a16547, type: 3}
+        roomB_NPCAvatar: {fileID: 5245021407769284173, guid: fc8cd8dd074ea704bb17428a29e121d2, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284407
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8612739744240798829, guid: 4188658e2bad9734a9f4de09e542a3f0, type: 3}
+        roomB_NPCAvatar: {fileID: 1667025052252471913, guid: 3dc98c86e00acc8489b495ebe1e25d8a, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284408
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 9082419334070313285, guid: f40182b6a6745c24ab03c42c05084701, type: 3}
+        roomB_NPCAvatar: {fileID: 5836601763929389210, guid: 131f95b1f86b95a4aa2e1f84a93866e0, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284409
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8612739744240798829, guid: 4188658e2bad9734a9f4de09e542a3f0, type: 3}
+        roomB_NPCAvatar: {fileID: 546019268559787885, guid: 69cf029dc7ba76a4796e630fe4ab0b06, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284410
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 2324528351695377151, guid: 0bb9a14138c1d194194d2f3c5ff68f37, type: 3}
+        roomB_NPCAvatar: {fileID: 5836601763929389210, guid: 131f95b1f86b95a4aa2e1f84a93866e0, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284411
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8475892927928457697, guid: 576928bf3bf48ca4990cc22d546c53b8, type: 3}
+        roomB_NPCAvatar: {fileID: 151296173630526888, guid: 876e9e5634b402b448170f35eed894c2, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284412
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 2324528351695377151, guid: 0bb9a14138c1d194194d2f3c5ff68f37, type: 3}
+        roomB_NPCAvatar: {fileID: 208037630454435721, guid: 8c01732804858554883bf9740bd2d65e, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284413
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8475892927928457697, guid: e9cfe076270167541bc1ee3619083802, type: 3}
+        roomB_NPCAvatar: {fileID: 5836601763929389210, guid: 131f95b1f86b95a4aa2e1f84a93866e0, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284414
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8095615030172524450, guid: 38cda17157ef41a4db8bc26ca0083e45, type: 3}
+        roomB_NPCAvatar: {fileID: 5836601763929389210, guid: 131f95b1f86b95a4aa2e1f84a93866e0, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284415
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8612739744240798829, guid: 4188658e2bad9734a9f4de09e542a3f0, type: 3}
+        roomB_NPCAvatar: {fileID: 151296173630526888, guid: a58f9d706654a05429a2538219c1a6b4, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284416
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 9082419334070313285, guid: 8d90ad1e5d31aac4eb81e5bbe7393aa2, type: 3}
+        roomB_NPCAvatar: {fileID: 151296173630526888, guid: 876e9e5634b402b448170f35eed894c2, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284417
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 3988616160223418690, guid: 79d60b613c46b4841a225f9ebd91a8da, type: 3}
+        roomB_NPCAvatar: {fileID: 1667025052252471913, guid: bf32db0547fd742419eb059dec9d9203, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284418
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 3988616160223418690, guid: 8b9cb7fe96df8544ba560c7f428a11f9, type: 3}
+        roomB_NPCAvatar: {fileID: 151296173630526888, guid: a58f9d706654a05429a2538219c1a6b4, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284419
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 9082419334070313285, guid: 8d90ad1e5d31aac4eb81e5bbe7393aa2, type: 3}
+        roomB_NPCAvatar: {fileID: 4633609961173241037, guid: cdfb60198d8b9324080dbc09f7222ed8, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284420
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 2324528351695377151, guid: 0bb9a14138c1d194194d2f3c5ff68f37, type: 3}
+        roomB_NPCAvatar: {fileID: 5836601763929389210, guid: 131f95b1f86b95a4aa2e1f84a93866e0, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284421
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 2765776896869550450, guid: 61dba6adea7bd4e4781628e5b9c42b83, type: 3}
+        roomB_NPCAvatar: {fileID: 208037630454435721, guid: 8c01732804858554883bf9740bd2d65e, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284422
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8475892927928457697, guid: 576928bf3bf48ca4990cc22d546c53b8, type: 3}
+        roomB_NPCAvatar: {fileID: 546019268559787885, guid: 425872b63f2588e40854eab7975a8716, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284423
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 3988616160223418690, guid: 79d60b613c46b4841a225f9ebd91a8da, type: 3}
+        roomB_NPCAvatar: {fileID: 546019268559787885, guid: 425872b63f2588e40854eab7975a8716, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284424
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 2324528351695377151, guid: 0bb9a14138c1d194194d2f3c5ff68f37, type: 3}
+        roomB_NPCAvatar: {fileID: 8715531548804830126, guid: 8881e988f6938da42b6782509bd9ece6, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284425
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 9082419334070313285, guid: f40182b6a6745c24ab03c42c05084701, type: 3}
+        roomB_NPCAvatar: {fileID: 7975788538233868137, guid: 7be1273a3feffd9479627225e96183ae, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284426
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8095615030172524450, guid: c321b29e23de4aa4f88bcc4695e78af3, type: 3}
+        roomB_NPCAvatar: {fileID: 582349888759162599, guid: 5a8a5c13c1c56fe4b83ce880267902ea, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284427
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 3988616160223418690, guid: 79d60b613c46b4841a225f9ebd91a8da, type: 3}
+        roomB_NPCAvatar: {fileID: 208037630454435721, guid: 3959146ed99e75342b7690eaca1c197b, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284428
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 3988616160223418690, guid: 8b9cb7fe96df8544ba560c7f428a11f9, type: 3}
+        roomB_NPCAvatar: {fileID: 1667025052252471913, guid: 3dc98c86e00acc8489b495ebe1e25d8a, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284429
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8612739744240798829, guid: 4188658e2bad9734a9f4de09e542a3f0, type: 3}
+        roomB_NPCAvatar: {fileID: 8715531548804830126, guid: 8881e988f6938da42b6782509bd9ece6, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284430
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 659953216500511583, guid: ba83635e156185c43a01ec769c1c4c5b, type: 3}
+        roomB_NPCAvatar: {fileID: 5245021407769284173, guid: 659e003288da5784da6a6dea8d1124aa, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284431
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 7137246065745300051, guid: c2a12df1281b7174ab1ddb88069fda90, type: 3}
+        roomB_NPCAvatar: {fileID: 546019268559787885, guid: 69cf029dc7ba76a4796e630fe4ab0b06, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284432
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 2765776896869550450, guid: 61dba6adea7bd4e4781628e5b9c42b83, type: 3}
+        roomB_NPCAvatar: {fileID: 7975788538233868137, guid: 7be1273a3feffd9479627225e96183ae, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284433
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 9082419334070313285, guid: f40182b6a6745c24ab03c42c05084701, type: 3}
+        roomB_NPCAvatar: {fileID: 7975788538233868137, guid: 7be1273a3feffd9479627225e96183ae, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284434
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8095615030172524450, guid: c321b29e23de4aa4f88bcc4695e78af3, type: 3}
+        roomB_NPCAvatar: {fileID: 5245021407769284173, guid: fc8cd8dd074ea704bb17428a29e121d2, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284435
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 3988616160223418690, guid: 8b9cb7fe96df8544ba560c7f428a11f9, type: 3}
+        roomB_NPCAvatar: {fileID: 5836601763929389210, guid: 131f95b1f86b95a4aa2e1f84a93866e0, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284436
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8612739744240798829, guid: 4188658e2bad9734a9f4de09e542a3f0, type: 3}
+        roomB_NPCAvatar: {fileID: 7975788538233868137, guid: 7be1273a3feffd9479627225e96183ae, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284437
+      type: {class: QuestionnairePanel_TwoSliders, ns: Questionnaire, asm: Assembly-CSharp}
+      data:
+        questionnairePanelType: 2
+        sliderOneQuestion: Happyness
+        sliderOneQuestionDecorType: 1
+        sliderOneQuestionDecorMinimumText: 
+        sliderOneQuestionDecorMaximumText: 
+        sliderOneQuestionDecorMinimumSprite: {fileID: 2800000, guid: ba249f57dccb56740854c30a0d6d434f, type: 3}
+        sliderOneQuestionDecorMaximumSprite: {fileID: 2800000, guid: 314f1ebef30680448baf6fb08aa85f4d, type: 3}
+        sliderTwoQuestion: Alertness
+        sliderTwoQuestionDecorType: 1
+        sliderTwoQuestionDecorMinimumText: 
+        sliderTwoQuestionDecorMaximumText: 
+        sliderTwoQuestionDecorMinimumSprite: {fileID: 2800000, guid: 0ddc82f33271d66449525a9753135693, type: 3}
+        sliderTwoQuestionDecorMaximumSprite: {fileID: 2800000, guid: d90aac651ae65eb48a4a2c9fb75b5997, type: 3}
+    - rid: 9174799472886284438
+      type: {class: Block, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        trials:
+        - rid: 9174799472886284439
+        - rid: 9174799472886284440
+        - rid: 9174799472886284441
+        - rid: 9174799472886284442
+        - rid: 9174799472886284443
+        - rid: 9174799472886284444
+        - rid: 9174799472886284445
+        - rid: 9174799472886284446
+        - rid: 9174799472886284447
+        - rid: 9174799472886284448
+        - rid: 9174799472886284449
+        - rid: 9174799472886284450
+        - rid: 9174799472886284451
+        - rid: 9174799472886284452
+        - rid: 9174799472886284453
+        - rid: 9174799472886284454
+        - rid: 9174799472886284455
+        - rid: 9174799472886284456
+        - rid: 9174799472886284457
+        - rid: 9174799472886284458
+        - rid: 9174799472886284459
+        - rid: 9174799472886284460
+        - rid: 9174799472886284461
+        - rid: 9174799472886284462
+        - rid: 9174799472886284463
+        - rid: 9174799472886284464
+        - rid: 9174799472886284465
+        - rid: 9174799472886284466
+        - rid: 9174799472886284467
+        - rid: 9174799472886284468
+        - rid: 9174799472886284469
+        - rid: 9174799472886284470
+        - rid: 9174799472886284471
+        - rid: 9174799472886284472
+        - rid: 9174799472886284473
+        - rid: 9174799472886284474
+        - rid: 9174799472886284475
+        - rid: 9174799472886284476
+        - rid: 9174799472886284477
+        - rid: 9174799472886284478
+        trialListVisibility: 0
+        blockQuestionnairePanels:
+        - rid: 9174799472886284479
+        questionnaireListVisibility: 0
+        targetRoom: 1
+    - rid: 9174799472886284439
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8612739744240798829, guid: 4188658e2bad9734a9f4de09e542a3f0, type: 3}
+        roomB_NPCAvatar: {fileID: 1667025052252471913, guid: 3dc98c86e00acc8489b495ebe1e25d8a, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284440
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8612739744240798829, guid: a435550fa0263f54488e6cd656a16547, type: 3}
+        roomB_NPCAvatar: {fileID: 5836601763929389210, guid: 160a2eac0f5beaa40b524cd084261160, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284441
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 2765776896869550450, guid: 61dba6adea7bd4e4781628e5b9c42b83, type: 3}
+        roomB_NPCAvatar: {fileID: 151296173630526888, guid: a58f9d706654a05429a2538219c1a6b4, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284442
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8475892927928457697, guid: 576928bf3bf48ca4990cc22d546c53b8, type: 3}
+        roomB_NPCAvatar: {fileID: 1667025052252471913, guid: bf32db0547fd742419eb059dec9d9203, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284443
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 659953216500511583, guid: ab307de9dd26b7d4fa3955126e999a16, type: 3}
+        roomB_NPCAvatar: {fileID: 5245021407769284173, guid: fc8cd8dd074ea704bb17428a29e121d2, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284444
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 2765776896869550450, guid: e2db069754df6964c89428928ad8727d, type: 3}
+        roomB_NPCAvatar: {fileID: 4633609961173241037, guid: cdfb60198d8b9324080dbc09f7222ed8, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284445
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 6494704717704555029, guid: ee575a7528ccefd44b2812a85f42772c, type: 3}
+        roomB_NPCAvatar: {fileID: 582349888759162599, guid: c55e9f9ef1f3b7542a06050d09b4d7ad, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284446
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8475892927928457697, guid: 576928bf3bf48ca4990cc22d546c53b8, type: 3}
+        roomB_NPCAvatar: {fileID: 546019268559787885, guid: 425872b63f2588e40854eab7975a8716, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284447
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 6494704717704555029, guid: 0bfe1fae11436714ea13c3d0f0772b63, type: 3}
+        roomB_NPCAvatar: {fileID: 582349888759162599, guid: 5a8a5c13c1c56fe4b83ce880267902ea, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284448
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 2324528351695377151, guid: bf615b22a1437dd4b856ac5ed0ae6f6a, type: 3}
+        roomB_NPCAvatar: {fileID: 151296173630526888, guid: 876e9e5634b402b448170f35eed894c2, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284449
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 7137246065745300051, guid: c2a12df1281b7174ab1ddb88069fda90, type: 3}
+        roomB_NPCAvatar: {fileID: 151296173630526888, guid: a58f9d706654a05429a2538219c1a6b4, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284450
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 7137246065745300051, guid: 328fca6e48d1b0140a329c267e2e8d65, type: 3}
+        roomB_NPCAvatar: {fileID: 546019268559787885, guid: 425872b63f2588e40854eab7975a8716, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284451
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8475892927928457697, guid: e9cfe076270167541bc1ee3619083802, type: 3}
+        roomB_NPCAvatar: {fileID: 8715531548804830126, guid: 8881e988f6938da42b6782509bd9ece6, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284452
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8095615030172524450, guid: 38cda17157ef41a4db8bc26ca0083e45, type: 3}
+        roomB_NPCAvatar: {fileID: 5836601763929389210, guid: 131f95b1f86b95a4aa2e1f84a93866e0, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284453
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 7137246065745300051, guid: c2a12df1281b7174ab1ddb88069fda90, type: 3}
+        roomB_NPCAvatar: {fileID: 208037630454435721, guid: 8c01732804858554883bf9740bd2d65e, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284454
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 2324528351695377151, guid: 0bb9a14138c1d194194d2f3c5ff68f37, type: 3}
+        roomB_NPCAvatar: {fileID: 5245021407769284173, guid: 659e003288da5784da6a6dea8d1124aa, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284455
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8475892927928457697, guid: e9cfe076270167541bc1ee3619083802, type: 3}
+        roomB_NPCAvatar: {fileID: 208037630454435721, guid: 8c01732804858554883bf9740bd2d65e, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284456
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8095615030172524450, guid: 38cda17157ef41a4db8bc26ca0083e45, type: 3}
+        roomB_NPCAvatar: {fileID: 582349888759162599, guid: c55e9f9ef1f3b7542a06050d09b4d7ad, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284457
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8475892927928457697, guid: e9cfe076270167541bc1ee3619083802, type: 3}
+        roomB_NPCAvatar: {fileID: 151296173630526888, guid: a58f9d706654a05429a2538219c1a6b4, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284458
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8612739744240798829, guid: a435550fa0263f54488e6cd656a16547, type: 3}
+        roomB_NPCAvatar: {fileID: 151296173630526888, guid: 876e9e5634b402b448170f35eed894c2, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284459
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8475892927928457697, guid: e9cfe076270167541bc1ee3619083802, type: 3}
+        roomB_NPCAvatar: {fileID: 7975788538233868137, guid: 7be1273a3feffd9479627225e96183ae, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284460
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8095615030172524450, guid: c321b29e23de4aa4f88bcc4695e78af3, type: 3}
+        roomB_NPCAvatar: {fileID: 1667025052252471913, guid: bf32db0547fd742419eb059dec9d9203, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284461
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 2765776896869550450, guid: e2db069754df6964c89428928ad8727d, type: 3}
+        roomB_NPCAvatar: {fileID: 7975788538233868137, guid: de10ff596c42abc449a300dcdffd7249, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284462
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 659953216500511583, guid: ab307de9dd26b7d4fa3955126e999a16, type: 3}
+        roomB_NPCAvatar: {fileID: 1667025052252471913, guid: bf32db0547fd742419eb059dec9d9203, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284463
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 2765776896869550450, guid: e2db069754df6964c89428928ad8727d, type: 3}
+        roomB_NPCAvatar: {fileID: 546019268559787885, guid: 425872b63f2588e40854eab7975a8716, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284464
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 9082419334070313285, guid: f40182b6a6745c24ab03c42c05084701, type: 3}
+        roomB_NPCAvatar: {fileID: 7975788538233868137, guid: 7be1273a3feffd9479627225e96183ae, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284465
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 6494704717704555029, guid: ee575a7528ccefd44b2812a85f42772c, type: 3}
+        roomB_NPCAvatar: {fileID: 5836601763929389210, guid: 131f95b1f86b95a4aa2e1f84a93866e0, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284466
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 7137246065745300051, guid: c2a12df1281b7174ab1ddb88069fda90, type: 3}
+        roomB_NPCAvatar: {fileID: 8715531548804830126, guid: 8881e988f6938da42b6782509bd9ece6, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284467
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 6494704717704555029, guid: ee575a7528ccefd44b2812a85f42772c, type: 3}
+        roomB_NPCAvatar: {fileID: 8715531548804830126, guid: 8881e988f6938da42b6782509bd9ece6, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284468
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 659953216500511583, guid: ab307de9dd26b7d4fa3955126e999a16, type: 3}
+        roomB_NPCAvatar: {fileID: 8715531548804830126, guid: 4b3f7e074748e7f4196b76b10360c417, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284469
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 9082419334070313285, guid: 8d90ad1e5d31aac4eb81e5bbe7393aa2, type: 3}
+        roomB_NPCAvatar: {fileID: 5836601763929389210, guid: 160a2eac0f5beaa40b524cd084261160, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284470
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 659953216500511583, guid: ba83635e156185c43a01ec769c1c4c5b, type: 3}
+        roomB_NPCAvatar: {fileID: 151296173630526888, guid: a58f9d706654a05429a2538219c1a6b4, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284471
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 9082419334070313285, guid: f40182b6a6745c24ab03c42c05084701, type: 3}
+        roomB_NPCAvatar: {fileID: 1667025052252471913, guid: 3dc98c86e00acc8489b495ebe1e25d8a, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284472
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 3988616160223418690, guid: 8b9cb7fe96df8544ba560c7f428a11f9, type: 3}
+        roomB_NPCAvatar: {fileID: 546019268559787885, guid: 69cf029dc7ba76a4796e630fe4ab0b06, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284473
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 9082419334070313285, guid: f40182b6a6745c24ab03c42c05084701, type: 3}
+        roomB_NPCAvatar: {fileID: 151296173630526888, guid: a58f9d706654a05429a2538219c1a6b4, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284474
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 3988616160223418690, guid: 79d60b613c46b4841a225f9ebd91a8da, type: 3}
+        roomB_NPCAvatar: {fileID: 208037630454435721, guid: 3959146ed99e75342b7690eaca1c197b, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284475
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 7137246065745300051, guid: c2a12df1281b7174ab1ddb88069fda90, type: 3}
+        roomB_NPCAvatar: {fileID: 7975788538233868137, guid: 7be1273a3feffd9479627225e96183ae, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284476
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8475892927928457697, guid: 576928bf3bf48ca4990cc22d546c53b8, type: 3}
+        roomB_NPCAvatar: {fileID: 5836601763929389210, guid: 160a2eac0f5beaa40b524cd084261160, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284477
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 2765776896869550450, guid: e2db069754df6964c89428928ad8727d, type: 3}
+        roomB_NPCAvatar: {fileID: 208037630454435721, guid: 3959146ed99e75342b7690eaca1c197b, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284478
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8095615030172524450, guid: 38cda17157ef41a4db8bc26ca0083e45, type: 3}
+        roomB_NPCAvatar: {fileID: 1667025052252471913, guid: 3dc98c86e00acc8489b495ebe1e25d8a, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284479
+      type: {class: QuestionnairePanel_TwoSliders, ns: Questionnaire, asm: Assembly-CSharp}
+      data:
+        questionnairePanelType: 2
+        sliderOneQuestion: Happyness
+        sliderOneQuestionDecorType: 1
+        sliderOneQuestionDecorMinimumText: 
+        sliderOneQuestionDecorMaximumText: 
+        sliderOneQuestionDecorMinimumSprite: {fileID: 2800000, guid: ba249f57dccb56740854c30a0d6d434f, type: 3}
+        sliderOneQuestionDecorMaximumSprite: {fileID: 2800000, guid: 314f1ebef30680448baf6fb08aa85f4d, type: 3}
+        sliderTwoQuestion: Alertness
+        sliderTwoQuestionDecorType: 1
+        sliderTwoQuestionDecorMinimumText: 
+        sliderTwoQuestionDecorMaximumText: 
+        sliderTwoQuestionDecorMinimumSprite: {fileID: 2800000, guid: 0ddc82f33271d66449525a9753135693, type: 3}
+        sliderTwoQuestionDecorMaximumSprite: {fileID: 2800000, guid: d90aac651ae65eb48a4a2c9fb75b5997, type: 3}
+    - rid: 9174799472886284480
+      type: {class: Block, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        trials:
+        - rid: 9174799472886284481
+        - rid: 9174799472886284482
+        - rid: 9174799472886284483
+        - rid: 9174799472886284484
+        - rid: 9174799472886284485
+        - rid: 9174799472886284486
+        - rid: 9174799472886284487
+        - rid: 9174799472886284488
+        - rid: 9174799472886284489
+        - rid: 9174799472886284490
+        - rid: 9174799472886284491
+        - rid: 9174799472886284492
+        - rid: 9174799472886284493
+        - rid: 9174799472886284494
+        - rid: 9174799472886284495
+        - rid: 9174799472886284496
+        - rid: 9174799472886284497
+        - rid: 9174799472886284498
+        - rid: 9174799472886284499
+        - rid: 9174799472886284500
+        - rid: 9174799472886284501
+        - rid: 9174799472886284502
+        - rid: 9174799472886284503
+        - rid: 9174799472886284504
+        - rid: 9174799472886284505
+        - rid: 9174799472886284506
+        - rid: 9174799472886284507
+        - rid: 9174799472886284508
+        - rid: 9174799472886284509
+        - rid: 9174799472886284510
+        - rid: 9174799472886284511
+        - rid: 9174799472886284512
+        - rid: 9174799472886284513
+        - rid: 9174799472886284514
+        - rid: 9174799472886284515
+        - rid: 9174799472886284516
+        - rid: 9174799472886284517
+        - rid: 9174799472886284518
+        - rid: 9174799472886284519
+        - rid: 9174799472886284520
+        trialListVisibility: 0
+        blockQuestionnairePanels:
+        - rid: 9174799472886284521
+        questionnaireListVisibility: 0
+        targetRoom: 0
+    - rid: 9174799472886284481
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 2765776896869550450, guid: 61dba6adea7bd4e4781628e5b9c42b83, type: 3}
+        roomB_NPCAvatar: {fileID: 151296173630526888, guid: a58f9d706654a05429a2538219c1a6b4, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284482
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 9082419334070313285, guid: f40182b6a6745c24ab03c42c05084701, type: 3}
+        roomB_NPCAvatar: {fileID: 582349888759162599, guid: c55e9f9ef1f3b7542a06050d09b4d7ad, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284483
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8475892927928457697, guid: 576928bf3bf48ca4990cc22d546c53b8, type: 3}
+        roomB_NPCAvatar: {fileID: 8715531548804830126, guid: 4b3f7e074748e7f4196b76b10360c417, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284484
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8095615030172524450, guid: 38cda17157ef41a4db8bc26ca0083e45, type: 3}
+        roomB_NPCAvatar: {fileID: 151296173630526888, guid: a58f9d706654a05429a2538219c1a6b4, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284485
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 659953216500511583, guid: ba83635e156185c43a01ec769c1c4c5b, type: 3}
+        roomB_NPCAvatar: {fileID: 1667025052252471913, guid: 3dc98c86e00acc8489b495ebe1e25d8a, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284486
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 2324528351695377151, guid: 0bb9a14138c1d194194d2f3c5ff68f37, type: 3}
+        roomB_NPCAvatar: {fileID: 208037630454435721, guid: 8c01732804858554883bf9740bd2d65e, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284487
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 659953216500511583, guid: ab307de9dd26b7d4fa3955126e999a16, type: 3}
+        roomB_NPCAvatar: {fileID: 582349888759162599, guid: 5a8a5c13c1c56fe4b83ce880267902ea, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284488
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8475892927928457697, guid: e9cfe076270167541bc1ee3619083802, type: 3}
+        roomB_NPCAvatar: {fileID: 8715531548804830126, guid: 8881e988f6938da42b6782509bd9ece6, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284489
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 9082419334070313285, guid: f40182b6a6745c24ab03c42c05084701, type: 3}
+        roomB_NPCAvatar: {fileID: 546019268559787885, guid: 69cf029dc7ba76a4796e630fe4ab0b06, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284490
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8612739744240798829, guid: 4188658e2bad9734a9f4de09e542a3f0, type: 3}
+        roomB_NPCAvatar: {fileID: 5836601763929389210, guid: 131f95b1f86b95a4aa2e1f84a93866e0, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284491
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8475892927928457697, guid: 576928bf3bf48ca4990cc22d546c53b8, type: 3}
+        roomB_NPCAvatar: {fileID: 8715531548804830126, guid: 4b3f7e074748e7f4196b76b10360c417, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284492
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8475892927928457697, guid: e9cfe076270167541bc1ee3619083802, type: 3}
+        roomB_NPCAvatar: {fileID: 546019268559787885, guid: 69cf029dc7ba76a4796e630fe4ab0b06, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284493
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8612739744240798829, guid: a435550fa0263f54488e6cd656a16547, type: 3}
+        roomB_NPCAvatar: {fileID: 582349888759162599, guid: 5a8a5c13c1c56fe4b83ce880267902ea, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284494
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 3988616160223418690, guid: 8b9cb7fe96df8544ba560c7f428a11f9, type: 3}
+        roomB_NPCAvatar: {fileID: 5836601763929389210, guid: 131f95b1f86b95a4aa2e1f84a93866e0, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284495
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 2765776896869550450, guid: 61dba6adea7bd4e4781628e5b9c42b83, type: 3}
+        roomB_NPCAvatar: {fileID: 546019268559787885, guid: 69cf029dc7ba76a4796e630fe4ab0b06, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284496
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 3988616160223418690, guid: 79d60b613c46b4841a225f9ebd91a8da, type: 3}
+        roomB_NPCAvatar: {fileID: 5245021407769284173, guid: fc8cd8dd074ea704bb17428a29e121d2, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284497
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 9082419334070313285, guid: 8d90ad1e5d31aac4eb81e5bbe7393aa2, type: 3}
+        roomB_NPCAvatar: {fileID: 4633609961173241037, guid: cdfb60198d8b9324080dbc09f7222ed8, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284498
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 2324528351695377151, guid: 0bb9a14138c1d194194d2f3c5ff68f37, type: 3}
+        roomB_NPCAvatar: {fileID: 5245021407769284173, guid: 659e003288da5784da6a6dea8d1124aa, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284499
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 2324528351695377151, guid: 0bb9a14138c1d194194d2f3c5ff68f37, type: 3}
+        roomB_NPCAvatar: {fileID: 208037630454435721, guid: 8c01732804858554883bf9740bd2d65e, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284500
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 9082419334070313285, guid: f40182b6a6745c24ab03c42c05084701, type: 3}
+        roomB_NPCAvatar: {fileID: 1667025052252471913, guid: 3dc98c86e00acc8489b495ebe1e25d8a, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284501
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 7137246065745300051, guid: 328fca6e48d1b0140a329c267e2e8d65, type: 3}
+        roomB_NPCAvatar: {fileID: 8715531548804830126, guid: 4b3f7e074748e7f4196b76b10360c417, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284502
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8475892927928457697, guid: e9cfe076270167541bc1ee3619083802, type: 3}
+        roomB_NPCAvatar: {fileID: 5245021407769284173, guid: 659e003288da5784da6a6dea8d1124aa, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284503
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 2324528351695377151, guid: 0bb9a14138c1d194194d2f3c5ff68f37, type: 3}
+        roomB_NPCAvatar: {fileID: 5836601763929389210, guid: 131f95b1f86b95a4aa2e1f84a93866e0, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284504
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 3988616160223418690, guid: 8b9cb7fe96df8544ba560c7f428a11f9, type: 3}
+        roomB_NPCAvatar: {fileID: 5836601763929389210, guid: 131f95b1f86b95a4aa2e1f84a93866e0, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284505
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 3988616160223418690, guid: 8b9cb7fe96df8544ba560c7f428a11f9, type: 3}
+        roomB_NPCAvatar: {fileID: 582349888759162599, guid: c55e9f9ef1f3b7542a06050d09b4d7ad, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284506
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 6494704717704555029, guid: ee575a7528ccefd44b2812a85f42772c, type: 3}
+        roomB_NPCAvatar: {fileID: 8715531548804830126, guid: 8881e988f6938da42b6782509bd9ece6, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284507
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8095615030172524450, guid: c321b29e23de4aa4f88bcc4695e78af3, type: 3}
+        roomB_NPCAvatar: {fileID: 4633609961173241037, guid: cdfb60198d8b9324080dbc09f7222ed8, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284508
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 2324528351695377151, guid: 0bb9a14138c1d194194d2f3c5ff68f37, type: 3}
+        roomB_NPCAvatar: {fileID: 1667025052252471913, guid: 3dc98c86e00acc8489b495ebe1e25d8a, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284509
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8095615030172524450, guid: c321b29e23de4aa4f88bcc4695e78af3, type: 3}
+        roomB_NPCAvatar: {fileID: 151296173630526888, guid: 876e9e5634b402b448170f35eed894c2, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284510
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 2765776896869550450, guid: e2db069754df6964c89428928ad8727d, type: 3}
+        roomB_NPCAvatar: {fileID: 4633609961173241037, guid: cdfb60198d8b9324080dbc09f7222ed8, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284511
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 659953216500511583, guid: ba83635e156185c43a01ec769c1c4c5b, type: 3}
+        roomB_NPCAvatar: {fileID: 1667025052252471913, guid: 3dc98c86e00acc8489b495ebe1e25d8a, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284512
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8612739744240798829, guid: 4188658e2bad9734a9f4de09e542a3f0, type: 3}
+        roomB_NPCAvatar: {fileID: 1667025052252471913, guid: 3dc98c86e00acc8489b495ebe1e25d8a, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284513
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8612739744240798829, guid: a435550fa0263f54488e6cd656a16547, type: 3}
+        roomB_NPCAvatar: {fileID: 5245021407769284173, guid: fc8cd8dd074ea704bb17428a29e121d2, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284514
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8095615030172524450, guid: c321b29e23de4aa4f88bcc4695e78af3, type: 3}
+        roomB_NPCAvatar: {fileID: 151296173630526888, guid: 876e9e5634b402b448170f35eed894c2, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284515
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8612739744240798829, guid: 4188658e2bad9734a9f4de09e542a3f0, type: 3}
+        roomB_NPCAvatar: {fileID: 7975788538233868137, guid: 7be1273a3feffd9479627225e96183ae, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284516
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8612739744240798829, guid: a435550fa0263f54488e6cd656a16547, type: 3}
+        roomB_NPCAvatar: {fileID: 5836601763929389210, guid: 160a2eac0f5beaa40b524cd084261160, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284517
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8612739744240798829, guid: 4188658e2bad9734a9f4de09e542a3f0, type: 3}
+        roomB_NPCAvatar: {fileID: 1667025052252471913, guid: 3dc98c86e00acc8489b495ebe1e25d8a, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284518
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 6494704717704555029, guid: 0bfe1fae11436714ea13c3d0f0772b63, type: 3}
+        roomB_NPCAvatar: {fileID: 546019268559787885, guid: 425872b63f2588e40854eab7975a8716, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284519
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 6494704717704555029, guid: ee575a7528ccefd44b2812a85f42772c, type: 3}
+        roomB_NPCAvatar: {fileID: 208037630454435721, guid: 8c01732804858554883bf9740bd2d65e, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284520
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 3988616160223418690, guid: 79d60b613c46b4841a225f9ebd91a8da, type: 3}
+        roomB_NPCAvatar: {fileID: 4633609961173241037, guid: cdfb60198d8b9324080dbc09f7222ed8, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284521
+      type: {class: QuestionnairePanel_TwoSliders, ns: Questionnaire, asm: Assembly-CSharp}
+      data:
+        questionnairePanelType: 2
+        sliderOneQuestion: Happyness
+        sliderOneQuestionDecorType: 1
+        sliderOneQuestionDecorMinimumText: 
+        sliderOneQuestionDecorMaximumText: 
+        sliderOneQuestionDecorMinimumSprite: {fileID: 2800000, guid: ba249f57dccb56740854c30a0d6d434f, type: 3}
+        sliderOneQuestionDecorMaximumSprite: {fileID: 2800000, guid: 314f1ebef30680448baf6fb08aa85f4d, type: 3}
+        sliderTwoQuestion: Alertness
+        sliderTwoQuestionDecorType: 1
+        sliderTwoQuestionDecorMinimumText: 
+        sliderTwoQuestionDecorMaximumText: 
+        sliderTwoQuestionDecorMinimumSprite: {fileID: 2800000, guid: 0ddc82f33271d66449525a9753135693, type: 3}
+        sliderTwoQuestionDecorMaximumSprite: {fileID: 2800000, guid: d90aac651ae65eb48a4a2c9fb75b5997, type: 3}
+    - rid: 9174799472886284522
+      type: {class: Block, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        trials:
+        - rid: 9174799472886284523
+        - rid: 9174799472886284524
+        - rid: 9174799472886284525
+        - rid: 9174799472886284526
+        - rid: 9174799472886284527
+        - rid: 9174799472886284528
+        - rid: 9174799472886284529
+        - rid: 9174799472886284530
+        - rid: 9174799472886284531
+        - rid: 9174799472886284532
+        - rid: 9174799472886284533
+        - rid: 9174799472886284534
+        - rid: 9174799472886284535
+        - rid: 9174799472886284536
+        - rid: 9174799472886284537
+        - rid: 9174799472886284538
+        - rid: 9174799472886284539
+        - rid: 9174799472886284540
+        - rid: 9174799472886284541
+        - rid: 9174799472886284542
+        - rid: 9174799472886284543
+        - rid: 9174799472886284544
+        - rid: 9174799472886284545
+        - rid: 9174799472886284546
+        - rid: 9174799472886284547
+        - rid: 9174799472886284548
+        - rid: 9174799472886284549
+        - rid: 9174799472886284550
+        - rid: 9174799472886284551
+        - rid: 9174799472886284552
+        - rid: 9174799472886284553
+        - rid: 9174799472886284554
+        - rid: 9174799472886284555
+        - rid: 9174799472886284556
+        - rid: 9174799472886284557
+        - rid: 9174799472886284558
+        - rid: 9174799472886284559
+        - rid: 9174799472886284560
+        - rid: 9174799472886284561
+        - rid: 9174799472886284562
+        trialListVisibility: 0
+        blockQuestionnairePanels:
+        - rid: 9174799472886284563
+        questionnaireListVisibility: 0
+        targetRoom: 1
+    - rid: 9174799472886284523
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 3988616160223418690, guid: 8b9cb7fe96df8544ba560c7f428a11f9, type: 3}
+        roomB_NPCAvatar: {fileID: 7975788538233868137, guid: 7be1273a3feffd9479627225e96183ae, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284524
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8475892927928457697, guid: e9cfe076270167541bc1ee3619083802, type: 3}
+        roomB_NPCAvatar: {fileID: 7975788538233868137, guid: 7be1273a3feffd9479627225e96183ae, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284525
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 2324528351695377151, guid: bf615b22a1437dd4b856ac5ed0ae6f6a, type: 3}
+        roomB_NPCAvatar: {fileID: 7975788538233868137, guid: de10ff596c42abc449a300dcdffd7249, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284526
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 2765776896869550450, guid: e2db069754df6964c89428928ad8727d, type: 3}
+        roomB_NPCAvatar: {fileID: 4633609961173241037, guid: cdfb60198d8b9324080dbc09f7222ed8, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284527
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8612739744240798829, guid: 4188658e2bad9734a9f4de09e542a3f0, type: 3}
+        roomB_NPCAvatar: {fileID: 546019268559787885, guid: 69cf029dc7ba76a4796e630fe4ab0b06, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284528
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8475892927928457697, guid: e9cfe076270167541bc1ee3619083802, type: 3}
+        roomB_NPCAvatar: {fileID: 5245021407769284173, guid: 659e003288da5784da6a6dea8d1124aa, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284529
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8475892927928457697, guid: e9cfe076270167541bc1ee3619083802, type: 3}
+        roomB_NPCAvatar: {fileID: 5836601763929389210, guid: 131f95b1f86b95a4aa2e1f84a93866e0, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284530
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 7137246065745300051, guid: c2a12df1281b7174ab1ddb88069fda90, type: 3}
+        roomB_NPCAvatar: {fileID: 546019268559787885, guid: 69cf029dc7ba76a4796e630fe4ab0b06, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284531
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 9082419334070313285, guid: 8d90ad1e5d31aac4eb81e5bbe7393aa2, type: 3}
+        roomB_NPCAvatar: {fileID: 5836601763929389210, guid: 160a2eac0f5beaa40b524cd084261160, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284532
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 7137246065745300051, guid: 328fca6e48d1b0140a329c267e2e8d65, type: 3}
+        roomB_NPCAvatar: {fileID: 5245021407769284173, guid: fc8cd8dd074ea704bb17428a29e121d2, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284533
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 9082419334070313285, guid: 8d90ad1e5d31aac4eb81e5bbe7393aa2, type: 3}
+        roomB_NPCAvatar: {fileID: 151296173630526888, guid: 876e9e5634b402b448170f35eed894c2, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284534
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8475892927928457697, guid: e9cfe076270167541bc1ee3619083802, type: 3}
+        roomB_NPCAvatar: {fileID: 208037630454435721, guid: 8c01732804858554883bf9740bd2d65e, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284535
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8475892927928457697, guid: e9cfe076270167541bc1ee3619083802, type: 3}
+        roomB_NPCAvatar: {fileID: 546019268559787885, guid: 69cf029dc7ba76a4796e630fe4ab0b06, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284536
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 2765776896869550450, guid: e2db069754df6964c89428928ad8727d, type: 3}
+        roomB_NPCAvatar: {fileID: 208037630454435721, guid: 3959146ed99e75342b7690eaca1c197b, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284537
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8095615030172524450, guid: 38cda17157ef41a4db8bc26ca0083e45, type: 3}
+        roomB_NPCAvatar: {fileID: 546019268559787885, guid: 69cf029dc7ba76a4796e630fe4ab0b06, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284538
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 9082419334070313285, guid: f40182b6a6745c24ab03c42c05084701, type: 3}
+        roomB_NPCAvatar: {fileID: 546019268559787885, guid: 69cf029dc7ba76a4796e630fe4ab0b06, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284539
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 9082419334070313285, guid: f40182b6a6745c24ab03c42c05084701, type: 3}
+        roomB_NPCAvatar: {fileID: 7975788538233868137, guid: 7be1273a3feffd9479627225e96183ae, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284540
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8612739744240798829, guid: 4188658e2bad9734a9f4de09e542a3f0, type: 3}
+        roomB_NPCAvatar: {fileID: 7975788538233868137, guid: 7be1273a3feffd9479627225e96183ae, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284541
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8475892927928457697, guid: e9cfe076270167541bc1ee3619083802, type: 3}
+        roomB_NPCAvatar: {fileID: 1667025052252471913, guid: 3dc98c86e00acc8489b495ebe1e25d8a, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284542
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 7137246065745300051, guid: 328fca6e48d1b0140a329c267e2e8d65, type: 3}
+        roomB_NPCAvatar: {fileID: 582349888759162599, guid: 5a8a5c13c1c56fe4b83ce880267902ea, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284543
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 9082419334070313285, guid: 8d90ad1e5d31aac4eb81e5bbe7393aa2, type: 3}
+        roomB_NPCAvatar: {fileID: 5245021407769284173, guid: fc8cd8dd074ea704bb17428a29e121d2, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284544
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8612739744240798829, guid: 4188658e2bad9734a9f4de09e542a3f0, type: 3}
+        roomB_NPCAvatar: {fileID: 5245021407769284173, guid: 659e003288da5784da6a6dea8d1124aa, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284545
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8475892927928457697, guid: 576928bf3bf48ca4990cc22d546c53b8, type: 3}
+        roomB_NPCAvatar: {fileID: 1667025052252471913, guid: bf32db0547fd742419eb059dec9d9203, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284546
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8612739744240798829, guid: 4188658e2bad9734a9f4de09e542a3f0, type: 3}
+        roomB_NPCAvatar: {fileID: 1667025052252471913, guid: 3dc98c86e00acc8489b495ebe1e25d8a, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284547
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8095615030172524450, guid: c321b29e23de4aa4f88bcc4695e78af3, type: 3}
+        roomB_NPCAvatar: {fileID: 8715531548804830126, guid: 4b3f7e074748e7f4196b76b10360c417, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284548
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 6494704717704555029, guid: ee575a7528ccefd44b2812a85f42772c, type: 3}
+        roomB_NPCAvatar: {fileID: 4633609961173241037, guid: c7159f531ae36da4a94376d3c092868a, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284549
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 659953216500511583, guid: ba83635e156185c43a01ec769c1c4c5b, type: 3}
+        roomB_NPCAvatar: {fileID: 5245021407769284173, guid: 659e003288da5784da6a6dea8d1124aa, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284550
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8095615030172524450, guid: 38cda17157ef41a4db8bc26ca0083e45, type: 3}
+        roomB_NPCAvatar: {fileID: 1667025052252471913, guid: 3dc98c86e00acc8489b495ebe1e25d8a, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284551
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 2324528351695377151, guid: 0bb9a14138c1d194194d2f3c5ff68f37, type: 3}
+        roomB_NPCAvatar: {fileID: 8715531548804830126, guid: 8881e988f6938da42b6782509bd9ece6, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284552
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 659953216500511583, guid: ab307de9dd26b7d4fa3955126e999a16, type: 3}
+        roomB_NPCAvatar: {fileID: 208037630454435721, guid: 3959146ed99e75342b7690eaca1c197b, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284553
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 2324528351695377151, guid: 0bb9a14138c1d194194d2f3c5ff68f37, type: 3}
+        roomB_NPCAvatar: {fileID: 5245021407769284173, guid: 659e003288da5784da6a6dea8d1124aa, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284554
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 659953216500511583, guid: ba83635e156185c43a01ec769c1c4c5b, type: 3}
+        roomB_NPCAvatar: {fileID: 4633609961173241037, guid: c7159f531ae36da4a94376d3c092868a, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284555
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 2765776896869550450, guid: e2db069754df6964c89428928ad8727d, type: 3}
+        roomB_NPCAvatar: {fileID: 5836601763929389210, guid: 160a2eac0f5beaa40b524cd084261160, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284556
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 6494704717704555029, guid: 0bfe1fae11436714ea13c3d0f0772b63, type: 3}
+        roomB_NPCAvatar: {fileID: 546019268559787885, guid: 425872b63f2588e40854eab7975a8716, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284557
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 659953216500511583, guid: ab307de9dd26b7d4fa3955126e999a16, type: 3}
+        roomB_NPCAvatar: {fileID: 151296173630526888, guid: 876e9e5634b402b448170f35eed894c2, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284558
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8475892927928457697, guid: e9cfe076270167541bc1ee3619083802, type: 3}
+        roomB_NPCAvatar: {fileID: 4633609961173241037, guid: c7159f531ae36da4a94376d3c092868a, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284559
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8612739744240798829, guid: 4188658e2bad9734a9f4de09e542a3f0, type: 3}
+        roomB_NPCAvatar: {fileID: 582349888759162599, guid: c55e9f9ef1f3b7542a06050d09b4d7ad, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284560
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 7137246065745300051, guid: c2a12df1281b7174ab1ddb88069fda90, type: 3}
+        roomB_NPCAvatar: {fileID: 582349888759162599, guid: c55e9f9ef1f3b7542a06050d09b4d7ad, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284561
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 6494704717704555029, guid: ee575a7528ccefd44b2812a85f42772c, type: 3}
+        roomB_NPCAvatar: {fileID: 4633609961173241037, guid: c7159f531ae36da4a94376d3c092868a, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284562
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 3988616160223418690, guid: 79d60b613c46b4841a225f9ebd91a8da, type: 3}
+        roomB_NPCAvatar: {fileID: 546019268559787885, guid: 425872b63f2588e40854eab7975a8716, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284563
+      type: {class: QuestionnairePanel_TwoSliders, ns: Questionnaire, asm: Assembly-CSharp}
+      data:
+        questionnairePanelType: 2
+        sliderOneQuestion: Happyness
+        sliderOneQuestionDecorType: 1
+        sliderOneQuestionDecorMinimumText: 
+        sliderOneQuestionDecorMaximumText: 
+        sliderOneQuestionDecorMinimumSprite: {fileID: 2800000, guid: ba249f57dccb56740854c30a0d6d434f, type: 3}
+        sliderOneQuestionDecorMaximumSprite: {fileID: 2800000, guid: 314f1ebef30680448baf6fb08aa85f4d, type: 3}
+        sliderTwoQuestion: Alertness
+        sliderTwoQuestionDecorType: 1
+        sliderTwoQuestionDecorMinimumText: 
+        sliderTwoQuestionDecorMaximumText: 
+        sliderTwoQuestionDecorMinimumSprite: {fileID: 2800000, guid: 0ddc82f33271d66449525a9753135693, type: 3}
+        sliderTwoQuestionDecorMaximumSprite: {fileID: 2800000, guid: d90aac651ae65eb48a4a2c9fb75b5997, type: 3}
+    - rid: 9174799472886284564
+      type: {class: Block, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        trials:
+        - rid: 9174799472886284565
+        - rid: 9174799472886284566
+        - rid: 9174799472886284567
+        - rid: 9174799472886284568
+        - rid: 9174799472886284569
+        - rid: 9174799472886284570
+        - rid: 9174799472886284571
+        - rid: 9174799472886284572
+        - rid: 9174799472886284573
+        - rid: 9174799472886284574
+        - rid: 9174799472886284575
+        - rid: 9174799472886284576
+        - rid: 9174799472886284577
+        - rid: 9174799472886284578
+        - rid: 9174799472886284579
+        - rid: 9174799472886284580
+        - rid: 9174799472886284581
+        - rid: 9174799472886284582
+        - rid: 9174799472886284583
+        - rid: 9174799472886284584
+        - rid: 9174799472886284585
+        - rid: 9174799472886284586
+        - rid: 9174799472886284587
+        - rid: 9174799472886284588
+        - rid: 9174799472886284589
+        - rid: 9174799472886284590
+        - rid: 9174799472886284591
+        - rid: 9174799472886284592
+        - rid: 9174799472886284593
+        - rid: 9174799472886284594
+        - rid: 9174799472886284595
+        - rid: 9174799472886284596
+        - rid: 9174799472886284597
+        - rid: 9174799472886284598
+        - rid: 9174799472886284599
+        - rid: 9174799472886284600
+        - rid: 9174799472886284601
+        - rid: 9174799472886284602
+        - rid: 9174799472886284603
+        - rid: 9174799472886284604
+        trialListVisibility: 0
+        blockQuestionnairePanels:
+        - rid: 9174799472886284605
+        questionnaireListVisibility: 0
+        targetRoom: 0
+    - rid: 9174799472886284565
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 659953216500511583, guid: ba83635e156185c43a01ec769c1c4c5b, type: 3}
+        roomB_NPCAvatar: {fileID: 582349888759162599, guid: c55e9f9ef1f3b7542a06050d09b4d7ad, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284566
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 3988616160223418690, guid: 79d60b613c46b4841a225f9ebd91a8da, type: 3}
+        roomB_NPCAvatar: {fileID: 8715531548804830126, guid: 4b3f7e074748e7f4196b76b10360c417, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284567
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 659953216500511583, guid: ab307de9dd26b7d4fa3955126e999a16, type: 3}
+        roomB_NPCAvatar: {fileID: 8715531548804830126, guid: 4b3f7e074748e7f4196b76b10360c417, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284568
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8612739744240798829, guid: a435550fa0263f54488e6cd656a16547, type: 3}
+        roomB_NPCAvatar: {fileID: 1667025052252471913, guid: bf32db0547fd742419eb059dec9d9203, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284569
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8095615030172524450, guid: c321b29e23de4aa4f88bcc4695e78af3, type: 3}
+        roomB_NPCAvatar: {fileID: 5245021407769284173, guid: fc8cd8dd074ea704bb17428a29e121d2, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284570
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 2324528351695377151, guid: 0bb9a14138c1d194194d2f3c5ff68f37, type: 3}
+        roomB_NPCAvatar: {fileID: 1667025052252471913, guid: 3dc98c86e00acc8489b495ebe1e25d8a, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284571
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 7137246065745300051, guid: c2a12df1281b7174ab1ddb88069fda90, type: 3}
+        roomB_NPCAvatar: {fileID: 5836601763929389210, guid: 131f95b1f86b95a4aa2e1f84a93866e0, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284572
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8475892927928457697, guid: e9cfe076270167541bc1ee3619083802, type: 3}
+        roomB_NPCAvatar: {fileID: 582349888759162599, guid: c55e9f9ef1f3b7542a06050d09b4d7ad, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284573
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 6494704717704555029, guid: ee575a7528ccefd44b2812a85f42772c, type: 3}
+        roomB_NPCAvatar: {fileID: 5836601763929389210, guid: 131f95b1f86b95a4aa2e1f84a93866e0, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284574
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 9082419334070313285, guid: f40182b6a6745c24ab03c42c05084701, type: 3}
+        roomB_NPCAvatar: {fileID: 546019268559787885, guid: 69cf029dc7ba76a4796e630fe4ab0b06, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284575
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8612739744240798829, guid: a435550fa0263f54488e6cd656a16547, type: 3}
+        roomB_NPCAvatar: {fileID: 1667025052252471913, guid: bf32db0547fd742419eb059dec9d9203, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284576
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 2765776896869550450, guid: 61dba6adea7bd4e4781628e5b9c42b83, type: 3}
+        roomB_NPCAvatar: {fileID: 5836601763929389210, guid: 131f95b1f86b95a4aa2e1f84a93866e0, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284577
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 6494704717704555029, guid: 0bfe1fae11436714ea13c3d0f0772b63, type: 3}
+        roomB_NPCAvatar: {fileID: 5836601763929389210, guid: 160a2eac0f5beaa40b524cd084261160, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284578
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8095615030172524450, guid: 38cda17157ef41a4db8bc26ca0083e45, type: 3}
+        roomB_NPCAvatar: {fileID: 8715531548804830126, guid: 8881e988f6938da42b6782509bd9ece6, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284579
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8475892927928457697, guid: 576928bf3bf48ca4990cc22d546c53b8, type: 3}
+        roomB_NPCAvatar: {fileID: 4633609961173241037, guid: cdfb60198d8b9324080dbc09f7222ed8, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284580
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 9082419334070313285, guid: 8d90ad1e5d31aac4eb81e5bbe7393aa2, type: 3}
+        roomB_NPCAvatar: {fileID: 208037630454435721, guid: 3959146ed99e75342b7690eaca1c197b, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284581
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 659953216500511583, guid: ab307de9dd26b7d4fa3955126e999a16, type: 3}
+        roomB_NPCAvatar: {fileID: 7975788538233868137, guid: de10ff596c42abc449a300dcdffd7249, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284582
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 7137246065745300051, guid: c2a12df1281b7174ab1ddb88069fda90, type: 3}
+        roomB_NPCAvatar: {fileID: 4633609961173241037, guid: c7159f531ae36da4a94376d3c092868a, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284583
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8612739744240798829, guid: a435550fa0263f54488e6cd656a16547, type: 3}
+        roomB_NPCAvatar: {fileID: 151296173630526888, guid: 876e9e5634b402b448170f35eed894c2, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284584
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 7137246065745300051, guid: 328fca6e48d1b0140a329c267e2e8d65, type: 3}
+        roomB_NPCAvatar: {fileID: 4633609961173241037, guid: cdfb60198d8b9324080dbc09f7222ed8, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284585
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 6494704717704555029, guid: ee575a7528ccefd44b2812a85f42772c, type: 3}
+        roomB_NPCAvatar: {fileID: 1667025052252471913, guid: 3dc98c86e00acc8489b495ebe1e25d8a, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284586
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8095615030172524450, guid: 38cda17157ef41a4db8bc26ca0083e45, type: 3}
+        roomB_NPCAvatar: {fileID: 5245021407769284173, guid: 659e003288da5784da6a6dea8d1124aa, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284587
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 3988616160223418690, guid: 79d60b613c46b4841a225f9ebd91a8da, type: 3}
+        roomB_NPCAvatar: {fileID: 1667025052252471913, guid: bf32db0547fd742419eb059dec9d9203, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284588
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 659953216500511583, guid: ab307de9dd26b7d4fa3955126e999a16, type: 3}
+        roomB_NPCAvatar: {fileID: 546019268559787885, guid: 425872b63f2588e40854eab7975a8716, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284589
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 2765776896869550450, guid: e2db069754df6964c89428928ad8727d, type: 3}
+        roomB_NPCAvatar: {fileID: 151296173630526888, guid: 876e9e5634b402b448170f35eed894c2, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284590
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8612739744240798829, guid: 4188658e2bad9734a9f4de09e542a3f0, type: 3}
+        roomB_NPCAvatar: {fileID: 5836601763929389210, guid: 131f95b1f86b95a4aa2e1f84a93866e0, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284591
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 9082419334070313285, guid: f40182b6a6745c24ab03c42c05084701, type: 3}
+        roomB_NPCAvatar: {fileID: 208037630454435721, guid: 8c01732804858554883bf9740bd2d65e, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284592
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 9082419334070313285, guid: f40182b6a6745c24ab03c42c05084701, type: 3}
+        roomB_NPCAvatar: {fileID: 7975788538233868137, guid: 7be1273a3feffd9479627225e96183ae, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284593
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8612739744240798829, guid: a435550fa0263f54488e6cd656a16547, type: 3}
+        roomB_NPCAvatar: {fileID: 208037630454435721, guid: 3959146ed99e75342b7690eaca1c197b, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284594
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 659953216500511583, guid: ab307de9dd26b7d4fa3955126e999a16, type: 3}
+        roomB_NPCAvatar: {fileID: 582349888759162599, guid: 5a8a5c13c1c56fe4b83ce880267902ea, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284595
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8612739744240798829, guid: a435550fa0263f54488e6cd656a16547, type: 3}
+        roomB_NPCAvatar: {fileID: 582349888759162599, guid: 5a8a5c13c1c56fe4b83ce880267902ea, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284596
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8095615030172524450, guid: 38cda17157ef41a4db8bc26ca0083e45, type: 3}
+        roomB_NPCAvatar: {fileID: 546019268559787885, guid: 69cf029dc7ba76a4796e630fe4ab0b06, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284597
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8095615030172524450, guid: c321b29e23de4aa4f88bcc4695e78af3, type: 3}
+        roomB_NPCAvatar: {fileID: 4633609961173241037, guid: cdfb60198d8b9324080dbc09f7222ed8, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284598
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 2324528351695377151, guid: 0bb9a14138c1d194194d2f3c5ff68f37, type: 3}
+        roomB_NPCAvatar: {fileID: 546019268559787885, guid: 69cf029dc7ba76a4796e630fe4ab0b06, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284599
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 7137246065745300051, guid: c2a12df1281b7174ab1ddb88069fda90, type: 3}
+        roomB_NPCAvatar: {fileID: 546019268559787885, guid: 69cf029dc7ba76a4796e630fe4ab0b06, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284600
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8475892927928457697, guid: 576928bf3bf48ca4990cc22d546c53b8, type: 3}
+        roomB_NPCAvatar: {fileID: 7975788538233868137, guid: de10ff596c42abc449a300dcdffd7249, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284601
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 659953216500511583, guid: ba83635e156185c43a01ec769c1c4c5b, type: 3}
+        roomB_NPCAvatar: {fileID: 4633609961173241037, guid: c7159f531ae36da4a94376d3c092868a, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284602
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 659953216500511583, guid: ba83635e156185c43a01ec769c1c4c5b, type: 3}
+        roomB_NPCAvatar: {fileID: 546019268559787885, guid: 69cf029dc7ba76a4796e630fe4ab0b06, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284603
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 3988616160223418690, guid: 8b9cb7fe96df8544ba560c7f428a11f9, type: 3}
+        roomB_NPCAvatar: {fileID: 546019268559787885, guid: 69cf029dc7ba76a4796e630fe4ab0b06, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284604
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8095615030172524450, guid: 38cda17157ef41a4db8bc26ca0083e45, type: 3}
+        roomB_NPCAvatar: {fileID: 208037630454435721, guid: 8c01732804858554883bf9740bd2d65e, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284605
+      type: {class: QuestionnairePanel_TwoSliders, ns: Questionnaire, asm: Assembly-CSharp}
+      data:
+        questionnairePanelType: 2
+        sliderOneQuestion: Happyness
+        sliderOneQuestionDecorType: 1
+        sliderOneQuestionDecorMinimumText: 
+        sliderOneQuestionDecorMaximumText: 
+        sliderOneQuestionDecorMinimumSprite: {fileID: 2800000, guid: ba249f57dccb56740854c30a0d6d434f, type: 3}
+        sliderOneQuestionDecorMaximumSprite: {fileID: 2800000, guid: 314f1ebef30680448baf6fb08aa85f4d, type: 3}
+        sliderTwoQuestion: Alertness
+        sliderTwoQuestionDecorType: 1
+        sliderTwoQuestionDecorMinimumText: 
+        sliderTwoQuestionDecorMaximumText: 
+        sliderTwoQuestionDecorMinimumSprite: {fileID: 2800000, guid: 0ddc82f33271d66449525a9753135693, type: 3}
+        sliderTwoQuestionDecorMaximumSprite: {fileID: 2800000, guid: d90aac651ae65eb48a4a2c9fb75b5997, type: 3}
+    - rid: 9174799472886284606
+      type: {class: Block, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        trials:
+        - rid: 9174799472886284607
+        - rid: 9174799472886284608
+        - rid: 9174799472886284609
+        - rid: 9174799472886284610
+        - rid: 9174799472886284611
+        - rid: 9174799472886284612
+        - rid: 9174799472886284613
+        - rid: 9174799472886284614
+        - rid: 9174799472886284615
+        - rid: 9174799472886284616
+        - rid: 9174799472886284617
+        - rid: 9174799472886284618
+        - rid: 9174799472886284619
+        - rid: 9174799472886284620
+        - rid: 9174799472886284621
+        - rid: 9174799472886284622
+        - rid: 9174799472886284623
+        - rid: 9174799472886284624
+        - rid: 9174799472886284625
+        - rid: 9174799472886284626
+        - rid: 9174799472886284627
+        - rid: 9174799472886284628
+        - rid: 9174799472886284629
+        - rid: 9174799472886284630
+        - rid: 9174799472886284631
+        - rid: 9174799472886284632
+        - rid: 9174799472886284633
+        - rid: 9174799472886284634
+        - rid: 9174799472886284635
+        - rid: 9174799472886284636
+        - rid: 9174799472886284637
+        - rid: 9174799472886284638
+        - rid: 9174799472886284639
+        - rid: 9174799472886284640
+        - rid: 9174799472886284641
+        - rid: 9174799472886284642
+        - rid: 9174799472886284643
+        - rid: 9174799472886284644
+        - rid: 9174799472886284645
+        - rid: 9174799472886284646
+        trialListVisibility: 0
+        blockQuestionnairePanels:
+        - rid: 9174799472886284647
+        questionnaireListVisibility: 0
+        targetRoom: 1
+    - rid: 9174799472886284607
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 2324528351695377151, guid: bf615b22a1437dd4b856ac5ed0ae6f6a, type: 3}
+        roomB_NPCAvatar: {fileID: 5245021407769284173, guid: fc8cd8dd074ea704bb17428a29e121d2, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284608
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8475892927928457697, guid: 576928bf3bf48ca4990cc22d546c53b8, type: 3}
+        roomB_NPCAvatar: {fileID: 582349888759162599, guid: 5a8a5c13c1c56fe4b83ce880267902ea, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284609
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8095615030172524450, guid: c321b29e23de4aa4f88bcc4695e78af3, type: 3}
+        roomB_NPCAvatar: {fileID: 208037630454435721, guid: 3959146ed99e75342b7690eaca1c197b, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284610
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 6494704717704555029, guid: 0bfe1fae11436714ea13c3d0f0772b63, type: 3}
+        roomB_NPCAvatar: {fileID: 208037630454435721, guid: 3959146ed99e75342b7690eaca1c197b, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284611
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 7137246065745300051, guid: c2a12df1281b7174ab1ddb88069fda90, type: 3}
+        roomB_NPCAvatar: {fileID: 151296173630526888, guid: a58f9d706654a05429a2538219c1a6b4, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284612
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 6494704717704555029, guid: 0bfe1fae11436714ea13c3d0f0772b63, type: 3}
+        roomB_NPCAvatar: {fileID: 5245021407769284173, guid: fc8cd8dd074ea704bb17428a29e121d2, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284613
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 659953216500511583, guid: ab307de9dd26b7d4fa3955126e999a16, type: 3}
+        roomB_NPCAvatar: {fileID: 582349888759162599, guid: 5a8a5c13c1c56fe4b83ce880267902ea, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284614
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8475892927928457697, guid: 576928bf3bf48ca4990cc22d546c53b8, type: 3}
+        roomB_NPCAvatar: {fileID: 7975788538233868137, guid: de10ff596c42abc449a300dcdffd7249, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284615
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 7137246065745300051, guid: 328fca6e48d1b0140a329c267e2e8d65, type: 3}
+        roomB_NPCAvatar: {fileID: 5836601763929389210, guid: 160a2eac0f5beaa40b524cd084261160, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284616
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 6494704717704555029, guid: ee575a7528ccefd44b2812a85f42772c, type: 3}
+        roomB_NPCAvatar: {fileID: 5836601763929389210, guid: 131f95b1f86b95a4aa2e1f84a93866e0, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284617
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 9082419334070313285, guid: 8d90ad1e5d31aac4eb81e5bbe7393aa2, type: 3}
+        roomB_NPCAvatar: {fileID: 1667025052252471913, guid: bf32db0547fd742419eb059dec9d9203, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284618
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 6494704717704555029, guid: ee575a7528ccefd44b2812a85f42772c, type: 3}
+        roomB_NPCAvatar: {fileID: 208037630454435721, guid: 8c01732804858554883bf9740bd2d65e, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284619
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 2765776896869550450, guid: e2db069754df6964c89428928ad8727d, type: 3}
+        roomB_NPCAvatar: {fileID: 546019268559787885, guid: 425872b63f2588e40854eab7975a8716, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284620
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 2765776896869550450, guid: e2db069754df6964c89428928ad8727d, type: 3}
+        roomB_NPCAvatar: {fileID: 7975788538233868137, guid: de10ff596c42abc449a300dcdffd7249, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284621
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 659953216500511583, guid: ab307de9dd26b7d4fa3955126e999a16, type: 3}
+        roomB_NPCAvatar: {fileID: 208037630454435721, guid: 3959146ed99e75342b7690eaca1c197b, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284622
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 7137246065745300051, guid: c2a12df1281b7174ab1ddb88069fda90, type: 3}
+        roomB_NPCAvatar: {fileID: 5245021407769284173, guid: 659e003288da5784da6a6dea8d1124aa, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284623
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 2324528351695377151, guid: bf615b22a1437dd4b856ac5ed0ae6f6a, type: 3}
+        roomB_NPCAvatar: {fileID: 5245021407769284173, guid: fc8cd8dd074ea704bb17428a29e121d2, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284624
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8612739744240798829, guid: a435550fa0263f54488e6cd656a16547, type: 3}
+        roomB_NPCAvatar: {fileID: 546019268559787885, guid: 425872b63f2588e40854eab7975a8716, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284625
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8612739744240798829, guid: 4188658e2bad9734a9f4de09e542a3f0, type: 3}
+        roomB_NPCAvatar: {fileID: 208037630454435721, guid: 8c01732804858554883bf9740bd2d65e, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284626
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8475892927928457697, guid: 576928bf3bf48ca4990cc22d546c53b8, type: 3}
+        roomB_NPCAvatar: {fileID: 7975788538233868137, guid: de10ff596c42abc449a300dcdffd7249, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284627
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 7137246065745300051, guid: 328fca6e48d1b0140a329c267e2e8d65, type: 3}
+        roomB_NPCAvatar: {fileID: 8715531548804830126, guid: 4b3f7e074748e7f4196b76b10360c417, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284628
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 7137246065745300051, guid: 328fca6e48d1b0140a329c267e2e8d65, type: 3}
+        roomB_NPCAvatar: {fileID: 208037630454435721, guid: 3959146ed99e75342b7690eaca1c197b, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284629
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8475892927928457697, guid: 576928bf3bf48ca4990cc22d546c53b8, type: 3}
+        roomB_NPCAvatar: {fileID: 7975788538233868137, guid: de10ff596c42abc449a300dcdffd7249, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284630
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 2765776896869550450, guid: e2db069754df6964c89428928ad8727d, type: 3}
+        roomB_NPCAvatar: {fileID: 1667025052252471913, guid: bf32db0547fd742419eb059dec9d9203, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284631
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8612739744240798829, guid: a435550fa0263f54488e6cd656a16547, type: 3}
+        roomB_NPCAvatar: {fileID: 208037630454435721, guid: 3959146ed99e75342b7690eaca1c197b, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284632
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 659953216500511583, guid: ab307de9dd26b7d4fa3955126e999a16, type: 3}
+        roomB_NPCAvatar: {fileID: 4633609961173241037, guid: cdfb60198d8b9324080dbc09f7222ed8, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284633
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 3988616160223418690, guid: 79d60b613c46b4841a225f9ebd91a8da, type: 3}
+        roomB_NPCAvatar: {fileID: 7975788538233868137, guid: de10ff596c42abc449a300dcdffd7249, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284634
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 7137246065745300051, guid: 328fca6e48d1b0140a329c267e2e8d65, type: 3}
+        roomB_NPCAvatar: {fileID: 5245021407769284173, guid: fc8cd8dd074ea704bb17428a29e121d2, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284635
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 6494704717704555029, guid: 0bfe1fae11436714ea13c3d0f0772b63, type: 3}
+        roomB_NPCAvatar: {fileID: 1667025052252471913, guid: bf32db0547fd742419eb059dec9d9203, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284636
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 659953216500511583, guid: ba83635e156185c43a01ec769c1c4c5b, type: 3}
+        roomB_NPCAvatar: {fileID: 5836601763929389210, guid: 131f95b1f86b95a4aa2e1f84a93866e0, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284637
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 6494704717704555029, guid: ee575a7528ccefd44b2812a85f42772c, type: 3}
+        roomB_NPCAvatar: {fileID: 1667025052252471913, guid: 3dc98c86e00acc8489b495ebe1e25d8a, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284638
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8475892927928457697, guid: 576928bf3bf48ca4990cc22d546c53b8, type: 3}
+        roomB_NPCAvatar: {fileID: 151296173630526888, guid: 876e9e5634b402b448170f35eed894c2, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284639
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 9082419334070313285, guid: 8d90ad1e5d31aac4eb81e5bbe7393aa2, type: 3}
+        roomB_NPCAvatar: {fileID: 582349888759162599, guid: 5a8a5c13c1c56fe4b83ce880267902ea, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284640
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 6494704717704555029, guid: 0bfe1fae11436714ea13c3d0f0772b63, type: 3}
+        roomB_NPCAvatar: {fileID: 5245021407769284173, guid: fc8cd8dd074ea704bb17428a29e121d2, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284641
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 2324528351695377151, guid: 0bb9a14138c1d194194d2f3c5ff68f37, type: 3}
+        roomB_NPCAvatar: {fileID: 5245021407769284173, guid: 659e003288da5784da6a6dea8d1124aa, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284642
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 3988616160223418690, guid: 8b9cb7fe96df8544ba560c7f428a11f9, type: 3}
+        roomB_NPCAvatar: {fileID: 582349888759162599, guid: c55e9f9ef1f3b7542a06050d09b4d7ad, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284643
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 6494704717704555029, guid: 0bfe1fae11436714ea13c3d0f0772b63, type: 3}
+        roomB_NPCAvatar: {fileID: 8715531548804830126, guid: 4b3f7e074748e7f4196b76b10360c417, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284644
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8475892927928457697, guid: 576928bf3bf48ca4990cc22d546c53b8, type: 3}
+        roomB_NPCAvatar: {fileID: 151296173630526888, guid: 876e9e5634b402b448170f35eed894c2, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284645
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 2765776896869550450, guid: e2db069754df6964c89428928ad8727d, type: 3}
+        roomB_NPCAvatar: {fileID: 5836601763929389210, guid: 160a2eac0f5beaa40b524cd084261160, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284646
+      type: {class: Trial, ns: Data.Input, asm: Assembly-CSharp}
+      data:
+        roomA_NPCAvatar: {fileID: 8475892927928457697, guid: e9cfe076270167541bc1ee3619083802, type: 3}
+        roomB_NPCAvatar: {fileID: 582349888759162599, guid: c55e9f9ef1f3b7542a06050d09b4d7ad, type: 3}
+        heldObject: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
+    - rid: 9174799472886284647
+      type: {class: QuestionnairePanel_TwoSliders, ns: Questionnaire, asm: Assembly-CSharp}
+      data:
+        questionnairePanelType: 2
+        sliderOneQuestion: Happyness
+        sliderOneQuestionDecorType: 1
+        sliderOneQuestionDecorMinimumText: 
+        sliderOneQuestionDecorMaximumText: 
+        sliderOneQuestionDecorMinimumSprite: {fileID: 2800000, guid: ba249f57dccb56740854c30a0d6d434f, type: 3}
+        sliderOneQuestionDecorMaximumSprite: {fileID: 2800000, guid: 314f1ebef30680448baf6fb08aa85f4d, type: 3}
+        sliderTwoQuestion: Alertness
+        sliderTwoQuestionDecorType: 1
+        sliderTwoQuestionDecorMinimumText: 
+        sliderTwoQuestionDecorMaximumText: 
+        sliderTwoQuestionDecorMinimumSprite: {fileID: 2800000, guid: 0ddc82f33271d66449525a9753135693, type: 3}
+        sliderTwoQuestionDecorMaximumSprite: {fileID: 2800000, guid: d90aac651ae65eb48a4a2c9fb75b5997, type: 3}

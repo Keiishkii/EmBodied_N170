@@ -10,6 +10,11 @@ namespace StateMachine
         
         public override void OnEnterState(GameControllerStateMachine stateMachine)
         {
+            Vector3 playerPosition = CameraOffset.position;
+            Vector3 newPosition = new Vector3(playerPosition.x, -3.95f, playerPosition.z);
+
+            CameraOffset.position = newPosition;
+            
             Debug.Log("Entered State: <color=#FFF>Trial Complete</color>");
             DataCollector.AddDataEventToContainer(new Data.DataCollection.DataCollectionEvent_RecordMarker()
             {

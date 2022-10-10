@@ -24,7 +24,7 @@ namespace StateMachine
 
         private IEnumerator LightsOnCountDown(GameControllerStateMachine stateMachine)
         {
-            yield return new WaitForSeconds(1.0f);
+            yield return new WaitForSeconds(0.1f);
             GlobalAudioSource.Instance.PlayOneShot(GlobalAudioSource.Instance.SfxContainer.GoSfx);
             
             stateMachine.CurrentState = stateMachine.AwaitingForRoomEnter;

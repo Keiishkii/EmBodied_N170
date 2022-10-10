@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Session Generator
   m_EditorClassIdentifier: 
   fileDirectory: Assets/- [ Data ] -/- [ Session Format Objects ] -
-  filename: Test - -
+  filename: 17
   heldItem: {fileID: 4360540672554874357, guid: daa9842ce47b6ce46af181269a6d4a5d, type: 3}
   groupA:
     listVisibility: 0
@@ -71,11 +71,11 @@ MonoBehaviour:
     - {fileID: 8715531548804830126, guid: 8881e988f6938da42b6782509bd9ece6, type: 3}
     - {fileID: 582349888759162599, guid: c55e9f9ef1f3b7542a06050d09b4d7ad, type: 3}
     - {fileID: 5245021407769284173, guid: 659e003288da5784da6a6dea8d1124aa, type: 3}
-  blocks: 9
+  blocks: 10
   trials: 40
   approachDistance: 2
-  participantHandedness: 0
-  initialTargetRoom: 0
+  participantHandedness: 1
+  initialTargetRoom: 1
   questionOne: Happyness
   questionOneLowTexture: {fileID: 2800000, guid: ba249f57dccb56740854c30a0d6d434f, type: 3}
   questionOneHighTexture: {fileID: 2800000, guid: 314f1ebef30680448baf6fb08aa85f4d, type: 3}

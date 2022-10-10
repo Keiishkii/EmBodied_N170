@@ -4,12 +4,15 @@ using Enums;
 using Questionnaire;
 using UnityEditor.Rendering;
 using UnityEngine;
+using UnityEngine.Events;
 using Random = UnityEngine.Random;
 
 namespace StateMachine
 {
     public class State_TrialStart : State_Interface
     {
+        public static readonly UnityEvent<GameControllerStateMachine> StartTrial = new UnityEvent<GameControllerStateMachine>();
+        
         private RayInteractionController _rayInteractionController;
         private RayInteractionController RayInteractionController => _rayInteractionController ?? (_rayInteractionController = GameObject.FindObjectOfType<RayInteractionController>());
 
@@ -24,8 +27,13 @@ namespace StateMachine
 
         private LookAtCursor _lookAtCursor;
         private LookAtCursor LookAtCursor => _lookAtCursor ?? (_lookAtCursor = GameObject.FindObjectOfType<LookAtCursor>());
-        
+
         private float _radius = 0.25f;
+        
+        private IEnumerator _alignmentCheckCoroutine;
+        private IEnumerator _trialStartCoroutine;
+        
+        
         
 
 
@@ -73,11 +81,18 @@ namespace StateMachine
             DataCollector.CurrentTrialData.roomBCharacterName = currentTrial.roomB_NPCAvatar.name;
             DataCollector.CurrentTrialData.roomBCharacterID = characterDataB.characterID;
 
-            stateMachine.StartCoroutine(LightsOnState(stateMachine, Random.Range(0.5f, 1.5f)));
+            _alignmentCheckCoroutine = LightsOnState(stateMachine);
+            
+            StartTrial.AddListener(StartTrialCoroutine);
+            
+            stateMachine.StartCoroutine(_alignmentCheckCoroutine);
         }
 
         public override void OnExitState(GameControllerStateMachine stateMachine)
         {
+            stateMachine.StopCoroutine(_alignmentCheckCoroutine);
+            StartTrial.RemoveListener(StartTrialCoroutine);
+            
             NPCDataCollectionData characterDataA = stateMachine.currentTrial.roomA_NPCAvatar.GetComponent<NPCDataCollectionData>();
             NPCDataCollectionData characterDataB = stateMachine.currentTrial.roomB_NPCAvatar.GetComponent<NPCDataCollectionData>();
 
@@ -133,7 +148,7 @@ namespace StateMachine
             return false;
         }
 
-        private IEnumerator LightsOnState(GameControllerStateMachine stateMachine, float waitTime)
+        private IEnumerator LightsOnState(GameControllerStateMachine stateMachine)
         {
             Transform playerHeadTransform = PlayerController.cameraTransform;
             Transform lookTargetTransform = MainCanvas.LookTarget.transform;
@@ -160,9 +175,8 @@ namespace StateMachine
 
                 yield return null;
             }
-            
-            yield return new WaitForSeconds(waitTime);
-            
+
+            yield return new WaitForSeconds(Random.Range(0.5f, 1.5f));
             stateMachine.CurrentState = stateMachine.LightsOn;
         }
 
@@ -188,11 +202,16 @@ namespace StateMachine
             return (Vector3.SqrMagnitude(flattenedPosition) < Mathf.Pow(_radius, 2));
         }
 
-        
-        
-        
-        
-        
+        private void StartTrialCoroutine(GameControllerStateMachine stateMachine)
+        {
+            stateMachine.CurrentState = stateMachine.LightsOn;
+        }
+
+
+
+
+
+
         public override void OnDrawGizmos(GameControllerStateMachine stateMachine)
         {
             Transform

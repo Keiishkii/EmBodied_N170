@@ -50,6 +50,10 @@ namespace StateMachine
         private void Update()
         {
             _currentState.Update(this);
+            
+            
+            
+            
         }
         
         private void OnDrawGizmos()

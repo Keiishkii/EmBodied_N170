@@ -4,12 +4,18 @@ using UnityEngine.Events;
 
 namespace StateMachine
 {
+    /// <summary>
+    /// Game State: Awaiting object placement.
+    /// Awaits the players interaction with the NPC and desk, on start enables collisions for the desk.
+    /// </summary>
     public class State_AwaitingObjectPlacement : State_Interface
     {
+        // Unity events for activating and deactivating room colliders, used to separate the state logic to the scene game objects.
         public static readonly UnityEvent<bool> ActivateRoomAColliders = new UnityEvent<bool>();
         public static readonly UnityEvent<bool> ActivateRoomBColliders = new UnityEvent<bool>();
         public static readonly UnityEvent<GameControllerStateMachine> ObjectPlaced = new UnityEvent<GameControllerStateMachine>();
 
+        // Function for setting the room behaviour on starting and ending the state.
         private delegate void SetRoomColliderActivation(bool activationState);
         private SetRoomColliderActivation _activateRoomCollider;
 
@@ -35,6 +41,7 @@ namespace StateMachine
         public override void OnExitState(GameControllerStateMachine stateMachine)
         {
             ObjectPlaced.RemoveListener(OnColliderEnter);
+            
             _activateRoomCollider.Invoke(false);
         }
 

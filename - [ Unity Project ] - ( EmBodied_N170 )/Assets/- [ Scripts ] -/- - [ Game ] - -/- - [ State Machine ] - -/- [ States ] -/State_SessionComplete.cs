@@ -3,6 +3,10 @@ using UnityEngine;
 
 namespace StateMachine
 {
+    /// <summary>
+    /// Game State: Closes of the experiment.
+    /// Shuts down the data collection and writes all collected data to a file.
+    /// </summary>
     public class State_SessionComplete : State_Interface
     {
         private MainCanvas _mainCanvas;

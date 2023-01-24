@@ -3,10 +3,16 @@ using UnityEngine;
 
 namespace StateMachine
 {
+    /// <summary>
+    /// Game State: Awaiting room entrance state.
+    /// Waits for the player to enter the correct room, before continuing to the next state.
+    /// </summary>
     public class State_AwaitingForRoomEnter : State_Interface
     {
+        // Displacement along the x axis until the player has entered the correct room.
         private const float _distanceToRoomEntrance = 1.5f;
         
+        // Comparison function for room distance checks.
         private delegate bool ComparisonCheck(in Vector3 position);
         private ComparisonCheck _comparisonCheck;
         
@@ -26,8 +32,6 @@ namespace StateMachine
 
         public override void Update(GameControllerStateMachine stateMachine)
         {
-            float playerXCoord = CameraTransform.position.x;
-
             if (_comparisonCheck(CameraTransform.position))
             {
                 stateMachine.CurrentState = stateMachine.AwaitingObjectPlacement;

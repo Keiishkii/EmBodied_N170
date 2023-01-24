@@ -4,11 +4,18 @@ using UnityEngine;
 
 namespace StateMachine
 {
+    /// <summary>
+    /// Game State: The end of a block.
+    /// Clears any data that needs to be removed at he end of a block and writes the result to the data collector,
+    /// Awaits for the user to finnish there break and then lets them move on.
+    /// </summary>
     public class State_BlockComplete : State_Interface
     {
+        // Reference to the scenes Main Canvas
         private MainCanvas _mainCanvas;
         private MainCanvas MainCanvas => _mainCanvas ?? (_mainCanvas = GameObject.FindObjectOfType<MainCanvas>());
 
+        // Reference ot the Room Correction Canvas.
         private RoomCorrectionCanvasController _roomCorrectionCanvasController;
         private RoomCorrectionCanvasController RoomCorrectionCanvasController => _roomCorrectionCanvasController ?? (_roomCorrectionCanvasController = GameObject.FindObjectOfType<RoomCorrectionCanvasController>());
         

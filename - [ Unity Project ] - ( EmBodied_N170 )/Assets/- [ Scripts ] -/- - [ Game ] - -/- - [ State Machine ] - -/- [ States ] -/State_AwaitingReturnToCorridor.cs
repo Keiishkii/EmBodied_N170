@@ -3,8 +3,13 @@ using UnityEngine;
 
 namespace StateMachine
 {
+    /// <summary>
+    /// Game State: Awaiting player return to corridor state.
+    /// Waits for the player to return to the corridor and face the correct direction, ready for the interaction phase of the test to end.
+    /// </summary>
     public class State_AwaitingReturnToCorridor : State_Interface
     {
+        // The activation radius for the players x, z position for it to be considered "returned".
         private float _radius = 0.4f;
 
         

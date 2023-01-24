@@ -5,6 +5,10 @@ using UnityEngine.Events;
 
 namespace StateMachine
 {
+    /// <summary>
+    /// Game State: The start of a new block.
+    /// Sets up the data constant across a whole block, and then enters into the first trial.
+    /// </summary>
     public class State_BlockStart : State_Interface
     {
         public static readonly UnityEvent<GameControllerStateMachine> StartBlock = new UnityEvent<GameControllerStateMachine>();
@@ -64,8 +68,6 @@ namespace StateMachine
             StartBlock.AddListener(OnBlockStart);
             ExitEarly.AddListener(OnExitEarly);
         }
-
-        public override void Update(GameControllerStateMachine stateMachine) { }
 
         public override void OnExitState(GameControllerStateMachine stateMachine)
         {

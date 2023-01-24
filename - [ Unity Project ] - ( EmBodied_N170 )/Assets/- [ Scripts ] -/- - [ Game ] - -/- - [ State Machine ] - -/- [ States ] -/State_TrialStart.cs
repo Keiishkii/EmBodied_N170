@@ -8,23 +8,34 @@ using Random = UnityEngine.Random;
 
 namespace StateMachine
 {
+    /// <summary>
+    /// Game State: Start of a new trial.
+    /// Spawns the active objects for the trial, such as the NPCs and Held object.
+    /// Then waits for the player to be in the correct position and looking in the correct direction before moving onward to the next state.
+    /// </summary>
     public class State_TrialStart : State_Interface
     {
+        // Reference to the scene ray interaction class;
         private RayInteractionController _rayInteractionController;
         private RayInteractionController RayInteractionController => _rayInteractionController ?? (_rayInteractionController = GameObject.FindObjectOfType<RayInteractionController>());
 
+        // Reference to the main canvas;
         private MainCanvas _mainCanvas;
         private MainCanvas MainCanvas => _mainCanvas ?? (_mainCanvas = GameObject.FindObjectOfType<MainCanvas>());
 
+        // Reference to the scene Hand animation controller;
         private HandAnimationController _handAnimationController;
         private HandAnimationController HandAnimationController => _handAnimationController ?? (_handAnimationController = GameObject.FindObjectOfType<HandAnimationController>());
 
+        // Reference to the scene NPC Manager;
         private NPCManager _npcManager;
         private NPCManager NPCManager => _npcManager ?? (_npcManager = GameObject.FindObjectOfType<NPCManager>());
 
+        // Reference to the look at cursor class for starting the trial;
         private LookAtCursor _lookAtCursor;
         private LookAtCursor LookAtCursor => _lookAtCursor ?? (_lookAtCursor = GameObject.FindObjectOfType<LookAtCursor>());
         
+        // The radius for considering the players x, z positions to be within for them to be centered.
         private float _radius = 0.25f;
         
 

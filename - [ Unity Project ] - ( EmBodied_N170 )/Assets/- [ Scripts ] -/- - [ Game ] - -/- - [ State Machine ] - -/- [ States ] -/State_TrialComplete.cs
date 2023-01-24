@@ -2,8 +2,13 @@
 
 namespace StateMachine
 {
+    /// <summary>
+    /// Game State: Completion of a trial.
+    /// Cleans the scene of the objects of the previous trial and gets ready to move on the the next trial, or block.
+    /// </summary>
     public class State_TrialComplete : State_Interface
     {
+        // Reference to the scene NPC Manager
         private NPCManager _npcManager;
         private NPCManager NPCManager => _npcManager ?? (_npcManager = GameObject.FindObjectOfType<NPCManager>());
         
@@ -30,8 +35,5 @@ namespace StateMachine
                 stateMachine.CurrentState = stateMachine.BlockComplete;
             }
         }
-
-        public override void Update(GameControllerStateMachine stateMachine) { }
-        public override void OnExitState(GameControllerStateMachine stateMachine) { }
     }
 }

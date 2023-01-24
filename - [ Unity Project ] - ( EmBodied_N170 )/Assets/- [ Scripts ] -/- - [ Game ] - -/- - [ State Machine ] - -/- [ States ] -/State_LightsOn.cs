@@ -5,6 +5,10 @@ namespace StateMachine
 {
     public class State_LightsOn : State_Interface
     {
+        /// <summary>
+        /// Game State: Lights on State.
+        /// Marks the beginning of the player interaction phase for the trial. Waits a second before signalling to the player to begin movement.
+        /// </summary>
         public override void OnEnterState(GameControllerStateMachine stateMachine)
         {
             Debug.Log("Entered State: <color=#FFF>Lights On</color>");
@@ -29,8 +33,5 @@ namespace StateMachine
             
             stateMachine.CurrentState = stateMachine.AwaitingForRoomEnter;
         }
-        
-        public override void Update(GameControllerStateMachine stateMachine) { }
-        public override void OnExitState(GameControllerStateMachine stateMachine) { }
     }
 }

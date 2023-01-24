@@ -2,9 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Data {
+namespace Data 
+{
     namespace DataCollection
     {
+        /// <summary>
+        /// Class for storing a single frames worth of transform data for all useful transforms within the experiment.
+        /// Useful to look at what the participant was doing at a given time and to compare against any potential discrepancies within the data.
+        /// </summary>
         public class TransformSampleData
         {
             // Time of data sample since program start:
@@ -17,6 +22,7 @@ namespace Data {
             public float[] cameraOffsetRotation, playerHeadRotation, playerLeftHandRotation, playerRightHandRotation;
 
 
+            // Converts the Camera transforms Unity Vector3 and Quaternion to an array of floats, for saving as JSON using Newtonsoft. 
             public Transform SetCameraOffsetTransform
             {
                 set
@@ -38,6 +44,7 @@ namespace Data {
                 }
             }
 
+            // Converts the Head transforms Unity Vector3 and Quaternion to an array of floats, for saving as JSON using Newtonsoft. 
             public Transform SetHeadTransform
             {
                 set
@@ -59,6 +66,7 @@ namespace Data {
                 }
             }
 
+            // Converts the Left Hand transforms Unity Vector3 and Quaternion to an array of floats, for saving as JSON using Newtonsoft. 
             public Transform SetLeftHandTransform
             {
                 set
@@ -80,6 +88,7 @@ namespace Data {
                 }
             }
 
+            // Converts the Right Hand transforms Unity Vector3 and Quaternion to an array of floats, for saving as JSON using Newtonsoft. 
             public Transform SetRightHandTransform
             {
                 set

@@ -5,6 +5,10 @@ using UnityEngine.Events;
 
 namespace StateMachine
 {
+    /// <summary>
+    /// Game State: Setup of the experiment.
+    /// Initialises everything needed to perform the experiment such as the data collector and player positions.
+    /// </summary>
     public class State_SessionStart : State_Interface
     {
         public static readonly UnityEvent<GameControllerStateMachine> StartSession = new UnityEvent<GameControllerStateMachine>();
